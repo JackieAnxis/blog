@@ -28,10 +28,15 @@
         <!-- Main Content -->
         <%- body %>
     </div>
-    <div class="index-right">
-        <!-- Main Content -->
+    
+    <%
+    if(is_post()){
+    // if(/[0-9]*\/[0-9]*\/[0-9]*\//.test(path)){
+    %>
+    <div class="index-right"></div>
         <%- partial('_partial/toc', {item: page, index: false}) %>
     </div>
+    <% } %>
 </div>
 
 <%- partial('_partial/footer', null, {cache: false}) %>
