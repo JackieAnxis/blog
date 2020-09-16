@@ -5,17 +5,17 @@
 # Site
 title: Jiacheng Pan's Blog
 subtitle: 🎶 生命因你而火热 💯
-description:
+description: Jiacheng Pan's Blog
 keywords:
 author: Jiacheng Pan
 language: zh
 timezone:
 sidebar-avatar: "https://avatars2.githubusercontent.com/u/19246028?s=460&u=8d4f9462069e17c42c9f7e460369ac703146ceb9&v=4"
-about: "http://panjiacheng.site"
+about: "Jiacheng Pan's Blog"
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://panjiacheng.site/blog/
+url: http://panjiacheng.site/blog/
 root: /blog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
