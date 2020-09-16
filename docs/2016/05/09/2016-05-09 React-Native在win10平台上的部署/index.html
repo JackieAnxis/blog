@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jiacheng Pan&#39;s Blog">
+  <meta name="keyword" content>
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4">
+
+  <title>
+     杂谈：React-Native在win10平台上的部署 - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/blog/css/aircloud.css"> <link rel="stylesheet" href="/blog/css/gitment.css">
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+  <!-- ga & ba script hoook -->
+  <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        杂谈：React-Native在win10平台上的部署
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2016-05-09 10:05:05</span></span> -->
+        <span class="attr">发布于：<span>2016-05-09</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#Gossip"
+                title="Gossip">Gossip</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#Coding" title="Coding">Coding</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p><strong>特别注意：牢记你的所有文件的路径不要出现中文，不然会出现未知的问题</strong><br><strong>默认查看本教程的看官们都有过一定开发经验~配置环境变量这些简单的工作就不用教了吧</strong></p>
+<h3 id="安装-JDK"><a href="#安装-JDK" class="headerlink" title="安装 JDK"></a>安装 JDK</h3><p>这一点就不废话了，一般程序员都应该有 JDK……<br>之后将 JDK 的 bin 文件夹的路径加入 PATH 环境变量</p>
+<h3 id="安装-Android-SDK-并下载重要组件："><a href="#安装-Android-SDK-并下载重要组件：" class="headerlink" title="安装 Android SDK 并下载重要组件："></a>安装 Android SDK 并下载重要组件：</h3><ol>
+<li><p>下载 Android SDK<br>如果你已经安装过 eclipse 集成版本或者 Android Stutio 就默认已经安装了 SDK<br>如果你没装过，需要去下载<a href="http://tools.android-studio.org/index.php/sdk" target="_blank" rel="noopener">android SDK</a>，下载完安装就行了。</p>
+</li>
+<li><p>配置环境变量<br>将 SDK 的 platform-tools 子目录加入 PATH 环境变量<br>将 ANDROID_HOME 环境变量设置成的 SDK 的目录，比如我的：<br><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-5-9/98466475.jpg" alt></p>
+</li>
+<li><p>打开 Android SDK 下载重要组件：<br>用行命令打开 SDK</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android sdk</span><br></pre></td></tr></table></figure>
+<p>你需要勾选以下组件：</p>
+<ul>
+<li>Tools/Android SDK Tools(&gt;=24.3.3)</li>
+<li>Tools/Android SDK Platform-tools(&gt;=22)</li>
+<li>Tools/Android SDK Build-tools(==23.0.1)</li>
+<li>Android 6.0 (API 23)/SDK Platform(&gt;=1)</li>
+<li>Extras/Android Support Repository(&gt;=29)</li>
+</ul>
+<p>下载之前:如果你没有科学上网工具，可以选择腾讯的<a href="http://android-mirror.bugly.qq.com:8080/include/usage.html" target="_blank" rel="noopener">Bugly</a>来代理下载<br>之后就慢慢等待完成即可~</p>
+</li>
+</ol>
+<h3 id="下载安装-node-js"><a href="#下载安装-node-js" class="headerlink" title="下载安装 node.js"></a>下载安装 node.js</h3><p>去官网下一个安装（4.1 及以上版本），本教程是不会讲的（哼，自己去看<a href="http://www.cnblogs.com/pigtail/archive/2013/01/08/2850486.html" target="_blank" rel="noopener">这篇博客</a>吧</p>
+<h3 id="安装-react-native-命令行工具"><a href="#安装-react-native-命令行工具" class="headerlink" title="安装 react-native 命令行工具"></a>安装 react-native 命令行工具</h3><p>在这之前，推荐你用淘宝的 npm 镜像来加速后面的过程：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org --global</span><br><span class="line">npm config <span class="built_in">set</span> disturl https://npm.taobao.org/dist --global</span><br></pre></td></tr></table></figure>
+<p>安装 react-native 命令行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g react-native-cli</span><br></pre></td></tr></table></figure>
+<p>等待几分钟后即可完成</p>
+<h3 id="下载一个模拟器或者使用-Android-Studio-自带的安卓模拟器"><a href="#下载一个模拟器或者使用-Android-Studio-自带的安卓模拟器" class="headerlink" title="下载一个模拟器或者使用 Android Studio 自带的安卓模拟器"></a>下载一个模拟器或者使用 Android Studio 自带的安卓模拟器</h3><p>推荐用 bluestacks(虽然我觉得这个模拟器界面很 low)，因为使用 Android Studio 自带的 AVD 很麻烦，所以我也没用</p>
+<h3 id="创建并启动-React-Native"><a href="#创建并启动-React-Native" class="headerlink" title="创建并启动 React-Native"></a>创建并启动 React-Native</h3><p>特别提示：这之前你可以先准备一部电影:)，因为过程将很漫长 hhhh</p>
+<ol>
+<li><p>创建一个工作的文件夹，如：MyProject，在该文件下使用 shift+右键，找到<strong>在此处打开命令窗口</strong>或者<strong>Git Bash</strong>并打开，输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native init MyProject</span><br></pre></td></tr></table></figure>
+<p>千万要耐心等待几<del>分钟</del>小时，而且还有很大可能失败……</p>
+</li>
+<li><p>运行你的 package</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native start</span><br></pre></td></tr></table></figure>
+<p>之后会出现<br><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-5-9/58757400.jpg" alt><br>之后需要保持该窗口，不要关闭<br>打开<a href="http://localhost:8081/index.android.bundle?platform=android" target="_blank" rel="noopener">这个链接</a>如果能看到一堆 js 代码，说明已经启动成功（第一次访问的时候需要等待一会）</p>
+</li>
+<li><p>打开你的安卓模拟器</p>
+</li>
+<li><p>另外再打开一个 git 或者 cmd，进入到工程目录，运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native run-android</span><br></pre></td></tr></table></figure>
+<p>第一次跑的时候要下载一个 gradle,会下载很长时间，出现很多白点点，你可以接着看上面没看完的那部电影 hhhh</p>
+<p>如果你看到有各种 failed，可以去<a href="http://www.jianshu.com/p/13adec293492" target="_blank" rel="noopener">React Native 的常见问题</a>以下文章找找原因。<br>最常见的是找不到 device，需要检查你是否打开了虚拟机或者是否连接了真机，可以使用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在你的模拟器上调试<br>你的模拟器上应该会出现一个 MyProject 的 app，打开之后一般都会出现红屏，不要慌张，因为还没完成。<br>首先找到你的 ip 地址，比如 12.23.34.45<br>需要摇晃设备，或者按 menu 键打开菜单<br>点击 Dev Settings<br>选 Debug server host for device<br>输入 你的 IP 地址:8081，如:12.23.34.45:8081<br>返回之后进行 Reload JS, 大概就能看到完成后的样子了</p>
+</li>
+</ol>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>如果你有什么不懂的地方，或者遇到没有解决的问题，欢迎留言咨询~我会及时回复</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-JDK"><span class="toc-text">安装 JDK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-Android-SDK-并下载重要组件："><span class="toc-text">安装 Android SDK 并下载重要组件：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下载安装-node-js"><span class="toc-text">下载安装 node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-react-native-命令行工具"><span class="toc-text">安装 react-native 命令行工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下载一个模拟器或者使用-Android-Studio-自带的安卓模拟器"><span class="toc-text">下载一个模拟器或者使用 Android Studio 自带的安卓模拟器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建并启动-React-Native"><span class="toc-text">创建并启动 React-Native</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最后"><span class="toc-text">最后</span></a></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    <a href="https://github.com/aircloud">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

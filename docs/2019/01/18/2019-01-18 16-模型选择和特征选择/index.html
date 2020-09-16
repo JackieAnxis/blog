@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jiacheng Pan&#39;s Blog">
+  <meta name="keyword" content>
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4">
+
+  <title>
+     CS229：16-模型选择和特征选择 - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/blog/css/aircloud.css"> <link rel="stylesheet" href="/blog/css/gitment.css">
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+  <!-- ga & ba script hoook -->
+  <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        CS229：16-模型选择和特征选择
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2019-01-18 13:53:00</span></span> -->
+        <span class="attr">发布于：<span>2019-01-18</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#AndrewNgCS229"
+                title="AndrewNgCS229">AndrewNgCS229</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#Course Notes" title="Course Notes">Course Notes</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Machine Learning" title="Machine Learning">Machine Learning</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>首先来说几种验证训练结果的方法。</p>
+<ul>
+<li><p>保留交叉验证法 hold out cross validation</p>
+<p>给出一个训练集，随机分成两个，一部分当做训练子集（一般占 70%）用于训练，另一部分当做保留交叉验证子集（30%）用于测试。</p>
+</li>
+<li><p>k 重交叉验证法 k-fold cross validation</p>
+<p>将整个数据集分成 k 部分，拿出 k-1 部分进行训练，将剩下一个用于测试。重复上述过程 k 次（每次都不一样），求出均值即为验证结果。一般 k 取 10。</p>
+<p>优点：增加了训练数据；缺点：计算代价高；</p>
+</li>
+<li><p>留一交叉验证法 leave one out cross validation</p>
+<p>当 k=m（训练数据量）时，称之为留一交叉验证法。一般用于训练数据过少的情况。</p>
+</li>
+</ul>
+<h2 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h2><p>在进行学习时，过多的特征容易带来过拟合，需要选出一个特征子集，其中的特征与学习算法最相关。</p>
+<h3 id="前向搜索法-forward-search"><a href="#前向搜索法-forward-search" class="headerlink" title="前向搜索法 forward search"></a>前向搜索法 forward search</h3><p>过程如下：</p>
+<ol>
+<li>初始化特征集$\cal F$</li>
+<li>对于不属于$\cal F$的每一个特征，计算添加该特征后模型精度的提升；</li>
+<li>选择提升最大的特征加入$\cal F$</li>
+<li>重复 2 和 3，直到精度不在上升。</li>
+</ol>
+<p>当然可以设置阈值 k，当$\cal F$包含了 k 个特征后即停止。</p>
+<h3 id="后向搜索法-backward-search"><a href="#后向搜索法-backward-search" class="headerlink" title="后向搜索法 backward search"></a>后向搜索法 backward search</h3><p>基本步骤与上述类似，只是过程相反：首先从满的特征集开始，之后每次删除表现最差的特征。</p>
+<hr>
+<p>上述的方法都被称为<strong>“wrapping” feature selection</strong>（“封装”特征选择），”封装”这个词，意味着：</p>
+<p>当你进行选择时（前向搜索或者后向搜索）你需要重复使用学习算法去训练模型，根据结果来选择特征子集。</p>
+<p>这种方法主要缺点是计算量大，但是它是一种比较准确的选择方法。</p>
+<p>另外有一种算法，可能它的泛化误差不会太低，但是计算代价较小。</p>
+<h3 id="特征过滤-filter-method"><a href="#特征过滤-filter-method" class="headerlink" title="特征过滤 filter method"></a>特征过滤 filter method</h3><p>主要方法是，计算每一个特征的一些度量，来衡量对 y（label）的影响有多大，一般使用互信息（Mutual Information）来度量：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+MI(x_i, y) &= \sum_{x_i \in \lbrace 0,1 \rbrace} \sum_{y \in \lbrace 0,1 \rbrace} p(x_i, y) \log \frac{p(x_i, y)}{p(x_i)p(y)} \\\
+&= KL(p(x, y) || p(x)p(y)) \text{, KL divergence}
+\end{align}</script><p>然后去选择最好的 k 个特征。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#特征选择"><span class="toc-text">特征选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#前向搜索法-forward-search"><span class="toc-text">前向搜索法 forward search</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后向搜索法-backward-search"><span class="toc-text">后向搜索法 backward search</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特征过滤-filter-method"><span class="toc-text">特征过滤 filter method</span></a></li></ol></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    <a href="https://github.com/aircloud">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

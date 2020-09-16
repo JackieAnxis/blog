@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jiacheng Pan&#39;s Blog">
+  <meta name="keyword" content>
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4">
+
+  <title>
+     CSS@5文本 - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/blog/css/aircloud.css"> <link rel="stylesheet" href="/blog/css/gitment.css">
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+  <!-- ga & ba script hoook -->
+  <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        CSS@5文本
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2016-10-23 14:24:20</span></span> -->
+        <span class="attr">发布于：<span>2016-10-23</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#FrontEnd"
+                title="FrontEnd">FrontEnd</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#FrontEnd" title="FrontEnd">FrontEnd</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Course Notes" title="Course Notes">Course Notes</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#CSS" title="CSS">CSS</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h1 id="文本相关的-CSS-样式"><a href="#文本相关的-CSS-样式" class="headerlink" title="文本相关的 CSS 样式"></a>文本相关的 CSS 样式</h1><hr>
+<h2 id="文字和颜色（font-amp-color）"><a href="#文字和颜色（font-amp-color）" class="headerlink" title="文字和颜色（font&amp;color）"></a>文字和颜色（<code>font</code>&amp;<code>color</code>）</h2><h3 id="font-size-文字大小"><a href="#font-size-文字大小" class="headerlink" title="font-size 文字大小"></a><code>font-size</code> 文字大小</h3><blockquote>
+<p><span style="font-family: consolas">font-size:&lt;length&gt;|&lt;percentage&gt;<span style="color: #ccc;">|&lt;absolute-size&gt;|&lt;relative-size&gt;</span>&lt;/span&gt;</span></p>
+</blockquote>
+<p><strong>解释：</strong></p>
+<ul>
+<li><code>font-size</code>可以填写一个<strong>绝对</strong>的长度值（length）或者一个<strong>相对</strong>的百分比值（percentage），我的前面一片文章中关于<a href="http://jackie-anxis.com/2016/09/26/CSS@4%E5%8D%95%E4%BD%8D/" target="_blank" rel="noopener">css 单位</a>中关于长度单位的部分可以参考。</li>
+<li><strong>默认</strong>是从父元素继承<code>font-size</code></li>
+<li>接下去，我一般会把不太重要的内容设置成灰色，这些内容一般平时都用不上。</li>
+</ul>
+<hr>
+<h3 id="font-family-文字字体"><a href="#font-family-文字字体" class="headerlink" title="font-family 文字字体"></a><code>font-family</code> 文字字体</h3><blockquote>
+<p><span style="font-family: consolas;">font-family:[&lt;family-name&gt;|&lt;generic-family&gt;]#</span> &gt; <span style=" font-family: consolas">&lt;generic-family&gt;=serif(衬线体)|sans-serif(非衬线体)<span style="color: #ccc;">|cursive|fantasy|monospace</span>&lt;/span&gt;</span></p>
+</blockquote>
+<p><strong>解释：</strong></p>
+<ul>
+<li><code>#</code>表示可以指定很多个<code>font-family</code>，中间用逗号<code>,</code>隔开，比如：<code>font-family:verdana, &quot;microsoft yahei&quot;;</code>或者<code>font-family:&quot;宋体&quot;, serif;</code></li>
+<li>指定多个<code>font-family</code>：表示依次搜索这些值，取最先搜到的</li>
+</ul>
+<hr>
+<h3 id="font-weight-字体粗细"><a href="#font-weight-字体粗细" class="headerlink" title="font-weight 字体粗细"></a><code>font-weight</code> 字体粗细</h3><blockquote>
+<p><span style="font-family: consolas">font-weight=normal|bold<span style="color: #ccc;">|bolder|lighter</span>|100|200|…|900&lt;/span&gt;</span></p>
+</blockquote>
+<p><strong>解释：</strong></p>
+<ul>
+<li><code>font-weight</code>的取值，可以设置为数字，只能为 100-900 之间的整百数，如果不是这 9 个数之一，那就会失效。</li>
+</ul>
+<hr>
+<h3 id="font-style-字体倾斜"><a href="#font-style-字体倾斜" class="headerlink" title="font-style 字体倾斜"></a><code>font-style</code> 字体倾斜</h3><blockquote>
+<p><span style="font-family: consolas">font-style=normal|italic<span style="color: #ccc;">|oblique</span>&lt;/span&gt;</span></p>
+</blockquote>
+<p><strong>解释：</strong></p>
+<ul>
+<li><code>italic</code>表示字体自带的斜体，<code>oblique</code>表示如果字体没有斜体，就会倾斜</li>
+</ul>
+<hr>
+<h3 id="line-height-字体行高"><a href="#line-height-字体行高" class="headerlink" title="line-height 字体行高"></a><code>line-height</code> 字体行高</h3><blockquote>
+<p><span style="font-family: consolas">line-height:normal|&lt;number&gt;|&lt;length&gt;|&lt;percentage&gt;</span></p>
+</blockquote>
+<p><strong>解释：</strong></p>
+<ul>
+<li><p>举几个例子：<code>line-height:40px;</code> <code>line-height:3em;</code> <code>line-height:300%;</code> <code>line-height:3;</code></p>
+</li>
+<li><p>上面四个例子中的后三者，看上去差不多，当不发生继承时，的确他们的表现差不多：</p>
+<div><p style="background: wheat; line-height: 3em; display: block">line-height: 3em</p><p style="background: lightblue; line-height: 300%; display: block">line-height: 300%</p><p style="background: salmon; line-height: 3; display: block">line-height: 3</p>
+</div>
+</li>
+<li><p>一旦他们的子元素继承了父元素的<code>line-height</code>，这三者就不一样了：<br>可以明显看到，<code>line-height: 3em</code>和<code>line-height: 300%</code>的表现是差不多的，都是<code>3*20px</code>，但是<code>line-height:3</code>是<code>3*10px</code>。可以理解为，前两者是直接把父元素的计算结果继承下来（<strong>先计算后继承</strong>），而后者则是直接继承，之后再计算（<strong>先继承后计算</strong>）：</p>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"line-height: 3em; font-size: 20px;"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"font-size: 10px; background: yellow;"</span>&gt;</span>line-height: 3em<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"line-height: 3; font-size: 20px;"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"font-size: 10px; background: blue;"</span>&gt;</span>line-height: 3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"line-height: 300%; font-size: 20px;"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"font-size: 10px; background: red;"</span>&gt;</span>line-height: 300%<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code>&lt;div style=&quot;line-height: 3em; font-size: 20px;&quot;&gt;&lt;p style=&quot;font-size: 10px; background: wheat;&quot;&gt;line-height: 3em&lt;/p&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 3; font-size: 20px;&quot;&gt;&lt;p style=&quot;font-size: 10px; background: lightblue;&quot;&gt;line-height: 3&lt;/p&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 300%; font-size: 20px;&quot;&gt;&lt;p style=&quot;font-size: 10px; background: salmon;&quot;&gt;line-height: 300%&lt;/p&gt;&lt;/div&gt;
+</code></pre><hr>
+<h3 id="font-缩写"><a href="#font-缩写" class="headerlink" title="font 缩写"></a><code>font</code> 缩写</h3><blockquote>
+<p><span style="font-family: consolas">font:[[&lt;font-style&gt;<span style="color: #ddd;">||&lt;font-variant&gt;</span>||&lt;font-weight&gt;<span style="color: #ddd;">||&lt;font-stretch&gt;</span>]? &lt;font-size&gt; [/&lt;line-height&gt;]?&lt;font-family&gt;]<span style="color: #ddd;">|caption|icon|menu|message-box|small-caption|status-bar</span>&lt;/span&gt;</span></p>
+</blockquote>
+<p><strong>解释：</strong></p>
+<ul>
+<li><code>[&lt;font-style&gt;||&lt;font-variant&gt;||&lt;font-weight&gt;||&lt;font-stretch&gt;]?</code>说的是：这四个元素都可以写一次或者不写。</li>
+<li><code>font-size</code>和<code>font-family</code>是必写的属性</li>
+<li>举例：</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font: italic 200 16px /3 "Microsoft yahei", Consolas;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="color-文字颜色"><a href="#color-文字颜色" class="headerlink" title="color 文字颜色"></a><code>color</code> 文字颜色</h3><blockquote>
+<p><span style="font-family: consolas">color:color_name|hex_number|rgb_number</span></p>
+</blockquote>
+<p><strong>解释：</strong></p>
+<ul>
+<li><code>color_name</code>：规定颜色值为颜色名称的颜色（比如 <code>red</code>, <code>blue</code>）。当然也可以设成<code>transparent</code>（全透明），具体关键词可以参照这里：<a href="#颜色关键值表">color 关键词对照表</a></li>
+<li><code>hex_number</code>：规定颜色值为十六进制值的颜色（比如 <code>#ff0000</code>或<code>#fff</code>）</li>
+<li><code>rgb_number</code>：规定颜色值为 rgb 代码的颜色（比如<code>rgb(255,0,0)</code>）</li>
+<li>除此之外，还有一个不是很常用的方法：<code>hsla()</code>，就是利用色相-饱和度-明度-阿尔法来定义颜色。比如<code>hsla(240,100%,50%,0.05)</code></li>
+</ul>
+<h2 id="文本修饰"><a href="#文本修饰" class="headerlink" title="文本修饰"></a>文本修饰</h2><h3 id="text-shadow-文字阴影"><a href="#text-shadow-文字阴影" class="headerlink" title="text-shadow 文字阴影"></a><code>text-shadow</code> 文字阴影</h3><blockquote>
+<p><span style="font-family: consolas">text-shadow:none|[&lt;length&gt;{2,3}&amp;&amp;&lt;color&gt;?]#</span></p>
+</blockquote>
+<p><strong>解释：</strong></p>
+<ul>
+<li>下面这条标签，<code>text-shadow:10px 20px 10px rgba(0,0,0,0.2);</code>这个样式，就是用来设置文字阴影的，它可以写<strong>两个或三个长度值</strong>并且指定<strong>颜色</strong>：</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"font-family: Consolas; font-size: 100px; text-shadow:10px 20px 10px rgba(0,0,0,0.2);"</span>&gt;</span>Jackie<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code>- 第一个长度值：阴影在x轴方向的偏移量
+- 第二个长度值：阴影在y轴方向的偏移量
+- 第三个长度值：阴影的模糊半径
+</code></pre><p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-10-23/24138474.jpg" alt></p>
+<h3 id="text-decoration-设置划线"><a href="#text-decoration-设置划线" class="headerlink" title="text-decoration 设置划线"></a><code>text-decoration</code> 设置划线</h3><blockquote>
+<p><span style="font-family: consolas">text-decoration:none|[underline||overline||line-through]</span></p>
+</blockquote>
+<p><strong>解释：</strong></p>
+<ul>
+<li><code>underline</code>,<code>overline</code>,<code>line-through</code>只能设置其中一个，分别表示：下划线，上划线和删除线。</li>
+</ul>
+<h2 id="文本对齐"><a href="#文本对齐" class="headerlink" title="文本对齐"></a>文本对齐</h2><h3 id="text-align-水平对齐"><a href="#text-align-水平对齐" class="headerlink" title="text-align 水平对齐"></a><code>text-align</code> 水平对齐</h3><blockquote>
+<p><span style="font-family: consolas">text-align:left|right|center|justify(左中右两端)</span></p>
+</blockquote>
+<p><strong>解释：</strong></p>
+<ul>
+<li>一张图理解这个属性：<br><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-10-23/95828562.jpg" alt></li>
+</ul>
+<h3 id="vertical-align-垂直对齐"><a href="#vertical-align-垂直对齐" class="headerlink" title="vertical-align 垂直对齐"></a><code>vertical-align</code> 垂直对齐</h3><blockquote>
+<p><span style="font-family: consolas">vertical-align:baseline|sub|super|top|text-top|middle|bottom|text-bottom|&lt;percentage&gt;|&lt;length&gt;</span></p>
+</blockquote>
+<p><strong>解释：</strong></p>
+<ul>
+<li>以上这段的解释是：基线 | 下标 | 上标 | (行)顶部 | 文本顶部 | 居中|(行)底部 | 文本底部 | 以<code>baseline</code>为起点往上偏移基于行高的百分比 | 以<code>baseline</code>为起点往上偏移 <code>n px/em</code></li>
+<li>默认是<code>baseline</code>,其他各种情况，不想赘述……请大家转而访问这篇更牛逼的博客：<a href="http://www.cnblogs.com/hykun/p/3937852.html" target="_blank" rel="noopener">CSS vertical-align 属性详解</a>以及另外一篇国外博客的译文<a href="https://segmentfault.com/a/1190000002668492" target="_blank" rel="noopener">(翻译)关于 Vertical-Align 你需要知道的事情</a></li>
+<li>重点讲一下<code>vertical-align</code>的适用性：<ol>
+<li>一般<code>vertical-align</code>属性用于对齐<code>display</code>为<code>inline</code>和<code>inline-block</code>的元素：<ul>
+<li><code>inline</code>的元素基本上就是文本元素</li>
+<li><code>inline-block</code>则是行块元素，高度可以自己设定，也可以是内容决定</li>
+</ul>
+</li>
+<li>而<code>vertical-align</code>最重要的还是用来垂直居中对齐某些元素</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="text-indent-首行缩进"><a href="#text-indent-首行缩进" class="headerlink" title="text-indent 首行缩进"></a><code>text-indent</code> 首行缩进</h3><blockquote>
+<p><span style="font-family: consolas">text-indent:&lt;length&gt;|&lt;percentage&gt;</span></p>
+</blockquote>
+<p><strong>解释：</strong></p>
+<ul>
+<li><code>text-indent</code>属性是用来规定首行缩进的，也就是一个元素的首行文本内容之前应该有多少水平空格。</li>
+<li><code>&lt;length&gt;</code>就是普通的长度值，不再赘述</li>
+<li><code>&lt;percentage&gt;</code>就是相对父元素而言的百分比长度，也不再赘述</li>
+</ul>
+<hr>
+<h2 id="格式处理"><a href="#格式处理" class="headerlink" title="格式处理"></a>格式处理</h2><h3 id="white-space-换行-空格的合并"><a href="#white-space-换行-空格的合并" class="headerlink" title="white-space 换行/空格的合并"></a><code>white-space</code> 换行/空格的合并</h3><blockquote>
+<p><span style="font-family:consolas">white-space：normal|nowrap|pre|pre-wrap|pre-line</span></p>
+</blockquote>
+<p><strong>解释：</strong></p>
+<ul>
+<li>我们知道，在除了<code>&lt;pre&gt;</code>标签以外的其他标签中，多个空格、多个制表符（tab）是会合并的，换行也是没有效果的，而且超过元素宽度是会自动换行的。那是因为这些标签的默认<code>white-space</code>的值是<code>normal</code>。</li>
+<li><code>white-space</code>的值的含义：<ul>
+<li><code>new lines</code>表示换行是否合并；</li>
+<li><code>spaces&amp;tabs</code>表示制表符和空格是否合并；</li>
+<li><code>text wrapping</code>则表示是否自动换行；</li>
+<li><code>collapse</code>表示换行会合并成一个空格，空格 tab 会和并；</li>
+<li><code>wrap</code>表示自动换行</li>
+<li><code>preserve</code>表示不自动合并</li>
+</ul>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">value</th>
+<th style="text-align:center">new lines</th>
+<th style="text-align:center">spaces&amp;tabs</th>
+<th style="text-align:center">text wrapping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>normal</strong></td>
+<td style="text-align:center">collapse</td>
+<td style="text-align:center">collapse</td>
+<td style="text-align:center">wrap</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>nowrap</strong></td>
+<td style="text-align:center">collapse</td>
+<td style="text-align:center">collapse</td>
+<td style="text-align:center">no wrap</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>pre</strong></td>
+<td style="text-align:center">preserve</td>
+<td style="text-align:center">preserve</td>
+<td style="text-align:center">no wrap</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>pre-wrap</strong></td>
+<td style="text-align:center">preserve</td>
+<td style="text-align:center">preserve</td>
+<td style="text-align:center">wrap</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>pre-line</strong></td>
+<td style="text-align:center">preserve</td>
+<td style="text-align:center">collapse</td>
+<td style="text-align:center">wrap</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h3 id="word-wrap-设置单词截断"><a href="#word-wrap-设置单词截断" class="headerlink" title="word-wrap 设置单词截断"></a><code>word-wrap</code> 设置单词截断</h3><blockquote>
+<p><span style="font-family:consolas">word-wrap:normal|break-word</span></p>
+</blockquote>
+<p><strong>解释：</strong></p>
+<ul>
+<li><code>word-wrap</code>是用来在设置是否截断一个宽度过大的单词（仅对 non-CJK 有效，Chinese/Japanese/Korean）。</li>
+<li>当啥都不写的时候，会发生这样的情况，浏览器自动截断这句长句子，将后面的东西换一行，而长单词，是不截断的。<br><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/public/16-11-27/80140572.jpg" alt></li>
+<li>但是如果赋予<code>word-wrap:break-word</code>，就会将<code>Jackieeeeeeeeeeee</code>截断：<br><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/public/16-11-27/61609140.jpg" alt></li>
+</ul>
+<hr>
+<h3 id="word-break-设置如何进行单词截断"><a href="#word-break-设置如何进行单词截断" class="headerlink" title="word-break 设置如何进行单词截断"></a><code>word-break</code> 设置如何进行单词截断</h3><blockquote>
+<p><span style="font-family:consolas">word-break:normal|keep-all|break-all</span></p>
+</blockquote>
+<p><strong>WTF?</strong><br>好吧，我不应该说脏话的，但是这个的确和上面提到的<code>break-word</code>太像了。。。老外是写不出新的单词了吗……</p>
+<ul>
+<li>不知道大家有没有思考过……为什么<code>My name is</code>后面为啥全空白却不利用？那是因为！<code>word-break</code>的值默认为<code>normal</code>，也就是把太长的单词先换到下一行再说……（当然也仅仅是对 non-CJK 有效）</li>
+<li><code>keep-all</code>的表现基本和<code>normal</code>一致，只是针对 CJK 语言进行了一个新规定:<br><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/public/16-11-27/1931567.jpg" alt></li>
+<li>当<code>word-break:break-all;</code>时（无论<code>word-break</code>如何），则变成下面这种情形啦！<code>break-all</code>本身的意思就是随时都能 break:<br><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/public/16-11-27/34985531.jpg" alt></li>
+<li>OK，写了这么多，我做个对比：<br><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/public/16-11-27/4714032.jpg" alt></li>
+</ul>
+<hr>
+<h3 id="text-overflow-文本溢出"><a href="#text-overflow-文本溢出" class="headerlink" title="text-overflow 文本溢出"></a><code>text-overflow</code> 文本溢出</h3><blockquote>
+<p><span style="font-family:consolas">text-overflow:clip|ellipsis</span></p>
+</blockquote>
+<p><strong>解释：</strong></p>
+<ul>
+<li><code>text-overflow</code>用来处理文本溢出的地方</li>
+<li><code>clip</code>是默认值，表示文本溢出的地方直接截断。</li>
+<li><code>ellipsis</code>表示文本溢出的地方替换成<code>...</code>，通常要配合另外两个属性一起写：<code>overflow:hidden; white-space:nowrap;</code>，就像这样：</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"width:100px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;"</span>&gt;</span>hello hello hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果：</p><p style="width:100px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;">hello hello hello</p><p></p>
+<hr>
+<h2 id="颜色关键值表"><a href="#颜色关键值表" class="headerlink" title="颜色关键值表"></a>颜色关键值表</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">关键字</th>
+<th style="text-align:center">翻译</th>
+<th style="text-align:center">RGB 十六进制</th>
+<th style="text-align:center">颜色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">black</td>
+<td style="text-align:center">黑</td>
+<td style="text-align:center">#000000</td>
+<td style="text-align:center"><span style="display:block;background-color:#000000;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">silver</td>
+<td style="text-align:center">银</td>
+<td style="text-align:center">#c0c0c0</td>
+<td style="text-align:center"><span style="display:block;background-color:#c0c0c0;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">gray</td>
+<td style="text-align:center">灰</td>
+<td style="text-align:center">#808080</td>
+<td style="text-align:center"><span style="display:block;background-color:#808080;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">white</td>
+<td style="text-align:center">白</td>
+<td style="text-align:center">#ffffff</td>
+<td style="text-align:center"><span style="display:block;background-color:#ffffff;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">maroon</td>
+<td style="text-align:center">褐</td>
+<td style="text-align:center">#800000</td>
+<td style="text-align:center"><span style="display:block;background-color:#800000;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">red</td>
+<td style="text-align:center">红</td>
+<td style="text-align:center">#ff0000</td>
+<td style="text-align:center"><span style="display:block;background-color:#ff0000;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">purple</td>
+<td style="text-align:center">紫</td>
+<td style="text-align:center">#800080</td>
+<td style="text-align:center"><span style="display:block;background-color:#800080;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">fuchsia</td>
+<td style="text-align:center">紫红</td>
+<td style="text-align:center">#ff00ff</td>
+<td style="text-align:center"><span style="display:block;background-color:#ff00ff;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">green</td>
+<td style="text-align:center">绿</td>
+<td style="text-align:center">#008000</td>
+<td style="text-align:center"><span style="display:block;background-color:#008000;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">lime</td>
+<td style="text-align:center">绿黄</td>
+<td style="text-align:center">#00ff00</td>
+<td style="text-align:center"><span style="display:block;background-color:#00ff00;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">olive</td>
+<td style="text-align:center">橄榄绿</td>
+<td style="text-align:center">#808000</td>
+<td style="text-align:center"><span style="display:block;background-color:#808000;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">yellow</td>
+<td style="text-align:center">黄</td>
+<td style="text-align:center">#ffff00</td>
+<td style="text-align:center"><span style="display:block;background-color:#ffff00;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">navy</td>
+<td style="text-align:center">藏青</td>
+<td style="text-align:center">#000080</td>
+<td style="text-align:center"><span style="display:block;background-color:#000080;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">blue</td>
+<td style="text-align:center">蓝</td>
+<td style="text-align:center">#0000ff</td>
+<td style="text-align:center"><span style="display:block;background-color:#0000ff;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">teal</td>
+<td style="text-align:center">青</td>
+<td style="text-align:center">#008080</td>
+<td style="text-align:center"><span style="display:block;background-color:#008080;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">aqua</td>
+<td style="text-align:center">水绿</td>
+<td style="text-align:center">#00ffff</td>
+<td style="text-align:center"><span style="display:block;background-color:#00ffff;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">orange</td>
+<td style="text-align:center">橙</td>
+<td style="text-align:center">#ffa500</td>
+<td style="text-align:center"><span style="display:block;background-color:#ffa500;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">aliceblue</td>
+<td style="text-align:center">浅灰蓝</td>
+<td style="text-align:center">#f0f8ff</td>
+<td style="text-align:center"><span style="display:block;background-color:#f0f8ff;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">antiquewhite</td>
+<td style="text-align:center">古董白</td>
+<td style="text-align:center">#faebd7</td>
+<td style="text-align:center"><span style="display:block;background-color:#faebd7;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">aquamarine</td>
+<td style="text-align:center">海蓝</td>
+<td style="text-align:center">#7fffd4</td>
+<td style="text-align:center"><span style="display:block;background-color:#7fffd4;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">azure</td>
+<td style="text-align:center">蔚蓝</td>
+<td style="text-align:center">#f0ffff</td>
+<td style="text-align:center"><span style="display:block;background-color:#f0ffff;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">beige</td>
+<td style="text-align:center">浅褐</td>
+<td style="text-align:center">#f5f5dc</td>
+<td style="text-align:center"><span style="display:block;background-color:#f5f5dc;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">bisque</td>
+<td style="text-align:center">橘黄</td>
+<td style="text-align:center">#ffe4c4</td>
+<td style="text-align:center"><span style="display:block;background-color:#ffe4c4;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">blanchedalmond</td>
+<td style="text-align:center">杏仁白</td>
+<td style="text-align:center">#ffe4c4</td>
+<td style="text-align:center"><span style="display:block;background-color:#ffe4c4;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">blueviolet</td>
+<td style="text-align:center">蓝紫</td>
+<td style="text-align:center">#8a2be2</td>
+<td style="text-align:center"><span style="display:block;background-color:#8a2be2;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">brown</td>
+<td style="text-align:center">褐</td>
+<td style="text-align:center">#a52a2a</td>
+<td style="text-align:center"><span style="display:block;background-color:#a52a2a;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">burlywood</td>
+<td style="text-align:center">原木色</td>
+<td style="text-align:center">#deb887</td>
+<td style="text-align:center"><span style="display:block;background-color:#deb887;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">cadetblue</td>
+<td style="text-align:center">灰蓝</td>
+<td style="text-align:center">#5f9ea0</td>
+<td style="text-align:center"><span style="display:block;background-color:#5f9ea0;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">chartreuse</td>
+<td style="text-align:center">黄绿</td>
+<td style="text-align:center">#7fff00</td>
+<td style="text-align:center"><span style="display:block;background-color:#7fff00;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">chocolate</td>
+<td style="text-align:center">巧克力色</td>
+<td style="text-align:center">#d2691e</td>
+<td style="text-align:center"><span style="display:block;background-color:#d2691e;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">coral</td>
+<td style="text-align:center">珊瑚红</td>
+<td style="text-align:center">#ff7f50</td>
+<td style="text-align:center"><span style="display:block;background-color:#ff7f50;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">cornflowerblue</td>
+<td style="text-align:center">矢车菊蓝</td>
+<td style="text-align:center">#6495ed</td>
+<td style="text-align:center"><span style="display:block;background-color:#6495ed;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">cornsilk</td>
+<td style="text-align:center">玉米穗黄</td>
+<td style="text-align:center">#fff8dc</td>
+<td style="text-align:center"><span style="display:block;background-color:#fff8dc;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">crimson</td>
+<td style="text-align:center">深红</td>
+<td style="text-align:center">#dc143c</td>
+<td style="text-align:center"><span style="display:block;background-color:#dc143c;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">darkblue</td>
+<td style="text-align:center">深蓝</td>
+<td style="text-align:center">#00008b</td>
+<td style="text-align:center"><span style="display:block;background-color:#00008b;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">darkcyan</td>
+<td style="text-align:center">深青</td>
+<td style="text-align:center">#008b8b</td>
+<td style="text-align:center"><span style="display:block;background-color:#008b8b;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">darkgoldenrod</td>
+<td style="text-align:center">暗金</td>
+<td style="text-align:center">#b8860b</td>
+<td style="text-align:center"><span style="display:block;background-color:#b8860b;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">darkgray</td>
+<td style="text-align:center">深灰</td>
+<td style="text-align:center">#a9a9a9</td>
+<td style="text-align:center"><span style="display:block;background-color:#a9a9a9;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">darkgreen</td>
+<td style="text-align:center">深绿</td>
+<td style="text-align:center">#006400</td>
+<td style="text-align:center"><span style="display:block;background-color:#006400;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">darkgrey</td>
+<td style="text-align:center">深灰</td>
+<td style="text-align:center">#a9a9a9</td>
+<td style="text-align:center"><span style="display:block;background-color:#a9a9a9;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">darkkhaki</td>
+<td style="text-align:center">暗黄褐</td>
+<td style="text-align:center">#bdb76b</td>
+<td style="text-align:center"><span style="display:block;background-color:#bdb76b;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">darkmagenta</td>
+<td style="text-align:center">深紫</td>
+<td style="text-align:center">#8b008b</td>
+<td style="text-align:center"><span style="display:block;background-color:#8b008b;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">darkolivegreen</td>
+<td style="text-align:center">深橄榄绿</td>
+<td style="text-align:center">#556b2f</td>
+<td style="text-align:center"><span style="display:block;background-color:#556b2f;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">darkorange</td>
+<td style="text-align:center">深橙</td>
+<td style="text-align:center">#ff8c00</td>
+<td style="text-align:center"><span style="display:block;background-color:#ff8c00;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">darkorchid</td>
+<td style="text-align:center">深兰花紫</td>
+<td style="text-align:center">#9932cc</td>
+<td style="text-align:center"><span style="display:block;background-color:#9932cc;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">darkred</td>
+<td style="text-align:center">深红</td>
+<td style="text-align:center">#8b0000</td>
+<td style="text-align:center"><span style="display:block;background-color:#8b0000;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">darksalmon</td>
+<td style="text-align:center">深橙红</td>
+<td style="text-align:center">#e9967a</td>
+<td style="text-align:center"><span style="display:block;background-color:#e9967a;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">darkseagreen</td>
+<td style="text-align:center">深海绿</td>
+<td style="text-align:center">#8fbc8f</td>
+<td style="text-align:center"><span style="display:block;background-color:#8fbc8f;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">darkslateblue</td>
+<td style="text-align:center">暗灰蓝</td>
+<td style="text-align:center">#483d8b</td>
+<td style="text-align:center"><span style="display:block;background-color:#483d8b;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">darkslategray</td>
+<td style="text-align:center">墨绿</td>
+<td style="text-align:center">#2f4f4f</td>
+<td style="text-align:center"><span style="display:block;background-color:#2f4f4f;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">darkslategrey</td>
+<td style="text-align:center">墨绿</td>
+<td style="text-align:center">#2f4f4f</td>
+<td style="text-align:center"><span style="display:block;background-color:#2f4f4f;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">darkturquoise</td>
+<td style="text-align:center">暗宝石绿</td>
+<td style="text-align:center">#00ced1</td>
+<td style="text-align:center"><span style="display:block;background-color:#00ced1;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">darkviolet</td>
+<td style="text-align:center">深紫罗兰</td>
+<td style="text-align:center">#9400d3</td>
+<td style="text-align:center"><span style="display:block;background-color:#9400d3;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">deeppink</td>
+<td style="text-align:center">深粉红</td>
+<td style="text-align:center">#ff1493</td>
+<td style="text-align:center"><span style="display:block;background-color:#ff1493;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">deepskyblue</td>
+<td style="text-align:center">深天蓝</td>
+<td style="text-align:center">#00bfff</td>
+<td style="text-align:center"><span style="display:block;background-color:#00bfff;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">dimgray</td>
+<td style="text-align:center">暗灰</td>
+<td style="text-align:center">#696969</td>
+<td style="text-align:center"><span style="display:block;background-color:#696969;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">dimgrey</td>
+<td style="text-align:center">暗灰</td>
+<td style="text-align:center">#696969</td>
+<td style="text-align:center"><span style="display:block;background-color:#696969;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">dodgerblue</td>
+<td style="text-align:center">遮板蓝</td>
+<td style="text-align:center">#1e90ff</td>
+<td style="text-align:center"><span style="display:block;background-color:#1e90ff;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">firebrick</td>
+<td style="text-align:center">砖红</td>
+<td style="text-align:center">#b22222</td>
+<td style="text-align:center"><span style="display:block;background-color:#b22222;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">floralwhite</td>
+<td style="text-align:center">花白</td>
+<td style="text-align:center">#fffaf0</td>
+<td style="text-align:center"><span style="display:block;background-color:#fffaf0;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">forestgreen</td>
+<td style="text-align:center">丛林绿</td>
+<td style="text-align:center">#228b22</td>
+<td style="text-align:center"><span style="display:block;background-color:#228b22;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">gainsboro</td>
+<td style="text-align:center">浅灰</td>
+<td style="text-align:center">#dcdcdc</td>
+<td style="text-align:center"><span style="display:block;background-color:#dcdcdc;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">ghostwhite</td>
+<td style="text-align:center">幽灵白</td>
+<td style="text-align:center">#f8f8ff</td>
+<td style="text-align:center"><span style="display:block;background-color:#f8f8ff;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">gold</td>
+<td style="text-align:center">金</td>
+<td style="text-align:center">#ffd700</td>
+<td style="text-align:center"><span style="display:block;background-color:#ffd700;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">goldenrod</td>
+<td style="text-align:center">橘黄</td>
+<td style="text-align:center">#daa520</td>
+<td style="text-align:center"><span style="display:block;background-color:#daa520;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">greenyellow</td>
+<td style="text-align:center">黄绿</td>
+<td style="text-align:center">#adff2f</td>
+<td style="text-align:center"><span style="display:block;background-color:#adff2f;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">grey</td>
+<td style="text-align:center">灰</td>
+<td style="text-align:center">#808080</td>
+<td style="text-align:center"><span style="display:block;background-color:#808080;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">honeydew</td>
+<td style="text-align:center">蜜瓜色</td>
+<td style="text-align:center">#f0fff0</td>
+<td style="text-align:center"><span style="display:block;background-color:#f0fff0;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">hotpink</td>
+<td style="text-align:center">亮粉</td>
+<td style="text-align:center">#ff69b4</td>
+<td style="text-align:center"><span style="display:block;background-color:#ff69b4;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">indianred</td>
+<td style="text-align:center">印第安红</td>
+<td style="text-align:center">#cd5c5c</td>
+<td style="text-align:center"><span style="display:block;background-color:#cd5c5c;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">indigo</td>
+<td style="text-align:center">靛蓝</td>
+<td style="text-align:center">#4b0082</td>
+<td style="text-align:center"><span style="display:block;background-color:#4b0082;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">ivory</td>
+<td style="text-align:center">象牙白</td>
+<td style="text-align:center">#fffff0</td>
+<td style="text-align:center"><span style="display:block;background-color:#fffff0;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">khaki</td>
+<td style="text-align:center">卡其色</td>
+<td style="text-align:center">#f0e68c</td>
+<td style="text-align:center"><span style="display:block;background-color:#f0e68c;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">lavender</td>
+<td style="text-align:center">淡紫</td>
+<td style="text-align:center">#e6e6fa</td>
+<td style="text-align:center"><span style="display:block;background-color:#e6e6fa;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">lavenderblush</td>
+<td style="text-align:center">淡紫红</td>
+<td style="text-align:center">#fff0f5</td>
+<td style="text-align:center"><span style="display:block;background-color:#fff0f5;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">lawngreen</td>
+<td style="text-align:center">草绿</td>
+<td style="text-align:center">#7cfc00</td>
+<td style="text-align:center"><span style="display:block;background-color:#7cfc00;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">lemonchiffon</td>
+<td style="text-align:center">粉黄</td>
+<td style="text-align:center">#fffacd</td>
+<td style="text-align:center"><span style="display:block;background-color:#fffacd;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">lightblue</td>
+<td style="text-align:center">淡蓝</td>
+<td style="text-align:center">#add8e6</td>
+<td style="text-align:center"><span style="display:block;background-color:#add8e6;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">lightcoral</td>
+<td style="text-align:center">浅珊瑚色</td>
+<td style="text-align:center">#f08080</td>
+<td style="text-align:center"><span style="display:block;background-color:#f08080;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">lightcyan</td>
+<td style="text-align:center">淡青</td>
+<td style="text-align:center">#e0ffff</td>
+<td style="text-align:center"><span style="display:block;background-color:#e0ffff;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">lightgoldenrodyellow</td>
+<td style="text-align:center">浅金黄</td>
+<td style="text-align:center">#fafad2</td>
+<td style="text-align:center"><span style="display:block;background-color:#fafad2;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">lightgray</td>
+<td style="text-align:center">浅灰</td>
+<td style="text-align:center">#d3d3d3</td>
+<td style="text-align:center"><span style="display:block;background-color:#d3d3d3;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">lightgreen</td>
+<td style="text-align:center">浅绿</td>
+<td style="text-align:center">#90ee90</td>
+<td style="text-align:center"><span style="display:block;background-color:#90ee90;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">lightgrey</td>
+<td style="text-align:center">浅灰</td>
+<td style="text-align:center">#d3d3d3</td>
+<td style="text-align:center"><span style="display:block;background-color:#d3d3d3;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">lightpink</td>
+<td style="text-align:center">淡粉</td>
+<td style="text-align:center">#ffb6c1</td>
+<td style="text-align:center"><span style="display:block;background-color:#ffb6c1;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">lightsalmon</td>
+<td style="text-align:center">浅肉色</td>
+<td style="text-align:center">#ffa07a</td>
+<td style="text-align:center"><span style="display:block;background-color:#ffa07a;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">lightseagreen</td>
+<td style="text-align:center">浅海绿</td>
+<td style="text-align:center">#20b2aa</td>
+<td style="text-align:center"><span style="display:block;background-color:#20b2aa;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">lightskyblue</td>
+<td style="text-align:center">浅天蓝</td>
+<td style="text-align:center">#87cefa</td>
+<td style="text-align:center"><span style="display:block;background-color:#87cefa;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">lightslategray</td>
+<td style="text-align:center">浅青灰</td>
+<td style="text-align:center">#778899</td>
+<td style="text-align:center"><span style="display:block;background-color:#778899;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">lightslategrey</td>
+<td style="text-align:center">浅青灰</td>
+<td style="text-align:center">#778899</td>
+<td style="text-align:center"><span style="display:block;background-color:#778899;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">lightsteelblue</td>
+<td style="text-align:center">浅钢蓝</td>
+<td style="text-align:center">#b0c4de</td>
+<td style="text-align:center"><span style="display:block;background-color:#b0c4de;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">lightyellow</td>
+<td style="text-align:center">浅黄</td>
+<td style="text-align:center">#ffffe0</td>
+<td style="text-align:center"><span style="display:block;background-color:#ffffe0;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">limegreen</td>
+<td style="text-align:center">酸橙绿</td>
+<td style="text-align:center">#32cd32</td>
+<td style="text-align:center"><span style="display:block;background-color:#32cd32;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">linen</td>
+<td style="text-align:center">亚麻色</td>
+<td style="text-align:center">#faf0e6</td>
+<td style="text-align:center"><span style="display:block;background-color:#faf0e6;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">mediumaquamarine</td>
+<td style="text-align:center">中绿</td>
+<td style="text-align:center">#66cdaa</td>
+<td style="text-align:center"><span style="display:block;background-color:#66cdaa;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">mediumblue</td>
+<td style="text-align:center">中蓝</td>
+<td style="text-align:center">#0000cd</td>
+<td style="text-align:center"><span style="display:block;background-color:#0000cd;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">mediumorchid</td>
+<td style="text-align:center">间兰花紫</td>
+<td style="text-align:center">#ba55d3</td>
+<td style="text-align:center"><span style="display:block;background-color:#ba55d3;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">mediumpurple</td>
+<td style="text-align:center">中紫</td>
+<td style="text-align:center">#9370db</td>
+<td style="text-align:center"><span style="display:block;background-color:#9370db;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">mediumseagreen</td>
+<td style="text-align:center">间海绿</td>
+<td style="text-align:center">#3cb371</td>
+<td style="text-align:center"><span style="display:block;background-color:#3cb371;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">mediumslateblue</td>
+<td style="text-align:center">中暗蓝</td>
+<td style="text-align:center">#7b68ee</td>
+<td style="text-align:center"><span style="display:block;background-color:#7b68ee;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">mediumspringgreen</td>
+<td style="text-align:center">中春绿</td>
+<td style="text-align:center">#00fa9a</td>
+<td style="text-align:center"><span style="display:block;background-color:#00fa9a;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">mediumturquoise</td>
+<td style="text-align:center">中海湖蓝</td>
+<td style="text-align:center">#48d1cc</td>
+<td style="text-align:center"><span style="display:block;background-color:#48d1cc;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">mediumvioletred</td>
+<td style="text-align:center">中紫罗兰</td>
+<td style="text-align:center">#c71585</td>
+<td style="text-align:center"><span style="display:block;background-color:#c71585;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">midnightblue</td>
+<td style="text-align:center">午夜蓝</td>
+<td style="text-align:center">#191970</td>
+<td style="text-align:center"><span style="display:block;background-color:#191970;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">mintcream</td>
+<td style="text-align:center">薄荷乳白</td>
+<td style="text-align:center">#f5fffa</td>
+<td style="text-align:center"><span style="display:block;background-color:#f5fffa;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">mistyrose</td>
+<td style="text-align:center">粉玫瑰红</td>
+<td style="text-align:center">#ffe4e1</td>
+<td style="text-align:center"><span style="display:block;background-color:#ffe4e1;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">moccasin</td>
+<td style="text-align:center">鹿皮色</td>
+<td style="text-align:center">#ffe4b5</td>
+<td style="text-align:center"><span style="display:block;background-color:#ffe4b5;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">navajowhite</td>
+<td style="text-align:center">纳瓦白</td>
+<td style="text-align:center">#ffdead</td>
+<td style="text-align:center"><span style="display:block;background-color:#ffdead;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">oldlace</td>
+<td style="text-align:center">浅米色</td>
+<td style="text-align:center">#fdf5e6</td>
+<td style="text-align:center"><span style="display:block;background-color:#fdf5e6;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">olivedrab</td>
+<td style="text-align:center">橄榄褐</td>
+<td style="text-align:center">#6b8e23</td>
+<td style="text-align:center"><span style="display:block;background-color:#6b8e23;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">orangered</td>
+<td style="text-align:center">橙红</td>
+<td style="text-align:center">#ff4500</td>
+<td style="text-align:center"><span style="display:block;background-color:#ff4500;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">orchid</td>
+<td style="text-align:center">兰花紫</td>
+<td style="text-align:center">#da70d6</td>
+<td style="text-align:center"><span style="display:block;background-color:#da70d6;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">palegoldenrod</td>
+<td style="text-align:center">灰菊黄</td>
+<td style="text-align:center">#eee8aa</td>
+<td style="text-align:center"><span style="display:block;background-color:#eee8aa;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">palegreen</td>
+<td style="text-align:center">苍绿</td>
+<td style="text-align:center">#98fb98</td>
+<td style="text-align:center"><span style="display:block;background-color:#98fb98;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">paleturquoise</td>
+<td style="text-align:center">苍宝石绿</td>
+<td style="text-align:center">#afeeee</td>
+<td style="text-align:center"><span style="display:block;background-color:#afeeee;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">palevioletred</td>
+<td style="text-align:center">苍紫罗兰</td>
+<td style="text-align:center">#db7093</td>
+<td style="text-align:center"><span style="display:block;background-color:#db7093;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">papayawhip</td>
+<td style="text-align:center">木瓜色</td>
+<td style="text-align:center">#ffefd5</td>
+<td style="text-align:center"><span style="display:block;background-color:#ffefd5;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">peachpuff</td>
+<td style="text-align:center">桃色</td>
+<td style="text-align:center">#ffdab9</td>
+<td style="text-align:center"><span style="display:block;background-color:#ffdab9;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">peru</td>
+<td style="text-align:center">秘鲁色</td>
+<td style="text-align:center">#cd853f</td>
+<td style="text-align:center"><span style="display:block;background-color:#cd853f;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">pink</td>
+<td style="text-align:center">粉</td>
+<td style="text-align:center">#ffc0cb</td>
+<td style="text-align:center"><span style="display:block;background-color:#ffc0cb;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">plum</td>
+<td style="text-align:center">李子色</td>
+<td style="text-align:center">#dda0dd</td>
+<td style="text-align:center"><span style="display:block;background-color:#dda0dd;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">powderblue</td>
+<td style="text-align:center">粉蓝</td>
+<td style="text-align:center">#b0e0e6</td>
+<td style="text-align:center"><span style="display:block;background-color:#b0e0e6;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">rosybrown</td>
+<td style="text-align:center">玫瑰粽</td>
+<td style="text-align:center">#bc8f8f</td>
+<td style="text-align:center"><span style="display:block;background-color:#bc8f8f;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">royalblue</td>
+<td style="text-align:center">宝蓝</td>
+<td style="text-align:center">#4169e1</td>
+<td style="text-align:center"><span style="display:block;background-color:#4169e1;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">saddlebrown</td>
+<td style="text-align:center">马鞍棕</td>
+<td style="text-align:center">#8b4513</td>
+<td style="text-align:center"><span style="display:block;background-color:#8b4513;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">salmon</td>
+<td style="text-align:center">鲑肉色</td>
+<td style="text-align:center">#fa8072</td>
+<td style="text-align:center"><span style="display:block;background-color:#fa8072;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">sandybrown</td>
+<td style="text-align:center">沙褐色</td>
+<td style="text-align:center">#f4a460</td>
+<td style="text-align:center"><span style="display:block;background-color:#f4a460;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">seagreen</td>
+<td style="text-align:center">海绿</td>
+<td style="text-align:center">#2e8b57</td>
+<td style="text-align:center"><span style="display:block;background-color:#2e8b57;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">seashell</td>
+<td style="text-align:center">贝壳白</td>
+<td style="text-align:center">#fff5ee</td>
+<td style="text-align:center"><span style="display:block;background-color:#fff5ee;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">sienna</td>
+<td style="text-align:center">赭</td>
+<td style="text-align:center">#a0522d</td>
+<td style="text-align:center"><span style="display:block;background-color:#a0522d;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">skyblue</td>
+<td style="text-align:center">天蓝</td>
+<td style="text-align:center">#87ceeb</td>
+<td style="text-align:center"><span style="display:block;background-color:#87ceeb;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">slateblue</td>
+<td style="text-align:center">青蓝</td>
+<td style="text-align:center">#6a5acd</td>
+<td style="text-align:center"><span style="display:block;background-color:#6a5acd;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">slategray</td>
+<td style="text-align:center">青灰</td>
+<td style="text-align:center">#708090</td>
+<td style="text-align:center"><span style="display:block;background-color:#708090;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">slategrey</td>
+<td style="text-align:center">青灰</td>
+<td style="text-align:center">#708090</td>
+<td style="text-align:center"><span style="display:block;background-color:#708090;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">snow</td>
+<td style="text-align:center">雪白</td>
+<td style="text-align:center">#fffafa</td>
+<td style="text-align:center"><span style="display:block;background-color:#fffafa;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">springgreen</td>
+<td style="text-align:center">春绿</td>
+<td style="text-align:center">#00ff7f</td>
+<td style="text-align:center"><span style="display:block;background-color:#00ff7f;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">steelblue</td>
+<td style="text-align:center">铁青</td>
+<td style="text-align:center">#4682b4</td>
+<td style="text-align:center"><span style="display:block;background-color:#4682b4;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">tan</td>
+<td style="text-align:center">棕褐</td>
+<td style="text-align:center">#d2b48c</td>
+<td style="text-align:center"><span style="display:block;background-color:#d2b48c;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">thistle</td>
+<td style="text-align:center">苍紫</td>
+<td style="text-align:center">#d8bfd8</td>
+<td style="text-align:center"><span style="display:block;background-color:#d8bfd8;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">tomato</td>
+<td style="text-align:center">番茄红</td>
+<td style="text-align:center">#ff6347</td>
+<td style="text-align:center"><span style="display:block;background-color:#ff6347;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">turquoise</td>
+<td style="text-align:center">蓝绿</td>
+<td style="text-align:center">#40e0d0</td>
+<td style="text-align:center"><span style="display:block;background-color:#40e0d0;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">violet</td>
+<td style="text-align:center">紫罗兰色</td>
+<td style="text-align:center">#ee82ee</td>
+<td style="text-align:center"><span style="display:block;background-color:#ee82ee;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">wheat</td>
+<td style="text-align:center">麦色</td>
+<td style="text-align:center">#f5deb3</td>
+<td style="text-align:center"><span style="display:block;background-color:#f5deb3;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">whitesmoke</td>
+<td style="text-align:center">烟白</td>
+<td style="text-align:center">#f5f5f5</td>
+<td style="text-align:center"><span style="display:block;background-color:#f5f5f5;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">yellowgreen</td>
+<td style="text-align:center">黄绿</td>
+<td style="text-align:center">#9acd32</td>
+<td style="text-align:center"><span style="display:block;background-color:#9acd32;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+<tr>
+<td style="text-align:left">rebeccapurple</td>
+<td style="text-align:center">利百加紫</td>
+<td style="text-align:center">#663399</td>
+<td style="text-align:center"><span style="display:block;background-color:#663399;width:20px;height:20px;margin:0 auto;"></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#文本相关的-CSS-样式"><span class="toc-text">文本相关的 CSS 样式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#文字和颜色（font-amp-color）"><span class="toc-text">文字和颜色（font&amp;color）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#font-size-文字大小"><span class="toc-text">font-size 文字大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#font-family-文字字体"><span class="toc-text">font-family 文字字体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#font-weight-字体粗细"><span class="toc-text">font-weight 字体粗细</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#font-style-字体倾斜"><span class="toc-text">font-style 字体倾斜</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#line-height-字体行高"><span class="toc-text">line-height 字体行高</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#font-缩写"><span class="toc-text">font 缩写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#color-文字颜色"><span class="toc-text">color 文字颜色</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文本修饰"><span class="toc-text">文本修饰</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#text-shadow-文字阴影"><span class="toc-text">text-shadow 文字阴影</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#text-decoration-设置划线"><span class="toc-text">text-decoration 设置划线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文本对齐"><span class="toc-text">文本对齐</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#text-align-水平对齐"><span class="toc-text">text-align 水平对齐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vertical-align-垂直对齐"><span class="toc-text">vertical-align 垂直对齐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#text-indent-首行缩进"><span class="toc-text">text-indent 首行缩进</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#格式处理"><span class="toc-text">格式处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#white-space-换行-空格的合并"><span class="toc-text">white-space 换行/空格的合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#word-wrap-设置单词截断"><span class="toc-text">word-wrap 设置单词截断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#word-break-设置如何进行单词截断"><span class="toc-text">word-break 设置如何进行单词截断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#text-overflow-文本溢出"><span class="toc-text">text-overflow 文本溢出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#颜色关键值表"><span class="toc-text">颜色关键值表</span></a></li></ol></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    <a href="https://github.com/aircloud">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

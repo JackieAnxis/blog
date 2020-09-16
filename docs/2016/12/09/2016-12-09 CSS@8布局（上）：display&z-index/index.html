@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jiacheng Pan&#39;s Blog">
+  <meta name="keyword" content>
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4">
+
+  <title>
+     CSS@8布局（上）：display&amp;amp;z-index - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/blog/css/aircloud.css"> <link rel="stylesheet" href="/blog/css/gitment.css">
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+  <!-- ga & ba script hoook -->
+  <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        CSS@8布局（上）：display&amp;amp;z-index
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2016-12-09 19:50:00</span></span> -->
+        <span class="attr">发布于：<span>2016-12-09</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#FrontEnd"
+                title="FrontEnd">FrontEnd</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#FrontEnd" title="FrontEnd">FrontEnd</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Course Notes" title="Course Notes">Course Notes</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#CSS" title="CSS">CSS</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h1 id="CSS-布局（上）：display-amp-z-index"><a href="#CSS-布局（上）：display-amp-z-index" class="headerlink" title="CSS 布局（上）：display&amp;z-index"></a>CSS 布局（上）：<code>display</code>&amp;<code>z-index</code></h1><h3 id="文档流的概念"><a href="#文档流的概念" class="headerlink" title="文档流的概念"></a>文档流的概念</h3><p>文档流指的是元素按照其在 HTML 中的位置顺序决定排布的过程，或者说在排布过程中将窗体自上而下分成一行行, 并在每行中按从左至右的顺序排放元素。<br>但是，在某些情况下，元素会脱离文档流，他们不会按照既定的顺序进行排布，而是按照指定的规则在文档流中浮动。</p>
+<hr>
+<h2 id="display"><a href="#display" class="headerlink" title="display"></a><code>display</code></h2><p><code>display</code>属性，是用来设置元素的布局方式，就是元素如何在页面上展示。</p>
+<blockquote>
+<p>display：<strong>none</strong> | <strong>inline</strong> | <strong>block</strong> | list-item | <strong>inline-block</strong> | <strong>table</strong> | inline-table | table-caption | table-cell | table-row | table-row-group | table-column | table-column-group | table-footer-group | table-header-group | run-in | box | inline-box | flexbox | inline-flexbox | flex | inline-flex</p>
+</blockquote>
+<p><code>display</code>可以有很多可选的值，但是，<strong>“似乎”</strong>最重要的就只有我加粗的这几个。比较常用的也是这几个。下面就分别介绍这几个值的含义。</p>
+<h3 id="display-inline-行内元素"><a href="#display-inline-行内元素" class="headerlink" title="display:inline 行内元素"></a><code>display:inline</code> 行内元素</h3><blockquote>
+<ul>
+<li>默认宽度为内容宽度</li>
+<li>不可设置宽高</li>
+<li>元素之间同行显示，内部会换行</li>
+</ul>
+</blockquote>
+<ul>
+<li>如果一个元素被指定为<code>display：inline</code>，那么这个元素就是一个行内元素。</li>
+<li><p>行内元素的意思，就是这个元素<strong>能和其他元素在同一行显示</strong>，比如以下两个元素都是<code>display:inline</code>，他们在同一行显示：</p>
+</li>
+<li><p><strong>内部会换行</strong>：虽然<code>inline</code>是一个行内元素，但是它自己内部是会换行的</p>
+</li>
+<li><p><strong>不可设置宽高</strong>：就是无法为一个行内元素设置宽（<code>width</code>）高（<code>height</code>），<code>inline</code>元素的行高完全是由元素本身内容决定的</p>
+</li>
+</ul>
+<ul>
+<li>默认是<code>display:inline</code>的元素有：<code>span</code>, <code>a</code>, <code>label</code>, <code>cite</code>, <code>em</code>, …</li>
+</ul>
+<hr>
+<h3 id="display：block-块级元素"><a href="#display：block-块级元素" class="headerlink" title="display：block 块级元素"></a><code>display：block</code> 块级元素</h3><blockquote>
+<ul>
+<li>默认宽度为父元素的宽度</li>
+<li>可设置宽高</li>
+<li>元素之间换行显示</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>默认宽度为父元素的宽度</strong>，指的是，子元素的<code>margin</code>+<code>border</code>+<code>padding</code>+<code>content</code>的宽度和等于父元素<code>content-box</code>的宽度。默认高度是元素内容高度，值得注意。如果没有内容，那么高度即为 0。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: lightseagreen;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>![](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-12-12/76855013-file_1481555964594_d399.png)
+</code></pre><ul>
+<li><p>默认是<code>display:block</code>的元素有：<code>div</code>, <code>p</code>, <code>h1</code>-<code>h6</code>, <code>ul</code>, <code>form</code>…</p>
+<pre><code>* * *
+
+### `display:inline-block` 行块元素
+
+&gt; *   默认宽度为内容宽度
+</code></pre><blockquote>
+<ul>
+<li>可设置宽高</li>
+<li>元素之间,同行显示</li>
+<li>后续元素宽度超过边界之后就会整块换行</li>
+</ul>
+</blockquote>
+</li>
+<li><p><code>display:inline-block</code>综合了行级元素和块级元素的特点。</p>
+</li>
+<li><strong>默认宽度为内容宽度</strong>，在未设置元素宽度的时候，元素的默认宽度就是内容的宽度，这和<code>inline</code>元素保持一致。但又同时是<strong>可设置宽高</strong>的。</li>
+<li><p>元素之间，同行显示，超过边界换行</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">60px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: lightseagreen;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.children</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: white;</span><br><span class="line">  <span class="attribute">outline</span>: <span class="number">1px</span> solid lightblue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>默认是<code>display:inline-block</code>的元素有：<code>input</code>, <code>textarea</code>, <code>selelct</code>, <code>button</code>, …</p>
+</li>
+<li><code>display:inline-block</code>一直有一个历史遗留问题。就是<strong>间隙问题</strong>，就比如下面这段代码，你可以复制这段代码到本地，你会发现，将<code>content-box</code>之外的所有内容都设为 0，元素之间仍旧有一个间隙，令人百思不得其解。</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.parent</span> &#123;</span></span><br><span class="line">        width: 200px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        background-color: lightseagreen;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.element</span> &#123;</span></span><br><span class="line">        display: inline-block;</span><br><span class="line">        width: 80px;</span><br><span class="line">        height: 40px;</span><br><span class="line">        margin: 0;</span><br><span class="line">        padding: 0;</span><br><span class="line">        border: 0;</span><br><span class="line">        background-color: white;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"element"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"element"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"element"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"element"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/jackie/20170122/191902397.png" alt="mark"><br>关于它的历史和解决方案，可以参照这篇文章<a href="http://www.iyunlu.com/view/css-xhtml/64.html" target="_blank" rel="noopener">inline-block 前世今生</a>，以及这篇文章提到了很多解决方案：<a href="http://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/" target="_blank" rel="noopener">去除 inline-block 元素间间距的 N 种方法</a></p>
+<ul>
+<li>我个人而言，比较推崇在父元素上加上<code>font-size:0</code>的方法。但是这个方法也有局限性，因为要为每个子元素都再设置一遍<code>font-size</code></li>
+</ul>
+<hr>
+<h3 id="display-none-不显示"><a href="#display-none-不显示" class="headerlink" title="display:none 不显示"></a><code>display:none</code> 不显示</h3><ul>
+<li>指的是元素不出现在文档流中，和变透明是<strong>不一样</strong>的，<code>display:none</code>是完完全全的消失</li>
+</ul>
+<h2 id="定位偏移属性"><a href="#定位偏移属性" class="headerlink" title="定位偏移属性"></a>定位偏移属性</h2><hr>
+<h3 id="top-bottom-left-right"><a href="#top-bottom-left-right" class="headerlink" title="top bottom left right"></a><code>top</code> <code>bottom</code> <code>left</code> <code>right</code></h3><ul>
+<li>当元素的<code>position</code>属性不是<code>static</code>的时候（下文中会讲），或者添加了<code>float</code>属性，那么就可以使用标题中的这四个属性来进行定位偏移</li>
+<li>默认是<code>auto</code>，也就是<code>top</code>和<code>left</code>都为 0，对齐到父元素<code>content-box</code>的左上角，以此类推。</li>
+<li>这四个值都可以设置</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS-布局（上）：display-amp-z-index"><span class="toc-text">CSS 布局（上）：display&amp;z-index</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文档流的概念"><span class="toc-text">文档流的概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#display"><span class="toc-text">display</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#display-inline-行内元素"><span class="toc-text">display:inline 行内元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#display：block-块级元素"><span class="toc-text">display：block 块级元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#display-none-不显示"><span class="toc-text">display:none 不显示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定位偏移属性"><span class="toc-text">定位偏移属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#top-bottom-left-right"><span class="toc-text">top bottom left right</span></a></li></ol></li></ol></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    <a href="https://github.com/aircloud">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

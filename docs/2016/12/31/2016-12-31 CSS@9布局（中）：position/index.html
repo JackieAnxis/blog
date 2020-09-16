@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jiacheng Pan&#39;s Blog">
+  <meta name="keyword" content>
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4">
+
+  <title>
+     CSS@布局（中）：position - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/blog/css/aircloud.css"> <link rel="stylesheet" href="/blog/css/gitment.css">
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+  <!-- ga & ba script hoook -->
+  <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        CSS@布局（中）：position
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2016-12-31 00:50:00</span></span> -->
+        <span class="attr">发布于：<span>2016-12-31</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#FrontEnd"
+                title="FrontEnd">FrontEnd</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#FrontEnd" title="FrontEnd">FrontEnd</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Course Notes" title="Course Notes">Course Notes</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#CSS" title="CSS">CSS</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h1 id="CSS-布局（中）：position"><a href="#CSS-布局（中）：position" class="headerlink" title="CSS 布局（中）：position"></a>CSS 布局（中）：position</h1><h2 id="position-定位方式"><a href="#position-定位方式" class="headerlink" title="position 定位方式"></a><code>position</code> 定位方式</h2><h3 id="position-static-默认定位"><a href="#position-static-默认定位" class="headerlink" title="position:static 默认定位"></a><code>position:static</code> 默认定位</h3><p>默认的定位方式，元素在文档流中，无法用<code>top</code>，<code>right</code>，<code>bottom</code>，<code>left</code>进行定位</p>
+<hr>
+<h3 id="position-relative-相对定位"><a href="#position-relative-相对定位" class="headerlink" title="position:relative 相对定位"></a><code>position:relative</code> 相对定位</h3><ul>
+<li>仍在文档流中</li>
+<li>参照物为元素本身</li>
+<li>相对定位元素层级较高</li>
+</ul>
+<p><strong>解释：</strong></p>
+<ul>
+<li><strong>仍在文档流中</strong>：指的是，这个元素仍然会按照原来的位置占据一定的区域，下面的元素不会因此上来，右边的元素不会因此左移，比如这样：<div style="margin:10px auto 0; height: 150px; width: 410px;font-family: consolas;"><div style="margin:0 auto;height:150px;width:200px; display: inline-block;"><div style="width: 200px; height: 50px; background-color: gold;"></div><div style="width: 200px; height: 50px; background-color: lightseagreen;color:white; line-height: 50px; text-align: center;">position: static;</div><div style="width: 200px; height: 50px; background-color: pink;"></div></div> <div style="margin:0 auto;height:200px;width:200px; display: inline-block;"><div style="width: 200px; height: 50px; background-color: gold;"></div><div style="width: 200px; height: 50px; background-color: lightseagreen; position: relative; left: 10px; top: 10px;color:white; line-height: 50px; text-align: center;">position: relative;</div><div style="width: 200px; height: 50px; background-color: pink;"></div></div></div>
+
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.grandparent</span> &#123;</span></span><br><span class="line">        margin: 10px auto 0;</span><br><span class="line">        height: 150px;</span><br><span class="line">        width: 410px;</span><br><span class="line">        font-family: consolas;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.parent</span> &#123;</span></span><br><span class="line">        margin: 0 auto;</span><br><span class="line">        height: 150px;</span><br><span class="line">        width: 200px;</span><br><span class="line">        display: inline-block;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.element</span> &#123;</span></span><br><span class="line">        width: 200px;</span><br><span class="line">        height: 50px;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.first</span> &#123;</span></span><br><span class="line">        background-color: gold;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.second</span> &#123;</span></span><br><span class="line">        background-color: lightseagreen;</span><br><span class="line">        color: white;</span><br><span class="line">        line-height: 50px;</span><br><span class="line">        text-align: center;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.third</span> &#123;</span></span><br><span class="line">        background-color: pink;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.relative</span> &#123;</span></span><br><span class="line">        position: relative;</span><br><span class="line">        left: 10px;</span><br><span class="line">        top: 10px;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"grandparent"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element first"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element second"</span>&gt;</span>position: static;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element third"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element first"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element second relative"</span>&gt;</span>position: relative;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element third"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>参照物为元素本身</strong>：也就是，元素通过<code>top</code>,<code>left</code>等定位偏移属性，其位移的原点，是元素本来的位置。比如上面右边的，其 CSS 样式是这样的，向右和向下偏移了<code>10px</code>：</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.second-child</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: lightseagreen;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>相对定位元素层级较高</strong>： 设置了<code>position</code>的元素会比未设置的元素层级要高。可以这么理解，设置了<code>position</code>视作一类，没有设置的视作一类。他们分别计算层级，而前者一定高于后者。<div style="position: relative; z-index: 10;"><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;position: absolute;background-color: pink;">absolute</div><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;position: relative;left: 100px;top: 100px;background-color: lightblue;">relative</div><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;">default</div></div>
+<div style="position: relative; z-index: 1;"><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;position: absolute;background-color: pink;">absolute</div><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;position: relative;left: 100px;top:0;background-color: lightblue;">relative</div><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;">default</div></div>
+
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">		<span class="selector-class">.element</span>&#123;</span></span><br><span class="line">			display: inline-block;</span><br><span class="line">			width: 200px;</span><br><span class="line">			height: 200px;</span><br><span class="line">			border: 3px solid white;</span><br><span class="line">			background-color: lightseagreen;</span><br><span class="line">			color: white;</span><br><span class="line">			text-align: center;</span><br><span class="line">			line-height: 200px;</span><br><span class="line">			font-family: consolas;</span><br><span class="line">			font-size: 24px;</span><br><span class="line">		&#125;</span><br><span class="line"><span class="css">		<span class="selector-class">.absolute</span>&#123;</span></span><br><span class="line">			position: absolute;</span><br><span class="line">			background-color: pink;</span><br><span class="line">		&#125;</span><br><span class="line"><span class="css">		<span class="selector-class">.relative</span>&#123;</span></span><br><span class="line">			position: relative;</span><br><span class="line">			left: 100px;</span><br><span class="line">			top: 100px;</span><br><span class="line">			background-color: lightblue;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"position: relative; z-index: 10;"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element absolute"</span>&gt;</span>absolute<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element relative"</span>&gt;</span>relative<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element default"</span>&gt;</span>default<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"position: relative; z-index: 1;"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element absolute"</span>&gt;</span>absolute<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element relative"</span> <span class="attr">style</span>=<span class="string">"top: 0;"</span>&gt;</span>relative<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element default"</span>&gt;</span>default<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>你会发现这段代码的效果里： - 第一行中<code>relative</code>的元素覆盖在了它后面的<code>default</code>元素上，因为<code>default</code>元素没有设置<code>position</code> - 第一行的<code>relative</code>元素还覆盖了第二行的<code>relative</code>元素，是因为它们父元素的<code>z-index</code>值的关系。</p>
+<h3 id="position-absolute-绝对定位"><a href="#position-absolute-绝对定位" class="headerlink" title="position: absolute 绝对定位"></a><code>position: absolute</code> 绝对定位</h3><ul>
+<li>脱离文档流（这个元素脱离了文档，浮出文档）</li>
+<li>参照物为第一个定位祖先/根元素（也就是 html 元素）</li>
+<li>默认宽度为内容宽度</li>
+</ul>
+<p><strong>解释：</strong></p>
+<ul>
+<li><strong>脱离文档流</strong>：意思就是，这个元素不再占用正常文档流中的空间，且定位方法也和一般元素不一样。比如下图中：<code>abosolute</code>的元素并没有占据文档的位置，而是浮在了上面，因为它脱离了文档流。具体原因会在下面讲到：<div style="position: relative; margin:0 auto;width:420px;"><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;">default</div><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;position: absolute;background-color: pink;width:120px;height: 80px;line-height: 80px;">absolute</div><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;">default</div></div>
+
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">		<span class="selector-class">.parent</span>&#123;</span></span><br><span class="line">			position: relative;</span><br><span class="line"><span class="css">			<span class="selector-tag">margin</span>: 0 <span class="selector-tag">auto</span>; <span class="comment">/*为了居中*/</span></span></span><br><span class="line">			width: 420px;</span><br><span class="line">		&#125;</span><br><span class="line"><span class="css">		<span class="selector-class">.element</span>&#123;</span></span><br><span class="line">			display: inline-block;</span><br><span class="line">			width: 200px;</span><br><span class="line">			height: 200px;</span><br><span class="line">			border: 3px solid white;</span><br><span class="line">			background-color: lightseagreen;</span><br><span class="line">			color: white;</span><br><span class="line">			text-align: center;</span><br><span class="line">			line-height: 200px;</span><br><span class="line">			font-family: consolas;</span><br><span class="line">			font-size: 24px;</span><br><span class="line">		&#125;</span><br><span class="line"><span class="css">		<span class="selector-class">.absolute</span>&#123;</span></span><br><span class="line">			position: absolute;</span><br><span class="line">			background-color: pink;</span><br><span class="line"><span class="css">			<span class="selector-tag">width</span><span class="selector-pseudo">:120px</span>;</span></span><br><span class="line">			height: 80px;</span><br><span class="line">			line-height: 80px;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element default"</span>&gt;</span>default<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element absolute"</span>&gt;</span>absolute<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"element default"</span>&gt;</span>default<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><strong>参照物为第一个定位祖先/根元素</strong>：在相对定位元素中，我们提到，<code>relative</code>元素的参照物是元素本身，而<code>absolute</code>元素的参照物应该是第一个已定位的祖先，如果没有这样的祖先，那么它的参照物就是根元素，也就是<code>&lt;html&gt;</code>。那么什么叫做<strong>已定位的祖先</strong>呢，就是它的已经设置了<code>position</code>值的祖先元素。</p>
+<ul>
+<li>第一点值得注意的是，即便对某个元素设置了<code>absolute</code>，如果没有进行定位，它会保持在原来的位置上。</li>
+<li>第二点值得注意的是，默认子元素会被包含在父元素的<code>content-box</code>里面，但是<code>absolute</code>元素定位的原点，是它的第一个已定位的祖先的<code>padding-box</code>左上角。<br><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-1-13/69220800-file_1484320283452_92ff.png" alt></li>
+</ul>
+</li>
+<li><p><strong>默认宽度为内容宽度</strong>：即便为这个<code>position:absolute</code>的元素设置成<code>block</code>元素，这个元素默认的宽度仍是内容的宽度。</p>
+</li>
+</ul>
+<h3 id="position-fixed-固定定位"><a href="#position-fixed-固定定位" class="headerlink" title="position: fixed 固定定位"></a><code>position: fixed</code> 固定定位</h3><ul>
+<li>脱离文档流（这个元素脱离了文档，浮出文档）</li>
+<li>参照物为视窗</li>
+<li><p>默认宽度为内容宽度</p>
+</li>
+<li><p><strong>参照物为视窗</strong>：视窗的意思就是浏览器窗口。不再多做解释。可以自己尝试一下。</p>
+</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS-布局（中）：position"><span class="toc-text">CSS 布局（中）：position</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#position-定位方式"><span class="toc-text">position 定位方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#position-static-默认定位"><span class="toc-text">position:static 默认定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#position-relative-相对定位"><span class="toc-text">position:relative 相对定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#position-absolute-绝对定位"><span class="toc-text">position: absolute 绝对定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#position-fixed-固定定位"><span class="toc-text">position: fixed 固定定位</span></a></li></ol></li></ol></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    <a href="https://github.com/aircloud">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

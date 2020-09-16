@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jiacheng Pan&#39;s Blog">
+  <meta name="keyword" content>
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4">
+
+  <title>
+     杂谈：图的小波变换 - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/blog/css/aircloud.css"> <link rel="stylesheet" href="/blog/css/gitment.css">
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+  <!-- ga & ba script hoook -->
+  <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        杂谈：图的小波变换
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2018-06-19 10:00:11</span></span> -->
+        <span class="attr">发布于：<span>2018-06-19</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#Gossip"
+                title="Gossip">Gossip</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#Graph Mining" title="Graph Mining">Graph Mining</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Graph" title="Graph">Graph</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Math" title="Math">Math</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <blockquote>
+<p>翻译自论文：Wavelet-based Visual Analysis of Dynamic Networks，2017 TVCG</p>
+</blockquote>
+<h2 id="图的傅里叶变换"><a href="#图的傅里叶变换" class="headerlink" title="图的傅里叶变换"></a>图的傅里叶变换</h2><h3 id="Graph-Fourier-Transform"><a href="#Graph-Fourier-Transform" class="headerlink" title="Graph Fourier Transform"></a><strong>Graph Fourier Transform</strong></h3><p>关于傅里叶变换请看：<a href="https://jackieanxis.github.io/blog-others/2018/06/19/%E5%82%85%E9%87%8C%E5%8F%B6%E5%88%86%E6%9E%90/" target="_blank" rel="noopener">【转】傅里叶分析之掐死教程（完整版）</a></p>
+<p>关于拉普拉斯矩阵的一些特性可以看我的另一篇博客：<a href="https://jackieanxis.github.io/blog-others/2018/06/19/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%9F%A9%E9%98%B5%E4%BA%8C%E5%88%86%E6%B3%95/" target="_blank" rel="noopener">拉普拉斯矩阵二分法</a></p>
+<p>假设一个无向正权图$G=(V,E)$，其邻接矩阵表示成$A$，每个元素代表边的权重。其度矩阵表示成$D$，是一个对角矩阵，对角线的元素则是每个节点所带的连接边的权重和（$d_{ij}=\sum_kw_{ik}$），这里不考虑自环。那么拉普拉斯矩阵（Laplacian）就是$L=D-A$。</p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-19/21849016.jpg" alt></p>
+<p>拉普拉斯矩阵是对称的半正定矩阵。因此有一组标准正交的特征向量$\{u_i\}, i \in \{1,…,n\}$，对应一组递增的非负实特征值$\{\lambda_i\},i \in \{1,…n\},0=\lambda_1&lt;\lambda_2\leq\cdots\leq\lambda_n$。小的$\lambda_i$就对应了傅里叶变换中的低频。</p>
+<p>假如给定一个将节点$V$映射成实数$\Bbb R$的实函数$f$，那么在频率$\lambda_l$上，$f$对应的傅里叶变换可以定义成：</p>
+<script type="math/tex; mode=display">
+\hat{f}(l)=u_l^T \cdot f = \sum_{j=1}^n u_l(j)f(j)</script><p>其中，$u_l(j)$是特征向量$u_l$中$j$位置的值，$f(j)$则是节点$j$的函数值。</p>
+<p>对比原连续傅里叶变换从时域转换成频域：</p>
+<script type="math/tex; mode=display">
+F(\omega)=\int_{-\infty}^{\infty}f(t)e^{-i \omega t}dt</script><p>那么图的傅里叶变换就是从节点转换成对应的拉普拉斯矩阵特征值上。</p>
+<h2 id="谱图小波变换"><a href="#谱图小波变换" class="headerlink" title="谱图小波变换"></a>谱图小波变换</h2><h3 id="Spectral-Graph-Wavelet-Transform"><a href="#Spectral-Graph-Wavelet-Transform" class="headerlink" title="Spectral Graph Wavelet Transform"></a><strong>Spectral Graph Wavelet Transform</strong></h3><p>小波变换参考：<a href="https://zhuanlan.zhihu.com/p/22450818" target="_blank" rel="noopener">形象易懂讲解算法 I——小波变换</a></p>
+<p>Hammond 于 2011 年提出了这个概念：Wavelets on graphs via spectral graph theory。</p>
+<p>图的小波变换公式：</p>
+<script type="math/tex; mode=display">
+W_f(s,j)=\sum_{l=1}^ng(s\lambda_l)\hat f(l)u_l(j)</script><p>上述的公式中，$j$还是代表了节点，在解释$s$之前，我们来说明一下函数$g$：</p>
+<script type="math/tex; mode=display">
+g(x) = \begin{cases}
+x^2, &\text{for $x < 1$} \\\
+-5+11x-6x^2+x^3, &\text{for $1\leq x \leq 2$}\\\
+4x^{-2}, &\text{for $2 < x$}
+\end{cases}</script><p>函数形状为：</p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-19-image-20180619231116668.png" alt="image-20180619231116668"></p>
+<p>可以得知，当$x$在$[1,2]$之间时，$g(x)$会较大。所以小的$s$值，会对大的$\lambda_l$（对局部特征描述的更详细）更有效果，而大的$s$则对小的（也就是低频的）$\lambda_l$（粗糙的描述了节点的局部特征）更有效果。</p>
+<p>我们知道，傅里叶变换仅仅将时域转换成频域，但无法知道特定时间的频域（因为它没有时间维度）；小波变换解决的问题就是能够知道特定时间上的频域是如何的，见<a href="https://zhuanlan.zhihu.com/p/22450818" target="_blank" rel="noopener">形象易懂讲解算法 I——小波变换</a>。</p>
+<p>以此类比：</p>
+<p>图的傅里叶变换中，我们将整个图转换成到了特征值上，用不同特征值的权重来表达了整张图，但无法对每个节点生成其特征值分布。</p>
+<p>而通过小波变换，可以获取每个节点上，不同$s$值的分布，也就代表了特征值的分布。</p>
+<p>特征值能够描述图的特性，比如特征值中 0 的个数表达了图中连通子图的数量，第二小的非零特征值可以用来描述二分最小切割边数量(代数连通度，algebraic connectivity，见另一篇博客<a href="https://jackieanxis.github.io/blog-others/2018/06/19/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%9F%A9%E9%98%B5%E5%92%8C%E4%BB%A3%E6%95%B0%E8%BF%9E%E9%80%9A%E5%BA%A6/" target="_blank" rel="noopener">拉普拉斯矩阵和代数连通度</a>）。</p>
+<p>小的特征值（对应大的$s$）对全局的描述更强一些，大的特征值则对局部的描述更详细一些。</p>
+<p>通过对$s$的值进行采样，我们可以得到一组$s_{min}=s_1,s_2,\ldots,s_r=s_{max}$，一般会取$s_{min}=2/\lambda_n, s_{max}=40/\lambda_n$，对应的$g(sx)$则被称为小波核（wavelet kernels）,生成的$W_f(s, j)$则被称为小波系数（wavelet coefficients）。</p>
+<h4 id="缩放函数-Scaling-function"><a href="#缩放函数-Scaling-function" class="headerlink" title="缩放函数 Scaling function"></a>缩放函数 Scaling function</h4><p>缩放函数（$h(x)$）可以用来生成缩放函数系数（$S_f(j)$）是一种用来稳定的表达低频的傅里叶模式（Fourier modes，也就是相对较小的特征值）的方法。一般会跟上述的小波变换产生的 wavelet coefficients，$W_f(s_1, j), W_f(s_2, j), \ldots, W_f(s_r,j)$组合，当成 wavelet coeffients，其中这个缩放函数（scaling function）则用于表达低频的傅里叶模式：$\{S_f(j), W_f(s_r, j), \ldots, W_f(s_1,j)\}$</p>
+<p>这个缩放函数系数$S_f(j)$：</p>
+<script type="math/tex; mode=display">
+S_f(j)=\sum_{l=1}^nh(\lambda_l)\hat{f}(l)u_l(j)</script><p>其中，缩放函数：</p>
+<script type="math/tex; mode=display">
+h(x)=\gamma exp(-(\frac{10x}{0.3\lambda_n})^4)</script><h3 id="小波系数的解释"><a href="#小波系数的解释" class="headerlink" title="小波系数的解释"></a>小波系数的解释</h3><p>小波系数可以解释成在特定频率的原始信号的能量。传统的小波变换中，高频区域对邻域的表达更好一些，所以相邻点之间在高频区域会有较大的差别，但在低频区域的差别更平滑。在网络（或者说图）中，也是一样的。</p>
+<p>图的小波变换，能够为每个节点生成一组系数，代表了不同频率的能量。如下图所示，小波变换系数的分布更为平滑的节点，往往是低频节点（指的是低频率的小波系数更为突出的节点，图中浅绿色的节点），而反之，则是高频节点（高频系数更为突出，图中深绿色节点），小波系数分布不是很平滑，相邻的小波系数之间差距可能会较大。</p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-124458.png" alt="image-20180624204457467"></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#图的傅里叶变换"><span class="toc-text">图的傅里叶变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Graph-Fourier-Transform"><span class="toc-text">Graph Fourier Transform</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#谱图小波变换"><span class="toc-text">谱图小波变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Spectral-Graph-Wavelet-Transform"><span class="toc-text">Spectral Graph Wavelet Transform</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#缩放函数-Scaling-function"><span class="toc-text">缩放函数 Scaling function</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小波系数的解释"><span class="toc-text">小波系数的解释</span></a></li></ol></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    <a href="https://github.com/aircloud">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

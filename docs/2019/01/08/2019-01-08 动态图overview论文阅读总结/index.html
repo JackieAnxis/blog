@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jiacheng Pan&#39;s Blog">
+  <meta name="keyword" content>
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4">
+
+  <title>
+     动态图overview论文阅读总结 - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/blog/css/aircloud.css"> <link rel="stylesheet" href="/blog/css/gitment.css">
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+  <!-- ga & ba script hoook -->
+  <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        动态图overview论文阅读总结
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2019-01-08 16:22:00</span></span> -->
+        <span class="attr">发布于：<span>2019-01-08</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#PaperReading"
+                title="PaperReading">PaperReading</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#Visualization" title="Visualization">Visualization</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Graph Visualization" title="Graph Visualization">Graph Visualization</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Dynamic Graph" title="Dynamic Graph">Dynamic Graph</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h3 id="NetFork-Mapping-Time-to-Space-in-Network-Visualization"><a href="#NetFork-Mapping-Time-to-Space-in-Network-Visualization" class="headerlink" title="NetFork: Mapping Time to Space in Network Visualization"></a>NetFork: Mapping Time to Space in Network Visualization</h3><ul>
+<li>Proceedings of the International Working Conference on Advanced Visual Interfaces. ACM 2016</li>
+</ul>
+<p>Requirements：</p>
+<ol>
+<li>Overview of dynamic activity. 动态活动的概览</li>
+<li>Change-cause analysis. 分析变化发生原因</li>
+<li>Identification of impacted sources. 分辨出有影响的源</li>
+<li>Detailed analysis of the temporal evolution of a source-destination path. 对路径的时序演化进行细化分析</li>
+</ol>
+<p>其他不是很有参考价值。</p>
+<h3 id="Visualizing-a-Sequence-of-a-Thousand-Graphs-or-Even-More"><a href="#Visualizing-a-Sequence-of-a-Thousand-Graphs-or-Even-More" class="headerlink" title="Visualizing a Sequence of a Thousand Graphs (or Even More)"></a>Visualizing a Sequence of a Thousand Graphs (or Even More)</h3><ul>
+<li>EuroVis 2017</li>
+</ul>
+<p>文章解决了具有超过 1000 个时间片段的动态图的展示问题。</p>
+<h4 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h4><ol>
+<li><p>每一个时间步的独立编码：</p>
+<p>转换成二部表示，左边的有向图可以被编码成右图的形式，然后利用抛雪球算法（splatting）来减少边相交；</p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-01-13/image-20190109101702184.png" alt="image-20190109101702184"></p>
+</li>
+<li><p>不同时间步的叠加：</p>
+<p>将不同的时间片叠加在一起，但保留一个像素的偏移，最终产生最右边的结果</p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-01-13/image-20190109104128274.png" alt="image-20190109104128274"></p>
+</li>
+<li><p>低通滤波：</p>
+<p>当简单进行叠加时，可能产生下图（a）的结果，边之间有较多的交错；为了使得结果更加平滑，可以使用低通滤波器。不断使用箱型滤波器（box filter）后，就会产生下面（b）（box filter 十次迭代）（c）（box filter 二十次迭代）的结果，边之间的相交更少了，细节变得不可见的同时，一些较大规模的结构也更容易被看到。<img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-01-13/image-20190109104342835.png" alt="image-20190109104342835"></p>
+</li>
+<li><p>每一个时间步的宽度调节</p>
+<p>每一个时间步的宽度较小时，就会变成一条直线；但太大时，屏幕空间要求就会加大，能展示的时间步数量就会下降。</p>
+<p>​</p>
+</li>
+<li><p>等高线：</p>
+<p>假如等高线之后，就能更好的描述可见结构的形状。</p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-01-13/image-20190109110448825.png" alt="image-20190109110448825"></p>
+</li>
+</ol>
+<h4 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h4><ol>
+<li>过滤：多种过滤机制来过滤节点、时间等</li>
+<li>聚合和聚类：对接点进行聚合、聚类等</li>
+<li>细节：corsshair function 来追踪垂直和水平的位置；</li>
+</ol>
+<h4 id="Patterns"><a href="#Patterns" class="headerlink" title="Patterns"></a>Patterns</h4><ol>
+<li>一般的 Pattern</li>
+<li>边 Pattern</li>
+<li>动态 Pattern<ul>
+<li>repeating patterns</li>
+<li>trend patterns</li>
+<li>contertrend patterns（逆向的）</li>
+<li>temporal shifts</li>
+<li>oscillating/alternating patterns</li>
+<li>outlier/anomaly patterns</li>
+</ul>
+</li>
+</ol>
+<h3 id="Let-It-Flow-a-Static-Method-for-Exploring-Dynamic-Graphs"><a href="#Let-It-Flow-a-Static-Method-for-Exploring-Dynamic-Graphs" class="headerlink" title="Let It Flow: a Static Method for Exploring Dynamic Graphs"></a>Let It Flow: a Static Method for Exploring Dynamic Graphs</h3><ul>
+<li>Visualization Symposium (PacificVis) 2014</li>
+</ul>
+<p>用于总结动态图中的结构特征的标准有：degree, betweenness, closeness, cluster coefficient</p>
+<ol>
+<li><p>根据节点的结构特征（degree, betweenness, closeness, cluster coefficient 等）为每个时间步的节点排序，多个时间步最终组成一个矩阵（图中的节点颜色表示了节点的类别信息）：</p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-01-13/image-20190109141500847.png" alt="image-20190109141500847"></p>
+</li>
+<li><p>根据节点排序的上升下降来为每个时刻的每个节点生成向量：</p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-01-13/image-20190109142010096.png" alt="image-20190109142010096"></p>
+</li>
+<li><p>利用 Line Integral Convolution（LIC）将向量渲染成一系列连续的流图（下图 a 至 b）</p>
+</li>
+<li><p>将相似颜色、相似方向的向量进行合并以加强主要的趋势（下图 c）</p>
+</li>
+<li><p>alpha blending（下图 d）</p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-01-13/image-20190110160848832.png" alt="image-20190110160848832"></p>
+</li>
+</ol>
+<h3 id="Exploring-Evolution-of-Dynamic-Networks-via-Diachronic-Node-Embeddings"><a href="#Exploring-Evolution-of-Dynamic-Networks-via-Diachronic-Node-Embeddings" class="headerlink" title="Exploring Evolution of Dynamic Networks via Diachronic Node Embeddings"></a>Exploring Evolution of Dynamic Networks via Diachronic Node Embeddings</h3><ul>
+<li>2018TVCG</li>
+</ul>
+<p>五个设计目标：</p>
+<p>G1. The evolution analysis of the network as a whole. 网络整体的演变分析</p>
+<p>G2. The evolution analysis of dynamic nodes. 动态节点的演变分析</p>
+<p>G3. The temporal analysis of temporal communities. 动态社团的时序分析</p>
+<p>G4. The structural analysis of stable communities. 稳定社团的结构分析</p>
+<p>G5. Relate the analysis to the original networks. 将分析关联至原始网络（可以用来验证）</p>
+<p>方法：</p>
+<ol>
+<li>对每一时间步的每一个节点都做了高维空间嵌入（为了保证每一帧的嵌入结果尺度一致，作者做了一个缩放 Embedding Alignment）</li>
+<li>利用 PCA 将至一维，颜色可以用来编码：时间、节点年龄、节点分类、演变值等等</li>
+<li>这个方法的好处在于，图嵌入方法将至一维后仍然能够很好地将社团聚集在一起</li>
+</ol>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-01-13/image-20190111165723729.png" alt="image-20190111165723729"></p>
+<h3 id="Reducing-Snapshots-to-Points"><a href="#Reducing-Snapshots-to-Points" class="headerlink" title="Reducing Snapshots to Points"></a>Reducing Snapshots to Points</h3><p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-01-13/image-20190111203134834.png" alt="image-20190111203134834"></p>
+<ol>
+<li>Discretization：将事件离散化为多个动态网络</li>
+<li>Vectorization &amp; Normalization：将$|V|\times|V|$的邻接矩阵表达转换为行向量$1 \times |V|^2$，N 个帧就会形成$N \times |V|^2$的矩阵，每一行表达一帧，每一列则是一条边随着时间的变化。当然，除了邻接矩阵，其他矩阵也可使用。对这些高维空间的向量进行归一化，比如：Binarization，Min-Max，Z-score 等。</li>
+<li>Dimensionality Reduction：先使用了 PCA，但是也可以使用 MDS 和 t-SNE（这两者在欧几里得距离度量下表现较好）。kolmogorov-smirnov test 和 Degree Distribution Quantification and Comparison 可以用于提供两个网络之间的结构比较（距离计算）</li>
+</ol>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-01-13/image-20190111204346817.png" alt="image-20190111204346817"></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#NetFork-Mapping-Time-to-Space-in-Network-Visualization"><span class="toc-text">NetFork: Mapping Time to Space in Network Visualization</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Visualizing-a-Sequence-of-a-Thousand-Graphs-or-Even-More"><span class="toc-text">Visualizing a Sequence of a Thousand Graphs (or Even More)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#可视化"><span class="toc-text">可视化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#交互"><span class="toc-text">交互</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Patterns"><span class="toc-text">Patterns</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Let-It-Flow-a-Static-Method-for-Exploring-Dynamic-Graphs"><span class="toc-text">Let It Flow: a Static Method for Exploring Dynamic Graphs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exploring-Evolution-of-Dynamic-Networks-via-Diachronic-Node-Embeddings"><span class="toc-text">Exploring Evolution of Dynamic Networks via Diachronic Node Embeddings</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reducing-Snapshots-to-Points"><span class="toc-text">Reducing Snapshots to Points</span></a></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    <a href="https://github.com/aircloud">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

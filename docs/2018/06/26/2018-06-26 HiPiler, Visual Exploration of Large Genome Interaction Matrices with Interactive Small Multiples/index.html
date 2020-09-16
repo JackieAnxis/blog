@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jiacheng Pan&#39;s Blog">
+  <meta name="keyword" content>
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4">
+
+  <title>
+     HiPiler Visual Exploration of Large Genome Interaction Matrices with Interactive Small Multiples - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/blog/css/aircloud.css"> <link rel="stylesheet" href="/blog/css/gitment.css">
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+  <!-- ga & ba script hoook -->
+  <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        HiPiler Visual Exploration of Large Genome Interaction Matrices with Interactive Small Multiples
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2018-06-26 10:40:00</span></span> -->
+        <span class="attr">发布于：<span>2018-06-26</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#PaperReading"
+                title="PaperReading">PaperReading</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#Visualization" title="Visualization">Visualization</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Matrix" title="Matrix">Matrix</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <ul>
+<li>论文原文：HiPiler: Visual Exploration of Large Genome Interaction Matrices with Interactive Small Multiples</li>
+<li>作者：Fritz Lekschas, Benjamin Bach, Peter Kerpedjiev, Nils Gehlenborg, and Hanspeter Pfister</li>
+<li>发表刊物/会议：2017 InfoVis</li>
+</ul>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-27-093553.png" alt="image-20180627173553094"></p>
+<blockquote>
+<p>图 1：系统界面。矩阵视图（1）包含概述（1A）和详细（1B）矩阵。 片段视图（2）将矩阵的区域呈现为交互式的 small multiples。 在这个例子中，片段以 t-SNE（2C）排列，一堆片段会以其平均模式进行显示（2A）。 查看操作菜单位于底部（1C 和 2B）。</p>
+</blockquote>
+<h2 id="个人评述"><a href="#个人评述" class="headerlink" title="个人评述"></a>个人评述</h2><ol>
+<li>结合了 small multiple 和 overview+detail 的方法来探索大矩阵，对大规模数据可视化很有借鉴意义。</li>
+<li>文章整体领域性特别强，就很注重讲故事的能力，并且整篇文章的讲故事能力也很强。</li>
+</ol>
+<p>启发：</p>
+<ol>
+<li><p>这对大规模图可视化其实有一个很好的借鉴意义，但相比于文中的有序矩阵，图的无序性会让其在拓扑空间的上下文很难展示在平面上。</p>
+<p>overview-&gt;detail-&gt;small multiple 的方法，是大规模数据可视化的一个重要模式。但在图可视化中，这几个部分都还很具有挑战性。</p>
+</li>
+<li><p>结合领域知识，使整片文章的 motivation 非常充足，或许也给我们一个思路，在结合领域的基础上进行科研，但又要跳出领域知识，比如这篇文章并没有把自己局限在生物领域，在其他领域，只要满足其矩阵有序的基本假设，都可以应用这个方法。</p>
+</li>
+</ol>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>生物学家对基因序列是如何折叠的研究非常感兴趣，可以帮助理解细胞的功能、疾病的产生等。</p>
+<p>基因组之间存在相互作用（_interacting_），两两之间相互作用则会形成一个基因组相互作用矩阵（_genome interaction matrix_），最多能达到三百万 × 三百万。里面会包含一些重复出现的图案/模式（称为<em>ROI</em>, _regions of interest_）。</p>
+<ul>
+<li><strong>挑战</strong>：</li>
+</ul>
+<ol>
+<li>算法识别的结果不是很可信，并且没有<em>ground-truth</em>去评估这些算法是否准确。</li>
+<li>成千上万的小<em>ROI</em>的探索和比较，还没有工具能够支持。</li>
+</ol>
+<ul>
+<li><strong>贡献</strong>：</li>
+</ul>
+<ol>
+<li>对算法检测到的团进行可视化评估</li>
+<li>大规模图案集合的分类、聚合、异常点检测</li>
+<li>在多个矩阵之间比较<em>ROI</em>（比如，在不同数据集，实验条件，抽取算法等等），_下文中也会称之为 Snippet_</li>
+<li>对其他的基因属性和图案之间的相关性进行分析</li>
+</ol>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-27-093832.png" alt="image-20180627173831533"></p>
+<blockquote>
+<p>图 2：<em>snippets</em>方法，将大矩阵（1）分解成小片段（2），并使用不同的布局，排列和样式探索这些片段（3），同时保持全局上下文。 矩阵内的小方块表示片段位置。</p>
+</blockquote>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
+<li><p><strong>Hi-C 矩阵分析</strong>：<em>HI-C</em>是一种捕获基因序列片段之间相互交联的方法。基因序列片段如果在空间上如果比较接近的话，会相互交联，如下图。每次检查数百万个不同细胞，会产生基因序列片段之间的平均接触概率矩阵。矩阵非常稀疏，并呈现这样的规律：空间邻近的基因序列片段更容易相互交联。</p>
+<p>矩阵元素的颜色深浅编码了基因片段之间的接触概率。</p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-27-074141.png" alt="image-20180627154141291"></p>
+<blockquote>
+<p>图 3：Hi-C 方法：由于 DNA(1)在细胞核(2)中并非随意进行组织的，某些序列会进行紧密交联(3)。在经过数亿个细胞计数之后(4)，会得到一个多达 300 万个单元的相互交联矩阵(5)，深色表示交联次数更多</p>
+</blockquote>
+</li>
+<li><p><strong>专家采访</strong>：主要围绕了以下三方面展开，</p>
+</li>
+</ul>
+<ol>
+<li><p>基因折叠相关研究的长期目标</p>
+<p>更好地理解基因组对基因调控等过程的作用。</p>
+</li>
+<li><p>工作的流程和策略</p>
+</li>
+<li><p>当前的挑战</p>
+<ul>
+<li>不同 ROI 相距甚远，普通工具容易导致上下文的丢失。</li>
+<li>很多图案之间差异细微</li>
+<li>数据噪音的存在，并非所有的图案都跟生物特征有关（有些仅仅是因为空间限制引发了交联）</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p><strong>常见的 Hi-C 矩阵图案</strong>：</p>
+<p>下图显示了一些常见的图案：</p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-27-081019.png" alt="image-20180627161019379"></p>
+<blockquote>
+<p>图 4：放大尺寸后的交联矩阵中的频繁图案的示例。上方的矩阵是下方矩阵的一个示意。交联矩阵是对称的，所以下面的三角用灰度来显示，以突出那些用橙色标记的图案。</p>
+</blockquote>
+</li>
+<li><p><strong>分析任务</strong>：</p>
+<p><strong>T1</strong>. 搜索已知的图案<br><strong>T2</strong>. 发现新的图案<br><strong>T3</strong>. 对某个图案实例进行研究<br><strong>T4</strong>. 比较单个图案类型中包含的多个实例<br><strong>T5</strong>. 将图案和其他生物特征进行关联<br><strong>T6</strong>. 比较矩阵中不同的<em>ROI</em></p>
+</li>
+</ul>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p>围绕了：</p>
+<ol>
+<li>基因交联矩阵可视化</li>
+<li>大矩阵可视化</li>
+<li>分而治之的挖掘方法</li>
+</ol>
+<h2 id="HiPiler-的设计"><a href="#HiPiler-的设计" class="headerlink" title="HiPiler 的设计"></a>HiPiler 的设计</h2><p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-27-093448.png" alt="image-20180627173447375"></p>
+<blockquote>
+<p>图 5：HiPiler 的可视化和交互的概览</p>
+</blockquote>
+<p><strong>关键目标</strong>：利用<em>smal multiple</em>的方法来对大矩阵的多个<em>ROI</em>进行探索。（如何提取<em>ROI</em>不是本文工作）</p>
+<p><em>Hipler</em>的设计过程是被以下几个问题所驱动的：</p>
+<ol>
+<li>如何有意义的限制<em>ROI</em>的显示数量？</li>
+<li>用什么交互来支持有效的排列？</li>
+<li>如何链接这些<em>ROI</em>和整个大矩阵？</li>
+</ol>
+<h3 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h3><p>这里假设了矩阵的行和列的排序是固定的，由基因序列给出。</p>
+<h3 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h3><p>跟计算生物学家之间讨论，研究了不同的可视化设计，并最终决定使用矩阵来进行可视化。</p>
+<h4 id="片段隐喻（Snipptet-Metaphor）"><a href="#片段隐喻（Snipptet-Metaphor）" class="headerlink" title="片段隐喻（Snipptet Metaphor）"></a>片段隐喻（Snipptet Metaphor）</h4><p>解决任务<strong>T1，T2，T3，T5</strong>。用来展示<em>ROI</em>的的矩阵数据，附加的一些可视化设计可以编码类别信息和有序数据：类别信息会被编码成颜色放在底下，有序数据则可以被编码成边框的颜色和粗细。</p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-27-090413.png" alt="image-20180627170413058"></p>
+<blockquote>
+<p>图 6：片段<em>snippet</em>被绘制为热力图（1），显示其<em>ROI</em>的矩阵数据。 分类属性可以用颜色标签可视化（2）。 与片段相关的有序数据可以通过边框的宽度和颜色（3）显示。 例如，较高的值被绘制为黑色粗边框。</p>
+</blockquote>
+<h4 id="片段布局（Snippet-Layout-）"><a href="#片段布局（Snippet-Layout-）" class="headerlink" title="片段布局（Snippet Layout ）"></a>片段布局（Snippet Layout ）</h4><p>解决任务<strong>T4</strong>。通过降维的方式，允许进行一维排序（1D），二维的布局（2D）以及多维的聚类（MD）。</p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-27-091216.png" alt="image-20180627171216301"></p>
+<blockquote>
+<p>图 7：片段<em>snippet</em>可以沿着各种不同的尺寸排列。 对于单个属性，片段在支持读取方向和希尔伯特曲线（1）的 1D 中布置。 选择两个属性创建散点图（2）。 对于两个以上的属性，HiPiler 应用了降维算法（3），如 t-SNE [33]。</p>
+</blockquote>
+<h4 id="聚合（Aggregation）"><a href="#聚合（Aggregation）" class="headerlink" title="聚合（Aggregation）"></a>聚合（Aggregation）</h4><p><strong>解决任务 T4，T6</strong>。利用了打桩（_piling_）来隐喻多个<em>snippet</em>的聚合。聚类后，每个片段每列取平均值划为一行的形式显示在上方，可以 hover 查看具体图案。集合封面可以显示集合的平均值或者方差。</p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-27-091532.png" alt="image-20180627171531688"></p>
+<blockquote>
+<p>图 8：HiPiler 显示一堆片段的平均值（1A）或方差（1B）的封面矩阵。 此外，每个片段都显示为一维预览，显示片段列的水平聚合（2）。 将鼠标光标移到预览上可显示相关矩阵。 检查堆（3B）的时候暂时隐藏所有其他片段（3B）。</p>
+</blockquote>
+<h4 id="关联（Linking）"><a href="#关联（Linking）" class="headerlink" title="关联（Linking）"></a>关联（Linking）</h4><p>解决<strong>T5，T6</strong>。将细节视图中的<em>snippet</em>关联到大矩阵中，因为在基因序列上的邻近信息对分析很重要。通过颜色标记来标记<em>snippet</em>在矩阵中的位置，不在矩阵视窗中的那些<em>snippet</em>则会被淡出。</p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-27-092332.png" alt="image-20180627172331496"></p>
+<blockquote>
+<p>图 9：当在片段上进行悬停，该片段的位置会在交联矩阵（1A）和矩阵细节（1B）进行高亮显示。其他的颜色表示另外选择的矩阵。</p>
+</blockquote>
+<h3 id="交互技术"><a href="#交互技术" class="headerlink" title="交互技术"></a>交互技术</h3><p>如图 5.5 所示，用户可以通过拖拽、lasso、刷选等方式来创建堆，双击以分散堆。缩放的时候，片段也会对窗口进行自适应。</p>
+<h2 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h2><p>评估通过 USAGE SCENARIOS 和 USER EVALUATION 展开。</p>
+<p>其中 USER EVALUATION 不同于之前的 USER STUDY，仅仅是让生物学家来使用这个系统，然后反馈意见。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#个人评述"><span class="toc-text">个人评述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关工作"><span class="toc-text">相关工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HiPiler-的设计"><span class="toc-text">HiPiler 的设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据模型"><span class="toc-text">数据模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设计"><span class="toc-text">设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#片段隐喻（Snipptet-Metaphor）"><span class="toc-text">片段隐喻（Snipptet Metaphor）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#片段布局（Snippet-Layout-）"><span class="toc-text">片段布局（Snippet Layout ）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#聚合（Aggregation）"><span class="toc-text">聚合（Aggregation）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关联（Linking）"><span class="toc-text">关联（Linking）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#交互技术"><span class="toc-text">交互技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#评估"><span class="toc-text">评估</span></a></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    <a href="https://github.com/aircloud">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

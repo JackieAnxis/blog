@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jiacheng Pan&#39;s Blog">
+  <meta name="keyword" content>
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4">
+
+  <title>
+     杂谈：图的相关基础知识 - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/blog/css/aircloud.css"> <link rel="stylesheet" href="/blog/css/gitment.css">
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+  <!-- ga & ba script hoook -->
+  <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        杂谈：图的相关基础知识
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2019-01-16 10:00:11</span></span> -->
+        <span class="attr">发布于：<span>2019-01-16</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#Gossip"
+                title="Gossip">Gossip</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#Graph Mining" title="Graph Mining">Graph Mining</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Graph" title="Graph">Graph</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Math" title="Math">Math</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h1 id="Graph-Knowledge"><a href="#Graph-Knowledge" class="headerlink" title="Graph Knowledge"></a>Graph Knowledge</h1><p>一些图论、图挖掘等图相关领域的知识收集、汇总。</p>
+<h2 id="节点相关的概念"><a href="#节点相关的概念" class="headerlink" title="节点相关的概念"></a>节点相关的概念</h2><h3 id="degree-度"><a href="#degree-度" class="headerlink" title="degree 度"></a>degree 度</h3><p>一个顶点的度（degree）指与该顶点关联的边的数目。当边有权重时，就是所有边的权重和。记做$deg(v)$。</p>
+<p>在有向图中，还有出度（out-degree）和入度（in-degree）的概念。</p>
+<p>出度（out-degree）指以该顶点为起点的边的权重和，入度（in-degree）指的是以该顶点为终点的边的权重和。</p>
+<h2 id="链接相关的概念"><a href="#链接相关的概念" class="headerlink" title="链接相关的概念"></a>链接相关的概念</h2><h2 id="结构相关的概念"><a href="#结构相关的概念" class="headerlink" title="结构相关的概念"></a>结构相关的概念</h2><h3 id="bipartite-二部"><a href="#bipartite-二部" class="headerlink" title="bipartite 二部"></a>bipartite 二部</h3><p>将图的顶点分成两个非空集合$V_1$和$V_2$，如果这个图的每一条边的两个端点都分别属于$V_1$和$V_2$，那么称这个图是二部图（bipartite）。</p>
+<p>在这个概念的基础上，还有完全二部图（complete bipartite graph）的概念，指的是在 bipartite 的基础上，$V_1$中的每个点，都与$V_2$中的每个点相连。</p>
+<h3 id="graphlets-图元"><a href="#graphlets-图元" class="headerlink" title="graphlets 图元"></a>graphlets 图元</h3><p>图元，指的是一系列异构的（_isomorphism_）导出（_induced_）子图。</p>
+<p>下面列举所有的 3 节点、4 节点、5 节点的图元：</p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-9-1/21892478.jpg" alt="3节点、4节点、5节点的所有图元"></p>
+<h3 id="induced-导出"><a href="#induced-导出" class="headerlink" title="induced 导出"></a>induced 导出</h3><p>给定一个图$G$，以及这个图的子图（subgraph）$G’=(V’, E’)$，其中$V’\subseteq V$并且$E’ \subseteq E$。如果$E’ = \{(v_i,v_j)|(v_i,v_j) \in E \text{ and }v_i, v_j \in V’\}$，也就是对于所有属于$V’$的节点，他们在原图$G$的中出现的所有边，也都出现在$G’$的$E’$中，那么，这个子图$G’$称为$G$的导出（induced）子图。</p>
+<p>下面是导出子图的一个示例：</p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-25-085552.png" alt="导出子图"></p>
+<h3 id="isomorphism-同构"><a href="#isomorphism-同构" class="headerlink" title="isomorphism 同构"></a>isomorphism 同构</h3><p>如果两个图$G = (V,E)$ 和 $G’ = (V’, E’)$ 之间存在一个双射（bijection）函数 $f: V \rightarrow V’$，使得$ (v_i, v_j) \in E \Leftrightarrow (f(v_i),f(v_j)) \in E’ \text{ for all }v_i,v_j \in V$，那么这两个图互为同构图（isomorphism）</p>
+<h3 id="subgraph-子图"><a href="#subgraph-子图" class="headerlink" title="subgraph 子图"></a>subgraph 子图</h3><p>给定一个图$G$，那么定义这个图的子图$G’=(V’, E’)$，其中$V’\subseteq V$并且$E’ \subseteq E$。</p>
+<h2 id="矩阵相关的概念"><a href="#矩阵相关的概念" class="headerlink" title="矩阵相关的概念"></a>矩阵相关的概念</h2><h3 id="adjacency-matrix-邻接矩阵"><a href="#adjacency-matrix-邻接矩阵" class="headerlink" title="adjacency matrix 邻接矩阵"></a>adjacency matrix 邻接矩阵</h3><p>一个图的邻接矩阵的定义是：$A=\lbrace a_{ij} \rbrace$，其中$a_{ij}=e_{ij}$，第$ij$个元素指的是边$e_{ij}$的值。</p>
+<h3 id="incidence-matrix-关联矩阵"><a href="#incidence-matrix-关联矩阵" class="headerlink" title="incidence matrix 关联矩阵"></a>incidence matrix 关联矩阵</h3><p>一个图的关联矩阵定义为：$M=\lbrace m_{ij} \rbrace$，其中$m_{ij}$为 1，如果节点$v_i$和边$e_j$相关，举例而言：</p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/GraphKnoledge/image-20190116204213867.png" alt="image-20190116204213867"></p>
+<p>的关联矩阵为：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">e1</th>
+<th style="text-align:center">e2</th>
+<th style="text-align:center">e3</th>
+<th style="text-align:center">e4</th>
+<th style="text-align:center">e5</th>
+<th style="text-align:center">e6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">v1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">v2</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">v3</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">v4</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">v5</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Graph-Knowledge"><span class="toc-text">Graph Knowledge</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#节点相关的概念"><span class="toc-text">节点相关的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#degree-度"><span class="toc-text">degree 度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链接相关的概念"><span class="toc-text">链接相关的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结构相关的概念"><span class="toc-text">结构相关的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#bipartite-二部"><span class="toc-text">bipartite 二部</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#graphlets-图元"><span class="toc-text">graphlets 图元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#induced-导出"><span class="toc-text">induced 导出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#isomorphism-同构"><span class="toc-text">isomorphism 同构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#subgraph-子图"><span class="toc-text">subgraph 子图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#矩阵相关的概念"><span class="toc-text">矩阵相关的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#adjacency-matrix-邻接矩阵"><span class="toc-text">adjacency matrix 邻接矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#incidence-matrix-关联矩阵"><span class="toc-text">incidence matrix 关联矩阵</span></a></li></ol></li></ol></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    <a href="https://github.com/aircloud">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

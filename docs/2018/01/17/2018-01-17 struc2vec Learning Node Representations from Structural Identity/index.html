@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jiacheng Pan&#39;s Blog">
+  <meta name="keyword" content>
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4">
+
+  <title>
+     STRUC2VEC（图结构→向量）论文方法解读 - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/blog/css/aircloud.css"> <link rel="stylesheet" href="/blog/css/gitment.css">
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+  <!-- ga & ba script hoook -->
+  <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        STRUC2VEC（图结构→向量）论文方法解读
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2018-01-17 17:29:00</span></span> -->
+        <span class="attr">发布于：<span>2018-01-17</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#PaperReading"
+                title="PaperReading">PaperReading</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#Machine Learning" title="Machine Learning">Machine Learning</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Graph Mining" title="Graph Mining">Graph Mining</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Graph Embedding" title="Graph Embedding">Graph Embedding</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h2 id="STRUC2VEC"><a href="#STRUC2VEC" class="headerlink" title="STRUC2VEC"></a>STRUC2VEC</h2><p>原文：struc2vec: Learning Node Representations from Structural Identity</p>
+<p>捕捉节点在网络中的结构信息，将它表达成一个高维向量，需要考虑以下两个相关的性质：</p>
+<ol>
+<li>不同节点的表达之间的距离（也就是高维向量之间的距离）应该跟他们的结构之间的相似度高度相关。</li>
+<li>节点的这种结构表达，不应该依赖于节点或者边的属性以及它们的标签。节点的结构信息应该跟他们在网络中的位置不相关。</li>
+</ol>
+<p><strong>STRUC2VEC</strong>的基本步骤：</p>
+<ol>
+<li><p>在不同的邻域大小下，比较图中的每个节点之间的结构相似度。</p>
+<p>产生一个结构相似度度量的多层模型（hierarchy）。</p>
+</li>
+<li><p>构造一个带权的多层图，网络中所有的节点都会出现在每一层，每一层都会和度量结构相似度的多层模型（hierarchy）的每一级相对应。然后带权多层图的边的权重和该边相关的节点对之间的距离成反比。</p>
+</li>
+<li><p>使用上述的多层图生成每个节点的上下文。用带偏的 random walk 来生成多层图的节点序列。</p>
+</li>
+<li><p>使用某种技术，通过节点序列给出的上下文来学习潜在表达</p>
+</li>
+</ol>
+<h4 id="第一步：度量结构相似度"><a href="#第一步：度量结构相似度" class="headerlink" title="第一步：度量结构相似度"></a>第一步：度量结构相似度</h4><ul>
+<li><p>$R_k(u)$表示了节点$u$的$k$级邻域。</p>
+</li>
+<li><p>$s(S)$则表示节点的集合$S \subset V$的度数序列。</p>
+</li>
+<li><p>$g(D_1,D_2)$度量了两个度数序列$D1,D2$之间的距离</p>
+</li>
+<li><p>$f_k(u,v)$表示了$u,v$两节点之间，$k$级邻域（距离小于等于$k$的节点和所有它们之间的边）的结构距离。</p>
+<p>$f_k(u,v) = f_{k-1}(u,v) + g(s(R_k(u)), s(R_k(v)))$</p>
+<p>$f_{-1} = 0$</p>
+<p>上述定义表达的是一个递归的过程，把问题转换成了如何定义两个节点集合之间的距离，也就是$g(\cdot)$该如何计算。</p>
+</li>
+<li><p>文章使用了 Dynamic Time Warping(DTW)来度量两个度数序列之间的距离。</p>
+<p>序列 A 和 B，其中，$a \in A$，$b \in B$，那么$a, b$之间的距离定义为：$d(a, b) = \frac{max(a, b)}{min(a, b)} - 1$，当$a=b$时，他们的距离也就是 0。然后两个序列之间的距离，也就是所有$a,b$组合之间的距离和。</p>
+<p>其他方案也可以用在该框架下，感觉这里的时间复杂度相对较高，可以有替换的方案。VIGOR 论文中提到的方法？</p>
+</li>
+</ul>
+<h4 id="第二步：构造上下文图（context-graph）"><a href="#第二步：构造上下文图（context-graph）" class="headerlink" title="第二步：构造上下文图（context graph）"></a>第二步：构造上下文图（context graph）</h4><ul>
+<li><p>构造一个带权的多层图$M$。层数由$0到k^<em>$，其中$k^</em>$表示的是图的直径，也就是原始图$G=(V,E)$中节点之间的最远距离。</p>
+</li>
+<li><p>第$k$层图表达的是节点之间$k$级邻域的相似度度量。</p>
+</li>
+<li><p>故而$M$的每一层都是一个完全图，都会有$n=|V|$个节点，边的数量是$n(n-1)$，边的权重的定义：</p>
+<script type="math/tex; mode=display">w_k(u,v) = e^{-f_k(u,v)},k=0,…,k^*</script><p>当然，只有$f_k$定义了，边才能被定义。</p>
+</li>
+<li><p>因为$f_k(u,v)$最小是 0，那么边的权重$w_k(u,v)$的取值范围是$(0,1]$，当等于 1 时，代表两个节点结构相同。</p>
+</li>
+<li><p>不同层级之间，通过有向边连接，在$k$层的每个节点都会跟$k-1$层和$k+1$层的相同节点用有向边连接，边的权重定义：</p>
+<script type="math/tex; mode=display">w(u_k,u_{k+1})=log(\Gamma_k(u)+e), k=0,…,k^∗−1</script><script type="math/tex; mode=display">w(u_k,u_{k-1})=1,k=1,…,k^∗</script><ul>
+<li>其中$\Gamma_k(u)$代表了指向节点$u$的权重大于$k$层图平均权重的边的数量：$\Gamma_k(u)=\sum_{v \in V} \mathbb{1}(w_k(u,v) &gt; \overline{w_k})$，也就是度量了该节点$u$和第$k$层其他节点之间的相似度。</li>
+<li>而$\overline{w_k} = \sum_{(u,v)\in  \begin{pmatrix} V \ 2 \ \end{pmatrix} }w_k(u,v)/\begin{pmatrix} n \ 2 \end{pmatrix}$</li>
+</ul>
+</li>
+</ul>
+<h4 id="第三步：生成节点的上下文"><a href="#第三步：生成节点的上下文" class="headerlink" title="第三步：生成节点的上下文"></a>第三步：生成节点的上下文</h4><p>利用$M$生成节点的上下文的过程：带偏的随机游走（biased random walk）。</p>
+<ul>
+<li><p>首先需要决定，随机游走的这一步，是留在当前层还是换层</p>
+</li>
+<li><p>有一定概率$q$，留在当前层，假设留在当前层，那么从节点$u$走到$v$的概率（权重越大，概率越高，也就是更容易走到相似节点上）：</p>
+<script type="math/tex; mode=display">p_k(u,v) = \frac{e^{-f_k(u,v)}}{Z_k(u)}$$，$$Z_k(u)=\sum_{v \in V, v ≠ u} e^{-f_k*(u,v)}</script></li>
+<li><p>假设在另一半概率上$1-q$，换层，换到$k+1$的概率定义：</p>
+<script type="math/tex; mode=display">p_k(u_k, u_{k+1}) = \frac{w(u_k, u_{k+1})}{(u_k, u_{k+1})+(u_k, u_{k-1})}</script><p>而换到$k-1$层的概率：</p>
+<script type="math/tex; mode=display">p_k(u_k, u_{k-1}) = 1 - p_k(u_k, u_{k+1})</script></li>
+<li><p>当节点走到$k+1$层时，产生的 context 可能只是前$k$层产生的 context 的一个子集，所以这种情况下，并不没有贡献</p>
+</li>
+<li><p>每次随机游走从第 0 层开始，游走步数都是一个固定的，较小的值，然后随机游走会在同一个节点上重复多次，产生多个独立的游走</p>
+</li>
+</ul>
+<h4 id="第四步：学习语言模型"><a href="#第四步：学习语言模型" class="headerlink" title="第四步：学习语言模型"></a>第四步：学习语言模型</h4><p>通过 word embedding 的方法，对第三步生成的随机游走结果，生成高维向量。</p>
+<p>文章使用了<strong>Skip-Gram</strong><sup><a href="#fn_1" id="reffn_1">1</a></sup>。</p>
+<blockquote id="fn_1">
+<sup>1</sup>. Mikolov, Tomas, et al. “Efficient estimation of word representations in vector space.” _arXiv preprint arXiv:1301.3781_ (2013).<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#STRUC2VEC"><span class="toc-text">STRUC2VEC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#第一步：度量结构相似度"><span class="toc-text">第一步：度量结构相似度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第二步：构造上下文图（context-graph）"><span class="toc-text">第二步：构造上下文图（context graph）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第三步：生成节点的上下文"><span class="toc-text">第三步：生成节点的上下文</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第四步：学习语言模型"><span class="toc-text">第四步：学习语言模型</span></a></li></ol></li></ol></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    <a href="https://github.com/aircloud">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

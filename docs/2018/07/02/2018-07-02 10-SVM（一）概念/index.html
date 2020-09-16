@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jiacheng Pan&#39;s Blog">
+  <meta name="keyword" content>
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4">
+
+  <title>
+     CS229：10-SVM（一）概念 - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/blog/css/aircloud.css"> <link rel="stylesheet" href="/blog/css/gitment.css">
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+  <!-- ga & ba script hoook -->
+  <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        CS229：10-SVM（一）概念
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2018-07-02 16:27:00</span></span> -->
+        <span class="attr">发布于：<span>2018-07-02</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#AndrewNgCS229"
+                title="AndrewNgCS229">AndrewNgCS229</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#Course Notes" title="Course Notes">Course Notes</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Machine Learning" title="Machine Learning">Machine Learning</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>_SVM_，指的是支持向量机（_support vector machines_）。</p>
+<p>支持向量机，假设数据是线性可分的，那么我们就能找到一个超平面，将数据分成两类。但是一旦线性可分，我们就可能找到无数的超平面，都可以将数据分成两类：</p>
+<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-7-3/83131877.jpg" alt></p>
+<p>但是很明显，上图中虽然<em>a, c</em>都对数据进行了有效的分割。但很明显，都不如<em>b</em>分割的好。</p>
+<p>我们可以用“间隔”这个概念来定义这个超平面（在二维上是线）对数据的分割优劣。在分类正确的情况下，间隔越大，我们认为对数据的分类越好。</p>
+<p>我们的目标是得到数据的分类：$y \in \lbrace -1, +1 \rbrace$。</p>
+<p>这个超平面，则可以表示成$w^Tx+b$，其中$w=[\theta_1, \ldots, \theta_n]^T, b=\theta_0$。这个超平面可以表达成一个$n+1$维向量。</p>
+<p>判别函数：</p>
+<script type="math/tex; mode=display">
+g(z)=\begin{cases}
++1, & \text{如果$z\geq0$} \\\
+-1, & \text{otherwise}
+\end{cases}</script><p>假设则可以表示成：$h_{w,b}(x)=g(w^Tx+b)$</p>
+<h2 id="间隔"><a href="#间隔" class="headerlink" title="间隔"></a>间隔</h2><h3 id="函数间隔（functional-margin）"><a href="#函数间隔（functional-margin）" class="headerlink" title="函数间隔（functional margin）"></a>函数间隔（functional margin）</h3><p>某个超平面$(w,b)$和训练样本$(x^{(i)}, y^{(i)})$之间的函数间隔被表示成：</p>
+<script type="math/tex; mode=display">
+\hat{\gamma}^{(i)}=y^{(i)}(w^Tx^{(i)}+b)</script><p>于是，我们可以知道：</p>
+<ol>
+<li>当$y^{(i)}=1$，于是我们想获得更大的函数间隔（这是我们的目标），就需要使得$w^Tx^{(i)}+b \gg 0$</li>
+<li>相反，当$y^{(i)}=-1$，我们想获得更大的函数间隔，就需要使得$w^Tx^{(i)}+b \ll 0$</li>
+</ol>
+<p>并且，很明显，只有当函数间隔$\hat{\gamma}&gt;0$时，分类结果是正确的。</p>
+<p>最后，超平面与数据集$\lbrace (x^{(1)}, y^{(1)}), (x^{(2)}, y^{(2)}), \ldots \rbrace$之间的函数间隔，被定义为所有函数间隔中的最小值：</p>
+<script type="math/tex; mode=display">
+\hat{\gamma}=\min_i\hat{\gamma}^{(i)}</script><h3 id="几何间隔（geometric-margin）"><a href="#几何间隔（geometric-margin）" class="headerlink" title="几何间隔（geometric margin）"></a>几何间隔（geometric margin）</h3><p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-7-3/34659777.jpg" alt></p>
+<p>从点$(x^{(i)}, y^{(i)})$出发，对超平面做垂线，得到点 D，我们知道他们之间的距离，就是该超平面到数据点$(x^{(i)}, y^{(i)})$的几何间隔。</p>
+<p>经过推导，D 的坐标可以表示为：</p>
+<script type="math/tex; mode=display">
+x^{(i)}-\gamma^{(i)}\frac{w}{||w||}</script><p>又因为，D 在超平面$w^Tx+b=0$上，所以：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+& w^T(x^{(i)}-\gamma^{(i)}\frac{w}{||w||})+b=0 \\\
+& \Rightarrow w^Tx^{(i)}+b=\gamma^{(i)} \cdot \frac{w^Tw}{||w||}=\gamma^{(i)} \cdot ||w|| \\\
+& \Rightarrow \gamma^{(i)}=(\frac{w}{||w||})^T \cdot x^{(i)}+\frac{b}{||w||}
+\end{align}</script><p>加上正负分类的判断：</p>
+<script type="math/tex; mode=display">
+\gamma^{(i)}=y^{(i)} \cdot ((\frac{w}{||w||})^T \cdot x^{(i)}+\frac{b}{||w||})</script><p>我们可以看到，几何间隔跟函数间隔之间存在如下的关系：</p>
+<script type="math/tex; mode=display">
+\hat{\gamma}^{(i)} = \frac{\gamma^{(i)}}{||w||}</script><p>同样的，超平面与数据集$\lbrace (x^{(1)}, y^{(1)}), (x^{(2)}, y^{(2)}), \ldots \rbrace$之间的几何间隔，被定义为所有几何间隔中的最小值：</p>
+<script type="math/tex; mode=display">
+\gamma=\min_i\gamma^{(i)}</script><p>最后，我们导出<strong>最优间隔分类器</strong>（_Optimal Margin Classifier_）问题：选择$w, b$，最大化$\gamma$，同时满足$\forall(x^{(i)}, y^{(i)})$，$ y^{(i)} \cdot ((\frac{w}{||w||})^T \cdot x^{(i)}+\frac{b}{||w||}) \geq \gamma$（所有数据点的几何间隔都大于该最小几何间隔）。</p>
+<p>目前为止，已经是 SVM 问题的一个简化版本。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#间隔"><span class="toc-text">间隔</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数间隔（functional-margin）"><span class="toc-text">函数间隔（functional margin）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#几何间隔（geometric-margin）"><span class="toc-text">几何间隔（geometric margin）</span></a></li></ol></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    <a href="https://github.com/aircloud">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>
