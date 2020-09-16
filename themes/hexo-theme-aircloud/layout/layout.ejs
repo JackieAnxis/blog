@@ -28,6 +28,10 @@
         <!-- Main Content -->
         <%- body %>
     </div>
+    <div class="index-right">
+        <!-- Main Content -->
+        <%- partial('_partial/toc', {item: page, index: false}) %>
+    </div>
 </div>
 
 <%- partial('_partial/footer', null, {cache: false}) %>

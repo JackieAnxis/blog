@@ -148,11 +148,13 @@ body {
 }
 
 .nav .avatar-name .name a {
-  text-decoration: none;
+  text-decoration: line-through;
+  text-decoration-color: #da3b01;
 }
 
 .nav .avatar-name .name a:hover {
   text-decoration: underline;
+  text-decoration-color: #da3b01;
 }
 
 .nav .avatar-name .name i {
@@ -912,6 +914,10 @@ body {
   flex: 1;
 }
 
+.index-container .index-right {
+  width: 120px;
+}
+
 @media screen and (max-width: 1180px) {
   .index-container {
     left: 0;
@@ -929,7 +935,11 @@ body {
 
   .index-container .index-middle {
     flex: 1;
-    max-width: calc(100% - 180px);
+    max-width: calc(100% - 260px);
+  }
+
+  .index-left {
+    width: 80px;
   }
 }
 
@@ -951,6 +961,10 @@ body {
   .index-container .index-middle {
     max-width: 100%;
     flex: 1;
+  }
+
+  .index-container .index-right {
+    max-width: 100%;
   }
 
   .index-about {
