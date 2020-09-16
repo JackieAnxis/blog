@@ -11,7 +11,7 @@ author: Jiacheng Pan
 language: zh
 timezone:
 sidebar-avatar: "https://avatars2.githubusercontent.com/u/19246028?s=460&u=8d4f9462069e17c42c9f7e460369ac703146ceb9&v=4"
-about: "Jiacheng Pan's Blog"
+about: http://panjiacheng.site
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
