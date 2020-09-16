@@ -1,0 +1,4 @@
+---
+layout: "author"
+title: "Author"
+---

@@ -1,0 +1,16 @@
+nav:
+  home: 博客
+  author: 分类
+  tags: 标签
+  archives: 时间
+  about: 主页
+  search: 搜索
+
+post:
+  postTime: 发布于
+  tags: 标签
+  visit: 访问
+  donate: 赞赏
+
+search:
+  search: 搜索
