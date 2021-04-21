@@ -187,13 +187,13 @@ arg\min_X\sum_{i<j}w_{ij}(x_i-x_j-e_{ij}d_{ij})^2</script><p>e 为边的目标�
 <h2 id="四、结构相关的鱼眼（structure-aware-fisheye）"><a href="#四、结构相关的鱼眼（structure-aware-fisheye）" class="headerlink" title="四、结构相关的鱼眼（structure-aware fisheye）"></a>四、结构相关的鱼眼（structure-aware fisheye）</h2><script type="math/tex; mode=display">
 arg\min_{Z^t}\sum_{(i, j) \in E} \omega_{ij}^s||z_i^t-z_j^t-e_{ij}^sd_{ij}^s||^2 \\\
 +\sum_{(i, j) \in \Omega} \omega_{ij}^r||z_i^t-z_j^t-e_{ij}^rd_{ij}^r||^2 \\\
-+\sum_{i \in \lbrace 1\ldots n \rbrace} \omega_i^t||z_i^t-z_i^{t-1}||^2 \\\</script><p>其中，$Z^t$指第 t 次迭代的节点位置，$\omega_{ij}^s, \omega_{ij}^r, \omega_i^t$是归一化的权重，$\Omega$是在焦点区域内的边的集合。$e_{ij}^s$和$d_{ij}^s$则提供了结构的限制，$e_{ij}^r$和$d_{ij}^r$则提供了可读性的限制。最后一项则表达了时序上的连续性也就是光滑过渡。</p>
++\sum_{i \in \lbrace 1\ldots n \rbrace} \omega_i^t||z_i^t-z_i^{t-1}||^2 \\\</script><p>其中，$Z^t$指第 t 次迭代的节点位置，$\omega<em>{ij}^s, \omega</em>{ij}^r, \omega<em>i^t$是归一化的权重，$\Omega$是在焦点区域内的边的集合。$e</em>{ij}^s$和$d<em>{ij}^s$则提供了结构的限制，$e</em>{ij}^r$和$d_{ij}^r$则提供了可读性的限制。最后一项则表达了时序上的连续性也就是光滑过渡。</p>
 <p>值得注意的是，$\Omega$并不只是那些可见的边，其包含了所以点对之间的关系，即便两个点之间没有边相连，因为需要使没有边相连的点相互远离。</p>
 <h3 id="结构相关的限制"><a href="#结构相关的限制" class="headerlink" title="结构相关的限制"></a>结构相关的限制</h3><script type="math/tex; mode=display">
 e_{ij}^s=\frac{x_i-x_j}{||x_i-x_j||}, d_{ij}^s=||x'_i-x'_j||</script><p>$X’$表示的是用鱼眼透镜估计的目标位置。保持了方向的一致性。</p>
 <p><strong>形状限制</strong>：上述的限制只保证了边方向的限制，只会让局部结构保持的比较好，而较大的结构会被扭曲，如下图，a 是初始图，b 是经过 graphical fisheye 的产出，c 是加入了边方向限制，d 则是加入了形状限制。</p>
 <p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116171318315.png" alt="image-20181116171318315"></p>
-<p>为了保留初始的结构，文章需要用户提供一组连接的边，称为$E_s$，比如上图 c 中的其中一圈蓝边，那么算法就能更好的估计$d_{ij}^s$。在缩放的时候，有些边变长，有些边变短。我们需要平衡这种变换。</p>
+<p>为了保留初始的结构，文章需要用户提供一组连接的边，称为$E<em>s$，比如上图 c 中的其中一圈蓝边，那么算法就能更好的估计$d</em>{ij}^s$。在缩放的时候，有些边变长，有些边变短。我们需要平衡这种变换。</p>
 <script type="math/tex; mode=display">
 \min_{\rho} \sum_{(i, j) \in E_s}(\rho d_{ij}-d'_{ij})^2</script><p>这里估计出了一个平均畸变率$\rho$，使得上图 c 产生的结构的边长$d’$和$\rho d_{ij}$之间的差距最少。</p>
 <p>由此可以计算得到这个畸变率，那么对所有边长都乘上这个畸变率，就能进行统一变换，再加上上面的边方向的保持，从而保持原结构。</p>
@@ -307,9 +307,24 @@ EOO(Z)=1-\frac{1}{|E|}\sum_{(i,j) \in E}||\langle \frac{x_i-x_j}{||x_i-x_j||}, \
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</footer>
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

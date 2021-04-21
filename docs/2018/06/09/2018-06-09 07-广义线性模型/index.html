@@ -170,9 +170,9 @@ P(y;\phi)
 a(\eta) &= -log(1-\phi)=log(1+e^\eta)\\\
 T(y) &= y\\\
 b(y) &= 1
-\end{cases}</script><p>这里的$\phi$一般会被称为正则响应函数（_canonic response function_）：</p>
+\end{cases}</script><p>这里的$\phi$一般会被称为正则响应函数（<em>canonic response function</em>）：</p>
 <script type="math/tex; mode=display">
-g(\eta) = E[y|\eta]=\frac{1}{1+e^{-\eta}}</script><p>相对的，正则关联函数（_canonic link function_）则是$g^{-1}$。</p>
+g(\eta) = E[y|\eta]=\frac{1}{1+e^{-\eta}}</script><p>相对的，正则关联函数（<em>canonic link function</em>）则是$g^{-1}$。</p>
 <h2 id="高斯分布"><a href="#高斯分布" class="headerlink" title="高斯分布"></a>高斯分布</h2><script type="math/tex; mode=display">
 N(\mu,\sigma^2)=\frac{1}{\sqrt{2\pi}}exp(-\frac{1}{2}(y-\mu)^2)</script><p>这里，出于简洁考虑，假设$\sigma=1$，经过一系列化简后，可以表示成：</p>
 <script type="math/tex; mode=display">
@@ -275,9 +275,24 @@ L(\theta) = \prod_{i=1}^mP(y^{(i)} | x^{(i)};\theta) = \prod_{i=1}^m\prod_{j=1}^
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</footer>
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

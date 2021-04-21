@@ -254,7 +254,7 @@
 <p>让四名用户进行了一次试点研究来决定是否有其他的条件影响用户的表现。</p>
 <p>并没有引入畸变透镜的技术，因为这些技术往往无法完全涵盖一个相对较大的虚拟平面，并且可能会引入其他的因素。</p>
 <ul>
-<li><p><strong>展示技术</strong>：平面（$D_p$），双曲（$D_h$），iSphere（$D_s$）</p>
+<li><p><strong>展示技术</strong>：平面（$D<em>p$），双曲（$D_h$），iSphere（$D</em>s$）</p>
 <p>​</p>
 </li>
 <li><p><strong>图规模</strong>：参数为节点个数和边数。</p>
@@ -291,8 +291,8 @@
 <tbody>
 <tr>
 <td style="text-align:right">技术</td>
-<td style="text-align:center"><strong>双曲（$D_h$），平面（$D_p$），iSphere（$D_s$）</strong></td>
-<td style="text-align:center"><strong>平面（$D_p$），iSphere（$D_s$）</strong></td>
+<td style="text-align:center"><strong>双曲（$D<em>h$），平面（$D_p$），iSphere（$D</em>s$）</strong></td>
+<td style="text-align:center"><strong>平面（$D<em>p$），iSphere（$D</em>s$）</strong></td>
 </tr>
 <tr>
 <td style="text-align:right">任务</td>
@@ -497,9 +497,24 @@
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</footer>
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

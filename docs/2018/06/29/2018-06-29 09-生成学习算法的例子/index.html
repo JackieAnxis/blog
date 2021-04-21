@@ -216,8 +216,8 @@ l(\phi_y,\phi_{j|y=1},\phi_{j|y=0}=\prod_{i=1}^mp(x^{(i)},y^{(i)})=\prod_{i=1}^m
 \phi_{j|y=1} &= \frac{\sum_{i=1}^m1\lbrace x_j{(i)}=1, y^{(i)}=1 \rbrace}{\sum_{i=1}^m1\lbrace y^{(i)}=1 \rbrace}  = \frac{统计所有包含词语j的垃圾邮件的数量}{垃圾邮件的总数}\\\
 \phi_{j|y=0} &= \frac{\sum_{i=1}^m1\lbrace x_j{(i)}=1, y^{(i)}=0 \rbrace}{\sum_{i=1}^m1\lbrace y^{(i)}=0 \rbrace} = \frac{统计所有包含词语j的非垃圾邮件的数量}{非垃圾邮件的总数} \\\
 \phi_y &= \frac{\sum_{i=1}^m1\lbrace y^{(i)}=1 \rbrace}{m} = \frac{垃圾邮件的数量}{邮件的总数}
-\end{align}</script><p>通过以上的公式，我们已经可以完全推得$p(x_1, x_2, \ldots, x_{50000}|y)$。</p>
-<h3 id="Laplace-平滑"><a href="#Laplace-平滑" class="headerlink" title="Laplace 平滑"></a>Laplace 平滑</h3><p>假设，训练集中，我们重来没有碰到过”_NIPS_”这个词汇，假设我们词典中包含这个词，位置是 30000，也就是说：</p>
+\end{align}</script><p>通过以上的公式，我们已经可以完全推得$p(x<em>1, x_2, \ldots, x</em>{50000}|y)$。</p>
+<h3 id="Laplace-平滑"><a href="#Laplace-平滑" class="headerlink" title="Laplace 平滑"></a>Laplace 平滑</h3><p>假设，训练集中，我们重来没有碰到过”<em>NIPS</em>“这个词汇，假设我们词典中包含这个词，位置是 30000，也就是说：</p>
 <script type="math/tex; mode=display">
 \begin{align}
 p(x_{30000}=1|y=1) &= 0\\\
@@ -297,9 +297,24 @@ C_{y=0}=\sum_{i=1}^n(1\lbrace y^{(i)} = 0 \rbrace \cdot n_i)</script><p>表示�
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</footer>
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

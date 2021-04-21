@@ -206,7 +206,7 @@
 \displaystyle \theta_i:=\theta_i - \alpha \frac{1}{m} \sum_{j=1}^m(h_\theta(x^{(j)})-y^{(j)}) \times x_i^{(j)}</script><p>但每次下降都需要遍历所有样本，效率较低，具体过程可能如下：</p>
 <p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-3/49403960.jpg" alt></p>
 <h3 id="随机梯度下降法（Stochastic-Gradient-Descent）"><a href="#随机梯度下降法（Stochastic-Gradient-Descent）" class="headerlink" title="随机梯度下降法（Stochastic Gradient Descent）"></a>随机梯度下降法（Stochastic Gradient Descent）</h3><p>又称为『增量梯度下降法』</p>
-<p>对每个样本$(x_{(j)}, y_{(j)})$进行：</p>
+<p>对每个样本$(x<em>{(j)}, y</em>{(j)})$进行：</p>
 <script type="math/tex; mode=display">
 \displaystyle \theta_i:=\theta_i - \alpha (h_\theta(x^{(j)})-y^{(j)}) \times x_i^{(j)}</script><p>直到收敛</p>
 <p>这时，每次梯度下降只遍历一个样本，具体过程可能如下：</p>
@@ -245,9 +245,24 @@
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</footer>
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jiacheng Pan&#39;s Blog">
+  <meta name="keyword" content>
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4">
+
+  <title>
+     杂谈：《编写可读代码的艺术》阅读笔记（三） - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/blog/css/aircloud.css"> <link rel="stylesheet" href="/blog/css/gitment.css">
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+  <!-- ga & ba script hoook -->
+  <script></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        杂谈：《编写可读代码的艺术》阅读笔记（三）
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2017-01-26 16:49:20</span></span> -->
+        <span class="attr">发布于：<span>2017-01-26</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#Gossip"
+                title="Gossip">Gossip</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#Coding" title="Coding">Coding</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Reading" title="Reading">Reading</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h1 id="重新组织代码"><a href="#重新组织代码" class="headerlink" title="重新组织代码"></a>重新组织代码</h1><h2 id="一、抽取不相关的子问题"><a href="#一、抽取不相关的子问题" class="headerlink" title="一、抽取不相关的子问题"></a>一、抽取不相关的子问题</h2><blockquote>
+<p>建议：<strong>积极发现并抽取出不相关的子逻辑</strong></p>
+<ul>
+<li>看看某个函数或代码块，问问自己，这段代码高层次目标是什么？</li>
+<li>对每一行代码，问问自己，它是直接为了目标而工作吗？这段代码的高层次目标是什么？</li>
+<li>如果有足够的行数在解决不相关的子问题，抽取代码到独立的函数中</li>
+</ul>
+</blockquote>
+<ul>
+<li>例子，计算地球上两个点的最近距离</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Return which element of 'array' is closest to the given latitude/longitude.</span></span><br><span class="line"><span class="comment">// Models the Earth as a perfect sphere.</span></span><br><span class="line"><span class="keyword">var</span> findClosestLocation = <span class="function"><span class="keyword">function</span> (<span class="params">lat, lng, array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> closest;</span><br><span class="line">  <span class="keyword">var</span> closest_dist = <span class="built_in">Number</span>.MAX_VALUE;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i += <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">// Convert both points to radians.</span></span><br><span class="line">    <span class="keyword">var</span> lat_rad = radians(lat);</span><br><span class="line">    <span class="keyword">var</span> lng_rad = radians(lng);</span><br><span class="line">    <span class="keyword">var</span> lat2_rad = radians(array[i].latitude);</span><br><span class="line">    <span class="keyword">var</span> lng2_rad = radians(array[i].longitude);</span><br><span class="line">    <span class="comment">// Use the "Spherical Law of Cosines" formula.</span></span><br><span class="line">    <span class="keyword">var</span> dist = <span class="built_in">Math</span>.acos(</span><br><span class="line">      <span class="built_in">Math</span>.sin(lat_rad) * <span class="built_in">Math</span>.sin(lat2_rad) +</span><br><span class="line">        <span class="built_in">Math</span>.cos(lat_rad) * <span class="built_in">Math</span>.cos(lat2_rad) * <span class="built_in">Math</span>.cos(lng2_rad - lng_rad)</span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">if</span> (dist &lt; closest_dist) &#123;</span><br><span class="line">      closest = array[i];</span><br><span class="line">      closest_dist = dist;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> closest;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>循环中大部分代码都在解决一个和高层问题无关的子问题：“计算两个坐标之间的球面距离”，所以我们将它抽离出来：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> spherical_distance = <span class="function"><span class="keyword">function</span> (<span class="params">lat1, lng1, lat2, lng2</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> lat1_rad = radians(lat1);</span><br><span class="line">  <span class="keyword">var</span> lng1_rad = radians(lng1);</span><br><span class="line">  <span class="keyword">var</span> lat2_rad = radians(lat2);</span><br><span class="line">  <span class="keyword">var</span> lng2_rad = radians(lng2);</span><br><span class="line">  <span class="comment">// Use the "Spherical Law of Cosines" formula.</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.acos(</span><br><span class="line">    <span class="built_in">Math</span>.sin(lat1_rad) * <span class="built_in">Math</span>.sin(lat2_rad) +</span><br><span class="line">      <span class="built_in">Math</span>.cos(lat1_rad) * <span class="built_in">Math</span>.cos(lat2_rad) * <span class="built_in">Math</span>.cos(lng2_rad - lng1_rad)</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>然后函数就变成了，可读性更高，还能做单独测试：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> findClosestLocation = <span class="function"><span class="keyword">function</span> (<span class="params">lat, lng, array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> closest;</span><br><span class="line">  <span class="keyword">var</span> closest_dist = <span class="built_in">Number</span>.MAX_VALUE;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i += <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> dist = spherical_distance(</span><br><span class="line">      lat,</span><br><span class="line">      lng,</span><br><span class="line">      array[i].latitude,</span><br><span class="line">      array[i].longitude</span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">if</span> (dist &lt; closest_dist) &#123;</span><br><span class="line">      closest = array[i];</span><br><span class="line">      closest_dist = dist;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> closest;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>值得明白的一点是，例子中并不是在讲怎么架构，不是从<strong>如何解耦</strong>出发的，而是从如何抽取<strong>不相关的问题</strong>出发的。虽然殊途同归，但是思路是不一样的。</p>
+<ul>
+<li><p>意料之外的好处：当抽取不相关子问题成为独立的代码之后，改进这些独立的代码变得更加容易。</p>
+</li>
+<li><p><strong>过犹不及</strong>：过多的抽离子问题，会让整个代码引入过多的小函数，阅读者就需要在不同的函数之间反复跳跃，降低可读性。</p>
+</li>
+</ul>
+<h2 id="二、一次只做一件事"><a href="#二、一次只做一件事" class="headerlink" title="二、一次只做一件事"></a>二、一次只做一件事</h2><blockquote>
+<p><strong>建议</strong>：</p>
+<ol>
+<li>列出代码所做的所有任务</li>
+<li>尽量把任务拆分到不同的函数中，或者至少是代码中不同的段落中</li>
+</ol>
+</blockquote>
+<h2 id="三、把想法变代码"><a href="#三、把想法变代码" class="headerlink" title="三、把想法变代码"></a>三、把想法变代码</h2><blockquote>
+<p><strong>建议</strong>：</p>
+<ol>
+<li>像对着一个同事一样用自然语言描述代码要做什么</li>
+<li>注意描述中所用的关键词和短语</li>
+<li>写出与描述所匹配的代码</li>
+</ol>
+</blockquote>
+<h3 id="清楚描述逻辑"><a href="#清楚描述逻辑" class="headerlink" title="清楚描述逻辑"></a>清楚描述逻辑</h3><p>在写代码之前，先清晰的描述（写）出你的逻辑，再进行 coding，这样有助于你写出更好的代码。<br>这不就是传说中的“小黄鸭 debug 术”吗！<br><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-1-27/76690189-file_1485499018366_468c.png" alt><br>下面这个例子就说明了如何用清晰的逻辑重构代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$is_admin = is_admin_request();</span><br><span class="line"><span class="keyword">if</span> ($document) &#123;</span><br><span class="line">	<span class="keyword">if</span> (!$is_admin &amp;&amp; ($document[<span class="string">'username'</span>] != $_SESSION[<span class="string">'username'</span>])) &#123;</span><br><span class="line">		<span class="keyword">return</span> not_authorized();</span><br><span class="line">	&#125;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (!$is_admin) &#123;</span><br><span class="line">		<span class="keyword">return</span> not_authorized();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// continue rendering the page ..</span></span><br></pre></td></tr></table></figure>
+<p>可以将上述逻辑表述为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 以下两种情况之一，你就能获得授权：</span></span><br><span class="line"><span class="comment">// 1. 你是管理员</span></span><br><span class="line"><span class="comment">// 2. 你拥有当前文档（如果有当前文档的话）</span></span><br><span class="line"><span class="comment">// 否则，无法授权与你</span></span><br></pre></td></tr></table></figure>
+<p>于是，代码可以重构为：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (is_admin_request()) &#123;</span><br><span class="line">	<span class="comment">// authorized</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> ($document &amp;&amp; ($document[<span class="string">'username'</span>] == $_SESSION[<span class="string">'username'</span>])) &#123;</span><br><span class="line">	<span class="comment">// authorized</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> not_authorized();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// continue rendering the page ...</span></span><br></pre></td></tr></table></figure>
+<h2 id="三、少写代码"><a href="#三、少写代码" class="headerlink" title="三、少写代码"></a>三、少写代码</h2><blockquote>
+<p>最好读的代码就是：没有代码</p>
+</blockquote>
+<h3 id="质疑和拆分需求"><a href="#质疑和拆分需求" class="headerlink" title="质疑和拆分需求"></a>质疑和拆分需求</h3><p>并不是所有程序都要运行得快，100%准确，并且能处理所有的输入。可以根据实际需要，拆分并且削减一部分需求。</p>
+<h3 id="保持小的代码库"><a href="#保持小的代码库" class="headerlink" title="保持小的代码库"></a>保持小的代码库</h3><p><strong>建议</strong>：</p>
+<ul>
+<li>代码复用，创建更多可复用的“工具”代码</li>
+<li>减少无用的代码或没有用的功能</li>
+<li>让代码保持分开的子项目状态</li>
+</ul>
+<h3 id="熟悉你周边的库"><a href="#熟悉你周边的库" class="headerlink" title="熟悉你周边的库"></a>熟悉你周边的库</h3><p>建议：<strong>每个一段时间，花 15 分钟来阅读标准库中的所有函数/模块/类型的名字</strong>，用以了解有什么可以用，下次写新的代码时就会想到。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#重新组织代码"><span class="toc-text">重新组织代码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、抽取不相关的子问题"><span class="toc-text">一、抽取不相关的子问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、一次只做一件事"><span class="toc-text">二、一次只做一件事</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、把想法变代码"><span class="toc-text">三、把想法变代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#清楚描述逻辑"><span class="toc-text">清楚描述逻辑</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、少写代码"><span class="toc-text">三、少写代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#质疑和拆分需求"><span class="toc-text">质疑和拆分需求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保持小的代码库"><span class="toc-text">保持小的代码库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#熟悉你周边的库"><span class="toc-text">熟悉你周边的库</span></a></li></ol></li></ol></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    <a href="https://github.com/aircloud">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/blog/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

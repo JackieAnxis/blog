@@ -124,6 +124,31 @@
 <div class="archives-container">
 
 <div class="one-tag-list">
+                <span class="fa fa-calendar-times-o listing-seperator" id="2021">
+                    <span class="tag-text">2021</span>
+                </span>
+    <ul>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>04-20</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/blog/2021/04/20/2021-04-20 Kyrix-S-Authoring Scalable Scatterplot Visualizations of Big Data/">
+                        <span>
+                            Kyrix-S: Authoring Scalable Scatterplot Visualizations of Big Data
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+
+    </ul>
+</div>
+
+<div class="one-tag-list">
                 <span class="fa fa-calendar-times-o listing-seperator" id="2020">
                     <span class="tag-text">2020</span>
                 </span>
@@ -1391,9 +1416,24 @@
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</footer>
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

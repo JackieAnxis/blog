@@ -165,7 +165,7 @@
 </li>
 </ol>
 <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>生物学家对基因序列是如何折叠的研究非常感兴趣，可以帮助理解细胞的功能、疾病的产生等。</p>
-<p>基因组之间存在相互作用（_interacting_），两两之间相互作用则会形成一个基因组相互作用矩阵（_genome interaction matrix_），最多能达到三百万 × 三百万。里面会包含一些重复出现的图案/模式（称为<em>ROI</em>, _regions of interest_）。</p>
+<p>基因组之间存在相互作用（<em>interacting</em>），两两之间相互作用则会形成一个基因组相互作用矩阵（<em>genome interaction matrix</em>），最多能达到三百万 × 三百万。里面会包含一些重复出现的图案/模式（称为<em>ROI</em>, <em>regions of interest</em>）。</p>
 <ul>
 <li><strong>挑战</strong>：</li>
 </ul>
@@ -179,7 +179,7 @@
 <ol>
 <li>对算法检测到的团进行可视化评估</li>
 <li>大规模图案集合的分类、聚合、异常点检测</li>
-<li>在多个矩阵之间比较<em>ROI</em>（比如，在不同数据集，实验条件，抽取算法等等），_下文中也会称之为 Snippet_</li>
+<li>在多个矩阵之间比较<em>ROI</em>（比如，在不同数据集，实验条件，抽取算法等等），<em>下文中也会称之为 Snippet</em></li>
 <li>对其他的基因属性和图案之间的相关性进行分析</li>
 </ol>
 <p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-27-093832.png" alt="image-20180627173831533"></p>
@@ -252,7 +252,7 @@
 <blockquote>
 <p>图 7：片段<em>snippet</em>可以沿着各种不同的尺寸排列。 对于单个属性，片段在支持读取方向和希尔伯特曲线（1）的 1D 中布置。 选择两个属性创建散点图（2）。 对于两个以上的属性，HiPiler 应用了降维算法（3），如 t-SNE [33]。</p>
 </blockquote>
-<h4 id="聚合（Aggregation）"><a href="#聚合（Aggregation）" class="headerlink" title="聚合（Aggregation）"></a>聚合（Aggregation）</h4><p><strong>解决任务 T4，T6</strong>。利用了打桩（_piling_）来隐喻多个<em>snippet</em>的聚合。聚类后，每个片段每列取平均值划为一行的形式显示在上方，可以 hover 查看具体图案。集合封面可以显示集合的平均值或者方差。</p>
+<h4 id="聚合（Aggregation）"><a href="#聚合（Aggregation）" class="headerlink" title="聚合（Aggregation）"></a>聚合（Aggregation）</h4><p><strong>解决任务 T4，T6</strong>。利用了打桩（<em>piling</em>）来隐喻多个<em>snippet</em>的聚合。聚类后，每个片段每列取平均值划为一行的形式显示在上方，可以 hover 查看具体图案。集合封面可以显示集合的平均值或者方差。</p>
 <p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-27-091532.png" alt="image-20180627171531688"></p>
 <blockquote>
 <p>图 8：HiPiler 显示一堆片段的平均值（1A）或方差（1B）的封面矩阵。 此外，每个片段都显示为一维预览，显示片段列的水平聚合（2）。 将鼠标光标移到预览上可显示相关矩阵。 检查堆（3B）的时候暂时隐藏所有其他片段（3B）。</p>
@@ -299,9 +299,24 @@
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</footer>
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

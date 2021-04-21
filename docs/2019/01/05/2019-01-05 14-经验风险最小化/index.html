@@ -190,7 +190,7 @@ P(|{\hat{\phi}} - \phi| > \gamma) \leq 2 exp(-2\gamma^2m)</script></blockquote>
 <p>那么：</p>
 <ol>
 <li>泛化误差：$P(z_i=1) = \varepsilon(h_j)$</li>
-<li>训练误差：${\hat{\varepsilon}}(h_j) = \frac{1}{m}\sum_{i=1}^m z_i$</li>
+<li>训练误差：${\hat{\varepsilon}}(h<em>j) = \frac{1}{m}\sum</em>{i=1}^m z_i$</li>
 </ol>
 <p>根据 Hoeffding 不等式，我们能够得到：</p>
 <script type="math/tex; mode=display">
@@ -275,9 +275,24 @@ m \geq \frac{1}{2\gamma^2}log(\frac{2k}{\delta})</script>
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</footer>
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

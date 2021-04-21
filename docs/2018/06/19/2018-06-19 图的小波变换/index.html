@@ -151,9 +151,9 @@
 </blockquote>
 <h2 id="图的傅里叶变换"><a href="#图的傅里叶变换" class="headerlink" title="图的傅里叶变换"></a>图的傅里叶变换</h2><h3 id="Graph-Fourier-Transform"><a href="#Graph-Fourier-Transform" class="headerlink" title="Graph Fourier Transform"></a><strong>Graph Fourier Transform</strong></h3><p>关于傅里叶变换请看：<a href="https://jackieanxis.github.io/blog-others/2018/06/19/%E5%82%85%E9%87%8C%E5%8F%B6%E5%88%86%E6%9E%90/" target="_blank" rel="noopener">【转】傅里叶分析之掐死教程（完整版）</a></p>
 <p>关于拉普拉斯矩阵的一些特性可以看我的另一篇博客：<a href="https://jackieanxis.github.io/blog-others/2018/06/19/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%9F%A9%E9%98%B5%E4%BA%8C%E5%88%86%E6%B3%95/" target="_blank" rel="noopener">拉普拉斯矩阵二分法</a></p>
-<p>假设一个无向正权图$G=(V,E)$，其邻接矩阵表示成$A$，每个元素代表边的权重。其度矩阵表示成$D$，是一个对角矩阵，对角线的元素则是每个节点所带的连接边的权重和（$d_{ij}=\sum_kw_{ik}$），这里不考虑自环。那么拉普拉斯矩阵（Laplacian）就是$L=D-A$。</p>
+<p>假设一个无向正权图$G=(V,E)$，其邻接矩阵表示成$A$，每个元素代表边的权重。其度矩阵表示成$D$，是一个对角矩阵，对角线的元素则是每个节点所带的连接边的权重和（$d<em>{ij}=\sum_kw</em>{ik}$），这里不考虑自环。那么拉普拉斯矩阵（Laplacian）就是$L=D-A$。</p>
 <p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-19/21849016.jpg" alt></p>
-<p>拉普拉斯矩阵是对称的半正定矩阵。因此有一组标准正交的特征向量$\{u_i\}, i \in \{1,…,n\}$，对应一组递增的非负实特征值$\{\lambda_i\},i \in \{1,…n\},0=\lambda_1&lt;\lambda_2\leq\cdots\leq\lambda_n$。小的$\lambda_i$就对应了傅里叶变换中的低频。</p>
+<p>拉普拉斯矩阵是对称的半正定矩阵。因此有一组标准正交的特征向量${u_i}, i \in {1,…,n}$，对应一组递增的非负实特征值${\lambda_i},i \in {1,…n},0=\lambda_1&lt;\lambda_2\leq\cdots\leq\lambda_n$。小的$\lambda_i$就对应了傅里叶变换中的低频。</p>
 <p>假如给定一个将节点$V$映射成实数$\Bbb R$的实函数$f$，那么在频率$\lambda_l$上，$f$对应的傅里叶变换可以定义成：</p>
 <script type="math/tex; mode=display">
 \hat{f}(l)=u_l^T \cdot f = \sum_{j=1}^n u_l(j)f(j)</script><p>其中，$u_l(j)$是特征向量$u_l$中$j$位置的值，$f(j)$则是节点$j$的函数值。</p>
@@ -179,8 +179,8 @@ x^2, &\text{for $x < 1$} \\\
 <p>而通过小波变换，可以获取每个节点上，不同$s$值的分布，也就代表了特征值的分布。</p>
 <p>特征值能够描述图的特性，比如特征值中 0 的个数表达了图中连通子图的数量，第二小的非零特征值可以用来描述二分最小切割边数量(代数连通度，algebraic connectivity，见另一篇博客<a href="https://jackieanxis.github.io/blog-others/2018/06/19/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%9F%A9%E9%98%B5%E5%92%8C%E4%BB%A3%E6%95%B0%E8%BF%9E%E9%80%9A%E5%BA%A6/" target="_blank" rel="noopener">拉普拉斯矩阵和代数连通度</a>）。</p>
 <p>小的特征值（对应大的$s$）对全局的描述更强一些，大的特征值则对局部的描述更详细一些。</p>
-<p>通过对$s$的值进行采样，我们可以得到一组$s_{min}=s_1,s_2,\ldots,s_r=s_{max}$，一般会取$s_{min}=2/\lambda_n, s_{max}=40/\lambda_n$，对应的$g(sx)$则被称为小波核（wavelet kernels）,生成的$W_f(s, j)$则被称为小波系数（wavelet coefficients）。</p>
-<h4 id="缩放函数-Scaling-function"><a href="#缩放函数-Scaling-function" class="headerlink" title="缩放函数 Scaling function"></a>缩放函数 Scaling function</h4><p>缩放函数（$h(x)$）可以用来生成缩放函数系数（$S_f(j)$）是一种用来稳定的表达低频的傅里叶模式（Fourier modes，也就是相对较小的特征值）的方法。一般会跟上述的小波变换产生的 wavelet coefficients，$W_f(s_1, j), W_f(s_2, j), \ldots, W_f(s_r,j)$组合，当成 wavelet coeffients，其中这个缩放函数（scaling function）则用于表达低频的傅里叶模式：$\{S_f(j), W_f(s_r, j), \ldots, W_f(s_1,j)\}$</p>
+<p>通过对$s$的值进行采样，我们可以得到一组$s<em>{min}=s_1,s_2,\ldots,s_r=s</em>{max}$，一般会取$s<em>{min}=2/\lambda_n, s</em>{max}=40/\lambda_n$，对应的$g(sx)$则被称为小波核（wavelet kernels）,生成的$W_f(s, j)$则被称为小波系数（wavelet coefficients）。</p>
+<h4 id="缩放函数-Scaling-function"><a href="#缩放函数-Scaling-function" class="headerlink" title="缩放函数 Scaling function"></a>缩放函数 Scaling function</h4><p>缩放函数（$h(x)$）可以用来生成缩放函数系数（$S_f(j)$）是一种用来稳定的表达低频的傅里叶模式（Fourier modes，也就是相对较小的特征值）的方法。一般会跟上述的小波变换产生的 wavelet coefficients，$W_f(s_1, j), W_f(s_2, j), \ldots, W_f(s_r,j)$组合，当成 wavelet coeffients，其中这个缩放函数（scaling function）则用于表达低频的傅里叶模式：${S_f(j), W_f(s_r, j), \ldots, W_f(s_1,j)}$</p>
 <p>这个缩放函数系数$S_f(j)$：</p>
 <script type="math/tex; mode=display">
 S_f(j)=\sum_{l=1}^nh(\lambda_l)\hat{f}(l)u_l(j)</script><p>其中，缩放函数：</p>
@@ -222,9 +222,24 @@ h(x)=\gamma exp(-(\frac{10x}{0.3\lambda_n})^4)</script><h3 id="小波系数的�
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</footer>
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

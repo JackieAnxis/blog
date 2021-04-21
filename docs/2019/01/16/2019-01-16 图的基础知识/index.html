@@ -152,16 +152,16 @@
 <p>出度（out-degree）指以该顶点为起点的边的权重和，入度（in-degree）指的是以该顶点为终点的边的权重和。</p>
 <h2 id="链接相关的概念"><a href="#链接相关的概念" class="headerlink" title="链接相关的概念"></a>链接相关的概念</h2><h2 id="结构相关的概念"><a href="#结构相关的概念" class="headerlink" title="结构相关的概念"></a>结构相关的概念</h2><h3 id="bipartite-二部"><a href="#bipartite-二部" class="headerlink" title="bipartite 二部"></a>bipartite 二部</h3><p>将图的顶点分成两个非空集合$V_1$和$V_2$，如果这个图的每一条边的两个端点都分别属于$V_1$和$V_2$，那么称这个图是二部图（bipartite）。</p>
 <p>在这个概念的基础上，还有完全二部图（complete bipartite graph）的概念，指的是在 bipartite 的基础上，$V_1$中的每个点，都与$V_2$中的每个点相连。</p>
-<h3 id="graphlets-图元"><a href="#graphlets-图元" class="headerlink" title="graphlets 图元"></a>graphlets 图元</h3><p>图元，指的是一系列异构的（_isomorphism_）导出（_induced_）子图。</p>
+<h3 id="graphlets-图元"><a href="#graphlets-图元" class="headerlink" title="graphlets 图元"></a>graphlets 图元</h3><p>图元，指的是一系列异构的（<em>isomorphism</em>）导出（<em>induced</em>）子图。</p>
 <p>下面列举所有的 3 节点、4 节点、5 节点的图元：</p>
 <p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-9-1/21892478.jpg" alt="3节点、4节点、5节点的所有图元"></p>
-<h3 id="induced-导出"><a href="#induced-导出" class="headerlink" title="induced 导出"></a>induced 导出</h3><p>给定一个图$G$，以及这个图的子图（subgraph）$G’=(V’, E’)$，其中$V’\subseteq V$并且$E’ \subseteq E$。如果$E’ = \{(v_i,v_j)|(v_i,v_j) \in E \text{ and }v_i, v_j \in V’\}$，也就是对于所有属于$V’$的节点，他们在原图$G$的中出现的所有边，也都出现在$G’$的$E’$中，那么，这个子图$G’$称为$G$的导出（induced）子图。</p>
+<h3 id="induced-导出"><a href="#induced-导出" class="headerlink" title="induced 导出"></a>induced 导出</h3><p>给定一个图$G$，以及这个图的子图（subgraph）$G’=(V’, E’)$，其中$V’\subseteq V$并且$E’ \subseteq E$。如果$E’ = {(v_i,v_j)|(v_i,v_j) \in E \text{ and }v_i, v_j \in V’}$，也就是对于所有属于$V’$的节点，他们在原图$G$的中出现的所有边，也都出现在$G’$的$E’$中，那么，这个子图$G’$称为$G$的导出（induced）子图。</p>
 <p>下面是导出子图的一个示例：</p>
 <p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-25-085552.png" alt="导出子图"></p>
 <h3 id="isomorphism-同构"><a href="#isomorphism-同构" class="headerlink" title="isomorphism 同构"></a>isomorphism 同构</h3><p>如果两个图$G = (V,E)$ 和 $G’ = (V’, E’)$ 之间存在一个双射（bijection）函数 $f: V \rightarrow V’$，使得$ (v_i, v_j) \in E \Leftrightarrow (f(v_i),f(v_j)) \in E’ \text{ for all }v_i,v_j \in V$，那么这两个图互为同构图（isomorphism）</p>
 <h3 id="subgraph-子图"><a href="#subgraph-子图" class="headerlink" title="subgraph 子图"></a>subgraph 子图</h3><p>给定一个图$G$，那么定义这个图的子图$G’=(V’, E’)$，其中$V’\subseteq V$并且$E’ \subseteq E$。</p>
-<h2 id="矩阵相关的概念"><a href="#矩阵相关的概念" class="headerlink" title="矩阵相关的概念"></a>矩阵相关的概念</h2><h3 id="adjacency-matrix-邻接矩阵"><a href="#adjacency-matrix-邻接矩阵" class="headerlink" title="adjacency matrix 邻接矩阵"></a>adjacency matrix 邻接矩阵</h3><p>一个图的邻接矩阵的定义是：$A=\lbrace a_{ij} \rbrace$，其中$a_{ij}=e_{ij}$，第$ij$个元素指的是边$e_{ij}$的值。</p>
-<h3 id="incidence-matrix-关联矩阵"><a href="#incidence-matrix-关联矩阵" class="headerlink" title="incidence matrix 关联矩阵"></a>incidence matrix 关联矩阵</h3><p>一个图的关联矩阵定义为：$M=\lbrace m_{ij} \rbrace$，其中$m_{ij}$为 1，如果节点$v_i$和边$e_j$相关，举例而言：</p>
+<h2 id="矩阵相关的概念"><a href="#矩阵相关的概念" class="headerlink" title="矩阵相关的概念"></a>矩阵相关的概念</h2><h3 id="adjacency-matrix-邻接矩阵"><a href="#adjacency-matrix-邻接矩阵" class="headerlink" title="adjacency matrix 邻接矩阵"></a>adjacency matrix 邻接矩阵</h3><p>一个图的邻接矩阵的定义是：$A=\lbrace a<em>{ij} \rbrace$，其中$a</em>{ij}=e<em>{ij}$，第$ij$个元素指的是边$e</em>{ij}$的值。</p>
+<h3 id="incidence-matrix-关联矩阵"><a href="#incidence-matrix-关联矩阵" class="headerlink" title="incidence matrix 关联矩阵"></a>incidence matrix 关联矩阵</h3><p>一个图的关联矩阵定义为：$M=\lbrace m<em>{ij} \rbrace$，其中$m</em>{ij}$为 1，如果节点$v_i$和边$e_j$相关，举例而言：</p>
 <p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/GraphKnoledge/image-20190116204213867.png" alt="image-20190116204213867"></p>
 <p>的关联矩阵为：</p>
 <div class="table-container">
@@ -260,9 +260,24 @@
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</footer>
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

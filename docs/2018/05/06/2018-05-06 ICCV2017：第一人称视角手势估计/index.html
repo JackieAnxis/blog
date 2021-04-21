@@ -181,7 +181,7 @@
 <p>图 4：由五层卷积层与一层非线性层构成的位置估计卷积网络</p>
 </blockquote>
 <p>Mueller 等人的工作<sup><a href="#fn_2" id="reffn_2">2</a></sup>，在深度神经网络训练结果上，加入了后处理（post processing）过程，目的是增加数据的稳定性，因为手部中心位置不会随时间的变化而发生较大的变化）。作者保留了同一组数据，多帧图像的历史定位记录，并对每一帧图像的手部位置的定位结果做一个是否可信的判定。如果帧 t 的热力图的最大置信度小于 0.1，且出现的位置和上一次最大值位置距离大于 30，则认为其不可信，然后需要对这个最大值点进行更新：</p>
-<script type="math/tex; mode=display">\phi_t=\phi_{t-1}+\delta^k\frac{\phi_{c-1} - \phi_{c-2}}{||\phi_{c-1} - \phi_{c-2}||}</script><p>其中$\phi_t=\phi(H_R^t)$是帧$t$处的更新之后的最大值位置，是$\phi_{c-1}$上一个可置信（confident）的最大值位置，$k$是自上个可置信的最大值起经过的帧数，$\delta$是逐渐对不可信的最大值进行减权（downweight）的衰减因子。</p>
+<script type="math/tex; mode=display">\phi_t=\phi_{t-1}+\delta^k\frac{\phi_{c-1} - \phi_{c-2}}{||\phi_{c-1} - \phi_{c-2}||}</script><p>其中$\phi<em>t=\phi(H_R^t)$是帧$t$处的更新之后的最大值位置，是$\phi</em>{c-1}$上一个可置信（confident）的最大值位置，$k$是自上个可置信的最大值起经过的帧数，$\delta$是逐渐对不可信的最大值进行减权（downweight）的衰减因子。</p>
 <p>经过更新，最大值位置不会随着时间变化而发生较剧烈的变化。</p>
 <h3 id="五、手势估计方法（Hand-Pose-Estimation）"><a href="#五、手势估计方法（Hand-Pose-Estimation）" class="headerlink" title="五、手势估计方法（Hand Pose Estimation）"></a>五、手势估计方法（Hand Pose Estimation）</h3><p>目前有的手势估计方法基本上可以分成两类，基于分类的方法和基于回归的方法。</p>
 <h4 id="分类方法"><a href="#分类方法" class="headerlink" title="分类方法"></a>分类方法</h4><p>Rogez 等人在 2014 年发表的文章<sup><a href="#fn_5" id="reffn_5">5</a></sup>中，使用了分层量化的分类器。首先，需要构建一棵姿态类别树，每个节点都代表了一种姿态，层次越高的姿态，普遍性越高。而越接近叶节点，代表其手势的细节越多，更特殊，如图 5 所示。接下去，可以使用宽度优先搜索（BFS）来对输入的手势进行评估，对树的每一层，都可以剪掉那些评级为 0 的节点（也就是没有吻合性的姿态）。</p>
@@ -195,21 +195,21 @@
 <p>图 6，a：RGB-D 图 数据再生成网络，b：手势分类器神经网络的架构</p>
 </blockquote>
 <h4 id="回归方法"><a href="#回归方法" class="headerlink" title="回归方法"></a>回归方法</h4><p>在 Mueller<sup><a href="#fn_3" id="reffn_3">3</a></sup>等人的工作中，则是使用了卷积神经网络，对手部姿态向量进行了回归。作者采用了一个 26 自由度的手骨骼模型，其包括 6 个用于全局平移和旋转的角度，以及 20 个关节角度，存储在向量$\Theta$中，然后用一个卷积神经网络对这个向量进行了回归。Mueller 等人在这个基础上，还加入了一些约束（比如关节旋转角度的范围，手关节运动速度等），以保证回归结果的有效性。</p>
-<script type="math/tex; mode=display">\mathcal{E}(\Theta) = E_{data}(\Theta,p_G,H)+E_{reg}(\Theta)</script><p>其中，$E_{data}$约束了相对位置，$E_{reg}$约束了关节旋转角度和运动速度。</p>
+<script type="math/tex; mode=display">\mathcal{E}(\Theta) = E_{data}(\Theta,p_G,H)+E_{reg}(\Theta)</script><p>其中，$E<em>{data}$约束了相对位置，$E</em>{reg}$约束了关节旋转角度和运动速度。</p>
 <blockquote id="fn_1">
-<sup>1</sup>. Choi, Chiho, et al. “A collaborative filtering approach to real-time hand pose estimation.” _Proceedings of the IEEE International Conference on Computer Vision_. 2015.<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+<sup>1</sup>. Choi, Chiho, et al. “A collaborative filtering approach to real-time hand pose estimation.” <em>Proceedings of the IEEE International Conference on Computer Vision</em>. 2015.<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_2">
-<sup>2</sup>. Choi, Chiho, et al. “Robust hand pose estimation during the interaction with an unknown object.” _Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition_. 2017.<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+<sup>2</sup>. Choi, Chiho, et al. “Robust hand pose estimation during the interaction with an unknown object.” <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</em>. 2017.<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_3">
-<sup>3</sup>. Mueller, Franziska, et al. “Real-time hand tracking under occlusion from an egocentric rgb-d sensor.” _Proceedings of International Conference on Computer Vision (ICCV)_. Vol. 10. 2017.<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
+<sup>3</sup>. Mueller, Franziska, et al. “Real-time hand tracking under occlusion from an egocentric rgb-d sensor.” <em>Proceedings of International Conference on Computer Vision (ICCV)</em>. Vol. 10. 2017.<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_4">
-<sup>4</sup>. Garcia-Hernando, Guillermo, et al. “First-Person Hand Action Benchmark with RGB-D Videos and 3D Hand Pose Annotations.” _arXiv preprint arXiv:1704.02463_(2017).<a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#8617;</a>
+<sup>4</sup>. Garcia-Hernando, Guillermo, et al. “First-Person Hand Action Benchmark with RGB-D Videos and 3D Hand Pose Annotations.” <em>arXiv preprint arXiv:1704.02463</em>(2017).<a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_5">
-<sup>5</sup>. Rogez, Grégory, et al. “3d hand pose detection in egocentric rgb-d images.” _Workshop at the European conference on computer vision_. Springer, Cham, 2014.<a href="#reffn_5" title="Jump back to footnote [5] in the text."> &#8617;</a>
+<sup>5</sup>. Rogez, Grégory, et al. “3d hand pose detection in egocentric rgb-d images.” <em>Workshop at the European conference on computer vision</em>. Springer, Cham, 2014.<a href="#reffn_5" title="Jump back to footnote [5] in the text."> &#8617;</a>
 </blockquote>
 
         
@@ -245,9 +245,24 @@
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</footer>
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>
