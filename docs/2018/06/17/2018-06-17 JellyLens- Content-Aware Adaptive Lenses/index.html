@@ -151,7 +151,7 @@
 <li>作者：Cyprien Pindat, Emmanuel Pietriga, Olivier Chapuis, Claude Puech</li>
 <li>发表刊物/会议：2012 TVCG</li>
 </ul>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-18/18705982.jpg" alt></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-18/18705982.jpg" alt></p>
 <p>作者提出了 JellyLens，自适应的鱼眼透镜，根据内容来调整透镜形状，提高了焦点区域内容的可见性，又保留了较大部分的上下文区域。并进行了一个 user study 来证明其有效性。</p>
 <h2 id="整体思路："><a href="#整体思路：" class="headerlink" title="整体思路："></a>整体思路：</h2><ol>
 <li>引出透镜，表达透镜的益处，然后说明现有透镜的缺点，总结本技术优势和本文贡献点</li>
@@ -179,7 +179,7 @@
 <p>后者则是用来放大一整块填充区域。</p>
 <h3 id="PathLens"><a href="#PathLens" class="headerlink" title="PathLens"></a>PathLens</h3><p>在该种透镜下，透镜形状主要受两个因素的影响：离鼠标的距离和离最近的对象的距离（指的是可以被放大的那些对象，比如地图中的高速公路等）。</p>
 <p>文中用一个隐式函数来导出：当$f({\bf x}) = lens({\bf x - c}) + data({\bf x})=s$时，就是边界。大概效果如下：</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-18/72742188.jpg" alt></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-18/72742188.jpg" alt></p>
 <h3 id="AreaLens"><a href="#AreaLens" class="headerlink" title="AreaLens"></a>AreaLens</h3><p>相比于前者只考虑最近的对象，AreaLens 考虑了所有感兴趣的对象，更适合用来密集区域的块状填充对象。</p>
 <p>所有落在兴趣区域的对象都会有影响，而外面的则不影响。</p>
 <p>提出了四个设计需求：</p>
@@ -198,7 +198,7 @@
 <li><strong>dispersion mapping</strong>：1. 先对移动对象进行位移，位移向量会考虑所有方法对象，并进行加权；2. 缩小这些对象，保证不重叠</li>
 <li><strong>magnification mapping</strong>：离鼠标越近的放大对象则被放的越大</li>
 </ul>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-18/33950652.jpg" alt></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-18/33950652.jpg" alt></p>
 <h2 id="EVALUATION"><a href="#EVALUATION" class="headerlink" title="EVALUATION"></a>EVALUATION</h2><p>目标是证明相对固定透镜所拥有的潜在的优点（potential benefits）和缺点（pitfalls）</p>
 <p>比较了 AreaLens 和普通鱼眼（圆形，高斯核）</p>
 <p>任务是找寻视觉元素</p>
@@ -239,24 +239,9 @@
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

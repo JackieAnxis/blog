@@ -3,14 +3,14 @@ title: Wavelet-based Visual Analysis of Dynamic Networks
 date: 2018-06-24 21:19:00
 author: PaperReading
 tags:
-  ["Visualization", "Graph Visualization", "Dynamic Graph", "Graph Embedding"]
+    ["Visualization", "Graph Visualization", "Dynamic Graph", "Graph Embedding"]
 mathjax: true
 ---
 
-- 论文原文：Wavelet-based Visual Analysis of Dynamic Networks
-- 作者：Alcebiades Dal Col, Paola Valdivia, Fabiano Petronetto, Fabio Dias, Claudio T. Silva, Senior Member
-- 发表刊物/会议：2017 TVCG
-- ps: 语法错误这么多的文章不知道是怎么发出来的，大概是真的实力强劲
+-   论文原文：Wavelet-based Visual Analysis of Dynamic Networks
+-   作者：Alcebiades Dal Col, Paola Valdivia, Fabiano Petronetto, Fabio Dias, Claudio T. Silva, Senior Member
+-   发表刊物/会议：2017 TVCG
+-   ps: 语法错误这么多的文章不知道是怎么发出来的，大概是真的实力强劲
 
 ## 个人评述
 
@@ -19,10 +19,10 @@ mathjax: true
 1. 动态图转化成静态图的方法：通过在时序上相邻的两个图之间增加时序边的方法，将一系列动态图组合成一整个图，再对该图进行小波变换
 2. 小波变换对突变的检测：利用小波变换的高频部分来检测动态图中存在的突变。
 3. 制定的四个目标，基本上包含了动态图可视化中所存在的任务：
-   - **目标 1**：将网络当做整体来进行分析
-   - **目标 2**：对每个节点的分析。
-   - **目标 3**：重要节点的辨认。
-   - **目标 4**：相似节点的辨认。
+    - **目标 1**：将网络当做整体来进行分析
+    - **目标 2**：对每个节点的分析。
+    - **目标 3**：重要节点的辨认。
+    - **目标 4**：相似节点的辨认。
 4. 详尽的 usage scenario，甚至可能可以当做模板
 
 为了阅读这篇文章，我花了一段时间补习了傅里叶变换、小波变换、谱图理论的相关背景知识，但读这篇文章的理论部分还是有点困难，想了很久。
@@ -69,7 +69,7 @@ mathjax: true
 
 但并不是串联所有的动态图，作者在这里定义了一个时间窗口，在时间窗口内的图会被串联起来（比如 5 分钟）
 
-![image-20180624215039214](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-135039.png)
+![image-20180624215039214](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-135039.png)
 
 ### 节点信号和边权重
 
@@ -77,8 +77,8 @@ mathjax: true
 
 比如：
 
-- 在对纽约市的出租车的场景分析中，节点表示了一个区域，而节点的信号则对应这个区域的出租车接客数量，网络中的边则是两个区域之间的乘客上下，边权重则是接送的乘客数量。
-- 而在另一个场景分析中，作者将人转换成节点，节点信号则是一段时间内这个人的人际交往数量，也就是该节点的度数。
+-   在对纽约市的出租车的场景分析中，节点表示了一个区域，而节点的信号则对应这个区域的出租车接客数量，网络中的边则是两个区域之间的乘客上下，边权重则是接送的乘客数量。
+-   而在另一个场景分析中，作者将人转换成节点，节点信号则是一段时间内这个人的人际交往数量，也就是该节点的度数。
 
 总而言之，如果自己定义信号，用图小波变换进行可视分析则是对节点的某个特征在拓扑空间和时间上的分布进行的分析。如果没有定义，那么就是对这个节点的拓扑信息进行了分析。
 
@@ -92,11 +92,11 @@ mathjax: true
 
 分类方法：机械扭矩。类似于将特征向量的各个值放在跷跷板上，看这个跷跷板往哪边偏，来判定这个特征向量主要是低频的还是高频的。
 
-![image-20180624223752644](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-143752.png)
+![image-20180624223752644](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-143752.png)
 
 分类的这种方法，比直接解释系数容易的多。一共分成五类：
 
-[-1, -0.3), [0.3, -0.05], [-0.05, 0.05), [0.05, 0.3), [0.3, 1]，编码从深蓝到红色。![image-20180624225101805](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-145102.png)
+[-1, -0.3), [0.3, -0.05], [-0.05, 0.05), [0.05, 0.3), [0.3, 1]，编码从深蓝到红色。![image-20180624225101805](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-145102.png)
 
 红色的节点，代表了信号的突变（时间和空间邻域上），但作者并未解释为什么高频代表了突变。
 
@@ -104,19 +104,19 @@ mathjax: true
 
 宗旨是为了能够发现动态网络中的 pattern 以及这些 pattern 是如何随时间演变的。
 
-- **目标 1**：将网络当做整体来进行分析
-- **目标 2**：对每个节点的分析。
-- **目标 3**：重要节点的辨认。
-- **目标 4**：相似节点的辨认。
+-   **目标 1**：将网络当做整体来进行分析
+-   **目标 2**：对每个节点的分析。
+-   **目标 3**：重要节点的辨认。
+-   **目标 4**：相似节点的辨认。
 
 四个界面：
 
-![image-20180625001348008](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-161348.png)
+![image-20180625001348008](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-161348.png)
 
-- Netowok Analyzer：对网络整体变化的一个概览
-- Time Slice View: 对某个时间片段的详细分析
-- Node Ranking：识别某个时间片段的相关节点
-- Node Time Series：对某个节点进行详细分析
+-   Netowok Analyzer：对网络整体变化的一个概览
+-   Time Slice View: 对某个时间片段的详细分析
+-   Node Ranking：识别某个时间片段的相关节点
+-   Node Time Series：对某个节点进行详细分析
 
 #### Network Analyzer
 
@@ -126,7 +126,7 @@ mathjax: true
 
 对某个给定的时间片的节点，做了力引导。之后花了篇幅讲解了这个视图的有效性。
 
-![image-20180625001408755](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-161409.png)
+![image-20180625001408755](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-161409.png)
 
 #### Node Ranking
 

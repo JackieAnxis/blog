@@ -152,7 +152,7 @@
 <h2 id="图的傅里叶变换"><a href="#图的傅里叶变换" class="headerlink" title="图的傅里叶变换"></a>图的傅里叶变换</h2><h3 id="Graph-Fourier-Transform"><a href="#Graph-Fourier-Transform" class="headerlink" title="Graph Fourier Transform"></a><strong>Graph Fourier Transform</strong></h3><p>关于傅里叶变换请看：<a href="https://jackieanxis.github.io/blog-others/2018/06/19/%E5%82%85%E9%87%8C%E5%8F%B6%E5%88%86%E6%9E%90/" target="_blank" rel="noopener">【转】傅里叶分析之掐死教程（完整版）</a></p>
 <p>关于拉普拉斯矩阵的一些特性可以看我的另一篇博客：<a href="https://jackieanxis.github.io/blog-others/2018/06/19/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%9F%A9%E9%98%B5%E4%BA%8C%E5%88%86%E6%B3%95/" target="_blank" rel="noopener">拉普拉斯矩阵二分法</a></p>
 <p>假设一个无向正权图$G=(V,E)$，其邻接矩阵表示成$A$，每个元素代表边的权重。其度矩阵表示成$D$，是一个对角矩阵，对角线的元素则是每个节点所带的连接边的权重和（$d_{ij}=\sum_kw_{ik}$），这里不考虑自环。那么拉普拉斯矩阵（Laplacian）就是$L=D-A$。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-19/21849016.jpg" alt></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-19/21849016.jpg" alt></p>
 <p>拉普拉斯矩阵是对称的半正定矩阵。因此有一组标准正交的特征向量$\{u_i\}, i \in \{1,…,n\}$，对应一组递增的非负实特征值$\{\lambda_i\},i \in \{1,…n\},0=\lambda_1&lt;\lambda_2\leq\cdots\leq\lambda_n$。小的$\lambda_i$就对应了傅里叶变换中的低频。</p>
 <p>假如给定一个将节点$V$映射成实数$\Bbb R$的实函数$f$，那么在频率$\lambda_l$上，$f$对应的傅里叶变换可以定义成：</p>
 <script type="math/tex; mode=display">
@@ -171,7 +171,7 @@ x^2, &\text{for $x < 1$} \\\
 -5+11x-6x^2+x^3, &\text{for $1\leq x \leq 2$}\\\
 4x^{-2}, &\text{for $2 < x$}
 \end{cases}</script><p>函数形状为：</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-19-image-20180619231116668.png" alt="image-20180619231116668"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-19-image-20180619231116668.png" alt="image-20180619231116668"></p>
 <p>可以得知，当$x$在$[1,2]$之间时，$g(x)$会较大。所以小的$s$值，会对大的$\lambda_l$（对局部特征描述的更详细）更有效果，而大的$s$则对小的（也就是低频的）$\lambda_l$（粗糙的描述了节点的局部特征）更有效果。</p>
 <p>我们知道，傅里叶变换仅仅将时域转换成频域，但无法知道特定时间的频域（因为它没有时间维度）；小波变换解决的问题就是能够知道特定时间上的频域是如何的，见<a href="https://zhuanlan.zhihu.com/p/22450818" target="_blank" rel="noopener">形象易懂讲解算法 I——小波变换</a>。</p>
 <p>以此类比：</p>
@@ -187,7 +187,7 @@ S_f(j)=\sum_{l=1}^nh(\lambda_l)\hat{f}(l)u_l(j)</script><p>其中，缩放函数
 <script type="math/tex; mode=display">
 h(x)=\gamma exp(-(\frac{10x}{0.3\lambda_n})^4)</script><h3 id="小波系数的解释"><a href="#小波系数的解释" class="headerlink" title="小波系数的解释"></a>小波系数的解释</h3><p>小波系数可以解释成在特定频率的原始信号的能量。传统的小波变换中，高频区域对邻域的表达更好一些，所以相邻点之间在高频区域会有较大的差别，但在低频区域的差别更平滑。在网络（或者说图）中，也是一样的。</p>
 <p>图的小波变换，能够为每个节点生成一组系数，代表了不同频率的能量。如下图所示，小波变换系数的分布更为平滑的节点，往往是低频节点（指的是低频率的小波系数更为突出的节点，图中浅绿色的节点），而反之，则是高频节点（高频系数更为突出，图中深绿色节点），小波系数分布不是很平滑，相邻的小波系数之间差距可能会较大。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-124458.png" alt="image-20180624204457467"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-124458.png" alt="image-20180624204457467"></p>
 
         
         <br />
@@ -222,24 +222,9 @@ h(x)=\gamma exp(-(\frac{10x}{0.3\lambda_n})^4)</script><h3 id="小波系数的�
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

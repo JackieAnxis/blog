@@ -148,7 +148,7 @@
     <div class="post-content ">
         <h2 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h2><h3 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h3><p>表格标签最重要的这几个标签都基本包含在这个代码中，</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1px"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">caption</span>&gt;</span>表格标题<span class="tag">&lt;/<span class="name">caption</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">	  <span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>列标题1<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>列标题2<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>行1列1<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>行1列2<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>行2列1<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>行2列2<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tfoot</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">"2"</span>&gt;</span>……<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--colspan可以用来合并列，rowspan可以用来合并行--&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">tfoot</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>效果大概是：<br><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-8-12/59167503.jpg" alt><br>可以看到：</p>
+<p>效果大概是：<br><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-8-12/59167503.jpg" alt><br>可以看到：</p>
 <ul>
 <li><code>&lt;table&gt;</code>标签包裹在最外层，表示这是一个表格。它有一些必要的属性，比如控制边框粗细，边框和内容之间的空白宽度等，具体见：<a href="http://www.w3school.com.cn/tags/tag_table.asp" target="_blank" rel="noopener">HTML table 标签</a>。</li>
 <li><code>&lt;caption&gt;</code>，这是一个表格的标题</li>
@@ -193,24 +193,9 @@
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

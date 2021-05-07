@@ -6,11 +6,11 @@ tags: ["Visualization", "Graph Visualization", "Large Graph"]
 mathjax: true
 ---
 
-- 论文原文：Reﬁnery, Visual Exploration of Large, HeterogeneousNetworks through Associative Browsing
-- 作者：S. Kairam, N. H. Riche, S. Drucker, R. Fernandez, and J. Heer
-- 发表刊物/会议：2015 EuroVis
+-   论文原文：Reﬁnery, Visual Exploration of Large, HeterogeneousNetworks through Associative Browsing
+-   作者：S. Kairam, N. H. Riche, S. Drucker, R. Fernandez, and J. Heer
+-   发表刊物/会议：2015 EuroVis
 
-![image-20180628165322984](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-28-085323.png)
+![image-20180628165322984](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-28-085323.png)
 
 ## 介绍
 
@@ -46,7 +46,7 @@ Mae 最近参加了一个关于人机交互中的伦理学研究的会议，她�
 
 Mae 在这里输入了关键词*ethics*，会返回一些相关的匹配结果（下图 a）。然后她继续输入了*Honorable Mention*。
 
-![image-20180628162048090](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-28-082048.png)
+![image-20180628162048090](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-28-082048.png)
 
 ##### Sidebar
 
@@ -54,13 +54,13 @@ Mae 在这里输入了关键词*ethics*，会返回一些相关的匹配结果�
 
 ##### Graph View
 
-![image-20180628163354240](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-28-083354.png)
+![image-20180628163354240](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-28-083354.png)
 
 在图视图中，与 Mae 选择的关键词相关的节点以及他们之间的连接被可视化出来。在图视图中，Mae 找到了一篇题为*Categorised Ethical Guidelines for Large Scale Mobile HCI*的文章，并阅读了摘要。她认为这篇文章已经十分接近她想要找的那篇文章，就将这篇文章添加到查询关键字中，这时，*CHI2013: Ethics in HCI*出现在图视图中，Mae 将这个节点也添加进查询中。
 
 ##### List View
 
-![image-20180628163728991](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-28-083729.png)
+![image-20180628163728991](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-28-083729.png)
 
 切换到列表视图后，Mae 最终找到了她想要的那篇文章*Benevolent Deception in Human Computer Interaction*。
 

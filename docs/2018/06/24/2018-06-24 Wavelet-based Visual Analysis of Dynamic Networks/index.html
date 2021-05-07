@@ -197,7 +197,7 @@
 </ol>
 <h3 id="动态图模型"><a href="#动态图模型" class="headerlink" title="动态图模型"></a>动态图模型</h3><p>作者将一系列的动态图相互串联（两个邻时刻同样的点之间，用临时的边进行链接，如图中的蓝边），以形成一整个图，从而应用图小波变换对其进行分析。</p>
 <p>但并不是串联所有的动态图，作者在这里定义了一个时间窗口，在时间窗口内的图会被串联起来（比如 5 分钟）</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-135039.png" alt="image-20180624215039214"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-135039.png" alt="image-20180624215039214"></p>
 <h3 id="节点信号和边权重"><a href="#节点信号和边权重" class="headerlink" title="节点信号和边权重"></a>节点信号和边权重</h3><p>节点信号的定义和边权重的定义都对分析有着重要影响。</p>
 <p>比如：</p>
 <ul>
@@ -209,9 +209,9 @@
 <h3 id="节点分类"><a href="#节点分类" class="headerlink" title="节点分类"></a>节点分类</h3><p>每个节点都用一个特征向量（feature vector，并非 eigenvector）来进行分类，这个特征向量事实上就是小波系数$FV_j=(S_f(j), W_f(s_r,j), \ldots, W_f(s_1, j))$。</p>
 <p>减少噪声：每个时间片中的孤立节点会被分配为 0 类。</p>
 <p>分类方法：机械扭矩。类似于将特征向量的各个值放在跷跷板上，看这个跷跷板往哪边偏，来判定这个特征向量主要是低频的还是高频的。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-143752.png" alt="image-20180624223752644"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-143752.png" alt="image-20180624223752644"></p>
 <p>分类的这种方法，比直接解释系数容易的多。一共分成五类：</p>
-<p>[-1, -0.3), [0.3, -0.05], [-0.05, 0.05), [0.05, 0.3), [0.3, 1]，编码从深蓝到红色。<img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-145102.png" alt="image-20180624225101805"></p>
+<p>[-1, -0.3), [0.3, -0.05], [-0.05, 0.05), [0.05, 0.3), [0.3, 1]，编码从深蓝到红色。<img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-145102.png" alt="image-20180624225101805"></p>
 <p>红色的节点，代表了信号的突变（时间和空间邻域上），但作者并未解释为什么高频代表了突变。</p>
 <h3 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h3><p>宗旨是为了能够发现动态网络中的 pattern 以及这些 pattern 是如何随时间演变的。</p>
 <ul>
@@ -221,7 +221,7 @@
 <li><strong>目标 4</strong>：相似节点的辨认。</li>
 </ul>
 <p>四个界面：</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-161348.png" alt="image-20180625001348008"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-161348.png" alt="image-20180625001348008"></p>
 <ul>
 <li>Netowok Analyzer：对网络整体变化的一个概览</li>
 <li>Time Slice View: 对某个时间片段的详细分析</li>
@@ -230,7 +230,7 @@
 </ul>
 <h4 id="Network-Analyzer"><a href="#Network-Analyzer" class="headerlink" title="Network Analyzer"></a>Network Analyzer</h4><p>每个时间片段被编码成一个圆，圆的垂直位置由包含的节点的信号值总和给出，节点颜色则是最大类的颜色。需要明白的是，这里的最大类并不是说当前时间片段包含节点最多的类，而是相对于该类在其他时间包含的节点数而言最大。</p>
 <h4 id="Time-Slice-View"><a href="#Time-Slice-View" class="headerlink" title="Time Slice View"></a>Time Slice View</h4><p>对某个给定的时间片的节点，做了力引导。之后花了篇幅讲解了这个视图的有效性。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-161409.png" alt="image-20180625001408755"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-161409.png" alt="image-20180625001408755"></p>
 <h4 id="Node-Ranking"><a href="#Node-Ranking" class="headerlink" title="Node Ranking"></a>Node Ranking</h4><p>对节点与该时间片段的相关性来排序。被标记为红色或者橙色的节点，才会认为这种节点和当前时间片会相关。</p>
 <h4 id="Node-Time-Series"><a href="#Node-Time-Series" class="headerlink" title="Node Time Series"></a>Node Time Series</h4><p>展示了某个特定节点随着时间的变化。</p>
 
@@ -267,24 +267,9 @@
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

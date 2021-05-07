@@ -183,18 +183,18 @@
 </ul>
 </li>
 </ul>
-<h4 id="链接标签-link"><a href="#链接标签-link" class="headerlink" title="链接标签 link"></a>链接标签 <code>link</code></h4><p><code>&lt;link&gt;</code>标签主要用来引入外部资源，最常用的用途就是引入外部 css 样式表和定义页面标签的 ICON 图标。<br><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-8-1/22509611.jpg" alt><br>详细内容见<a href="http://www.w3school.com.cn/tags/tag_link.asp" target="_blank" rel="noopener">【HTML link 标签 W3School】</a></p>
+<h4 id="链接标签-link"><a href="#链接标签-link" class="headerlink" title="链接标签 link"></a>链接标签 <code>link</code></h4><p><code>&lt;link&gt;</code>标签主要用来引入外部资源，最常用的用途就是引入外部 css 样式表和定义页面标签的 ICON 图标。<br><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-8-1/22509611.jpg" alt><br>详细内容见<a href="http://www.w3school.com.cn/tags/tag_link.asp" target="_blank" rel="noopener">【HTML link 标签 W3School】</a></p>
 <ul>
 <li><strong>定义 ICON 图标</strong>：<code>&lt;link rel=&quot;shortcut icon&quot; href=&quot;favicon.ico&quot;&gt;</code> 属性<code>rel=&quot;shortcut icon&quot;</code>用来指示这段代码是用来引入 ICON 图标，而 href 则用来写 icon 图标的位置。</li>
 <li><strong>引入外部 CSS 样式</strong>：<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;../css/style.css&quot;&gt;</code> 属性<code>rel=&quot;stylesheet&quot;</code>用来指示这段代码是用来引入 CSS 样式资源的，而同样的，href 则是写这个 CSS 文件的地址是”../css/style.css”</li>
 </ul>
 <h4 id="样式标签-style"><a href="#样式标签-style" class="headerlink" title="样式标签 style"></a>样式标签 <code>style</code></h4><p><code>&lt;style&gt;</code>标签之间，可以用来写 CSS 样式代码，比如这样</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">  h1 &#123;</span><br><span class="line">    color: red;</span><br><span class="line">  &#125;</span><br><span class="line">  p &#123;</span><br><span class="line">    color: blue;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">    h1 &#123;</span><br><span class="line">        color: red;</span><br><span class="line">    &#125;</span><br><span class="line">    p &#123;</span><br><span class="line">        color: blue;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="标签属性"><a href="#标签属性" class="headerlink" title="标签属性"></a>标签属性</h2><p>什么是标签属性呢，可以这么理解，一个标签是一个人，那么 id 属性就是这个人的身份证号，class 属性就可以理解成一个人的民族，style 属性就是一个人长什么样等等等等类似，接下来就来详细了解几个常用的标签属性。具体可以看<a href="http://www.w3school.com.cn/html/html_attributes.asp" target="_blank" rel="noopener">【HTML 属性】</a>。</p>
 <h3 id="id属性"><a href="#id属性" class="headerlink" title="id属性"></a><code>id</code>属性</h3><p><code>&lt;div id=&quot;...&quot;&gt;&lt;/div&gt;</code><br>上面提到，id 属性事实上就是一个标签的身份证号，在一个页面下，这个 id 属性的内容一定要保证在这个页面中是唯一的（虽然发生重复也不会报错），但是如果你用 JS 脚本来找到这个元素的时候就会出错，只能找到第一个。<br>id 属性是一个标签的标志，所以可以通过 ID 属性来找到唯一的一个标签。</p>
 <h3 id="class属性"><a href="#class属性" class="headerlink" title="class属性"></a><code>class</code>属性</h3><p><code>&lt;div class=&quot;...&quot;&gt;&lt;/div&gt;</code><br>class 属性，则是一个标签的类名。拥有同一个类名的标签不用唯一，可以有很多个，也可以通过 class 属性来获得这些带有同一属性的标签。<br><strong>※id 和 class 的区别</strong>：拥有同一个 id 属性的标签在同一个页面下只能有一个（虽然有多个也不会报错），但是拥有同一个 class 属性的标签可以出现多个。</p>
 <h3 id="style属性"><a href="#style属性" class="headerlink" title="style属性"></a><code>style</code>属性</h3><p><code>&lt;div style=&quot;...&quot;&gt;&lt;/div&gt;</code><br>style 属性，是一个标签的外表。可以直接在 style 属性中写样式，但是后面我们会提到，在这里面写的样式具有较高的优先级。不推荐 在这里写样式，因为会增加标签长度。</p>
-<h3 id="title-属性"><a href="#title-属性" class="headerlink" title="title 属性"></a>title 属性</h3><p><code>&lt;div title=&quot;...&quot;&gt;&lt;/div&gt;</code><br>title 属性规定了元素的额外的一些信息，当鼠标移动到元素上方就会显示这些信息。<br><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-8-9/52350225.jpg" alt></p>
+<h3 id="title-属性"><a href="#title-属性" class="headerlink" title="title 属性"></a>title 属性</h3><p><code>&lt;div title=&quot;...&quot;&gt;&lt;/div&gt;</code><br>title 属性规定了元素的额外的一些信息，当鼠标移动到元素上方就会显示这些信息。<br><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-8-9/52350225.jpg" alt></p>
 
         
         <br />
@@ -229,24 +229,9 @@
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

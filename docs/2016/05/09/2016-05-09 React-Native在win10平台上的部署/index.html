@@ -145,19 +145,20 @@
 <h3 id="安装-Android-SDK-并下载重要组件："><a href="#安装-Android-SDK-并下载重要组件：" class="headerlink" title="安装 Android SDK 并下载重要组件："></a>安装 Android SDK 并下载重要组件：</h3><ol>
 <li><p>下载 Android SDK<br>如果你已经安装过 eclipse 集成版本或者 Android Stutio 就默认已经安装了 SDK<br>如果你没装过，需要去下载<a href="http://tools.android-studio.org/index.php/sdk" target="_blank" rel="noopener">android SDK</a>，下载完安装就行了。</p>
 </li>
-<li><p>配置环境变量<br>将 SDK 的 platform-tools 子目录加入 PATH 环境变量<br>将 ANDROID_HOME 环境变量设置成的 SDK 的目录，比如我的：<br><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-5-9/98466475.jpg" alt></p>
+<li><p>配置环境变量<br>将 SDK 的 platform-tools 子目录加入 PATH 环境变量<br>将 ANDROID_HOME 环境变量设置成的 SDK 的目录，比如我的：<br><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-5-9/98466475.jpg" alt></p>
 </li>
 <li><p>打开 Android SDK 下载重要组件：<br>用行命令打开 SDK</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android sdk</span><br></pre></td></tr></table></figure>
-<p>你需要勾选以下组件：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android sdk</span><br></pre></td></tr></table></figure>
+<p> 你需要勾选以下组件：</p>
 <ul>
 <li>Tools/Android SDK Tools(&gt;=24.3.3)</li>
 <li>Tools/Android SDK Platform-tools(&gt;=22)</li>
 <li>Tools/Android SDK Build-tools(==23.0.1)</li>
 <li>Android 6.0 (API 23)/SDK Platform(&gt;=1)</li>
-<li>Extras/Android Support Repository(&gt;=29)</li>
-</ul>
+<li><p>Extras/Android Support Repository(&gt;=29)</p>
 <p>下载之前:如果你没有科学上网工具，可以选择腾讯的<a href="http://android-mirror.bugly.qq.com:8080/include/usage.html" target="_blank" rel="noopener">Bugly</a>来代理下载<br>之后就慢慢等待完成即可~</p>
+</li>
+</ul>
 </li>
 </ol>
 <h3 id="下载安装-node-js"><a href="#下载安装-node-js" class="headerlink" title="下载安装 node.js"></a>下载安装 node.js</h3><p>去官网下一个安装（4.1 及以上版本），本教程是不会讲的（哼，自己去看<a href="http://www.cnblogs.com/pigtail/archive/2013/01/08/2850486.html" target="_blank" rel="noopener">这篇博客</a>吧</p>
@@ -170,20 +171,20 @@
 <h3 id="创建并启动-React-Native"><a href="#创建并启动-React-Native" class="headerlink" title="创建并启动 React-Native"></a>创建并启动 React-Native</h3><p>特别提示：这之前你可以先准备一部电影:)，因为过程将很漫长 hhhh</p>
 <ol>
 <li><p>创建一个工作的文件夹，如：MyProject，在该文件下使用 shift+右键，找到<strong>在此处打开命令窗口</strong>或者<strong>Git Bash</strong>并打开，输入以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native init MyProject</span><br></pre></td></tr></table></figure>
-<p>千万要耐心等待几<del>分钟</del>小时，而且还有很大可能失败……</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native init MyProject</span><br></pre></td></tr></table></figure>
+<p> 千万要耐心等待几<del>分钟</del>小时，而且还有很大可能失败……</p>
 </li>
 <li><p>运行你的 package</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native start</span><br></pre></td></tr></table></figure>
-<p>之后会出现<br><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-5-9/58757400.jpg" alt><br>之后需要保持该窗口，不要关闭<br>打开<a href="http://localhost:8081/index.android.bundle?platform=android" target="_blank" rel="noopener">这个链接</a>如果能看到一堆 js 代码，说明已经启动成功（第一次访问的时候需要等待一会）</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native start</span><br></pre></td></tr></table></figure>
+<p> 之后会出现<br> <img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-5-9/58757400.jpg" alt><br> 之后需要保持该窗口，不要关闭<br> 打开<a href="http://localhost:8081/index.android.bundle?platform=android" target="_blank" rel="noopener">这个链接</a>如果能看到一堆 js 代码，说明已经启动成功（第一次访问的时候需要等待一会）</p>
 </li>
 <li><p>打开你的安卓模拟器</p>
 </li>
 <li><p>另外再打开一个 git 或者 cmd，进入到工程目录，运行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native run-android</span><br></pre></td></tr></table></figure>
-<p>第一次跑的时候要下载一个 gradle,会下载很长时间，出现很多白点点，你可以接着看上面没看完的那部电影 hhhh</p>
-<p>如果你看到有各种 failed，可以去<a href="http://www.jianshu.com/p/13adec293492" target="_blank" rel="noopener">React Native 的常见问题</a>以下文章找找原因。<br>最常见的是找不到 device，需要检查你是否打开了虚拟机或者是否连接了真机，可以使用：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native run-android</span><br></pre></td></tr></table></figure>
+<p> 第一次跑的时候要下载一个 gradle,会下载很长时间，出现很多白点点，你可以接着看上面没看完的那部电影 hhhh</p>
+<p> 如果你看到有各种 failed，可以去<a href="http://www.jianshu.com/p/13adec293492" target="_blank" rel="noopener">React Native 的常见问题</a>以下文章找找原因。<br> 最常见的是找不到 device，需要检查你是否打开了虚拟机或者是否连接了真机，可以使用：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在你的模拟器上调试<br>你的模拟器上应该会出现一个 MyProject 的 app，打开之后一般都会出现红屏，不要慌张，因为还没完成。<br>首先找到你的 ip 地址，比如 12.23.34.45<br>需要摇晃设备，或者按 menu 键打开菜单<br>点击 Dev Settings<br>选 Debug server host for device<br>输入 你的 IP 地址:8081，如:12.23.34.45:8081<br>返回之后进行 Reload JS, 大概就能看到完成后的样子了</p>
 </li>
@@ -223,24 +224,9 @@
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

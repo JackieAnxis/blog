@@ -152,20 +152,20 @@
 <li><code>&lt;ul&gt;</code>标签：无序列表(默认样式是不带序号的)</li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>效果：<img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-8-9/3495335.jpg" alt></p>
+<p>效果：<img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-8-9/3495335.jpg" alt></p>
 <ul>
 <li><code>&lt;ol&gt;</code>标签：有序列表(默认是带有数字序号的,控制<code>type=&quot;a&quot; start=&quot;2&quot;</code>就会从 b 开始排序)</li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span> <span class="attr">type</span>=<span class="string">"a"</span> <span class="attr">start</span>=<span class="string">"2"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>效果：<img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-8-9/8684718.jpg" alt></p>
+<p>效果：<img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-8-9/8684718.jpg" alt></p>
 <ul>
 <li><code>&lt;dl&gt;</code>标签：自定义列表(如：问答列表，术语定义列表)</li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dt</span>&gt;</span>列表标题1<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dd</span>&gt;</span>列表标题1下的内容1<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dd</span>&gt;</span>列表标题1下的内容2<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dt</span>&gt;</span>列表标题2<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dd</span>&gt;</span>列表标题2下的内容<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>效果：<img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-8-9/12583532.jpg" alt></p>
+<p>效果：<img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-8-9/12583532.jpg" alt></p>
 <h4 id="格式-pre"><a href="#格式-pre" class="headerlink" title="格式 pre"></a>格式 <code>pre</code></h4><p>首先需要提到一个问题，就是在 HTML 一般的标签中，都是默认会自动删除换行符，将多个空格合并成一个，将行缩进（tab）替换成空格。所以有时候就会有保留原格式的需求，在 pre 标签中，就不会有以上的问题。</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">	hello!</span><br><span class="line">	every        one!</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span></span><br><span class="line">	hello!</span><br><span class="line">	every        one!</span><br><span class="line"><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>效果：<img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-8-9/713675.jpg" alt></p>
+<p>效果：<img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/16-8-9/713675.jpg" alt></p>
 <h4 id="块级引用-blockquote"><a href="#块级引用-blockquote" class="headerlink" title="块级引用 blockquote"></a>块级引用 blockquote</h4><p>其实和 p,段落标签也没什么区别，只是引用段落的时候比较常用罢了。</p>
 
         
@@ -201,24 +201,9 @@
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

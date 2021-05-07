@@ -152,14 +152,14 @@
 <li>手和物体的交互</li>
 <li>该场景下，标注数据的缺失</li>
 </ul>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-5-3/94908344.jpg" alt></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-5-3/94908344.jpg" alt></p>
 <blockquote>
 <p>图 1，第一人称视角的手势跟踪</p>
 </blockquote>
 <p>本文总结了近几年在第一人称手势估计方面的顶级工作。这些方法基本上都是基于卷积神经网络进行，利用已有的，或者自己采集的，真实的或者合成的数 据进行训练。一般针对与物体交互的场景进行，需要在有遮挡、杂乱无章的环境下进行。</p>
 <h3 id="二、手部姿势估计的一般过程"><a href="#二、手部姿势估计的一般过程" class="headerlink" title="二、手部姿势估计的一般过程"></a>二、手部姿势估计的一般过程</h3><p>一般而言，第一人称视角下，手部姿势估计过程可以分成两步，手部定位和姿势估计。近几年，这两者基本上都可以通过卷积神经网络实现。</p>
 <p><strong>手部定位</strong>：通过训练好的，多层卷积神经网络，我们可以得到一个关于手部中心位置的置信度分布图，从而可以绘制成热力图的形式，如图 2。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-5-3/61027681.jpg" alt></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-5-3/61027681.jpg" alt></p>
 <blockquote>
 <p>图 2，卷积神经网络输出的热力图</p>
 </blockquote>
@@ -169,14 +169,14 @@
 <p>Choi 等人的工作<sup><a href="#fn_2" id="reffn_2">2</a></sup>中，提出了一种用模型进行拟合的方式，来优化模拟手对于模拟物体的抓握姿势的方法。该工作使用了粒子群优化方法（particle swarm optimization），对虚拟的三维手模型和被该手握住的模型的距离误差进行最小化。之后，作者通过碰撞检测技术来判断这个虚拟手部的抓取是否有效，从而排除无效的抓取。之后作者从模型中导出了相应的手的关节角度参数。最后作者将虚拟手部的深度图插入到杂乱无章的背景中，以模仿现实世界的真是噪音的存在。</p>
 <h4 id="2-半合成数据"><a href="#2-半合成数据" class="headerlink" title="2 半合成数据"></a>2 半合成数据</h4><p>为了在真实性和数据的多样性、易获取性上做出权衡，Mueller 等人的工作<sup><a href="#fn_3" id="reffn_3">3</a></sup>则采用了半合成数据的方法，作者称为混合现实（merged reality）。如图 3a 所示，作者用一个无标记跟踪摄像头，用以从第三视角，跟踪一个无遮挡的真实手部，产生跟踪数据（这种方法已经很成熟），从而用以操作虚拟 3D 模型手来抓取虚拟的物体。通过这个方法可以增加数据的真实性。</p>
 <p>这种方式的优点在于，既保留了一定的手部运动真实性，又能模拟出大量不同的虚拟手部（比如肤色的不同，手指长短，体毛浓密等等），与各种不同类型物体的交互以及各种不同的场景。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-5-3/74120103.jpg" alt></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-5-3/74120103.jpg" alt></p>
 <blockquote>
 <p>图 3，a：混合现实（merged reality）方式获取手部数据，b：使用传感器和 RGB-D 相机 采集第一人称数据</p>
 </blockquote>
 <h3 id="3-真实数据"><a href="#3-真实数据" class="headerlink" title="3 真实数据"></a>3 真实数据</h3><p>在 Garcia-Hernando<sup><a href="#fn_4" id="reffn_4">4</a></sup>的工作中，采集了超过 100,000 个有 3D 手姿势注释的 RGB-D 帧，使用装在指尖上的六个磁性传感器进行数据采集，如图 3b。其中包括 45 个类别，在 3 个场景中，与 25 个不同的物体进行交互。作者静心设计了不同的手部动作，以保证能覆盖较多的姿势，交互时间和运动状态。</p>
 <h3 id="四、手部定位方法（Localization）"><a href="#四、手部定位方法（Localization）" class="headerlink" title="四、手部定位方法（Localization）"></a>四、手部定位方法（Localization）</h3><p>因为卷积神经网络（CNN）方法的成熟，现如今，手部定位基本上都采用卷积神经网络来进行，Choi 等人的工作，也证明了卷积神经网络相对于随机森林方法的优势<sup><a href="#fn_1" id="reffn_1">1</a></sup>。在经过训练好的深度神经网络的估计之后，一般会输出一张关于手部中心位置置信度的热力图。</p>
 <p>比如，在 Choi 等人的工作中<sup><a href="#fn_2" id="reffn_2">2</a></sup>，训练了一个带有六个卷积层，以及一个非线性判定层的卷积神经网络，用以判定输入图中的手心位置以及物体位置，如图 4。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-5-3/69002183.jpg" alt></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-5-3/69002183.jpg" alt></p>
 <blockquote>
 <p>图 4：由五层卷积层与一层非线性层构成的位置估计卷积网络</p>
 </blockquote>
@@ -185,12 +185,12 @@
 <p>经过更新，最大值位置不会随着时间变化而发生较剧烈的变化。</p>
 <h3 id="五、手势估计方法（Hand-Pose-Estimation）"><a href="#五、手势估计方法（Hand-Pose-Estimation）" class="headerlink" title="五、手势估计方法（Hand Pose Estimation）"></a>五、手势估计方法（Hand Pose Estimation）</h3><p>目前有的手势估计方法基本上可以分成两类，基于分类的方法和基于回归的方法。</p>
 <h4 id="分类方法"><a href="#分类方法" class="headerlink" title="分类方法"></a>分类方法</h4><p>Rogez 等人在 2014 年发表的文章<sup><a href="#fn_5" id="reffn_5">5</a></sup>中，使用了分层量化的分类器。首先，需要构建一棵姿态类别树，每个节点都代表了一种姿态，层次越高的姿态，普遍性越高。而越接近叶节点，代表其手势的细节越多，更特殊，如图 5 所示。接下去，可以使用宽度优先搜索（BFS）来对输入的手势进行评估，对树的每一层，都可以剪掉那些评级为 0 的节点（也就是没有吻合性的姿态）。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-5-3/60258705.jpg" alt></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-5-3/60258705.jpg" alt></p>
 <blockquote>
 <p>图 5，手势层次量化分类器</p>
 </blockquote>
 <p>Choi 等人的工作<sup><a href="#fn_2" id="reffn_2">2</a></sup>，用一个卷积神经网络，训练了一个分类器，已分类手部姿态，该工作的场景中，用户会抓取一个未知的物体。在训练分类器之前，作者认为，在追踪用户的手部姿态的时候，会因为传感器噪声等，导致输出的 RGB-D 图像存在一定缺失。故而在训练该分类器的同时，训练了输入数据再生成网络，通过自动编码器的方法实现输入数据复原。自动编码器由编码器（将高维数据映射到较低的维特征空间来降低输入的维数）和解码器（通过将学到的表示，映射回高维空间来恢复原始输入）构成，两者都是卷积神经网络，作者为两者都加入了四层隐含层，如图 6a。之后，作者认为手的姿态和物体形状高度相关，所以在训练手部姿态分类器的同时，也加入了另一个神经网络作为物体形状的分类器，并共享这两者的决策层，来协作学习手和物体的成对的卷积特征，以增加分类准确性，如图 6a。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-5-3/74747573.jpg" alt></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-5-3/74747573.jpg" alt></p>
 <blockquote>
 <p>图 6，a：RGB-D 图 数据再生成网络，b：手势分类器神经网络的架构</p>
 </blockquote>
@@ -245,24 +245,9 @@
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

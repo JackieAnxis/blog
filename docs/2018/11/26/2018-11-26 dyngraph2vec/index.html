@@ -166,7 +166,7 @@ L_{t+1} &= \parallel (\hat{A_{t+l+1}}-A_{t+l+1})\odot \mathcal{B} \parallel^2_F 
 <p>$\mathcal{B}$是惩罚项，$\mathcal{B}_{ij}=\beta, for (i,j) \in E_{t+l+1}, else 1$。</p>
 <p>$\odot​$表示一种矩阵的布尔运算，具体定义可以在这个<a href="https://www.math.fsu.edu/~pkirby/mad2104/SlideShow/s5_4.pdf" target="_blank" rel="noopener">pdf</a>里面找一下（<a href="https://www.math.fsu.edu/~pkirby/mad2104/SlideShow/s5_4.pdf），不再详述。" target="_blank" rel="noopener">https://www.math.fsu.edu/~pkirby/mad2104/SlideShow/s5_4.pdf），不再详述。</a></p>
 <p>文章使用的深度学习模型有如下三种：$dyngraph2vecAE, dyngraph2vecRNN, dyngraph2vecAERNN$。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181126170553492.png" alt="image-20181126170553492"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181126170553492.png" alt="image-20181126170553492"></p>
 <p>我们可以看到，这三种方法都分成两个步骤，Deep encoders 的目的，是输入动态的邻接矩阵，为每个节点生成低维向量；Deep decoders 则可以根据低维向量，来生成下一时刻的预测图。</p>
 
         
@@ -202,24 +202,9 @@ L_{t+1} &= \parallel (\hat{A_{t+l+1}}-A_{t+l+1})\odot \mathcal{B} \parallel^2_F 
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

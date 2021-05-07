@@ -6,11 +6,11 @@ tags: ["Visualization", "Fisheye", "Graph Visualization"]
 mathjax: true
 ---
 
-- 论文原文：JellyLens- Content-Aware Adaptive Lenses
-- 作者：Cyprien Pindat, Emmanuel Pietriga, Olivier Chapuis, Claude Puech
-- 发表刊物/会议：2012 TVCG
+-   论文原文：JellyLens- Content-Aware Adaptive Lenses
+-   作者：Cyprien Pindat, Emmanuel Pietriga, Olivier Chapuis, Claude Puech
+-   发表刊物/会议：2012 TVCG
 
-![](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-18/18705982.jpg)
+![](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-18/18705982.jpg)
 
 作者提出了 JellyLens，自适应的鱼眼透镜，根据内容来调整透镜形状，提高了焦点区域内容的可见性，又保留了较大部分的上下文区域。并进行了一个 user study 来证明其有效性。
 
@@ -71,7 +71,7 @@ JellyLens 能动态适应感兴趣区域，因此需要它能够采取任意形�
 
 文中用一个隐式函数来导出：当$f({\bf x}) = lens({\bf x - c}) + data({\bf x})=s$时，就是边界。大概效果如下：
 
-![](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-18/72742188.jpg)
+![](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-18/72742188.jpg)
 
 ### AreaLens
 
@@ -91,10 +91,10 @@ JellyLens 能动态适应感兴趣区域，因此需要它能够采取任意形�
 1. dispersion mapping，用来完成位移，使得被放大的那些对象有足够的空间。
 2. magnification mapping，用来完成放大离鼠标最近的那些对象（被称为放大对象，其余则被称为移动对象）
 
-- **dispersion mapping**：1. 先对移动对象进行位移，位移向量会考虑所有方法对象，并进行加权；2. 缩小这些对象，保证不重叠
-- **magnification mapping**：离鼠标越近的放大对象则被放的越大
+-   **dispersion mapping**：1. 先对移动对象进行位移，位移向量会考虑所有方法对象，并进行加权；2. 缩小这些对象，保证不重叠
+-   **magnification mapping**：离鼠标越近的放大对象则被放的越大
 
-![](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-18/33950652.jpg)
+![](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-18/33950652.jpg)
 
 ## EVALUATION
 

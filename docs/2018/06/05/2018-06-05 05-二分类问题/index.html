@@ -144,10 +144,10 @@
     </div>
     <div class="post-content ">
         <p>在二分类问题中，输出$y\in \{0, 1\}$。同样的，我们也可以用线性拟合来尝试解决二分类问题（如下图左），但数据点比较异常时，容易出现下图右这样的情况：</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-5/41455819.jpg" alt></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-5/41455819.jpg" alt></p>
 <p>一般，在二分类问题中，我们会选用『<em>logistic</em>函数』来拟合（因为形状像<em>S</em>，又称为『<em>sigmoid</em>函数』）：</p>
 <script type="math/tex; mode=display">
-h_\theta (x)=g(\theta^Tx)=\frac{1}{1+e^{-\theta^Tx}}</script><p><em>logistic</em>函数$g(z)=1/(1+e^{-z})​$的形状如下：<br><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-5/53166407.jpg" alt><br>可以定义</p>
+h_\theta (x)=g(\theta^Tx)=\frac{1}{1+e^{-\theta^Tx}}</script><p><em>logistic</em>函数$g(z)=1/(1+e^{-z})​$的形状如下：<br><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-5/53166407.jpg" alt><br>可以定义</p>
 <script type="math/tex; mode=display">
 \begin{align}
 P(y=1|x;\theta)& =h_\theta (x) \\\
@@ -202,24 +202,9 @@ l(\theta)&=log(L(\theta))\\\
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

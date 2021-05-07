@@ -190,7 +190,7 @@ c
 k(x, z)=(x^Tz+c)^d</script><p>有了核函数，即可替换 SVM 中的内积$\langle x^{(i)}, x^{(j)} \rangle$，比如常用的高斯核：</p>
 <script type="math/tex; mode=display">
 k(x,z)=\exp(-\frac{||x-z||^2}{2\sigma^2})</script><p>有了核函数，相当于把数据从原始空间转换到了高位空间，很多数据，在一维空间往往是线性不可分的，但是到了高维空间会变成可分的：</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-7-23/7489488.jpg" alt></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-7-23/7489488.jpg" alt></p>
 <h2 id="核函数的合法性"><a href="#核函数的合法性" class="headerlink" title="核函数的合法性"></a>核函数的合法性</h2><p>如何判断一个核函数是合法的呢？判断依据是：是否存在函数$\phi$，使得$k(x,z)$能够被写成$\langle \phi(x), \phi(z) \rangle$。</p>
 <blockquote>
 <p><strong>定理</strong>：如果核函数合法，那么其对应的核矩阵（kernel matrix）是半正定的。</p>
@@ -241,24 +241,9 @@ z^TKz &= \sum_i\sum_jz_iK_{ij}z_j \\\
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

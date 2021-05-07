@@ -328,7 +328,7 @@
 <li>HAYASHI A., MATSUBAYASHI T., HOSHIDE T., UCHIYAMA T.: Initial positioning method for online and real-time dynamic graph drawing of time varying data. In Proceedings of the 17th International Conference on Information Visualisation (2013), IV, pp. 435–444.】：<strong>调研了初始节点位置对布局算法的影响</strong></li>
 </ul>
 <h4 id="Offline-Problem"><a href="#Offline-Problem" class="headerlink" title="Offline Problem"></a>Offline Problem</h4><p>首先需要明白一个 super-graph 的概念，存在时间越长的边，会在 super-graph 中拥有更高的权重。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181115111357623.png" alt="image-20181115111357623"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181115111357623.png" alt="image-20181115111357623"></p>
 <ul>
 <li>【DIEHL S., GÖRG C., KERREN A.: Preserving the mental map using foresighted layout. In Proceedings of the 3rd Joint Eurographics–IEEE TCVG Conference on Visualiza- tion (2001), VisSym, Eurographics Association, pp. 175–184.】：<strong>提出了 foresighted layout 算法，将不活跃的节点聚集在一起，然后再构建 super-graph。</strong></li>
 <li>【DIEHL S., GÖRG C.: Graphs, they are changing – dynamic graph drawing for a sequence of graphs. In Graph Draw- ing, GD. Springer-Verlag, 2002, pp. 23–31.】：<strong>引入了 Tolerance 的概念，允许一定程度的偏移，可以为每一帧的布局继续用力引导做优化</strong></li>
@@ -349,33 +349,33 @@
 <li><p>【LOUBIER E., DOUSSET B.: Temporal and relational data representation by graph morphing. Safety and Reliability for Managing Risk 14, 02 (2008), 2008–16.】：（<strong>对不起没读懂，大概讲的是在变化为上一帧布局变换到下一帧的时候，先对齐到 super-graph，以维护 mental map</strong>）a super-graph layout is computed with nodes in the same time step attracted to a specific position; for the transition between two time steps, the graph is first morphed to the super-graph to recalibrate the mental map, before the super-graph is further transformed into the layout of the next time-step.</p>
 </li>
 <li><p>【HURTER C., ERSOY O., FABRIKANT S., KLEIN T., TELEA A.: Bundled visualization of dynamic graph and trail data. IEEE Transactions on Visualization and Computer Graph- ics (2013).】：<strong>假如节点位置固定，则可以利用 edge bundling 的方法来展示边的变化。</strong></p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/Nov-15-2018 15-09-00.gif" alt="Nov-15-2018 15-09-00"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/Nov-15-2018 15-09-00.gif" alt="Nov-15-2018 15-09-00"></p>
 </li>
 <li><p>【BACH B., PIETRIGA E., FEKETE J.-D.: GraphDiaries: Animated transitions and temporal navigation for dynamic networks. IEEE Transactions on Visualization and Computer Graphics 20, 5 (2014), 740–754.】：<strong>类似上面的，但是会高亮那些移除的活着新增的元素。</strong></p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/Nov-15-2018 15-24-12.gif" alt="Nov-15-2018 15-24-12"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/Nov-15-2018 15-24-12.gif" alt="Nov-15-2018 15-24-12"></p>
 </li>
 </ul>
 <h3 id="特殊目的布局（special-purpose-layout）"><a href="#特殊目的布局（special-purpose-layout）" class="headerlink" title="特殊目的布局（special-purpose layout）"></a>特殊目的布局（special-purpose layout）</h3><h4 id="Compound-Graph（复合图）"><a href="#Compound-Graph（复合图）" class="headerlink" title="Compound Graph（复合图）"></a>Compound Graph（复合图）</h4><p>动态复合图的布局，需要在不同时刻追踪聚类，不仅要保持布局稳定，也要保持聚类的稳定。</p>
 <ul>
 <li><p>【FRISHMAN Y., TAL A.: Dynamic drawing of clustered graphs. In Proceedings of the 2004 IEEE Symposium on Infor- mation Visualization (2004), InfoVis, IEEE, pp. 191–198.】：一种 online 的方法，在聚类外面绘制盒子，保证节点在该范围内。（下图上面是不加该方法的布局，下图是加入了文章的方法）</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181115153232857.png" alt="image-20181115153232857"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181115153232857.png" alt="image-20181115153232857"></p>
 </li>
 <li><p>【[KG06] KUMAR G., GARLAND M.: Visual exploration of com- plex time-varying graphs. IEEE Transactions on Visualization and Computer Graphics 12, 5 (2006), 805–812.】：针对 3D 图，画上气泡来表达复合的结构。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181115153635432.png" alt="image-20181115153635432"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181115153635432.png" alt="image-20181115153635432"></p>
 </li>
 <li><p>【POHL M., BIRKE P.: Interactive exploration of large dynamic networks. In Proceedings of the 10th Inter- national Conference on Visual Information Systems (2008), VISUAL, Springer-Verlag, pp. 56–67.】：是对 foresighted layout 的一种扩展，做了一个个嵌套的盒子。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181115155535509.png" alt="image-20181115155535509"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181115155535509.png" alt="image-20181115155535509"></p>
 </li>
 <li><p>【REITZ F., POHL M., DIEHL S.: Focused animation of dynamic compound digraphs. In Proceedings of the 13th Interna- tional Conference on Information Visualisation (2009), IV, IEEE Computer Society, pp. 679–684】：<strong>利用层次结构，折叠不变的结构，使得动画更加清楚。</strong></p>
 </li>
 <li><p>【LIN Y.-R., SUN J., CAO N., LIU S.: ContexTour: Contextual contour visual analysis on dynamic multi-relational clustering. In Proceedings of the 2010 SIAM International Con- ference on Data Mining (2010), SDM, pp. 418–429.】：<strong>用不同颜色的 contour map 来表示不同的聚类。</strong></p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181115161137542.png" alt="image-20181115161137542"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181115161137542.png" alt="image-20181115161137542"></p>
 </li>
 <li><p>【MASHIMA D., KOBOUROV S., HU Y.: Visualizing dynamic data with maps. IEEE Transactions on Visualization and Computer Graphics 18, 9 (2012), 1424–1437.】【HU Y., KOBOUROV S. G., VEERAMONI S.: Embed- ding, clustering and coloring for dynamic maps. In Proceedings of the 2012 IEEE Pacific Visualization Symposium (2012), Paci- ficVis, IEEE Computer Society, pp. 33–40.】：<strong>是对上述算法的拓展，用空间填充的方法来绘制。</strong></p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181115161453296.png" alt="image-20181115161453296"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181115161453296.png" alt="image-20181115161453296"></p>
 </li>
 <li><p>【ABELLO J., HADLAK S., SCHUMANN H., SCHULZ H.-J.: A modular degree-of-interest specification for the vi- sual analysis of large dynamic networks. IEEE Transactions on Visualization and Computer Graphics 20, 3 (2013), 337–350.】：<strong>当用户分析图的某一部分的细节时，利用 DOI 方法对其他部分进行聚类。</strong></p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181115161728559.png" alt="image-20181115161728559"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181115161728559.png" alt="image-20181115161728559"></p>
 </li>
 </ul>
 <h4 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h4><p>针对 planar graph 和 acyclic graph，不再细述。</p>
@@ -387,7 +387,7 @@
 <li>难以追踪某个特定节点</li>
 <li>每幅图都太小，以至于会有杂乱</li>
 </ol>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181115173957261.png" alt="image-20181115173957261"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181115173957261.png" alt="image-20181115173957261"></p>
 <ul>
 <li>【GREILICH M., BURCH M., DIEHL S.: Visualizing the evolution of compound digraphs with TimeArcTrees. Computer Graphics Forum 28, 3 (2009), 975–982.】：<strong>将节点摆放在水平线上，以便追踪，但可读性比较差，如上图最左边。</strong></li>
 <li>【BURCH M., VEHLOW C., BECK F., DIEHL S., WEISKOPF D.: Parallel Edge Splatting for scalable dynamic graph visualization. IEEE Transactions on Visualization and Computer Graphics 17, 12 (2011), 2344–2353.】：<strong>提出了一种新方法：Parallel Edge Splatting，如 上图中间，它将垂直排列的图人为的分成二部图，这个二部图中边的方向都是从左向右的。</strong></li>
@@ -398,44 +398,44 @@
 <h4 id="Superimposed（重叠的）"><a href="#Superimposed（重叠的）" class="headerlink" title="Superimposed（重叠的）"></a>Superimposed（重叠的）</h4><p>重叠的画法，需要节点在相同的位置，并且不同时间的边应该有不同的样式。将多个 2D 的图堆叠起来就会形成 3D，但这些堆叠的图层是离散的，故而只能说成是 2.5D。</p>
 <ul>
 <li><p>【DWYER T., EADES P.: Visualising a fund manager flow graph with columns and worms. In Proceedings of the 6th In- ternational Conference on Information Visualisation (2002), IV, IEEE, pp. 147–152.】：<strong>在不可见的 2D 平面上放置 3D 圆柱体。</strong></p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116091643871.png" alt="image-20181116091643871"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116091643871.png" alt="image-20181116091643871"></p>
 </li>
 <li><p>【BRANDES U., CORMAN S. R.: Visual unrolling of network evolution and the analysis of dynamic discourse. In- formation Visualization 2, 1 (2003), 40–50.】：<strong>跟上者类似，放置 3D 的圆柱体代表节点，用一些半透明的平面来表达图层，下图左。</strong></p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116091729780.png" alt="image-20181116091729780"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116091729780.png" alt="image-20181116091729780"></p>
 </li>
 <li><p>【ERTEN C., KOBOUROV S. G., LE V., NAVABI A.: Si- multaneous graph drawing: Layout algorithms and visualization schemes. In Graph Drawing (2004), GD, Springer, pp. 437–449.】：<strong>如上图右，允许节点有不同的位置，他们使用了一种改进的李引导算法，使得节点大致保持同一位置，以保留 mental map。</strong></p>
 </li>
 <li><p>【GROH G., HANSTEIN H., WÖRNDL W.: Interactively visualizing dynamic social networks with DySoN. In Proceedings of the 2009 Workshop on Visual Interfaces to the Social and the Semantic Web (2009), VISSW.】：<strong>拓展上述方法，将上图右边的虚拟的虚线，以管状进行绘制。</strong></p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116100226178.png" alt="image-20181116100226178"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116100226178.png" alt="image-20181116100226178"></p>
 </li>
 </ul>
 <h4 id="Integrated（集成）"><a href="#Integrated（集成）" class="headerlink" title="Integrated（集成）"></a>Integrated（集成）</h4><p>在集成图里面，时间轴会被加入到节点链接图里面，那么，在不破坏布局的情况下，不同时间片段的图就不可能被单独抽离。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116103251163.png" alt="image-20181116103251163"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116103251163.png" alt="image-20181116103251163"></p>
 <ul>
 <li>【REITZ F.: A framework for an ego-centered and time-aware visualization of relations in arbitrary data reposito- ries. arXiv preprint arXiv:1009.5183 (2010).】：<strong>在 ego networks 上，将时间轴编码到边上，边的权重演变被编码成分段的颜色，故而每条边都是一个独立的时间轴，上图左。</strong></li>
 <li>【SHI L., WANG C., WEN Z.: Dynamic network visualization in 1.5D. In Proceedings of the 2011 IEEE Pa- cific Visualization Symposium (2011), PacificVis, pp. 179–186.】：<strong>针对 ego network，将中心节点变成时间轴，每当新的边出现的时候，将它们按照时间书序依次连接到中心的时间轴上，上图中。</strong></li>
 <li>【VAN DEN ELZEN S., HOLTEN D., BLAAS J., VAN WIJK J.: Dynamic network visualization with extended massive sequence views. IEEE Transactions on Visualization and Computer Graphics (2013).】：<strong>针对边代表瞬时事件的图（也即这些事件并不会持续一段时间），提出 Extended Massive Sequence Views，事件被绘制在水平线上，节点则被排列在垂直线上，如上图右。</strong></li>
 </ul>
 <h3 id="基于矩阵的方法（Matrix-Based）"><a href="#基于矩阵的方法（Matrix-Based）" class="headerlink" title="基于矩阵的方法（Matrix-Based）"></a>基于矩阵的方法（Matrix-Based）</h3><h4 id="单元内部的时间轴（Intra-Cell-Timelines）"><a href="#单元内部的时间轴（Intra-Cell-Timelines）" class="headerlink" title="单元内部的时间轴（Intra-Cell Timelines）"></a>单元内部的时间轴（Intra-Cell Timelines）</h4><p>每一个单元格都会抱憾一条独立的时间轴。有很多不同的时间轴表达方法，如下图所示。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116131911711.png" alt="image-20181116131911711"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116131911711.png" alt="image-20181116131911711"></p>
 <ul>
 <li><p>【BURCH M., SCHMIDT B., WEISKOPF D.: A matrix-based visualization for exploring dynamic compound digraphs. In Proceedings of the 17th International Conference Information Visualisation (2013), IV, IEEE, pp. 66–73.】&amp;【YI J. S., ELMQVIST N., LEE S.: TimeMatrix: Analyzing temporal social networks using interactive matrix-based visualizations. International Journal of Human-Computer In- teraction 26, 11-12 (2010), 1031–1051.】：<strong>直接放置了一条水平的 bar chart，如上图左。</strong></p>
 </li>
 <li><p>【BURCH M., SCHMIDT B., WEISKOPF D.: A matrix-based visualization for exploring dynamic compound digraphs. In Proceedings of the 17th International Conference Information Visualisation (2013), IV, IEEE, pp. 66–73.】：<strong>在矩阵边上放置层次结构，从而来表达一个动态的复合图。</strong></p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116132732275.png" alt="image-20181116132732275"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116132732275.png" alt="image-20181116132732275"></p>
 </li>
 <li><p>【YI J. S., ELMQVIST N., LEE S.: TimeMatrix: Analyzing temporal social networks using interactive matrix-based visualizations. International Journal of Human-Computer In- teraction 26, 11-12 (2010), 1031–1051.】：<strong>节点是聚合后的时间轴，不同的边类型就用不同的颜色进行编码。</strong></p>
 </li>
 <li><p>【BRANDES U., NICK B.: Asymmetric relations in longitudinal social networks. IEEE Transactions on Visualization and Computer Graphics 17, 12 (2011), 2283–2290.】：<strong>利用叫做 Gestaltlines 的表达方法，使用了堆叠的线条，线条的角度，左面长度和右面长度可以来编码三种不同的指标，如上上图的中间部分。</strong></p>
 </li>
 <li><p>【STEIN K., WEGENER R., SCHLIEDER C.: Pixel-oriented visualization of change in social networks. In Proceedings of the 2010 International Conference on Advances in So- cial Networks Analysis and Mining (2010), ASONAM, IEEE, pp. 233–240.】：<strong>建议了一种 pixel-based 的方法（基于像素图），将时间轴折叠成为像素图。每一个像素（或者说一个单元）表达时间上的一个点，用来编码当前时间片段的边的权重。文章还提到了几种折叠时间轴的方法：row-by-row, column-by-column, diagonal, etc.</strong></p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116134654857.png" alt="image-20181116134654857"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116134654857.png" alt="image-20181116134654857"></p>
 </li>
 </ul>
-<h4 id="分层矩阵（Layered-Matrixed）"><a href="#分层矩阵（Layered-Matrixed）" class="headerlink" title="分层矩阵（Layered Matrixed）"></a>分层矩阵（Layered Matrixed）</h4><p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116134937923.png" alt="image-20181116134937923"></p>
+<h4 id="分层矩阵（Layered-Matrixed）"><a href="#分层矩阵（Layered-Matrixed）" class="headerlink" title="分层矩阵（Layered Matrixed）"></a>分层矩阵（Layered Matrixed）</h4><p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116134937923.png" alt="image-20181116134937923"></p>
 <ul>
 <li><p>【BURCH M., DIEHL S.: TimeRadarTrees: Visualizing dynamic compound digraphs. Computer Graphics Forum 27, 3 (2008), 823–830.】&amp;【BURCH M., HÖFERLIN M., WEISKOPF D.: Layered TimeRadarTrees. In Proceedings of the 15th International Conference on Information Visualisation (2011), IV, IEEE, pp. 18– 25.】：<strong>将边和边之间的关系以环形编码到圆上，如下图左边的大圆，红色部分表示有边链接到该节点，小圆则表示有边从该节点出去。圆形的径向则是时间轴，也即上图第二图所示（radially distributtd）</strong></p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116141532045.png" alt="image-20181116141532045"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116141532045.png" alt="image-20181116141532045"></p>
 </li>
 <li><p>【VEHLOW C., BURCH M., SCHMAUDER H., WEISKOPF D.: Radial layered matrix visualization of dynamic graphs. In Proceedings of the 17th International Conference Information Visualisation (2013), IV, pp. 51–58.】：<strong>弯折矩阵变成圆环，每一个圆环都代表一个时刻，上上图 radially layered。</strong></p>
 </li>
@@ -491,24 +491,9 @@
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

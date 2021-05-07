@@ -6,11 +6,11 @@ tags: ["Visualization", "Fisheye", "Graph Visualization", "Large Graph"]
 mathjax: true
 ---
 
-- 论文原文：SchemeLens: A Content-Aware Vector-Based Fisheye Technique for Navigating Large Systems Diagrams
-- 作者：[Aurélie Cohé](https://dblp.uni-trier.de/pers/c/Coh=eacute=:Aur=eacute=lie)，[Bastien Liutkus](http://dblp.uni-trier.de/pers/hd/l/Liutkus:Bastien), [Gilles Bailly](https://dblp.uni-trier.de/pers/b/Bailly:Gilles) , [James Egan](https://dblp.uni-trier.de/pers/e/Egan:James)，[Eric Lecolinet](https://dblp.uni-trier.de/pers/l/Lecolinet:Eric)
-- 发表刊物/会议：2016 TVCG
+-   论文原文：SchemeLens: A Content-Aware Vector-Based Fisheye Technique for Navigating Large Systems Diagrams
+-   作者：[Aurélie Cohé](https://dblp.uni-trier.de/pers/c/Coh=eacute=:Aur=eacute=lie)，[Bastien Liutkus](http://dblp.uni-trier.de/pers/hd/l/Liutkus:Bastien), [Gilles Bailly](https://dblp.uni-trier.de/pers/b/Bailly:Gilles) , [James Egan](https://dblp.uni-trier.de/pers/e/Egan:James)，[Eric Lecolinet](https://dblp.uni-trier.de/pers/l/Lecolinet:Eric)
+-   发表刊物/会议：2016 TVCG
 
-![](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-10/50334813.jpg)
+![](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-10/50334813.jpg)
 
 ## 整体套路介绍：
 
@@ -55,17 +55,17 @@ st->op1->op2->op3->op4->op5->op6->e
 
 ## SchemeLens 技术描述
 
-![](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-9/95973080.jpg)
+![](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-9/95973080.jpg)
 
 Schemelens 综合了三个模块来做焦点上下文：
 
 1. 放大透镜：
 
-   靠近鼠标的聚焦区域，会被几何放大，给定节点的放大率和其到中心的距离负相关。
+    靠近鼠标的聚焦区域，会被几何放大，给定节点的放大率和其到中心的距离负相关。
 
 2. 拓扑透镜：
 
-    在鼠标下面的元素会被放大，然后沿着该元素所在的路径进行放大，测地距离（geodesic distance，也就是拓扑距离）远的放大率低。该机制有利于调节相距比较远的节点。
+     在鼠标下面的元素会被放大，然后沿着该元素所在的路径进行放大，测地距离（geodesic distance，也就是拓扑距离）远的放大率低。该机制有利于调节相距比较远的节点。
 
 3. 用户意图：移动鼠标时，只有沿着该路径并且和鼠标移动方向一致的节点会被放大，
 
@@ -97,7 +97,7 @@ Schemelens 综合了三个模块来做焦点上下文：
 
 1. 对齐。同一直线的节点要对齐（下图左），不同直线但在同一个局部环中的节点也要对齐（下图中），在同一直线上的交点也要对齐（下图右）。
 
-   ![](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-9/69993075.jpg)
+    ![](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-9/69993075.jpg)
 
 2. 正交。边之间的正交被保留。
 

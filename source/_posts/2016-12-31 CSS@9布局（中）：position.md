@@ -17,13 +17,13 @@ tags: ["FrontEnd", "Course Notes", "CSS"]
 
 ### `position:relative` 相对定位
 
-- 仍在文档流中
-- 参照物为元素本身
-- 相对定位元素层级较高
+-   仍在文档流中
+-   参照物为元素本身
+-   相对定位元素层级较高
 
 **解释：**
 
-- **仍在文档流中**：指的是，这个元素仍然会按照原来的位置占据一定的区域，下面的元素不会因此上来，右边的元素不会因此左移，比如这样：
+-   **仍在文档流中**：指的是，这个元素仍然会按照原来的位置占据一定的区域，下面的元素不会因此上来，右边的元素不会因此左移，比如这样：
 <div style="margin:10px auto 0; height: 150px; width: 410px;font-family: consolas;"><div style="margin:0 auto;height:150px;width:200px; display: inline-block;"><div style="width: 200px; height: 50px; background-color: gold;"></div><div style="width: 200px; height: 50px; background-color: lightseagreen;color:white; line-height: 50px; text-align: center;">position: static;</div><div style="width: 200px; height: 50px; background-color: pink;"></div></div> <div style="margin:0 auto;height:200px;width:200px; display: inline-block;"><div style="width: 200px; height: 50px; background-color: gold;"></div><div style="width: 200px; height: 50px; background-color: lightseagreen; position: relative; left: 10px; top: 10px;color:white; line-height: 50px; text-align: center;">position: relative;</div><div style="width: 200px; height: 50px; background-color: pink;"></div></div></div></div>
 
 ```xml
@@ -85,23 +85,23 @@ tags: ["FrontEnd", "Course Notes", "CSS"]
 </html>
 ```
 
-- **参照物为元素本身**：也就是，元素通过`top`,`left`等定位偏移属性，其位移的原点，是元素本来的位置。比如上面右边的，其 CSS 样式是这样的，向右和向下偏移了`10px`：
+-   **参照物为元素本身**：也就是，元素通过`top`,`left`等定位偏移属性，其位移的原点，是元素本来的位置。比如上面右边的，其 CSS 样式是这样的，向右和向下偏移了`10px`：
 
 ```css
 .second-child {
-  width: 200px;
-  height: 50px;
-  background-color: lightseagreen;
-  position: relative;
-  left: 10px;
-  top: 10px;
-  color: white;
-  line-height: 50px;
-  text-align: center;
+    width: 200px;
+    height: 50px;
+    background-color: lightseagreen;
+    position: relative;
+    left: 10px;
+    top: 10px;
+    color: white;
+    line-height: 50px;
+    text-align: center;
 }
 ```
 
-- **相对定位元素层级较高**： 设置了`position`的元素会比未设置的元素层级要高。可以这么理解，设置了`position`视作一类，没有设置的视作一类。他们分别计算层级，而前者一定高于后者。
+-   **相对定位元素层级较高**： 设置了`position`的元素会比未设置的元素层级要高。可以这么理解，设置了`position`视作一类，没有设置的视作一类。他们分别计算层级，而前者一定高于后者。
 <div style="position: relative; z-index: 10;"><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;position: absolute;background-color: pink;">absolute</div><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;position: relative;left: 100px;top: 100px;background-color: lightblue;">relative</div><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;">default</div></div>
 <div style="position: relative; z-index: 1;"><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;position: absolute;background-color: pink;">absolute</div><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;position: relative;left: 100px;top:0;background-color: lightblue;">relative</div><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;">default</div></div>
 
@@ -154,13 +154,13 @@ tags: ["FrontEnd", "Course Notes", "CSS"]
 
 ### `position: absolute` 绝对定位
 
-- 脱离文档流（这个元素脱离了文档，浮出文档）
-- 参照物为第一个定位祖先/根元素（也就是 html 元素）
-- 默认宽度为内容宽度
+-   脱离文档流（这个元素脱离了文档，浮出文档）
+-   参照物为第一个定位祖先/根元素（也就是 html 元素）
+-   默认宽度为内容宽度
 
 **解释：**
 
-- **脱离文档流**：意思就是，这个元素不再占用正常文档流中的空间，且定位方法也和一般元素不一样。比如下图中：`abosolute`的元素并没有占据文档的位置，而是浮在了上面，因为它脱离了文档流。具体原因会在下面讲到：
+-   **脱离文档流**：意思就是，这个元素不再占用正常文档流中的空间，且定位方法也和一般元素不一样。比如下图中：`abosolute`的元素并没有占据文档的位置，而是浮在了上面，因为它脱离了文档流。具体原因会在下面讲到：
 <div style="position: relative; margin:0 auto;width:420px;"><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;">default</div><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;position: absolute;background-color: pink;width:120px;height: 80px;line-height: 80px;">absolute</div><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;">default</div></div>
 
 ```xml
@@ -205,18 +205,18 @@ tags: ["FrontEnd", "Course Notes", "CSS"]
 </html>
 ```
 
-- **参照物为第一个定位祖先/根元素**：在相对定位元素中，我们提到，`relative`元素的参照物是元素本身，而`absolute`元素的参照物应该是第一个已定位的祖先，如果没有这样的祖先，那么它的参照物就是根元素，也就是`<html>`。那么什么叫做**已定位的祖先**呢，就是它的已经设置了`position`值的祖先元素。
+-   **参照物为第一个定位祖先/根元素**：在相对定位元素中，我们提到，`relative`元素的参照物是元素本身，而`absolute`元素的参照物应该是第一个已定位的祖先，如果没有这样的祖先，那么它的参照物就是根元素，也就是`<html>`。那么什么叫做**已定位的祖先**呢，就是它的已经设置了`position`值的祖先元素。
 
-  - 第一点值得注意的是，即便对某个元素设置了`absolute`，如果没有进行定位，它会保持在原来的位置上。
-  - 第二点值得注意的是，默认子元素会被包含在父元素的`content-box`里面，但是`absolute`元素定位的原点，是它的第一个已定位的祖先的`padding-box`左上角。
-    ![](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-1-13/69220800-file_1484320283452_92ff.png)
+    -   第一点值得注意的是，即便对某个元素设置了`absolute`，如果没有进行定位，它会保持在原来的位置上。
+    -   第二点值得注意的是，默认子元素会被包含在父元素的`content-box`里面，但是`absolute`元素定位的原点，是它的第一个已定位的祖先的`padding-box`左上角。
+        ![](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-1-13/69220800-file_1484320283452_92ff.png)
 
-- **默认宽度为内容宽度**：即便为这个`position:absolute`的元素设置成`block`元素，这个元素默认的宽度仍是内容的宽度。
+-   **默认宽度为内容宽度**：即便为这个`position:absolute`的元素设置成`block`元素，这个元素默认的宽度仍是内容的宽度。
 
 ### `position: fixed` 固定定位
 
-- 脱离文档流（这个元素脱离了文档，浮出文档）
-- 参照物为视窗
-- 默认宽度为内容宽度
+-   脱离文档流（这个元素脱离了文档，浮出文档）
+-   参照物为视窗
+-   默认宽度为内容宽度
 
-- **参照物为视窗**：视窗的意思就是浏览器窗口。不再多做解释。可以自己尝试一下。
+-   **参照物为视窗**：视窗的意思就是浏览器窗口。不再多做解释。可以自己尝试一下。

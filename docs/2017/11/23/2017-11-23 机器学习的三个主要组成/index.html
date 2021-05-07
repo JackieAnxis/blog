@@ -148,7 +148,7 @@
 <h3 id="模型（model）"><a href="#模型（model）" class="headerlink" title="模型（model）"></a>模型（model）</h3><p>模型指的是$\cal F$，一般而言有 CNN/SVM/LDA 等等，我们的目标是要通过调整参数，从模型的参数空间中找出一个参数组合，使得在这个参数组合下，模型的损失函数值最小。</p>
 <p>首先需要区分一个概念，$\cal F$和$f$的关系与区别。$\cal F$指的是一个概念模型，比如 SVM 指的是支持向量机，那么在这个模型概念下，不一样的参数组合，就会生成不一样的具体模型，比如在支持向量机中，选择不同的核函数可以生成不同的具体的 SVM 模型（$f$）。</p>
 <p>其实，$\cal F$是一个参数空间，是决策函数（也就是具体模型）$f$的一个值域空间。我们的目标是找出一个具体模型（知道这个具体函数的参数），使得损失函数最小化。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-11-23/40443514.jpg" alt></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-11-23/40443514.jpg" alt></p>
 <p>以上这幅图，仅仅针对一个二维参数空间而言，对于不同的模型$\cal F$，有着不同的参数空间，比如上图实线所包围的部分，就指代了模型$\cal F$的能取值到的值域。选择不同的参数，在当前所选择的概念模型下，能生成不同的具体模型。当然，具体模型中，参数肯定不止两个，那么这个参数空间就是一个高维的参数空间。</p>
 <p>对于不同的模型（$\cal F$），有着不同的表达能力，比如上图中虚线部分所代表的模型，表达能力大于实线部分，因为它能取到的参数空间完全包含了实线部分。比如四层卷积神经网络的表达能力大于三层。</p>
 <p>但是否表达能力越好的模型越好呢？这其实是一个权衡的问题，表达能力越好，也代表着可能这个模型的代价更高，所以我们要选择适合的模型而不是最好的模型，在有限的计算资源下，选出表达能力最佳的模型。</p>
@@ -202,24 +202,9 @@
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

@@ -154,7 +154,7 @@ p(y=1|x) &= \frac{p(x|y=1)p(y=1)}{p(x)} \\\
 <li>$x$的条件概率分布（$p(x|y=0)$和$p(x|y=1)$）满足高斯分布。</li>
 </ol>
 <p>考虑二维的情况：</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-30-084350.png" alt="image-20180630164349595"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-30-084350.png" alt="image-20180630164349595"></p>
 <p>蓝色数据表达的是$p(x|y=0)$的分布，红色数据表达的是$p(x|y=1)$的分布，两条蓝色和红色的曲线分别是它们的概率密度曲线。</p>
 <p>而灰色的曲线则表示了$p(y=1|x)$的概率密度曲线。</p>
 <p>假设$p(x|y=0) \sim N(\mu_0, \sigma_0)$，$p(x|y=1) \sim N(\mu_1, \sigma_1)$，而$p(y)$均匀分布那么：</p>
@@ -297,24 +297,9 @@ C_{y=0}=\sum_{i=1}^n(1\lbrace y^{(i)} = 0 \rbrace \cdot n_i)</script><p>表示�
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

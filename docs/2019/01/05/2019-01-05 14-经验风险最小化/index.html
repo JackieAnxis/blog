@@ -183,7 +183,7 @@ P(A_1 \cup \ldots \cup A_k) \leq P(A_1) + \dots + P(A_k)</script></blockquote>
 <script type="math/tex; mode=display">
 P(|{\hat{\phi}} - \phi| > \gamma) \leq 2 exp(-2\gamma^2m)</script></blockquote>
 <p>Hoeffding 不等式的直观解释就是，下图中的阴影面积，会有上界。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-01-06/image-20190106143941030.png" alt="image-20190106143941030"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-01-06/image-20190106143941030.png" alt="image-20190106143941030"></p>
 </li>
 </ul>
 <h3 id="一致收敛"><a href="#一致收敛" class="headerlink" title="一致收敛"></a>一致收敛</h3><h3 id="Uniform-Conversions"><a href="#Uniform-Conversions" class="headerlink" title="Uniform Conversions"></a>Uniform Conversions</h3><p>对于某个$h_j \in \cal{H}$，我们定义$z_i = 1 \lbrace h_j(x^{(i)}) \neq y^{(i)}\rbrace \in \lbrace{}$为第 i 个样本被分类错误的指示函数的值，对于 logistic 而言，它服从伯努利分布。</p>
@@ -236,7 +236,7 @@ h^\ast &= \mathop{\arg \min}_{h \in \cal H} \varepsilon(h) \text{, 使得泛化�
 <script type="math/tex; mode=display">
 \varepsilon(\hat h) \leq \underbrace{(\min_{h \in {\cal H}}\varepsilon(h))}_{\varepsilon(h^\ast)} + 2 \underbrace{\sqrt{\frac{1}{2m}log(\frac{2k}{\delta})}}_{\gamma}</script><p>的概率不低于$1-\delta$。</p>
 <p>可以想象，为了得到最佳的假设$h^\ast$，我们尽可能增大$\cal H$（能够减小$\varepsilon(h^\ast)$），但随之而来的就是$\gamma$的增大，所以需要在这两者之间进行权衡，我们指的就是<strong>偏差方差权衡 Bias Variance Tradeoff</strong>。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-01-06/image-20190106154201189.png" alt="image-20190106154201189"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-01-06/image-20190106154201189.png" alt="image-20190106154201189"></p>
 <p>由此，我们得到一个推论：</p>
 <p>给定$\delta, \gamma$，为了能够保证$\varepsilon(\hat h) \leq (\min_{h \in {\cal H}}\varepsilon(h)) + 2\gamma$的概率不小于$1-\delta$（ERM 得到的假设的一般误差，与最佳假设的一般误差之间，差值不大于$2\gamma$）</p>
 <p>我们需要保证：</p>
@@ -275,24 +275,9 @@ m \geq \frac{1}{2\gamma^2}log(\frac{2k}{\delta})</script>
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

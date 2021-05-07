@@ -163,7 +163,7 @@
 <ul>
 <li><strong>参照物为元素本身</strong>：也就是，元素通过<code>top</code>,<code>left</code>等定位偏移属性，其位移的原点，是元素本来的位置。比如上面右边的，其 CSS 样式是这样的，向右和向下偏移了<code>10px</code>：</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.second-child</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: lightseagreen;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.second-child</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: lightseagreen;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><strong>相对定位元素层级较高</strong>： 设置了<code>position</code>的元素会比未设置的元素层级要高。可以这么理解，设置了<code>position</code>视作一类，没有设置的视作一类。他们分别计算层级，而前者一定高于后者。<div style="position: relative; z-index: 10;"><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;position: absolute;background-color: pink;">absolute</div><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;position: relative;left: 100px;top: 100px;background-color: lightblue;">relative</div><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;">default</div></div>
 <div style="position: relative; z-index: 1;"><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;position: absolute;background-color: pink;">absolute</div><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;position: relative;left: 100px;top:0;background-color: lightblue;">relative</div><div style="display: inline-block;width: 200px;height: 200px;border: 3px solid white;background-color: lightseagreen;color: white;text-align: center;line-height: 200px;font-family: consolas;font-size: 24px;">default</div></div>
@@ -188,7 +188,7 @@
 <li><p><strong>参照物为第一个定位祖先/根元素</strong>：在相对定位元素中，我们提到，<code>relative</code>元素的参照物是元素本身，而<code>absolute</code>元素的参照物应该是第一个已定位的祖先，如果没有这样的祖先，那么它的参照物就是根元素，也就是<code>&lt;html&gt;</code>。那么什么叫做<strong>已定位的祖先</strong>呢，就是它的已经设置了<code>position</code>值的祖先元素。</p>
 <ul>
 <li>第一点值得注意的是，即便对某个元素设置了<code>absolute</code>，如果没有进行定位，它会保持在原来的位置上。</li>
-<li>第二点值得注意的是，默认子元素会被包含在父元素的<code>content-box</code>里面，但是<code>absolute</code>元素定位的原点，是它的第一个已定位的祖先的<code>padding-box</code>左上角。<br><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-1-13/69220800-file_1484320283452_92ff.png" alt></li>
+<li>第二点值得注意的是，默认子元素会被包含在父元素的<code>content-box</code>里面，但是<code>absolute</code>元素定位的原点，是它的第一个已定位的祖先的<code>padding-box</code>左上角。<br><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-1-13/69220800-file_1484320283452_92ff.png" alt></li>
 </ul>
 </li>
 <li><p><strong>默认宽度为内容宽度</strong>：即便为这个<code>position:absolute</code>的元素设置成<code>block</code>元素，这个元素默认的宽度仍是内容的宽度。</p>
@@ -236,24 +236,9 @@
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

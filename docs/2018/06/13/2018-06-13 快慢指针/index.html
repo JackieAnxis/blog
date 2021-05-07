@@ -167,7 +167,7 @@
 <p>看到了快慢指针这个解，最快能达到$O(N)$的时间复杂度，于是详细分析了一下这题。</p>
 <p>一般会用两个指针一起遍历数组，快指针每次移动 2 步，慢指针每次移动 1 步。就跟跑步一样，假如在这个链表当中存在环的话，就快指针总是会追上慢指针，这个时候刚好超过慢指针$n$圈，并且快指针跑过的距离刚好是慢指针的两倍。</p>
 <p>我们看图，慢指针从 A 开始，在 B 点进入了环中，经过$n$轮后，在 C 点和快指针相遇了。假设 AB 的长度是$a$，$BC$的长度是$b$，B 的循环的长度是$c$，那么从 B 点走到 C 点需要经过$c-b$</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-13/34029455.jpg" alt></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-13/34029455.jpg" alt></p>
 <p>此时，慢指针走过的距离是$a+nc+b​$，快指针假设是$a+Nc+​$b，因为它们速度差是 2 倍，所以：</p>
 <script type="math/tex; mode=display">
 \begin{align}
@@ -183,7 +183,7 @@
 <li>上述两者相同的意思是，此时指针又会共同指向 B 点，那么我们就找到了进入循环的点。</li>
 </ol>
 <p>在题中，我们可以将数组看成一个链表，比如[1,3,4,2,2]可以看成一个$1\rightarrow3\rightarrow2\rightarrow4\rightarrow2\cdots$的链表（数组元素表示该元素指向的下一个元素的下标，如果看不懂，读代码就好）。然后我们就可以发现链表会在重复值那里进入循环，于是找到进入循环的点的时候，就可以找到重复值。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> findDuplicate = <span class="function"><span class="keyword">function</span> (<span class="params">nums</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> slow = nums[<span class="number">0</span>],</span><br><span class="line">    fast = nums[nums[<span class="number">0</span>]],</span><br><span class="line">    t = nums[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">while</span> (slow != fast) &#123;</span><br><span class="line">    slow = nums[slow];</span><br><span class="line">    fast = nums[nums[fast]];</span><br><span class="line">  &#125;</span><br><span class="line">  slow = nums[slow];</span><br><span class="line">  <span class="keyword">while</span> (slow != t) &#123;</span><br><span class="line">    slow = nums[slow];</span><br><span class="line">    t = nums[t];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> slow;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> findDuplicate = <span class="function"><span class="keyword">function</span> (<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> slow = nums[<span class="number">0</span>],</span><br><span class="line">        fast = nums[nums[<span class="number">0</span>]],</span><br><span class="line">        t = nums[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">while</span> (slow != fast) &#123;</span><br><span class="line">        slow = nums[slow]</span><br><span class="line">        fast = nums[nums[fast]]</span><br><span class="line">    &#125;</span><br><span class="line">    slow = nums[slow]</span><br><span class="line">    <span class="keyword">while</span> (slow != t) &#123;</span><br><span class="line">        slow = nums[slow]</span><br><span class="line">        t = nums[t]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> slow</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="关于快慢指针的应用"><a href="#关于快慢指针的应用" class="headerlink" title="关于快慢指针的应用"></a>关于快慢指针的应用</h2><ul>
 <li>单向链表是否存在循环：只要快指针和慢指针相遇，则一定存在环</li>
 <li>寻找无环链表的中位数：当快指针指向链尾时，慢指针指向链中</li>
@@ -224,24 +224,9 @@
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

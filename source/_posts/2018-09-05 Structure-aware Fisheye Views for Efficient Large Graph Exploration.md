@@ -7,9 +7,9 @@ mathjax: true
 Katex: ture
 ---
 
-![image-20181116171253691](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116171253691.png)
+![image-20181116171253691](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116171253691.png)
 
-- 论文原标题： Structure-aware Fisheye Views for Efficient Large Graph Exploration
+-   论文原标题： Structure-aware Fisheye Views for Efficient Large Graph Exploration
 
 ## 一、介绍
 
@@ -93,7 +93,7 @@ $X'$表示的是用鱼眼透镜估计的目标位置。保持了方向的一致�
 
 **形状限制**：上述的限制只保证了边方向的限制，只会让局部结构保持的比较好，而较大的结构会被扭曲，如下图，a 是初始图，b 是经过 graphical fisheye 的产出，c 是加入了边方向限制，d 则是加入了形状限制。
 
-![image-20181116171318315](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116171318315.png)
+![image-20181116171318315](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116171318315.png)
 
 为了保留初始的结构，文章需要用户提供一组连接的边，称为$E_s$，比如上图 c 中的其中一圈蓝边，那么算法就能更好的估计$d_{ij}^s$。在缩放的时候，有些边变长，有些边变短。我们需要平衡这种变换。
 
@@ -111,7 +111,7 @@ $$
 
 ### 可读性限制
 
-![](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/53259428.jpg)
+![](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/53259428.jpg)
 
 **不重叠的节点**：
 
@@ -139,7 +139,7 @@ $$
 
 **路径透镜**：用户简单的挑选两个节点，算法找到最短路径，然后沿着这条路径定义焦点区域，关于这个焦点区域的半径：屏幕尺寸的$\sqrt{m}/28$，其中$m$是放大系数。
 
-![](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/77703149.jpg)
+![](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/77703149.jpg)
 
 ## 六、结果和评估
 
@@ -147,17 +147,17 @@ $$
 
 对照组：
 
-- **graphical fisheye**(**GF**, M. Sarkar and M. H. Brown. Graphical fisheye views of graphs. In Proc. SIGCHI conference on Human Factors in Computing Systems, pp. 83–91, 1992. doi: 10.1145/142750.142763)
+-   **graphical fisheye**(**GF**, M. Sarkar and M. H. Brown. Graphical fisheye views of graphs. In Proc. SIGCHI conference on Human Factors in Computing Systems, pp. 83–91, 1992. doi: 10.1145/142750.142763)
 
-- **hyperbolic fisheye**(**HF**, T. Munzner. Exploring large graphs in 3d hyperbolic space. IEEE Computer Graphics and Applications, 18(4):18–23, 1998. doi: 10.1109/38.689657)
+-   **hyperbolic fisheye**(**HF**, T. Munzner. Exploring large graphs in 3d hyperbolic space. IEEE Computer Graphics and Applications, 18(4):18–23, 1998. doi: 10.1109/38.689657)
 
-- **iSphere**(F. Du, N. Cao, Y.-R. Lin, P. Xu, and H. Tong. isphere: Focus+ context sphere visualization for interactive large graph exploration. In Proc.SIGCHI conference on Human Factors in Computing Systems, pp. 2916–2927, 2017. doi: 10.1145/3025453.3025628)
+-   **iSphere**(F. Du, N. Cao, Y.-R. Lin, P. Xu, and H. Tong. isphere: Focus+ context sphere visualization for interactive large graph exploration. In Proc.SIGCHI conference on Human Factors in Computing Systems, pp. 2916–2927, 2017. doi: 10.1145/3025453.3025628)
 
 考虑因素：
 
-- 边方向保留
-- 节点重叠
-- 形状保留
+-   边方向保留
+-   节点重叠
+-   形状保留
 
 其中，比较双曲线鱼眼的时候，用了 iSphere 这篇文章的实现来进行比较，而 iSphere 在放大之后会把非焦聚区域放在球体的背面，无法比较前两项指标。
 
@@ -177,25 +177,25 @@ $$
 
 **节点不重叠**：比较了初始输入跟输出之间的节点重叠数量的差别。下图 b 表示了重叠的节点的数量，能看到文章的方法效果不错。
 
-![image-20181116171403266](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116171403266.png)
+![image-20181116171403266](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116171403266.png)
 
 **形状保留**：利用 Eades 提出的基于形状的美学指标。给定一组节点组成一个图，将该组节点的 k 最近邻的集合构成的图叫做它的 shape graph。那么，通过 mean Jaccard similarity 来比较缩放前后，某个图的 shape graph 的相似度，就可以看出其是否保留形状。
 
-![](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/71304701.jpg)
+![](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/71304701.jpg)
 
 下图展示了不同的透镜下的结果（初始布局是利用一个限制了某些形状的，并且聚类之间不重叠的限制的压力模型），a 是初始图，b 是 graphical fisheye，c 是 hyperbolic fisheye，d 是 iShpere，e 是线性放大，f 是文章方法结合 graphical fisheye，g 是文章方法结合 hyperbolic fisheye，h 是文章方法结合 iSphere。
 
-![](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/27496642.jpg)
+![](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/27496642.jpg)
 
 ### Lab Stydy
 
 为了验证文章的 structure-aware fisheye 是否能够有效提升图探索效率，文章设计了这个 lab study。比较了五个技术：
 
-- pan-and-zoom(P&Z)
-- graphical fisheye(GF)
-- hyperbolic fisheye(HF)
-- iSphere
-- 文章方法+graphical fisheye(Ours+GF)，因为这个表现适中，没有很好也不是很坏。
+-   pan-and-zoom(P&Z)
+-   graphical fisheye(GF)
+-   hyperbolic fisheye(HF)
+-   iSphere
+-   文章方法+graphical fisheye(Ours+GF)，因为这个表现适中，没有很好也不是很坏。
 
 因为传统的方法并没有考虑可读性的限制，于是在这里只是用了边方向限制作为比较。
 
@@ -209,7 +209,7 @@ $$
 
 **参与者跟设施**：40 名，24 男 16 女，22-29 岁（平均 24 岁），实验放在桌面电脑上进行，有鼠标键盘，24 寸显示器 1920 1080 分辨率，144hz 刷新率（真有钱）。节点连接图白色背景，节点为一个黑点，边则是黑线，而窗口大小则是 150mm 150mm。下图是初始布局和五种不同技术放大后的效果。
 
-![](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/11209567.jpg)
+![](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/11209567.jpg)
 
 **过程**：在一开始，为参与者介绍五种技术。然后会有两条练习来熟悉五种技术：跟正式测试一样，也是找到两个随机选择的节点之间的最短变。
 
@@ -225,7 +225,7 @@ $$
 
 **结果**：根据图所示，在时间方面，Ours+GF 会比其他所有技术都更快，这支持了假设 1，但只是部分支持假设 2，毕竟 Ours+GF 和 P&Z 之间有大幅重叠。而在误差方面，有大规模的置信区间，也就说明了结果并不明确。尽管这样，Ours+GF 的平均值还是最低的。
 
-![](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/8710039.jpg)
+![](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/8710039.jpg)
 
 #### 讨论
 
@@ -245,7 +245,7 @@ $$
 
 #### 美国主要城市的探索
 
-![image-20181116171419003](http://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116171419003.png)
+![image-20181116171419003](https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181116171419003.png)
 
 134 个节点代表美国城市，338 边则表达了城市之间是相邻的关系。图 b 利用了聚类透镜，放大了淡蓝色区域。于是节点之间的重叠降低，可以看清这些节点的 label。
 

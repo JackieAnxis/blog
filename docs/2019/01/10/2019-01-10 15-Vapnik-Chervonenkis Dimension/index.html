@@ -153,12 +153,12 @@ m \geq \frac{1}{2\gamma^2}\log \frac{2k}{\delta} = O(\frac{1}{\gamma^2}\log \fra
 m \geq O(\frac{1}{\gamma^2}\log \frac{k}{\delta}) = O(\frac{d}{\gamma^2}\log \frac{1}{\delta})</script><p>最直观的解释就是$m$与假设类的参数数量几乎是成正比的。</p>
 <hr>
 <p>定义<strong>Shatter（分散）</strong>：给定一个由$d$个点构成的集合：$S=\lbrace x^{(1)}, \ldots, x^{(d)} \rbrace$，我们说一个假设类$\cal H$能够<strong>分散(shatter)</strong>一个集合$S$，如果$\cal H$能够实现对$S$的任意一种标记方式，也即，对$S$的任意一种标记方式，我们都可以从$\cal H$中找到对应的假设来进行分割。<br>举例而言，如果${\cal H} = \lbrace \text{linear classification in 2D} \rbrace$(二维线性分类器的集合)，对于二维平面上的三个点，有 8 种标记方式：</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-1-11/image-20190111094049430.png" alt="image-20190111094049430"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-1-11/image-20190111094049430.png" alt="image-20190111094049430"></p>
 <p>那么，蓝线所代表的线性分类器，都能完成对它们的标记，所以我们称$\cal H$能够分散平面上三个点所构成的集合。但是对于平面上四个点，就有存在以下这种情况，没有任何的线性分类器能够实现这种标记：</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-1-11/image-20190111094649618.png" alt="image-20190111094649618"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-1-11/image-20190111094649618.png" alt="image-20190111094649618"></p>
 <hr>
 <p>定义<strong>Vapnik-Chervonenkis dimension（VC 维）</strong>：假设集$\cal H$的<strong>VC 维</strong>，写成$VC({\cal H})$，指的是能够被$\cal H$分散的最大集合的大小。<br>举例而言，如果$\cal H$是所有二维线性分类器构成的集合，那么$VC(\cal H) = 3$。当然并不是说$\cal H$要能分散所有三个点构成的集合，只要有某个三个点构成的集合能被$\cal H$分散即可，比如下面这种标记方式，$\cal H$就无法实现，但是我们还是称$VC(\cal H) = 3$。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-1-11/image-20190111095306079.png" alt="image-20190111095306079"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-1-11/image-20190111095306079.png" alt="image-20190111095306079"></p>
 <p>有一个推论：</p>
 <p>$VC({\text{linear classification of n D}}) = n + 1$</p>
 <hr>
@@ -210,24 +210,9 @@ VC({\cal H}) \leq \lceil \frac{R^2}{4\gamma^2} \rceil + 1</script><p>也就说�
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

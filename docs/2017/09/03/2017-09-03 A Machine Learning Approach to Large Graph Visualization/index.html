@@ -173,7 +173,7 @@
 <h2 id="二、背景"><a href="#二、背景" class="headerlink" title="二、背景"></a>二、背景</h2><p>给定图数据$G$，如何得到某种图布局？</p>
 <p>如果已经有一个数据集${G_1, G_2, \ldots, G_N}$，其中包含了大量的图数据和对应的图布局结果。</p>
 <p>假如可以从中找到一份图数据$G_k$，它的拓扑结构跟$G$最相似，那我们就可以用它的图布局来当做$G$的结果。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-26-015231.gif" alt="6月-26-2018 09-51-54"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-26-015231.gif" alt="6月-26-2018 09-51-54"></p>
 <p>那么问题来了，如何度量两份图数据之间的拓扑相似度？</p>
 <h3 id="拓扑相似度度量"><a href="#拓扑相似度度量" class="headerlink" title="拓扑相似度度量"></a>拓扑相似度度量</h3><p>也叫做：_graph matching, graph comparison, network alignment_。</p>
 <ul>
@@ -194,9 +194,9 @@ k(x, x') = \langle\phi(x), \phi(x')\rangle = \langle\bf{x}, \bf{x'}\rangle</scri
 <p>_indeced_: Given a graph $G$, a graph $G’ = (V’,E’)$ is a subgraph of $G$ if $V’\subseteq V$ and $E’ \subseteq E$. A subgraph $G’ = (V’,E’)$ is called an _induced_(or _vertex-induced_) subgraph of $G$ if $E’ = \{(v_i,v_j)|(v_i,v_j) \in E \text{ and }v_i, v_j \in V’\}$, that is, all edges in $E$, between two vertices $v_i,v_j \in V’$, are also present in $E’$.</p>
 </blockquote>
 <p>下图是一个导出子图的示例：</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-25-085552.png" alt="image-20180625165552358"></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-25-085552.png" alt="image-20180625165552358"></p>
 <p>下图列举了所有 3 节点、4 节点、5 节点的 graphlets：</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-9-1/21892478.jpg" alt></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-9-1/21892478.jpg" alt></p>
 <p>$\phi$：如何对输入$x$，生成其高维特征空间$\cal H$的特征向量$\phi(x)$，以便进行内积，生成 graph kernel？这里，$x$也就是图$G$。<br>通过计数图中相互独立的图元的个数，统计它们的频率分布，将图元的频率分布向量，得到图的特征向量。</p>
 <h2 id="三、方法"><a href="#三、方法" class="headerlink" title="三、方法"></a>三、方法</h2><h3 id="设计-graphlet-kernel-的框架"><a href="#设计-graphlet-kernel-的框架" class="headerlink" title="设计 graphlet kernel 的框架"></a>设计 graphlet kernel 的框架</h3><p>一个 graphlet kernel 的设计，需要以下步骤：</p>
 <ol>
@@ -238,7 +238,7 @@ x_i = log(\frac{w_i+w_b}{\sum (w_i+w_b)})</script></li>
 <li>选出$k$个最相似图</li>
 </ol>
 <h6 id="图元频率分布的四个例子"><a href="#图元频率分布的四个例子" class="headerlink" title="图元频率分布的四个例子"></a>图元频率分布的四个例子</h6><p>下图中，x 轴表示了图元的种类，y 轴表示了图元的频率。图 a 和 c 的图元频率分布相似，且节点数量也相近，我们可以认为它们两者是拓扑相似图；但是，虽然图 b 和 d 的图元频率分布相似，但是因为节点数量相差过大，它们事实上不应该算作相似图。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-9-3/37262850.jpg" alt></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-9-3/37262850.jpg" alt></p>
 <h3 id="预测图的美学指标（EAM）"><a href="#预测图的美学指标（EAM）" class="headerlink" title="预测图的美学指标（EAM）"></a>预测图的美学指标（EAM）</h3><p>文章把这个方法称为<strong>EAM</strong>(Estimating Aesthetic Metrics)</p>
 <p>美学指标是用来评判一幅图布局的良好状况的一系列指标，既然计算一个图的实际布局结果非常耗时，我们可以训练一个回归模型，用于预测某个新的输入图的美学指标，而不用实际计算布局结果，训练步骤一共分三步：</p>
 <ol>
@@ -312,7 +312,7 @@ R^2(\cal Y, \tilde{\cal Y}) = 1 - \sum_{i}(y_i - \tilde{y_i})^2 / \sum_{i}(y_i -
 </li>
 </ul>
 <h4 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h4><h5 id="估算精度方面"><a href="#估算精度方面" class="headerlink" title="估算精度方面"></a>估算精度方面</h5><h6 id="部分精度评估结果"><a href="#部分精度评估结果" class="headerlink" title="部分精度评估结果"></a>部分精度评估结果</h6><p>上图展示了四个不同的 kernel（RW-LOG-LAPLACIAN, RW-LOG-RBF, RV-LIN-COS, DGK）在八种不同的布局方法（$sfdp, FM^3, FR, KK, Spectral, HDE, Treemap, Gosper$）的四种不同美学指标（$m_c, m_a, m_l, m_s$）的两种不同估算精度度量（$RMES, R^2$）的结果。加粗部分是最佳结果。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-9-3/78771086.jpg" alt></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-9-3/78771086.jpg" alt></p>
 <ul>
 <li>从上图可以看到，除了在$FM^3$布局下的$m_c$指标以外，RW-LOG-LAPLACIAN kernel 的表现都是最佳。而 RW-LOG-RBF kernel 则在$FM^3$布局下的$m_c$指标表现最佳。DGK 排名为第十二名，说明框架产生的 kernel 大部分都优于这个对照组，也就回答了第三个问题。</li>
 <li>总体而言，RW 采样方法得到的结果精确度要高于 RV 采样方法，LOG 变换比 LIN 变化的精度更高，用 LAPLACIAN 的核也比其他两者精度更高。</li>
@@ -326,7 +326,7 @@ R^2(\cal Y, \tilde{\cal Y}) = 1 - \sum_{i}(y_i - \tilde{y_i})^2 / \sum_{i}(y_i -
 <li>RV 采样计算速度最慢，每幅图平均 6.81 秒（标准差为 7.04）。</li>
 </ul>
 <h6 id="计算时间和图规模之间的关系"><a href="#计算时间和图规模之间的关系" class="headerlink" title="计算时间和图规模之间的关系"></a>计算时间和图规模之间的关系</h6><p>下图显示了拥有最高精度的 RW-LOG-LAPLACIAN kernel，实际计算和估算八种布局结果以及四种美学指标的时间。左图展示了八种布局的<strong>平均实际布局时间以及估算时间（y）</strong>和图<strong>节点数量(x)</strong>之间的关系，右图则展现了不同美学指标的<strong>平均计算时间以及估算时间(y)</strong>与图<strong>节点数量（x）</strong>之间的关系。随着图的规模变大，实际布局计算时间以及美学指标的计算时间和估算时间之间也就拉开了距离。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-8-31/39145853.jpg" alt></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-8-31/39145853.jpg" alt></p>
 <h4 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h4><ul>
 <li>RW 采样方法比 RV 采样方法精度高，因为 RW 只采样连通图元，故而我们推测，连通图元对展现图的结构信息更重要，故而估算结果的精度也更高。</li>
 <li>事实上，在用 RV 采样的过程中，每个图采样 10000 个图元，发现只有 1.913%是连通图元，而有 35.77%的图没有采样到连通图元，即便它们这些图本身都是连通的，这就使得这些图本身就很难用于比较。</li>
@@ -340,7 +340,7 @@ R^2(\cal Y, \tilde{\cal Y}) = 1 - \sum_{i}(y_i - \tilde{y_i})^2 / \sum_{i}(y_i -
 <p>为了避免偏见，实验并没有定义什么叫做“相似”，并且也没有告诉用户，这些图都是用同一种布局方法进行布局的。</p>
 <p>实验采用了九个图数据，八种布局方法进行组合，一共是 72 个任务。</p>
 <h6 id="用户调研中的其中一个任务示例"><a href="#用户调研中的其中一个任务示例" class="headerlink" title="用户调研中的其中一个任务示例"></a>用户调研中的其中一个任务示例</h6><p>每个任务中，参与者都会面对一个目标图（Target）和九个选项（Choices），他们需要从这些选项中，挑选出和目标最像的三个图，并按照相似度进行排序。a, b, c 三个图的中心节点被展示在右边。</p>
-<p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-8-31/55830450.jpg" alt></p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-8-31/55830450.jpg" alt></p>
 <h5 id="图的选取"><a href="#图的选取" class="headerlink" title="图的选取"></a>图的选取</h5><ul>
 <li>目标图（Target）：一共选取了 9 个目标图，选择过程如下：<ol>
 <li>将已有的 8000+图，利用谱聚类（spectral clustering）的方法分成 9 类</li>
@@ -379,7 +379,7 @@ R^2(\cal Y, \tilde{\cal Y}) = 1 - \sum_{i}(y_i - \tilde{y_i})^2 / \sum_{i}(y_i -
 </ul>
 </li>
 </ul>
-<h2 id="五、讨论"><a href="#五、讨论" class="headerlink" title="五、讨论"></a>五、讨论</h2><p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-9-3/42643278.jpg" alt></p>
+<h2 id="五、讨论"><a href="#五、讨论" class="headerlink" title="五、讨论"></a>五、讨论</h2><p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-9-3/42643278.jpg" alt></p>
 <p>上图是 8263 幅图用 RW-LOG-LAPLACIAN kernel 计算得到的相似度的一个投影，这一对对的图是 9 对拓扑结构最相似但却非同构的图。</p>
 <p>这篇论文，为我们进行大图可视化提供了一个新的思路，为了应对大图中高的计算代价，可以通过机器学习的方法，用预计算的代价来代替实时计算。这样就甚至能把大图的某些计算效率提高到实时的级别。</p>
 
@@ -416,24 +416,9 @@ R^2(\cal Y, \tilde{\cal Y}) = 1 - \sum_{i}(y_i - \tilde{y_i})^2 / \sum_{i}(y_i -
     <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
     <a href="https://github.com/aircloud">@Xiaotao</a>
   </p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>
