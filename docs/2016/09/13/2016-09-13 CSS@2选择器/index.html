@@ -242,7 +242,7 @@
 <h4 id="子选择器：-gt"><a href="#子选择器：-gt" class="headerlink" title="子选择器：&gt;"></a><strong>子选择器：<code>&gt;</code></strong></h4><p>还是上面 1 里面那个例子，如果你只想选出“标题 1”而不想选出“标题 2”，那你就需要一个子选择器，子选择器<code>&gt;</code>（大于号）只会选出直接的子元素：<code>.main&gt;h2{}</code></p>
 <h4 id="兄弟选择器：-和"><a href="#兄弟选择器：-和" class="headerlink" title="兄弟选择器：+和~"></a><strong>兄弟选择器：<code>+</code>和<code>~</code></strong></h4><p>又比如有以下的结构：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h2</span>&gt;</span>标题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>段落1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>段落2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>我们姑且把<code>div</code>下的三个子元素分别称为<em>老大</em>（标题），<em>老二</em>（段落 1）和<em>老三</em>（段落 2）吧。</p>
+<p>我们姑且把<code>div</code>下的三个子元素分别称为<em>老大</em>（标题），_老二_（段落 1）和<em>老三</em>（段落 2）吧。</p>
 <ul>
 <li>第一种情况： 如果想要选出老大的第一个弟弟，也就是老二，可以通过兄弟选择器<code>+</code>来实现：<code>h2+p{}</code>。（你当然可以通过前面说过的伪元素选择器来实现）<br>所以你懂了，<code>a+b</code>的意思就是选出 a 的第一个弟弟，而且这个弟弟还必须叫 b，否则就找不到。</li>
 <li>第二种情况：你想要找到老大的所有的标签为<code>&lt;p&gt;</code>弟弟，你就需要第二个兄弟选择器：<code>~</code>。可以这么做：<code>h2~p{}</code>。而且不一定要相邻，只要是标签<code>h2</code>的<code>&lt;p&gt;</code>弟弟都能找到。</li>
@@ -302,7 +302,7 @@
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

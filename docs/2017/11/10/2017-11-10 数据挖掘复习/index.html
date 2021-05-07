@@ -323,11 +323,11 @@
 </li>
 </ul>
 </li>
-<li><p>欧几里得距离（Euclidean Distance）：$d=\sqrt{(x<em>{i1}-x</em>{j1})^2+(x<em>{i2}-x</em>{j2})^2+…+(x<em>{ip}-x</em>{jp})^2}$</p>
+<li><p>欧几里得距离（Euclidean Distance）：$d=\sqrt{(x_{i1}-x_{j1})^2+(x_{i2}-x_{j2})^2+…+(x_{ip}-x_{jp})^2}$</p>
 </li>
-<li><p>曼哈顿距离$d=|x<em>{i1}-x</em>{j1}|+|x<em>{i2}-x</em>{j2}|+…+|x<em>{ip}-x</em>{jp}|$</p>
+<li><p>曼哈顿距离$d=|x_{i1}-x_{j1}|+|x_{i2}-x_{j2}|+…+|x_{ip}-x_{jp}|$</p>
 </li>
-<li><p>闵可夫斯基距离（Minkowski distance）：$d=\sqrt[h]{|x<em>{i1}-x</em>{j1}|^h+|x<em>{i2}-x</em>{j2}|^h+…+|x<em>{ip}-x</em>{jp}|^h}$</p>
+<li><p>闵可夫斯基距离（Minkowski distance）：$d=\sqrt[h]{|x_{i1}-x_{j1}|^h+|x_{i2}-x_{j2}|^h+…+|x_{ip}-x_{jp}|^h}$</p>
 <p>范数</p>
 </li>
 <li><p>上确界距离（$L_{max}$，切比雪夫距离）</p>
@@ -339,7 +339,7 @@
 <li><p>有序属性（ordinal）</p>
 <ul>
 <li><p>标准化，映射到[0,1]，$r_{if}$是原始值的排序值，$M_f$是属性$f$的状态数</p>
-<p>$z<em>{if}=\frac{r</em>{if}-1}{M_{f}-1}$</p>
+<p>$z_{if}=\frac{r_{if}-1}{M_{f}-1}$</p>
 </li>
 <li><p>用数值属性提到的四种距离来计算</p>
 </li>
@@ -352,7 +352,7 @@
 <li><p>计算距离：</p>
 <p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-11-13/64012434.jpg" alt></p>
 <ul>
-<li>指示符$\delta<em>{ij}=0$ 表示，对象 i 或对象 j 缺少属性 f,或者$x</em>{if} = x_{jf} = 0$且 f 是非对称的二元属性；否则为 1。</li>
+<li>指示符$\delta_{ij}=0$ 表示，对象 i 或对象 j 缺少属性 f,或者$x_{if} = x_{jf} = 0$且 f 是非对称的二元属性；否则为 1。</li>
 <li>$d_{ij}^{(f)}$，表示 i 和 j 在属性 f 上的距离：<ul>
 <li>二元属性或者枚举属性：相同为 0，不同为 1；</li>
 <li>有序属性，用有序属性标准化的方式进行标准化</li>
@@ -635,7 +635,7 @@
 </ul>
 </li>
 <li><p>分割投影</p>
-<p>为了让 fp-tree 能放进主存，需要将数据库划分成投影数据库的集合。比如 4 图中，就可以先分成两个以 r1 为前缀项集的投影数据库${b1}，{ {c1,c2},{c1,c3}}$</p>
+<p>为了让 fp-tree 能放进主存，需要将数据库划分成投影数据库的集合。比如 4 图中，就可以先分成两个以 r1 为前缀项集的投影数据库$\{b1\}，\{ \{c1,c2\},\{c1,c3\}\}$</p>
 </li>
 </ol>
 <h3 id="用等价类变换（ECLAT）进行垂直数据格式挖掘"><a href="#用等价类变换（ECLAT）进行垂直数据格式挖掘" class="headerlink" title="用等价类变换（ECLAT）进行垂直数据格式挖掘"></a>用等价类变换（ECLAT）进行垂直数据格式挖掘</h3><p>前面的方法都是 TID 项集格式的挖掘方式，这种数据格式称为水平数据格式；而垂直数据格式刚好是它的一个转置。$t(X)= {T1,T2,T3},  t(XY) = {T1, T3}$</p>
@@ -721,7 +721,7 @@
 <p>选择最高信息增益的属性作为分裂属性，也就是说选择$Info_A(D)$最小。</p>
 </li>
 <li><p>计算连续值得的信息增益</p>
-<p>A 的值进行递增序排序，每对相邻的中值作为一个可能的分裂点（$(a<em>i+a</em>{i+1})/2$），对于 A 的给定的 v 个值，则需要计算 v-1 个可能的划分。</p>
+<p>A 的值进行递增序排序，每对相邻的中值作为一个可能的分裂点（$(a_i+a_{i+1})/2$），对于 A 的给定的 v 个值，则需要计算 v-1 个可能的划分。</p>
 <p>对每个分裂点计算$Info_A(D)$，对每个分裂点，分区个数是 2，选出最小期望信息需求的点作为分裂点。</p>
 </li>
 </ul>
@@ -784,7 +784,7 @@
 </li>
 <li><p>朴素贝叶斯分类</p>
 <ul>
-<li><p>最大化$P(C_i|X)$：假定一个 tuple 用一个 n 维属性向量$X={x_1,x_2,…x_n}$表示，且假定有 m 个类，那么配件单贝叶斯分类法中，预测$X$属于$C_i$的概率为：$P(C_i|X)$，只要找到这个最大值对应的$C_i$即可。</p>
+<li><p>最大化$P(C_i|X)$：假定一个 tuple 用一个 n 维属性向量$X=\{x_1,x_2,…x_n\}$表示，且假定有 m 个类，那么配件单贝叶斯分类法中，预测$X$属于$C_i$的概率为：$P(C_i|X)$，只要找到这个最大值对应的$C_i$即可。</p>
 </li>
 <li><p>最大化$P(X|C_i)$：而根据贝叶斯公式，只要找到$P(X|C_i)P(C_i)$的最大值即可。加入类的先验概率未知，我们通常假设所有类的先验概率一致，于是我们只要找到$P(X|C_i)$的最大值即可</p>
 </li>
@@ -794,7 +794,7 @@
 <li><p>如果属性$x_k$是分类属性，那么概率即为训练集中属性值为$x_k$，且属于$C_i$的 tuple 在$C_i$中的比例</p>
 </li>
 <li><p>如果属性是连续值，一般假设属性服从高斯分布。</p>
-<p>$P(x<em>k|C_i)=g(x_k,\mu</em>{C<em>i},\sigma</em>{C_i})$<img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-11-16/66390485.jpg" alt></p>
+<p>$P(x_k|C_i)=g(x_k,\mu_{C_i},\sigma_{C_i})$<img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-11-16/66390485.jpg" alt></p>
 </li>
 </ul>
 </li>
@@ -818,7 +818,7 @@
 <p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-11-16/68799474.jpg" alt></p>
 <ul>
 <li>准确率：$accuracy=(TP+TN)/(P+N)$</li>
-<li>错误率：$error\ rate=(FP+FN)/(P+N)$</li>
+<li>错误率：$error rate=(FP+FN)/(P+N)$</li>
 <li>有些数据是不平衡的，比如在癌症检测，显然 cancer=yes 的元组才是我们关注的，于是有了以下两个度量：<ul>
 <li>灵敏性（正确识别的正元组的比例）：$sensitivity=TP/P$，反映了识别正例的能力</li>
 <li>特效性（正确识别的负元组的比例）：$specificity=TN/N$，反映了识别反例的能力</li>
@@ -827,7 +827,7 @@
 <li>精度（正确识别的正元组在预测为正元组中的比例）：$precision=(TP)/(TP+FP)$</li>
 <li>召回率：$recall=TP/P$，其实也就是灵敏性</li>
 <li>$F$度量：$F=(2 \times precision \times recall)/(precision+recall)$</li>
-<li>$F<em>\beta$度量：$F</em>\beta=((1+\beta^2) \times precision \times recall)/(\beta^2 \times precision+recall)$</li>
+<li>$F_\beta$度量：$F_\beta=((1+\beta^2) \times precision \times recall)/(\beta^2 \times precision+recall)$</li>
 </ul>
 </li>
 <li><p>保持方法和随机二次抽样</p>
@@ -846,8 +846,8 @@
 <ul>
 <li><p>$.632$自助法：对于给定的包含 d 个元组的数据集，有放回抽样 d 次，产生 d 个样本的自主样本集或训练集，其余作为验证。平均情况下，63.2%的数据会被用于训练。</p>
 <p>准确率计算：</p>
-<p>$Acc(M)=\sum(0.632 \times Acc(M<em>i)</em>{test_set} + 0.368 \times Acc(M<em>i)</em>{train_set})$</p>
-<p>$Acc(M<em>i)</em>{test_set}$是对于检验集 i 的准确率，$Acc(M<em>i)</em>{train_set})$是对于源数据的准确率</p>
+<p>$Acc(M)=\sum(0.632 \times Acc(M_i)_{test_set} + 0.368 \times Acc(M_i)_{train_set})$</p>
+<p>$Acc(M_i)_{test_set}$是对于检验集 i 的准确率，$Acc(M_i)_{train_set})$是对于源数据的准确率</p>
 </li>
 </ul>
 </li>
@@ -1031,7 +1031,7 @@
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

@@ -143,7 +143,7 @@
         </span>
     </div>
     <div class="post-content ">
-        <p><strong>最优间隔分类器</strong>（<em>Optimal Margin Classifier</em>）。其目标是使得最小几何间隔最大化（SVM（一）概念）：</p>
+        <p><strong>最优间隔分类器</strong>（_Optimal Margin Classifier_）。其目标是使得最小几何间隔最大化（SVM（一）概念）：</p>
 <script type="math/tex; mode=display">
 \text{目标(1):} \\\
 \max_{w, b} \gamma \\\
@@ -216,7 +216,7 @@ w^\ast =\sum_{i=1}\alpha_i^\ast y^{(i)}x^{(i)}</script><p>在原始问题中，�
 <script type="math/tex; mode=display">
 g_i(w,b)=1-y{(i)}(w^Tx^{(i)}+b) \leq 0</script><p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-7-4/9336603.jpg" alt></p>
 <p>我们知道，在数据中，只有少数的几个数据点，他们的函数距离为 1（最小），也即$g_i(w,b)=0$，如图所示。</p>
-<p>在整个数据集中，只有这些数据点对约束超平面起了作用，这些数据点被称为支持向量（<em>support vector</em>），其对应的$\alpha_i^\ast  \neq 0$，而其他不是支持向量的数据点，没有对约束超平面起作用，其$\alpha_i^\ast =0$。</p>
+<p>在整个数据集中，只有这些数据点对约束超平面起了作用，这些数据点被称为支持向量（_support vector_），其对应的$\alpha_i^\ast  \neq 0$，而其他不是支持向量的数据点，没有对约束超平面起作用，其$\alpha_i^\ast =0$。</p>
 <p>此时，我们已经得到了$w^\ast $，而$b^\ast $的计算如下，找到一个数据点，其$\alpha_j^\ast  \neq 0$(也就是支持向量，其函数间隔为 1)，我们就能得到：</p>
 <script type="math/tex; mode=display">
 y^{(j)}(w^{*T}x^{(j)}+b^\ast )=1
@@ -272,7 +272,7 @@ b^\ast =y^{(j)}-\sum_{i=1}\alpha_i^\ast y^{(i)}(x^{(i)} \cdot x^{(j)})</script>
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

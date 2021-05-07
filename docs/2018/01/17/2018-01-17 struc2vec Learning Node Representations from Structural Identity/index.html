@@ -172,7 +172,7 @@
 <li><p>$g(D_1,D_2)$度量了两个度数序列$D1,D2$之间的距离</p>
 </li>
 <li><p>$f_k(u,v)$表示了$u,v$两节点之间，$k$级邻域（距离小于等于$k$的节点和所有它们之间的边）的结构距离。</p>
-<p>$f<em>k(u,v) = f</em>{k-1}(u,v) + g(s(R_k(u)), s(R_k(v)))$</p>
+<p>$f_k(u,v) = f_{k-1}(u,v) + g(s(R_k(u)), s(R_k(v)))$</p>
 <p>$f_{-1} = 0$</p>
 <p>上述定义表达的是一个递归的过程，把问题转换成了如何定义两个节点集合之间的距离，也就是$g(\cdot)$该如何计算。</p>
 </li>
@@ -193,8 +193,8 @@
 </li>
 <li><p>不同层级之间，通过有向边连接，在$k$层的每个节点都会跟$k-1$层和$k+1$层的相同节点用有向边连接，边的权重定义：</p>
 <script type="math/tex; mode=display">w(u_k,u_{k+1})=log(\Gamma_k(u)+e), k=0,…,k^∗−1</script><script type="math/tex; mode=display">w(u_k,u_{k-1})=1,k=1,…,k^∗</script><ul>
-<li>其中$\Gamma<em>k(u)$代表了指向节点$u$的权重大于$k$层图平均权重的边的数量：$\Gamma_k(u)=\sum</em>{v \in V} \mathbb{1}(w_k(u,v) &gt; \overline{w_k})$，也就是度量了该节点$u$和第$k$层其他节点之间的相似度。</li>
-<li>而$\overline{w<em>k} = \sum</em>{(u,v)\in  \begin{pmatrix} V \ 2 \ \end{pmatrix} }w_k(u,v)/\begin{pmatrix} n \ 2 \end{pmatrix}$</li>
+<li>其中$\Gamma_k(u)$代表了指向节点$u$的权重大于$k$层图平均权重的边的数量：$\Gamma_k(u)=\sum_{v \in V} \mathbb{1}(w_k(u,v) &gt; \overline{w_k})$，也就是度量了该节点$u$和第$k$层其他节点之间的相似度。</li>
+<li>而$\overline{w_k} = \sum_{(u,v)\in  \begin{pmatrix} V \ 2 \ \end{pmatrix} }w_k(u,v)/\begin{pmatrix} n \ 2 \end{pmatrix}$</li>
 </ul>
 </li>
 </ul>
@@ -215,7 +215,7 @@
 <h4 id="第四步：学习语言模型"><a href="#第四步：学习语言模型" class="headerlink" title="第四步：学习语言模型"></a>第四步：学习语言模型</h4><p>通过 word embedding 的方法，对第三步生成的随机游走结果，生成高维向量。</p>
 <p>文章使用了<strong>Skip-Gram</strong><sup><a href="#fn_1" id="reffn_1">1</a></sup>。</p>
 <blockquote id="fn_1">
-<sup>1</sup>. Mikolov, Tomas, et al. “Efficient estimation of word representations in vector space.” <em>arXiv preprint arXiv:1301.3781</em> (2013).<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+<sup>1</sup>. Mikolov, Tomas, et al. “Efficient estimation of word representations in vector space.” _arXiv preprint arXiv:1301.3781_ (2013).<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
 </blockquote>
 
         
@@ -268,7 +268,7 @@
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

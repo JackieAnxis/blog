@@ -144,22 +144,22 @@
     </div>
     <div class="post-content ">
         <p>生成学习算法，英文为<em>Generative Learning Algorithm</em>。</p>
-<p>我们之前看到的都是判别学习算法（<em>Discriminative Learning Algorithm</em>）。判别学习算法可以分成两种：</p>
+<p>我们之前看到的都是判别学习算法（_Discriminative Learning Algorithm_）。判别学习算法可以分成两种：</p>
 <ol>
 <li>学得$p(y|x)$，比如之前的线性模型</li>
 <li>学得一个假设$h_\theta (x) = \lbrace 0, 1 \rbrace$，比如二分类问题</li>
 </ol>
 <p>上面都是根据特征$x$，来对输出$y$进行建模，也许$y$是一个连续的值，也可能是离散的，比如类别。</p>
-<p>那么，生成学习算法（<em>Generative Learning Algorithm</em>）刚好跟判别学习算法（<em>Discriminative Learning Algorithm</em>）相反，其用输出$y$对$x$进行建模，也就是：<strong>学得$p(x|y)$</strong>。</p>
+<p>那么，生成学习算法（_Generative Learning Algorithm_）刚好跟判别学习算法（_Discriminative Learning Algorithm_）相反，其用输出$y$对$x$进行建模，也就是：<strong>学得$p(x|y)$</strong>。</p>
 <p><strong>详细解释</strong>：</p>
 <p>对于一个二分类或多分类问题，生成学习算法，在给定样本所述的类别的条件下，会对其样本特征建立一个概率模型。举例而言，在给定癌症是良性或者是恶性的条件下，生成模型会对该癌症的特征的概率分布进行建模。</p>
 <p>根据朴素贝叶斯，</p>
 <script type="math/tex; mode=display">
 p(y=1|x)=\frac{p(x|y=1) p(y=1)}{p(x)}</script><p>因为给定了$x$，所以$p(x)$可以视作 1，也即</p>
 <script type="math/tex; mode=display">
-p(y=1|x)=p(x|y=1) p(y=1)</script><h2 id="高斯判别算法"><a href="#高斯判别算法" class="headerlink" title="高斯判别算法"></a>高斯判别算法</h2><p><em>Gaussian Discriminant Algorithm</em></p>
+p(y=1|x)=p(x|y=1) p(y=1)</script><h2 id="高斯判别算法"><a href="#高斯判别算法" class="headerlink" title="高斯判别算法"></a>高斯判别算法</h2><p>_Gaussian Discriminant Algorithm_</p>
 <p>对特征满足高斯分布的二分类问题进行建模。</p>
-<p>假设$x \in \Bbb R^n$，且$p(x|y)$满足高斯分布，因为$x$往往是一个特征向量，故而这里的高斯分布是一个多元高斯分布（<em>multivariate Gaussian）</em>。</p>
+<p>假设$x \in \Bbb R^n$，且$p(x|y)$满足高斯分布，因为$x$往往是一个特征向量，故而这里的高斯分布是一个多元高斯分布（_multivariate Gaussian）_。</p>
 <blockquote>
 <p>多元高斯分布，$z \sim N(\mu, \Sigma)$。</p>
 <script type="math/tex; mode=display">
@@ -178,7 +178,7 @@ l(\phi, \mu_0, \mu_1, \Sigma) &= log\prod_{i=1}^mp(x^{(i)}, (y^{(i)})) \\\
 &= log\prod_{i=1}^mp(x^{(i)}| (y^{(i)}))p(y^{(i)})
 \end{align}</script><p>对比一下之前二分类问题中的对数似然估计函数：</p>
 <script type="math/tex; mode=display">
-l(\theta) = \sum_{i=1}^mlog(P(y^{(i)}|x^{(i)};\theta))</script><p>这里，我们使用了联合概率（<em>joint likelihood</em>）: $p(x^{(i)}, (y^{(i)}))$，而在之前的判别模型里，我们用的是条件概率（<em>conditional likelihood</em>）: $P(y^{(i)}|x^{(i)};\theta)$。因为，在判别模型中，特征$x$是给定的，所以用条件概率来进行极大似然估计；而在生成模型中，特征$x$不给定，所以需要用联合概率来进行极大似然估计。</p>
+l(\theta) = \sum_{i=1}^mlog(P(y^{(i)}|x^{(i)};\theta))</script><p>这里，我们使用了联合概率（_joint likelihood_）: $p(x^{(i)}, (y^{(i)}))$，而在之前的判别模型里，我们用的是条件概率（_conditional likelihood_）: $P(y^{(i)}|x^{(i)};\theta)$。因为，在判别模型中，特征$x$是给定的，所以用条件概率来进行极大似然估计；而在生成模型中，特征$x$不给定，所以需要用联合概率来进行极大似然估计。</p>
 <p>然后，我们进行极大似然估计，得到：</p>
 <script type="math/tex; mode=display">
 \phi=\frac{1}{m}\sum_{i=1}^my^{(i)}=\frac{1}{m}\sum_{i=1}^m 1\lbrace y^{(i)} = 1 \rbrace</script><p>也就是分类标签为 1 的训练样本的比例。</p>
@@ -239,7 +239,7 @@ l(\theta) = \sum_{i=1}^mlog(P(y^{(i)}|x^{(i)};\theta))</script><p>这里，我�
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

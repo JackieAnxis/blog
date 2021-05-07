@@ -143,7 +143,7 @@
         </span>
     </div>
     <div class="post-content ">
-        <p><em>SVM</em>，指的是支持向量机（<em>support vector machines</em>）。</p>
+        <p>_SVM_，指的是支持向量机（_support vector machines_）。</p>
 <p>支持向量机，假设数据是线性可分的，那么我们就能找到一个超平面，将数据分成两类。但是一旦线性可分，我们就可能找到无数的超平面，都可以将数据分成两类：</p>
 <p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-7-3/83131877.jpg" alt></p>
 <p>但是很明显，上图中虽然<em>a, c</em>都对数据进行了有效的分割。但很明显，都不如<em>b</em>分割的好。</p>
@@ -182,7 +182,7 @@ x^{(i)}-\gamma^{(i)}\frac{w}{||w||}</script><p>又因为，D 在超平面$w^Tx+b
 <script type="math/tex; mode=display">
 \hat{\gamma}^{(i)} = \frac{\gamma^{(i)}}{||w||}</script><p>同样的，超平面与数据集$\lbrace (x^{(1)}, y^{(1)}), (x^{(2)}, y^{(2)}), \ldots \rbrace$之间的几何间隔，被定义为所有几何间隔中的最小值：</p>
 <script type="math/tex; mode=display">
-\gamma=\min_i\gamma^{(i)}</script><p>最后，我们导出<strong>最优间隔分类器</strong>（<em>Optimal Margin Classifier</em>）问题：选择$w, b$，最大化$\gamma$，同时满足$\forall(x^{(i)}, y^{(i)})$，$ y^{(i)} \cdot ((\frac{w}{||w||})^T \cdot x^{(i)}+\frac{b}{||w||}) \geq \gamma$（所有数据点的几何间隔都大于该最小几何间隔）。</p>
+\gamma=\min_i\gamma^{(i)}</script><p>最后，我们导出<strong>最优间隔分类器</strong>（_Optimal Margin Classifier_）问题：选择$w, b$，最大化$\gamma$，同时满足$\forall(x^{(i)}, y^{(i)})$，$ y^{(i)} \cdot ((\frac{w}{||w||})^T \cdot x^{(i)}+\frac{b}{||w||}) \geq \gamma$（所有数据点的几何间隔都大于该最小几何间隔）。</p>
 <p>目前为止，已经是 SVM 问题的一个简化版本。</p>
 
         
@@ -235,7 +235,7 @@ x^{(i)}-\gamma^{(i)}\frac{w}{||w||}</script><p>又因为，D 在超平面$w^Tx+b
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>

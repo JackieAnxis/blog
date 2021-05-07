@@ -175,9 +175,9 @@
 <p>假如可以从中找到一份图数据$G_k$，它的拓扑结构跟$G$最相似，那我们就可以用它的图布局来当做$G$的结果。</p>
 <p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-26-015231.gif" alt="6月-26-2018 09-51-54"></p>
 <p>那么问题来了，如何度量两份图数据之间的拓扑相似度？</p>
-<h3 id="拓扑相似度度量"><a href="#拓扑相似度度量" class="headerlink" title="拓扑相似度度量"></a>拓扑相似度度量</h3><p>也叫做：<em>graph matching, graph comparison, network alignment</em>。</p>
+<h3 id="拓扑相似度度量"><a href="#拓扑相似度度量" class="headerlink" title="拓扑相似度度量"></a>拓扑相似度度量</h3><p>也叫做：_graph matching, graph comparison, network alignment_。</p>
 <ul>
-<li><strong>老方法</strong>：<em>isomorphsim relation, graph edit distance, graph measures</em>。但复杂度太高，或者普适性不强。</li>
+<li><strong>老方法</strong>：_isomorphsim relation, graph edit distance, graph measures_。但复杂度太高，或者普适性不强。</li>
 <li><strong>新方法</strong>：<strong>图核（Graph kernel）</strong>：可以支持 kernelized machine learning，对图之间进行成对比较，得到图和图之间的拓扑相似度。可以支持 SVM 等方法。</li>
 </ul>
 <blockquote>
@@ -185,13 +185,13 @@
 <script type="math/tex; mode=display">
 k(x, x') = \langle\phi(x), \phi(x')\rangle = \langle\bf{x}, \bf{x'}\rangle</script><p>其中$\phi$将输入$x$映射到高维特征空间：$x\mapsto \cal{H}$</p>
 </blockquote>
-<p>现有的图核：<em>walks, shortest pathes, subtress, cycles, graphlets</em>，前面几个都有较高的时间复杂度（$O(|V|^3)$或者更高），或者不适合无标记图。<em>graphlets kernel</em>被引入已解决上述的问题。</p>
+<p>现有的图核：_walks, shortest pathes, subtress, cycles, graphlets_，前面几个都有较高的时间复杂度（$O(|V|^3)$或者更高），或者不适合无标记图。<em>graphlets kernel</em>被引入已解决上述的问题。</p>
 <ul>
-<li><em>graphlets</em>：图元，指的是一系列异构的（<em>isomorphism</em>）导出（<em>indeced</em>）子图。</li>
+<li>_graphlets_：图元，指的是一系列异构的（_isomorphism_）导出（_indeced_）子图。</li>
 </ul>
 <blockquote>
-<p><em>isomophism</em>: two graphs $G = (V,E)$ and $G’ = (V’, E’)$ are <em>isomorphic</em> if there exists a bijection $f: V \rightarrow V’$, called isomorphism, such that$ (v_i, v_j) \in E \Leftrightarrow (f(v_i),f(v_j)) \in E’ \text{ for all }v_i,v_j \in V​$.</p>
-<p><em>indeced</em>: Given a graph $G$, a graph $G’ = (V’,E’)$ is a subgraph of $G$ if $V’\subseteq V$ and $E’ \subseteq E$. A subgraph $G’ = (V’,E’)$ is called an <em>induced</em>(or <em>vertex-induced</em>) subgraph of $G$ if $E’ = {(v_i,v_j)|(v_i,v_j) \in E \text{ and }v_i, v_j \in V’}$, that is, all edges in $E$, between two vertices $v_i,v_j \in V’$, are also present in $E’$.</p>
+<p>_isomophism_: two graphs $G = (V,E)$ and $G’ = (V’, E’)$ are _isomorphic_ if there exists a bijection $f: V \rightarrow V’$, called isomorphism, such that$ (v_i, v_j) \in E \Leftrightarrow (f(v_i),f(v_j)) \in E’ \text{ for all }v_i,v_j \in V​$.</p>
+<p>_indeced_: Given a graph $G$, a graph $G’ = (V’,E’)$ is a subgraph of $G$ if $V’\subseteq V$ and $E’ \subseteq E$. A subgraph $G’ = (V’,E’)$ is called an _induced_(or _vertex-induced_) subgraph of $G$ if $E’ = \{(v_i,v_j)|(v_i,v_j) \in E \text{ and }v_i, v_j \in V’\}$, that is, all edges in $E$, between two vertices $v_i,v_j \in V’$, are also present in $E’$.</p>
 </blockquote>
 <p>下图是一个导出子图的示例：</p>
 <p><img src="http://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-25-085552.png" alt="image-20180625165552358"></p>
@@ -231,10 +231,10 @@ x_i = log(\frac{w_i+w_b}{\sum (w_i+w_b)})</script></li>
 \langle \bf{x, x'} \rangle = exp(-\frac{||\bf{x - x'}||_1}{\sigma})</script></li>
 </ul>
 <h3 id="预测图的布局结果（WGL）"><a href="#预测图的布局结果（WGL）" class="headerlink" title="预测图的布局结果（WGL）"></a>预测图的布局结果（WGL）</h3><p>文章把这个方法称为<strong>WGL</strong>（What Would a Graph Look Like in This Layout? ）</p>
-<p>文章基于相似度，设计了一个类似<em>kNN</em>的最近邻算法，用来找出和输入图$G<em>{input}$拓扑结构最相似的 k 个图，并展示他们已存在的布局结果给用户。用户就可以通过观察这些拓扑相似的图来预测$G</em>{input}$的结果，步骤一共分三步：</p>
+<p>文章基于相似度，设计了一个类似<em>kNN</em>的最近邻算法，用来找出和输入图$G_{input}$拓扑结构最相似的 k 个图，并展示他们已存在的布局结果给用户。用户就可以通过观察这些拓扑相似的图来预测$G_{input}$的结果，步骤一共分三步：</p>
 <ol>
 <li>计算准备好的已存在的图（每个图都预先计算好了布局结果）和输入图$G_{input}$的相似度</li>
-<li>移除不满足约束条件的图（因为有些图，虽然它的特征向量和$G<em>{input}$很相似，但是因为节点过多或者过少，事实上应该不算做相似图，比如下图：<a href="#元频率分布的四个例子">图元频率分布的四个例子</a>，文章中设置了一个约束条件，即相似图的节点数，不能多于$G</em>{input}$的 2 倍，或者少于$G_{input}$的 1/2）</li>
+<li>移除不满足约束条件的图（因为有些图，虽然它的特征向量和$G_{input}$很相似，但是因为节点过多或者过少，事实上应该不算做相似图，比如下图：<a href="#元频率分布的四个例子">图元频率分布的四个例子</a>，文章中设置了一个约束条件，即相似图的节点数，不能多于$G_{input}$的 2 倍，或者少于$G_{input}$的 1/2）</li>
 <li>选出$k$个最相似图</li>
 </ol>
 <h6 id="图元频率分布的四个例子"><a href="#图元频率分布的四个例子" class="headerlink" title="图元频率分布的四个例子"></a>图元频率分布的四个例子</h6><p>下图中，x 轴表示了图元的种类，y 轴表示了图元的频率。图 a 和 c 的图元频率分布相似，且节点数量也相近，我们可以认为它们两者是拓扑相似图；但是，虽然图 b 和 d 的图元频率分布相似，但是因为节点数量相差过大，它们事实上不应该算作相似图。</p>
@@ -302,8 +302,8 @@ m_s = MJS(G_{input}, G_S), \quad MJS(G_1, G_2) = \frac{1}{|V|} \sum_{v \in V} \f
 <script type="math/tex; mode=display">
 RMSE(\cal Y, \tilde{\cal Y}) = \sqrt{\frac{1}{n}\sum_{i}(y_i - \tilde{y_i})^2}</script><p>其中：</p>
 <ul>
-<li>$\cal Y = {y_1,…,y_n}$是经过实际布局后，测量出来的真实结果；</li>
-<li>$\tilde{\cal Y} = {\tilde{y_1},…,\tilde{y_n}}$是回归模型的估算结果。</li>
+<li>$\cal Y = \{y_1,…,y_n\}$是经过实际布局后，测量出来的真实结果；</li>
+<li>$\tilde{\cal Y} = \{\tilde{y_1},…,\tilde{y_n}\}$是回归模型的估算结果。</li>
 </ul>
 </li>
 <li><p><strong>测定系数（coefficient of determination (R ) ）</strong>：结果越小越好</p>
@@ -364,7 +364,7 @@ R^2(\cal Y, \tilde{\cal Y}) = 1 - \sum_{i}(y_i - \tilde{y_i})^2 / \sum_{i}(y_i -
 <ul>
 <li>如图：<a href="#用户调研的总结">用户调研的总结</a>，发现有 80.46%的情况，参与者认为最相似的选项图（$r_P=1$）和系统选出来的最相似的图（$r_T=1$）刚好吻合（图 a 最左边的蓝色长条）；90.27%的情况下，参与者认为的最相似（$r_P=1$）和第二相似（$r_P=2$）的选项图和系统选出的最相似图（$r_T=1$）吻合；而 93.8%的情况下，参与者选出的第 1、2、3 相似的图（$r_P={1,2,3}$）和系统选出的最相似图（$r_T=1$）吻合。</li>
 <li>除了 treemap 布局和 spectral 布局以外，有 78.52%~93.33%的情况下，参与者选出来的最相似图和算法得到的最相似图一致，有 94.44%~99.26%的情况下，参与者选出来的最相似的三幅图和算法得到的最相似图吻合。</li>
-<li>目标图中，除了$G<em>{2331}$和$G</em>{3833}$，有 79.58%~98.33%的情况下，参与者选出来的最相似图和算法得到的最相似图一致，有 92.08%~99.99%的情况下，参与者选出来的最相似的三幅图和算法得到的最相似图吻合。</li>
+<li>目标图中，除了$G_{2331}$和$G_{3833}$，有 79.58%~98.33%的情况下，参与者选出来的最相似图和算法得到的最相似图一致，有 92.08%~99.99%的情况下，参与者选出来的最相似的三幅图和算法得到的最相似图吻合。</li>
 </ul>
 <h4 id="讨论-1"><a href="#讨论-1" class="headerlink" title="讨论"></a>讨论</h4><ul>
 <li>为什么 Spectral 和 Treemap 布局比其他的布局方法结果要差？<ul>
@@ -433,7 +433,7 @@ R^2(\cal Y, \tilde{\cal Y}) = 1 - \sum_{i}(y_i - \tilde{y_i})^2 / \sum_{i}(y_i -
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>
