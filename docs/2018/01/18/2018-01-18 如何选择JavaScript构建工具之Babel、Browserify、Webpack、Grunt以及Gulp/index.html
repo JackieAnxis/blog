@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="google-site-verification"
+    content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Jiacheng Pan&#39;s Blog" />
+  <meta name="keyword" content="" />
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" />
+
+  <title>
+     如何选择JavaScript构建工具之Babel、Browserify、Webpack、Grunt以及Gulp - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+ 
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link
+    href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <!-- ga & ba script hoook -->
+  <script></script>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        如何选择JavaScript构建工具之Babel、Browserify、Webpack、Grunt以及Gulp
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2018-01-18 07:33:00</span></span> -->
+        <span class="attr">发布于：<span>2018-01-18</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#FrontEnd"
+                title="FrontEnd">FrontEnd</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#FrontEnd" title="FrontEnd">FrontEnd</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#JavaScript" title="JavaScript">JavaScript</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h2 id="如何选择-JavaScript-构建工具之-Babel、Browserify、Webpack、Grunt-以及-Gulp"><a href="#如何选择-JavaScript-构建工具之-Babel、Browserify、Webpack、Grunt-以及-Gulp" class="headerlink" title="如何选择 JavaScript 构建工具之 Babel、Browserify、Webpack、Grunt 以及 Gulp"></a>如何选择 JavaScript 构建工具之 Babel、Browserify、Webpack、Grunt 以及 Gulp</h2><p>当我们开始一个新的 JavaScript 项目时，我们需要考虑的第一件事就是搭建一个前端编译环境。但是在面对众多的 JavaScript 构建工具时，我们却无所适从，不知道究竟哪一个才是最适合我们的。</p>
+<p>想象一下，如果有一个很简单的判断标准，让你知道如何针对不同的项目，选取不同的前端构建工具，那是不是很美好呢？事实上，在使用自动构建系统，积累了 5 年的项目开发经验之后，我总结出来如下内容。相信我，它是可以让你明白不同构建工具的使用场景的。</p>
+<h2 id="开门见山"><a href="#开门见山" class="headerlink" title="开门见山"></a>开门见山</h2><p>判断你的项目需要使用哪种构建工具是很容易的：</p>
+<ul>
+<li>如果是小项目的话，基于 ES6 编译器即可</li>
+<li>如果是单页应用的话，还需要一个模块打包器</li>
+<li>如果你的项目，部署在了生产环境之中，除了上述之外，还需要一个能够自动执行的任务运行器</li>
+</ul>
+<p>下面是我推荐的一些可以满足你上述需求的前端构建工具：</p>
+<ul>
+<li>使用 <code>Babel</code> 可以编译适配 ES6 代码</li>
+<li>使用 <code>Webpack</code> 能够打包 JavaScript 文件以及其相关的依赖</li>
+<li>使用 <code>Gulp</code> 能够自动化地将文件批量重命名，从而刷新静态资源文件的缓存</li>
+</ul>
+<p>那么，问题来了，前端构建工具那么多，为什么我偏偏推荐上述的这些呢？</p>
+<h2 id="追根溯源"><a href="#追根溯源" class="headerlink" title="追根溯源"></a>追根溯源</h2><p>我对很多流行的 JavaScript 构建工具进行了分析，并分别找出了它们的优点与缺点。既然编译器是无论如何都需要的，那么我们就从编译器开始说起吧。</p>
+<h3 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h3><p>ES5 版的 JavaScript 并不是那么优雅。尽管 ES6 与 ES7 有了非常大的提升，但是目前的浏览器并不支持 ES6 与 ES7。</p>
+<p>幸运的是，有很多工程师打造了能够将<code>新的 JavaScript 代码</code>转换成<code>浏览器支持的 JavaScript 代码</code>的工具，有的甚至还在此基础上，加入了新的特性与功能 — 例如微软的 TypeScript 。但是如果我们要在众多的 JavaScript 编译器中，选取一个最接近 JavaScript 官方代码风格的，那么 <code>Babel</code> 无疑是最优秀的。</p>
+<h4 id="Babel"><a href="#Babel" class="headerlink" title="Babel"></a>Babel</h4><p>在阅读完这篇文章之后，如果你必须要学着使用一款工具，那么这款工具肯定就是 <code>Babel</code> 了</p>
+<p>Babel 的功能并不会让你大吃一惊，正如你所期待的那样，它主要是将 ES6 代码转换成浏览器所支持的 ES5 代码而已。还有一点就是它允许你在 Babel 已拥有的转换器基础之上，定制属于你自己的转换器——欣喜的是，Babel 的社区在转换器方面，已经为我们提供了很多。此外，它还能够对 ES7 的特性进行转换，例如 <code>async</code> / <code>await</code> 以及 <code>decorators</code>。同时，它也提供了对 React JSX 的支持。</p>
+<p>尽管 Babel 在转换 JavaScript 代码方面做得足够优秀，但是除此之外，它不能帮我们做任何事情。事实上，它甚至不能通过 ES6 的 <code>import</code> 和 <code>export</code> 的表达式，将我们的多个文件进行合并。这也是为什么我们接下来需要一个模块打包器了。</p>
+<h3 id="模块打包器"><a href="#模块打包器" class="headerlink" title="模块打包器"></a>模块打包器</h3><p>大多数的项目，无论规模多大，程序员都习惯于将代码拆分到多个文件之中。尽管你可以使用 <code>script</code> 标签，来一个个地引入这些单独的 js 文件，但是你终究还是需要基于不同文件的依赖关系来决定它们引入的先后顺序的。在这件事情上，工具能够比你做得更好，这也就是为什么你需要使用模块打包器，来将一些文件自动化地打包进一个单独的文件的原因。</p>
+<p>尽管我们可以从网上找到很多的模块打包器，但是只有两款是最具代表性的：<a href="http://browserify.org/" target="_blank" rel="noopener">Browserify</a> 与 <a href="https://webpack.github.io/" target="_blank" rel="noopener">Webpack</a></p>
+<h4 id="Browserify"><a href="#Browserify" class="headerlink" title="Browserify"></a>Browserify</h4><p>Browserify 可以使得 Node packages 获得浏览器的支持。当然，它也可以帮助我们将 Web 应用打包成一个 Node Packages。</p>
+<p>这种以 Node 为中心的哲学，有很多的好处。使用 Browserify 来打包一个应用是非常容易的。你可以使用 Node 内置的模块，例如 <code>path</code> ，也可以引用你之前在 Node 项目中写过的任何代码。当然，缺点就是，你的单页应用通常需要的资源，正好是 Node 项目不需要的，例如 CSS 、图片以及字体。</p>
+<p>尽管存在这种问题，但是这种问题也并不是不能解决的。许多人已经写了插件来使得 Browserify 可以打包这些资源。这些插件可以使你能够转换 ES6 到 ES5 、打包 CSS、分离你的代码到多个文件之中等等。但是考虑到这些插件违背了 Browserify 这一工具的设计初衷，它的配置将会比较混乱。</p>
+<p>因此，尽管 Browserify 是一款能够优雅地将 Node Packages 打包成浏览器支持形式的工具，但是如果你写的是一个单页应用，那么你最好选择一款专门用于打包、并且能够打包所有资源文件的模块打包器。</p>
+<h4 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h4><p>Webpack 是一款能够将许多的 JavaScript 模块以及它的相关依赖打包进一个单独文件的工具。它并不需要你给出这些模块的依赖具体是哪些，只要它能够打包成 JavaScript 模块即可。</p>
+<p>只要它能够打包成 JavaScript 模块即可？这意味着它不支持 CSS 和图片，是吗？当然不是，Webpack 是可以通过各种 loaders 来将各种资源文件都转换成 JavaScript 模块的神器。</p>
+<p>Loaders 是一种能够处理不同资源文件的转换器。它们能够接收任何形式的资源文件，也能输出任何形式的资源文件，而不仅仅是 JavaScript 。而且，这种操作也是可以链式的，它允许你先将 SCSS 文件转换为 CSS，然后再将 CSS 转换为 JavaScript 模块。然后，Webpack 再对这些 JavaScript 模块统一打包！</p>
+<p>如果非要说 Webpack 有什么缺点的话，那就是许多流行的案例项目都包含了令开发人员感到害怕的 Webpack 复杂的配置文件。如果你按照我的 <a href="http://jamesknelson.com/webpack-made-simple-build-es6-less-with-autorefresh-in-26-lines/" target="_blank" rel="noopener">configuring Webpack with Babel in 26 lines</a> 教程来做的话，你就会发现解决这种问题是如此的 so easy。</p>
+<p>经过上述的分析，现在你应该知道怎样使用模块打包器来生成一系列的静态资源文件了。但是有了这些文件之后，我们该怎么做呢？这就是该任务运行器发挥作用的时候了。</p>
+<h3 id="任务运行器"><a href="#任务运行器" class="headerlink" title="任务运行器"></a>任务运行器</h3><p>任务运行器是用来定义并运行任务的工具。简言之，任何你可能在命令行上执行的操作，都可以通过任务运行器来完成。</p>
+<p>在使用任务运行器之前，理解这句话是非常重要的：不要为了编写任务而编写任务。也就是说，如果你自己编写一个任务来进行模块打包，这也是可以的。但是如果你把这件事情交给 Webpack 去做的话，你只需要启动一下 Webpack 就好了，我们完全没有必要重复造轮子。</p>
+<p>编写一些你的模块打包器不能处理的任务才是有必要的，例如为模块打包器自动生成的静态资源文件在网页中插入一个 <code>script</code> 标签。</p>
+<h4 id="Grunt"><a href="#Grunt" class="headerlink" title="Grunt"></a>Grunt</h4><p>Grunt 是一个运行你先前定义过的任务的工具。也就是说，如果你不定义任务，基本上 Grunt 不能为你做任何事情。</p>
+<p>原因就在于，Grunt 的任务并不是使用 JavaScript 的代码来定义，而是通过一系列的配置对象来进行声明式的定义的。为了保持 Grunt 核心包的大小，它的所有配置对象都是插件化的 — 从监控文件变化到复制、串联文件。</p>
+<p>这种做法也是有它的优势的。Grunt 有成千上万的插件，基本上你不需要编写任何代码，针对不同的需求，选取其一，直接拿来用即可。它最大的问题其实在于，如果你感觉确实有必要对插件运行的效果做一些微调的话，通过编写纯 JavaScript 代码是没法实现的，你必须要为此重新编写一个 Grunt 插件了。</p>
+<h4 id="Gulp"><a href="#Gulp" class="headerlink" title="Gulp"></a>Gulp</h4><p>Gulp，类似 Grunt ，也是一个用来定义并运行任务的工具。</p>
+<p>Grunt 与 Gulp 最大的不同就在于 Grunt 使用配置对象来声明任务的运行方式，而 Gulp 则使用 JavaScript 的函数来定义任务。也正是由于 Gulp 知道如何处理 JavaScript 返回的 <a href="https://github.com/gulpjs/gulp/blob/master/docs/writing-a-plugin/dealing-with-streams.md" target="_blank" rel="noopener">streams</a> 或者 <a href="http://jamesknelson.com/grokking-es6-promises-the-four-functions-you-need-to-avoid-callback-hell/" target="_blank" rel="noopener">promises</a> ，这使得你在编写任务的时候具备很大的灵活性。</p>
+<p>Gulp 与 Grunt 一样，也拥有非常丰富的插件库。不过考虑到 Gulp 的插件提供的都是一些原始基础的功能，你也可以引用 Node 模块来丰富完善你的 Gulp 任务体系。</p>
+<p>Gulp 最大的问题在于 <code>streams</code> 与 <code>promises</code> 的对接对新手来说可能是比较困难的。但是这也是一个双刃剑，随着实践经验的积累，你就能够体会到 <code>streams</code> 与 <code>promises</code> 的好处了。</p>
+<p>本文转载自思过崖的个人博客,原文链接为<a href="http://www.siguoya.name/pc/home/article/271" target="_blank" rel="noopener">http://www.siguoya.name/pc/home/article/271</a></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何选择-JavaScript-构建工具之-Babel、Browserify、Webpack、Grunt-以及-Gulp"><span class="toc-text">如何选择 JavaScript 构建工具之 Babel、Browserify、Webpack、Grunt 以及 Gulp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开门见山"><span class="toc-text">开门见山</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#追根溯源"><span class="toc-text">追根溯源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#编译器"><span class="toc-text">编译器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Babel"><span class="toc-text">Babel</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块打包器"><span class="toc-text">模块打包器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Browserify"><span class="toc-text">Browserify</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Webpack"><span class="toc-text">Webpack</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#任务运行器"><span class="toc-text">任务运行器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Grunt"><span class="toc-text">Grunt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Gulp"><span class="toc-text">Gulp</span></a></li></ol></li></ol></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a>
+    <a href="https://github.com/aircloud" target="_blank" rel="noopener">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

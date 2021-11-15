@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="google-site-verification"
+    content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Jiacheng Pan&#39;s Blog" />
+  <meta name="keyword" content="" />
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" />
+
+  <title>
+     Wavelet-based Visual Analysis of Dynamic Networks - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+ 
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link
+    href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <!-- ga & ba script hoook -->
+  <script></script>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Wavelet-based Visual Analysis of Dynamic Networks
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2018-06-24 21:19:00</span></span> -->
+        <span class="attr">发布于：<span>2018-06-24</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#PaperReading"
+                title="PaperReading">PaperReading</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#Visualization" title="Visualization">Visualization</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Graph Visualization" title="Graph Visualization">Graph Visualization</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Graph Embedding" title="Graph Embedding">Graph Embedding</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Dynamic Graph" title="Dynamic Graph">Dynamic Graph</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <ul>
+<li>论文原文：Wavelet-based Visual Analysis of Dynamic Networks</li>
+<li>作者：Alcebiades Dal Col, Paola Valdivia, Fabiano Petronetto, Fabio Dias, Claudio T. Silva, Senior Member</li>
+<li>发表刊物/会议：2017 TVCG</li>
+<li>ps: 语法错误这么多的文章不知道是怎么发出来的，大概是真的实力强劲</li>
+</ul>
+<h2 id="个人评述"><a href="#个人评述" class="headerlink" title="个人评述"></a>个人评述</h2><p>作者主要提出了一种利用小波变换的结果，对动态图进行可视化的方法。有几点亮点：</p>
+<ol>
+<li>动态图转化成静态图的方法：通过在时序上相邻的两个图之间增加时序边的方法，将一系列动态图组合成一整个图，再对该图进行小波变换</li>
+<li>小波变换对突变的检测：利用小波变换的高频部分来检测动态图中存在的突变。</li>
+<li>制定的四个目标，基本上包含了动态图可视化中所存在的任务：<ul>
+<li><strong>目标 1</strong>：将网络当做整体来进行分析</li>
+<li><strong>目标 2</strong>：对每个节点的分析。</li>
+<li><strong>目标 3</strong>：重要节点的辨认。</li>
+<li><strong>目标 4</strong>：相似节点的辨认。</li>
+</ul>
+</li>
+<li>详尽的 usage scenario，甚至可能可以当做模板</li>
+</ol>
+<p>为了阅读这篇文章，我花了一段时间补习了傅里叶变换、小波变换、谱图理论的相关背景知识，但读这篇文章的理论部分还是有点困难，想了很久。</p>
+<p>接下去说说它的不足：</p>
+<ol>
+<li>可视化设计简单：其几个视图的设计都异常简洁（或许其简洁也是其亮点），可视化设计方面没有太大的创新</li>
+<li>文章上下文背景知识的补充不足：经常出现不明所以的结论，没有任何铺垫，比如：为何小波变换后，高频部分比较突出的节点可以视作突变节点？</li>
+<li>Motivation 的不足：可能多讲一些动态图可视化背景来引出 4 种目标会更好</li>
+</ol>
+<p>启发：</p>
+<ol>
+<li>图嵌入算法对于动态图可视化的帮助：很多向量化的方法事实上同时捕捉到了全局和局部的特征，比谱图理论（小波变换）更容易解释，反而对动态图可视化更有帮助</li>
+<li>小波变换对于异常检测的意义：对突变的检测是否精准，有待验证。</li>
+</ol>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>动态网络介绍+谱图小波理论的优势（模式挖掘，噪声移除，信息压缩）</p>
+<p>本文的工作：用图小波来对动态网络进行可视分析，特别是对局部特征变换的分析。</p>
+<p>贡献：</p>
+<ol>
+<li>基于小波变换的动态网络探索方法，识别动态网络中不规律的、微妙的以及突现的拓扑信号变化；</li>
+<li>一个交互式的可视分析工具，引导用户了解动态网络中的模式和现象，并降低探索整体和局部间探索的隔阂</li>
+<li>usage scenario</li>
+</ol>
+<p>这篇文章是上一篇做静态图的文章的引申。</p>
+<h2 id="谱图理论"><a href="#谱图理论" class="headerlink" title="谱图理论"></a>谱图理论</h2><p>这一部分，可以见我的另一篇博客，我将这部分做了单独的阐释：<a href="https://jackieanxis.github.io/blog-others/2018/06/19/%E5%9B%BE%E7%9A%84%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2/" target="_blank" rel="noopener">图的小波变换</a></p>
+<h2 id="图小波对动态图进行可视分析"><a href="#图小波对动态图进行可视分析" class="headerlink" title="图小波对动态图进行可视分析"></a>图小波对动态图进行可视分析</h2><p>主要涉及两个问题：</p>
+<ol>
+<li>如何定义节点的信号</li>
+<li>对一组时间序列内的小波分析结果进行了表示</li>
+</ol>
+<h3 id="动态图模型"><a href="#动态图模型" class="headerlink" title="动态图模型"></a>动态图模型</h3><p>作者将一系列的动态图相互串联（两个邻时刻同样的点之间，用临时的边进行链接，如图中的蓝边），以形成一整个图，从而应用图小波变换对其进行分析。</p>
+<p>但并不是串联所有的动态图，作者在这里定义了一个时间窗口，在时间窗口内的图会被串联起来（比如 5 分钟）</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-135039.png" alt="image-20180624215039214"></p>
+<h3 id="节点信号和边权重"><a href="#节点信号和边权重" class="headerlink" title="节点信号和边权重"></a>节点信号和边权重</h3><p>节点信号的定义和边权重的定义都对分析有着重要影响。</p>
+<p>比如：</p>
+<ul>
+<li>在对纽约市的出租车的场景分析中，节点表示了一个区域，而节点的信号则对应这个区域的出租车接客数量，网络中的边则是两个区域之间的乘客上下，边权重则是接送的乘客数量。</li>
+<li>而在另一个场景分析中，作者将人转换成节点，节点信号则是一段时间内这个人的人际交往数量，也就是该节点的度数。</li>
+</ul>
+<p>总而言之，如果自己定义信号，用图小波变换进行可视分析则是对节点的某个特征在拓扑空间和时间上的分布进行的分析。如果没有定义，那么就是对这个节点的拓扑信息进行了分析。</p>
+<p>还可以控制那些不同时间片段的图之间的连接边的权重，用来控制分析过程中时间的影响。</p>
+<h3 id="节点分类"><a href="#节点分类" class="headerlink" title="节点分类"></a>节点分类</h3><p>每个节点都用一个特征向量（feature vector，并非 eigenvector）来进行分类，这个特征向量事实上就是小波系数$FV_j=(S_f(j), W_f(s_r,j), \ldots, W_f(s_1, j))$。</p>
+<p>减少噪声：每个时间片中的孤立节点会被分配为 0 类。</p>
+<p>分类方法：机械扭矩。类似于将特征向量的各个值放在跷跷板上，看这个跷跷板往哪边偏，来判定这个特征向量主要是低频的还是高频的。</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-143752.png" alt="image-20180624223752644"></p>
+<p>分类的这种方法，比直接解释系数容易的多。一共分成五类：</p>
+<p>[-1, -0.3), [0.3, -0.05], [-0.05, 0.05), [0.05, 0.3), [0.3, 1]，编码从深蓝到红色。<img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-145102.png" alt="image-20180624225101805"></p>
+<p>红色的节点，代表了信号的突变（时间和空间邻域上），但作者并未解释为什么高频代表了突变。</p>
+<h3 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h3><p>宗旨是为了能够发现动态网络中的 pattern 以及这些 pattern 是如何随时间演变的。</p>
+<ul>
+<li><strong>目标 1</strong>：将网络当做整体来进行分析</li>
+<li><strong>目标 2</strong>：对每个节点的分析。</li>
+<li><strong>目标 3</strong>：重要节点的辨认。</li>
+<li><strong>目标 4</strong>：相似节点的辨认。</li>
+</ul>
+<p>四个界面：</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-161348.png" alt="image-20180625001348008"></p>
+<ul>
+<li>Netowok Analyzer：对网络整体变化的一个概览</li>
+<li>Time Slice View: 对某个时间片段的详细分析</li>
+<li>Node Ranking：识别某个时间片段的相关节点</li>
+<li>Node Time Series：对某个节点进行详细分析</li>
+</ul>
+<h4 id="Network-Analyzer"><a href="#Network-Analyzer" class="headerlink" title="Network Analyzer"></a>Network Analyzer</h4><p>每个时间片段被编码成一个圆，圆的垂直位置由包含的节点的信号值总和给出，节点颜色则是最大类的颜色。需要明白的是，这里的最大类并不是说当前时间片段包含节点最多的类，而是相对于该类在其他时间包含的节点数而言最大。</p>
+<h4 id="Time-Slice-View"><a href="#Time-Slice-View" class="headerlink" title="Time Slice View"></a>Time Slice View</h4><p>对某个给定的时间片的节点，做了力引导。之后花了篇幅讲解了这个视图的有效性。</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-24-161409.png" alt="image-20180625001408755"></p>
+<h4 id="Node-Ranking"><a href="#Node-Ranking" class="headerlink" title="Node Ranking"></a>Node Ranking</h4><p>对节点与该时间片段的相关性来排序。被标记为红色或者橙色的节点，才会认为这种节点和当前时间片会相关。</p>
+<h4 id="Node-Time-Series"><a href="#Node-Time-Series" class="headerlink" title="Node Time Series"></a>Node Time Series</h4><p>展示了某个特定节点随着时间的变化。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#个人评述"><span class="toc-text">个人评述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#谱图理论"><span class="toc-text">谱图理论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图小波对动态图进行可视分析"><span class="toc-text">图小波对动态图进行可视分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#动态图模型"><span class="toc-text">动态图模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#节点信号和边权重"><span class="toc-text">节点信号和边权重</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#节点分类"><span class="toc-text">节点分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可视化"><span class="toc-text">可视化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Network-Analyzer"><span class="toc-text">Network Analyzer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Time-Slice-View"><span class="toc-text">Time Slice View</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Node-Ranking"><span class="toc-text">Node Ranking</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Node-Time-Series"><span class="toc-text">Node Time Series</span></a></li></ol></li></ol></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a>
+    <a href="https://github.com/aircloud" target="_blank" rel="noopener">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

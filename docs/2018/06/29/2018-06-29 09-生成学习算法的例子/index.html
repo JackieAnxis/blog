@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="google-site-verification"
+    content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Jiacheng Pan&#39;s Blog" />
+  <meta name="keyword" content="" />
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" />
+
+  <title>
+     CS229：09-生成学习算法的例子 - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+ 
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link
+    href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <!-- ga & ba script hoook -->
+  <script></script>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        CS229：09-生成学习算法的例子
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2018-06-29 21:10:00</span></span> -->
+        <span class="attr">发布于：<span>2018-06-29</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#AndrewNgCS229"
+                title="AndrewNgCS229">AndrewNgCS229</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#Course Notes" title="Course Notes">Course Notes</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Machine Learning" title="Machine Learning">Machine Learning</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h2 id="例一：高斯判别分析和-logistic-函数"><a href="#例一：高斯判别分析和-logistic-函数" class="headerlink" title="例一：高斯判别分析和 logistic 函数"></a>例一：高斯判别分析和 logistic 函数</h2><p>我们来看一个例子，对于一个高斯判别分析问题，根据贝叶斯：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+p(y=1|x) &= \frac{p(x|y=1)p(y=1)}{p(x)} \\\
+&= \frac{p(x|y=1)p(y=1)}{p(x|y=0)p(y=0)+p(x|y=1)p(y=1)}
+\end{align}</script><p>在这里，我们提出几个假设：</p>
+<ol>
+<li>$p(y)$是均匀分布的，也就是$p(y=1)=p(y=0)$</li>
+<li>$x$的条件概率分布（$p(x|y=0)$和$p(x|y=1)$）满足高斯分布。</li>
+</ol>
+<p>考虑二维的情况：</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2018-06-30-084350.png" alt="image-20180630164349595"></p>
+<p>蓝色数据表达的是$p(x|y=0)$的分布，红色数据表达的是$p(x|y=1)$的分布，两条蓝色和红色的曲线分别是它们的概率密度曲线。</p>
+<p>而灰色的曲线则表示了$p(y=1|x)$的概率密度曲线。</p>
+<p>假设$p(x|y=0) \sim N(\mu_0, \sigma_0)$，$p(x|y=1) \sim N(\mu_1, \sigma_1)$，而$p(y)$均匀分布那么：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+p(y=1|x) &= \frac{N(\mu_0,\sigma_0)}{N(\mu_0,\sigma_0)+N(\mu_1,\sigma_1)} \\\
+&= \cdots \\\
+&= \frac{1}{1+\frac{\sigma_0}{\sigma_1}exp(2\sigma_1^2(x-\mu_0)^2-2\sigma_0^2(x-\mu_1)^2}
+\end{align}</script><p>事实上，这条曲线跟我们之前见过的<em>logistic</em>曲线非常像，特别是当我们假设$\sigma_0=\sigma_1$的时候，就是一条<em>logistic</em>曲线。</p>
+<p>我们有如下的推广结论：</p>
+<script type="math/tex; mode=display">
+{\begin{cases}
+p(x|y=1) \sim Exp Family(\eta_1) \\\
+p(x|y=0) \sim Exp Family(\eta_0)
+\end{cases}} \Rightarrow p(y=1|x)是logistic函数</script><p>但这个命题的逆命题并不成立，故而我们知道，<em>logistic</em>所需要的假设更少（无需假设$x$的条件概率分布），鲁棒性更强。而生成函数因为对数据的分布做出了假设，所以需要的数据量会少于<em>logstic</em>回归，我们需要在两者之间进行权衡。</p>
+<h2 id="例二：垃圾邮件分类（1）"><a href="#例二：垃圾邮件分类（1）" class="headerlink" title="例二：垃圾邮件分类（1）"></a>例二：垃圾邮件分类（1）</h2><p>这里我们会用朴素贝叶斯（Naive Bayes）来解决垃圾邮件分类问题（$y\in \lbrace 0, 1 \rbrace$）。</p>
+<p>首先对邮件进行建模，生成特征向量如下：</p>
+<script type="math/tex; mode=display">
+x=
+\begin{bmatrix}
+0 \\\
+0 \\\
+0 \\\
+\vdots \\\
+1 \\\
+\vdots
+\end{bmatrix}
+\begin{matrix}
+a \\\
+advark \\\
+ausworth \\\
+\vdots \\\
+buy \\\
+\vdots
+\end{matrix}</script><p>这是一个类似于词频向量的特征向量，我们有一个 50000 个词的词典，如果邮件中出现了某个词汇，那么其在向量中对应的位置就会被标记为 1，否则为 0。</p>
+<p>我们的目标是获取，垃圾邮件和非垃圾邮件的特征分别是怎么样的，也即$p(x|y)$。$x={\lbrace 0, 1 \rbrace}^n, y \in \lbrace 0, 1 \rbrace$，这里我们的词典中词汇数量是 50000，所以$n=50000$，特征向量$x$会有$2^{50000}$种可能，需要$2^{50000}-1$个参数。</p>
+<p>我们假设$x_i|y$之间相互独立(虽然假设各个单词的出现概率相互独立不是很合理，但是即便这样，朴素贝叶斯的效果依旧不错)，根据朴素贝叶斯，我们得到：</p>
+<script type="math/tex; mode=display">
+p(x_1, x_2, \ldots, x_{50000}|y)=p(x_1|y)p(x_2|y) \cdots p(x_{50000}|y)</script><p>单独观察$p(x_j|y=1)​$：</p>
+<script type="math/tex; mode=display">
+p(x_j|y=1) = p(x_j=1|y=1)^{x_j}p(x_j=0|y=1)^{1-x_j}</script><p>给定三个参数：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\phi_{j|y=1} &= p(x_j=1|y=1) \\\
+\phi_{j|y=0} &= p(x_j=1|y=0) \\\
+\phi_y &= p(y = 1)
+\end{align}</script><p>故：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+p(x_j|y=1) &= \phi_{j|y=1}^{x_j}(\phi_y - \phi_{j|y=1})^{1-x_j}\\\
+p(x_j|y=0) &= \phi_{j|y=0}^{x_j}(1-\phi_y + \phi_{j|y=0})^{1-x_j} \\\
+p(x_j|y) &= p(x_j|y=1)^yp(x_j|y=0)^{1-y} \\\
+p(y) &= \phi_y^y(1-\phi_y)^{1-y}
+\end{align}</script><p>按照上个博客生成学习算法的概念中所述，我们会选用联合概率分布的极大似然来导出最优解：</p>
+<script type="math/tex; mode=display">
+l(\phi_y,\phi_{j|y=1},\phi_{j|y=0}=\prod_{i=1}^mp(x^{(i)},y^{(i)})=\prod_{i=1}^mp(x^{(i)}|y^{(i)})p(y^{(i)})</script><p>可以解得：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\phi_{j|y=1} &= \frac{\sum_{i=1}^m1\lbrace x_j{(i)}=1, y^{(i)}=1 \rbrace}{\sum_{i=1}^m1\lbrace y^{(i)}=1 \rbrace}  = \frac{统计所有包含词语j的垃圾邮件的数量}{垃圾邮件的总数}\\\
+\phi_{j|y=0} &= \frac{\sum_{i=1}^m1\lbrace x_j{(i)}=1, y^{(i)}=0 \rbrace}{\sum_{i=1}^m1\lbrace y^{(i)}=0 \rbrace} = \frac{统计所有包含词语j的非垃圾邮件的数量}{非垃圾邮件的总数} \\\
+\phi_y &= \frac{\sum_{i=1}^m1\lbrace y^{(i)}=1 \rbrace}{m} = \frac{垃圾邮件的数量}{邮件的总数}
+\end{align}</script><p>通过以上的公式，我们已经可以完全推得$p(x_1, x_2, \ldots, x_{50000}|y)$。</p>
+<h3 id="Laplace-平滑"><a href="#Laplace-平滑" class="headerlink" title="Laplace 平滑"></a>Laplace 平滑</h3><p>假设，训练集中，我们重来没有碰到过”_NIPS_”这个词汇，假设我们词典中包含这个词，位置是 30000，也就是说：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+p(x_{30000}=1|y=1) &= 0\\\
+p(x_{30000}=0|y=1) &= 0
+\end{align} \\\
+\Downarrow \\\
+p(x|y=1) =\prod_{i=1}^{50000}p(x_i|y=1)=0 \\\
+p(x|y=0) =\prod_{i=1}^{50000}p(x_i|y=0)=0</script><p>故而在分类垃圾邮件时：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+p(y=1|x) &= \frac{p(x|y=1)p(y=1)}{p(x)} \\\
+&=\frac{p(x|y=1)p(y=1)}{p(x|y=0)p(y=0)+p(x|y=1)p(y=1)} \\\
+&= \frac{0}{0+0}
+\end{align}</script><p>所以，我们提出$p(x_{30000}=1|y=1) = 0$这样的假设不够好。</p>
+<p><em>Laplace</em>平滑就是来帮助解决这个问题的。</p>
+<p>举例而言，在计算：</p>
+<script type="math/tex; mode=display">
+\phi_y=p(y=1)=\frac{\text{numof(1)}}{\text{numof(0)}+\text{numof(1)}}</script><p>其中，$\text{numof(1)}$表示的是，被分类为 1 的训练集中数据个数。</p>
+<p>在<em>Laplace</em>平滑中，我们会采取如下策略:</p>
+<script type="math/tex; mode=display">
+\phi_y=p(y=1)=\frac{\text{numof(1)}+1}{\text{numof(0)}+1+\text{numof(1)}+1}</script><p>比如，A 球队在之前的五场比赛里面都输了，我们预测下一场比赛赢的概率：</p>
+<script type="math/tex; mode=display">
+p(y=1)=\frac{0+1}{0+1+5+1}=\frac{1}{7}</script><p>而不是简单的认为（没有<em>Laplace</em>平滑）是 0。</p>
+<p>推广而言，在多分类问题中，$y\in\lbrace1, \ldots, k \rbrace$，那么：</p>
+<script type="math/tex; mode=display">
+p(y=j) = \frac{\sum_{i=1}^m1\lbrace y^{(i)} = j \rbrace+1}{m+k}</script><h2 id="例三：垃圾邮件分类（2）"><a href="#例三：垃圾邮件分类（2）" class="headerlink" title="例三：垃圾邮件分类（2）"></a>例三：垃圾邮件分类（2）</h2><p>之前的垃圾分类模型里面，我们对邮件提取的特征向量是：</p>
+<script type="math/tex; mode=display">
+x=[1,0,0,\ldots,1,\ldots]^T</script><p>这种模型，我们称之为多元伯努利事件模型（Multivariate Bernoulli Event Model）。</p>
+<p>现在，我们换一种特征向量提取方式，将邮件的特征向量表示为：</p>
+<script type="math/tex; mode=display">
+x=[x_1,x_2,\ldots,x_j,\ldots]^T</script><p>$x_j$表示词汇$j$在邮件中出现的次数。上述的特征向量也就是词频向量了。这种模型，我们称为多项式事件模型（Multinomial Event Model）。</p>
+<p>对联合概率分布$p(x,y)$进行极大似然估计，得到如下的参数：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\phi_{k|y=1} &= p(x_j=k|y=1) = \frac{C_{x=k}+1}{C_{y=1}+n} \\\
+\phi_{k|y=0} &=p(x_j=k|y=0) = \frac{C_{x=k}+1}{C_{y=0}+n} \\\
+\phi_{y} &= p(y=1) = \frac{C_{y=1}+1}{C_{y=1}+1+C_{y=0}+1}
+\end{align}</script><p>其中：</p>
+<p>$n$表示词典中词汇的数量，也就是特征向量的长度；</p>
+<script type="math/tex; mode=display">
+C_{x=k}=\sum_{i=1}^m(1\lbrace y^{(i)}=1 \rbrace \sum_{j=1}^{n_i}1 \lbrace x_j^{(i)} = k \rbrace)</script><p>表示在训练集中，所有垃圾邮件中词汇$k$出现的次数（并不是邮件的次数，而是词汇的次数）；</p>
+<script type="math/tex; mode=display">
+C_{y=1}=\sum_{i=1}^n(1\lbrace y^{(i)} = 1 \rbrace \cdot n_i)</script><p>表示训练集中垃圾邮件的所有词汇总长；</p>
+<script type="math/tex; mode=display">
+C_{y=0}=\sum_{i=1}^n(1\lbrace y^{(i)} = 0 \rbrace \cdot n_i)</script><p>表示训练集中非垃圾邮件的所有词汇总长；</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#例一：高斯判别分析和-logistic-函数"><span class="toc-text">例一：高斯判别分析和 logistic 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例二：垃圾邮件分类（1）"><span class="toc-text">例二：垃圾邮件分类（1）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Laplace-平滑"><span class="toc-text">Laplace 平滑</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例三：垃圾邮件分类（2）"><span class="toc-text">例三：垃圾邮件分类（2）</span></a></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a>
+    <a href="https://github.com/aircloud" target="_blank" rel="noopener">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

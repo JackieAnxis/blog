@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="google-site-verification"
+    content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Jiacheng Pan&#39;s Blog" />
+  <meta name="keyword" content="" />
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" />
+
+  <title>
+     CSS@2选择器 - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+ 
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link
+    href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <!-- ga & ba script hoook -->
+  <script></script>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        CSS@2选择器
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2016-09-13 08:17:20</span></span> -->
+        <span class="attr">发布于：<span>2016-09-13</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#FrontEnd"
+                title="FrontEnd">FrontEnd</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#FrontEnd" title="FrontEnd">FrontEnd</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Course Notes" title="Course Notes">Course Notes</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#CSS" title="CSS">CSS</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h2 id="CSS-选择器"><a href="#CSS-选择器" class="headerlink" title="CSS 选择器"></a><strong>CSS 选择器</strong></h2><p>OK，先来普及一下选择器是什么：<br>假如你是造物主，你需要捏造一个个的人，而 HTML 文档中的一个个标签则是一个个人，你要从茫茫人海中挑选出一个或者一部分人来为他们声明他们的样式，这个时候你可能会需要一个工具，那就是选择器的功能，将你要选的一个或一部分标签选出来，并为他们声明样式。</p>
+<h3 id="简单选择器"><a href="#简单选择器" class="headerlink" title="简单选择器"></a><strong>简单选择器</strong></h3><h4 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a><strong>标签选择器</strong></h4><p>根据标签名选出对应的标签，如：<br>假如想选出这个文档中所有的<code>&lt;p&gt;</code>标签，并声明它们包含的文字颜色应该是蓝色的：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a><strong>类选择器</strong></h4><p><strong>符号<code>.</code> + 类名</strong>：根据类名(class)选出对应的标签，如：<br>假如想选出这个文档中所有的属性<code>class</code>等于<code>special</code>的标签，并声明它们的宽度为 20px：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.special</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="ID-选择器"><a href="#ID-选择器" class="headerlink" title="ID 选择器"></a><strong>ID 选择器</strong></h4><p><strong>符号<code>#</code> + ID 名</strong>：根据 ID 选出对应的标签，如：<br>假如想选出这个文档中的属性<code>id</code>等于<code>special</code>的标签，并声明它们的背景颜色为红色：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#special</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="通配符选择器"><a href="#通配符选择器" class="headerlink" title="通配符选择器"></a><strong>通配符选择器</strong></h4><p>符号<code>*</code>：用于选择所有元素</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="属性选择器-att"><a href="#属性选择器-att" class="headerlink" title="属性选择器[att]"></a><strong>属性选择器[att]</strong></h4><p><code>[att]{ css code }</code>: 用来选出某些带有特殊属性的标签。</p>
+<ul>
+<li>最普通的：<br>假如需要选出带有<code>disabled</code>属性的标签，设置它们的背景颜色为蓝色：</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[disabled]</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>=</code>（等于）<br>假如需要选出<code>value</code>属性等于<code>abc</code>的标签，设置它们的背景颜色为蓝色：</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[value="abc"]</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>~=</code>（包含）<br>假如需要选出<code>class</code>属性包含<code>special</code>字段的标签，设置它们的背景颜色为蓝色：</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[class~="special"]</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>​```xml
+&lt;p class=&quot;special&quot;&gt;能被选中&lt;/p&gt;
+&lt;p class=&quot;special abc&quot;&gt;能被选中&lt;/p&gt;
+&lt;p class=&quot;abspecialc&quot;&gt;不能被选中&lt;/p&gt;
+​```
+</code></pre><ul>
+<li><code>|=</code>（选择 xx 和 xx-）<br>OK，此处不多说，都在代码里了：</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[lang|="en"]</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">&#125; //(这个属性选择器可以选择en以及en-这些标签)</span><br></pre></td></tr></table></figure>
+<pre><code>​```xml
+&lt;p lang=&quot;en&quot;&gt;能被选中&lt;/p&gt;
+&lt;p lang=&quot;en-us&quot;&gt;能被选中&lt;/p&gt;
+&lt;p lang=&quot;en-au&quot;&gt;能被选中&lt;/p&gt;
+&lt;p lang=&quot;en fr&quot;&gt;无法被选中&lt;/p&gt;
+&lt;p lang=&quot;cy-en&quot;&gt;无法被选中&lt;/p&gt;
+​```
+</code></pre><ul>
+<li><code>^=</code>（匹配属性值开头）<br>比如，你需要选出带有以<code>https</code>开头的<code>href</code>属性的标签：</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[href^="https"]</span> &#123;</span><br><span class="line">  ...;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>$=</code>(匹配属性值结尾)<br>基本同上。</li>
+<li><code>*=</code>（匹配字符串）<br>假如你需要找出<code>href</code>属性值的字符串中包含<code>&quot;jackie&quot;</code>的标签：</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[href*="jackie"]</span> &#123;</span><br><span class="line">  ...;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>这和`~=`最大的区别就在于，同样是`[href~=jackie]`和`[href*=jackie]`，前者无法匹配到`href=&#39;jackie-anxis.com&#39;`而后者可以，因为前者只能匹配到关键词前后都是空格的那些标签，比如`href=&#39;jackie anxis&#39;`。
+</code></pre><h4 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a><strong>伪类选择器</strong></h4><ol>
+<li>可以用来选出具有特定样式的标签：</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://jackie-anxis.com/"</span>&gt;</span>叫Jackie的咸鱼<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code>如下面所示：`link`和`visited`属性的伪类选择器只用于链接标签，`hover`和`active`可用于其他标签。
+​```css
+a:link{color:gray;}    /*用于选中带有连接的a类*/
+a:visited{color:red;}    /*用来表示访问过的链接*/
+a:hover{color:green;}    /*鼠标悬停样式*/
+a:active{color:green;}    /*鼠标点击样式*/
+​```
+如果对一个链接标签写以上四种不同的伪类选择器，那么需要按照以下顺序来写，不然会失效。除了以上介绍之外，其他常用的还有：
+​```css
+input:enabled{color:red;} /*处于可用状态的input标签*/
+input:disabled{color:red;} /*处于不可用状态的input标签*/
+input:checked{color:red;} /*处于选中或焦聚状态的input标签*/
+​```
+</code></pre><ol>
+<li>可以选出特定的子元素：<br>比如，有如下结构：</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>1<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>2<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>3<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>4<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code>如果要选出这个结构中的第一个子元素`&lt;p&gt;1&lt;/P&gt;`，并设置文字颜色为蓝色，可以这么写：
+​```css
+p:first-child{color:blue;}
+​```
+除此之外，还可以选最后一个子元素`:last-child{}`，或者自定义：`:nth-child(...){}`（括号中的...可以替换成odd，even或者一个表达式如3n+1等等）
+当然，需要注意的是：&lt;span style=&quot;color:orange&quot;&gt;这个伪类选择器的头部（冒号前的部分）需要是子元素&lt;/span&gt;，比如这个例子中，是`p:first-child`，意思是作为第一个子元素的p标签。
+</code></pre><ol>
+<li>其他一些：</li>
+</ol>
+<ul>
+<li><code>:only-child{}</code>选中只有一个子元素的列表</li>
+<li><code>dd:first-of-type{}</code>选中 dd 这种标签的第一个元素(<code>last-of-type</code>, <code>nth-of-type(...){}</code>,<code>nth-last-of-type(...){}</code>)</li>
+<li>不常用的有这些：<ul>
+<li><code>:empty</code> 选中没有子元素的标签</li>
+<li><code>:root</code> 选中<code>&lt;html&gt;</code>这个根标签</li>
+<li><code>:not()</code> 选中不包含某个选择器的元素,括号里放简单选择器</li>
+<li><code>:target</code> 选中一些被锚点选中为目标的目标元素</li>
+<li><code>:lang()</code> 选中 language 值是特殊值的某些元素</li>
+</ul>
+</li>
+</ul>
+<h4 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a><strong>伪元素选择器</strong></h4><p>伪元素选择器就比较少，基本上就以下几个：</p>
+<ul>
+<li><code>:first-line{}</code>：向文本的首行设置特殊样式。比如：</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:first-line</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>:<span class="number">#ff0000</span>;</span><br><span class="line">  <span class="attribute">font-variant</span>:small-caps;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>`first-line`只作用于块级元素，简单而言就是说，这个元素是会有很多行的。
+</code></pre><ul>
+<li><code>:first-letter{}</code>用于向文本的首字母设置特殊样式。同样也只适用于块级元素。</li>
+<li><code>:before{}</code>用于在元素的内容前面插入新内容。比如，需要在<code>&lt;p&gt;</code>元素之前插入一张图片：</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">	<span class="attribute">content</span>: <span class="built_in">url</span>(logo.gif);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>:after{}</code>用于在元素后面插入新内容，原理同<code>:before</code></li>
+<li><code>:selection{}</code>用于调整用户选中的内容：</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:selection</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#ccc</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>注释</strong>：伪元素选择器是可以和一般的选择器配合使用的，关于伪元素选择器更加详细的资料也可参考：<a href="http://www.w3school.com.cn/css/css_pseudo_elements.asp" target="_blank" rel="noopener">CSS 伪元素 (Pseudo-elements)</a></li>
+</ul>
+<h3 id="组合选择器"><a href="#组合选择器" class="headerlink" title="组合选择器"></a><strong>组合选择器</strong></h3><h4 id="后代选择器：空格"><a href="#后代选择器：空格" class="headerlink" title="后代选择器：空格 "></a><strong>后代选择器：空格<code> </code></strong></h4><p>比如有如下结构：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h2</span>&gt;</span>标题1<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">h2</span>&gt;</span>标题2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>想要选出 main 类下面的所有 h2 标签，可以这么做：<code>.main h2{}</code>。<br>所以你懂了，后代选择器就是用来选出某个元素的这些后代元素的（不光是子元素，可能是孙元素）。空格<code> </code>代表的是后代的意思。</p>
+<h4 id="子选择器：-gt"><a href="#子选择器：-gt" class="headerlink" title="子选择器：&gt;"></a><strong>子选择器：<code>&gt;</code></strong></h4><p>还是上面 1 里面那个例子，如果你只想选出“标题 1”而不想选出“标题 2”，那你就需要一个子选择器，子选择器<code>&gt;</code>（大于号）只会选出直接的子元素：<code>.main&gt;h2{}</code></p>
+<h4 id="兄弟选择器：-和"><a href="#兄弟选择器：-和" class="headerlink" title="兄弟选择器：+和~"></a><strong>兄弟选择器：<code>+</code>和<code>~</code></strong></h4><p>又比如有以下的结构：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h2</span>&gt;</span>标题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>段落1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>段落2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>我们姑且把<code>div</code>下的三个子元素分别称为<em>老大</em>（标题），_老二_（段落 1）和<em>老三</em>（段落 2）吧。</p>
+<ul>
+<li>第一种情况： 如果想要选出老大的第一个弟弟，也就是老二，可以通过兄弟选择器<code>+</code>来实现：<code>h2+p{}</code>。（你当然可以通过前面说过的伪元素选择器来实现）<br>所以你懂了，<code>a+b</code>的意思就是选出 a 的第一个弟弟，而且这个弟弟还必须叫 b，否则就找不到。</li>
+<li>第二种情况：你想要找到老大的所有的标签为<code>&lt;p&gt;</code>弟弟，你就需要第二个兄弟选择器：<code>~</code>。可以这么做：<code>h2~p{}</code>。而且不一定要相邻，只要是标签<code>h2</code>的<code>&lt;p&gt;</code>弟弟都能找到。</li>
+</ul>
+<h4 id="选择器分组"><a href="#选择器分组" class="headerlink" title="选择器分组"></a><strong>选择器分组</strong></h4><p>很多有一样样式的选择器你可以写到一起，比如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: gray;</span><br><span class="line">  <span class="attribute">font-family</span>: sans-serif;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">h2</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: gray;</span><br><span class="line">  <span class="attribute">font-family</span>: sans-serif;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">h3</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: gray;</span><br><span class="line">  <span class="attribute">font-family</span>: sans-serif;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>你可以写成：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span>,</span><br><span class="line"><span class="selector-tag">h2</span>,</span><br><span class="line"><span class="selector-tag">h3</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: gray;</span><br><span class="line">  <span class="attribute">font-family</span>: sans-serif;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-选择器"><span class="toc-text">CSS 选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简单选择器"><span class="toc-text">简单选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#标签选择器"><span class="toc-text">标签选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类选择器"><span class="toc-text">类选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ID-选择器"><span class="toc-text">ID 选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通配符选择器"><span class="toc-text">通配符选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#属性选择器-att"><span class="toc-text">属性选择器[att]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#伪类选择器"><span class="toc-text">伪类选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#伪元素选择器"><span class="toc-text">伪元素选择器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组合选择器"><span class="toc-text">组合选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#后代选择器：空格"><span class="toc-text">后代选择器：空格 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#子选择器：-gt"><span class="toc-text">子选择器：&gt;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#兄弟选择器：-和"><span class="toc-text">兄弟选择器：+和~</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#选择器分组"><span class="toc-text">选择器分组</span></a></li></ol></li></ol></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a>
+    <a href="https://github.com/aircloud" target="_blank" rel="noopener">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

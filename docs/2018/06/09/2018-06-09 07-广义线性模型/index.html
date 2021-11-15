@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="google-site-verification"
+    content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Jiacheng Pan&#39;s Blog" />
+  <meta name="keyword" content="" />
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" />
+
+  <title>
+     CS229：07-广义线性模型 - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+ 
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link
+    href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <!-- ga & ba script hoook -->
+  <script></script>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        CS229：07-广义线性模型
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2018-06-09 16:29:00</span></span> -->
+        <span class="attr">发布于：<span>2018-06-09</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#AndrewNgCS229"
+                title="AndrewNgCS229">AndrewNgCS229</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#Course Notes" title="Course Notes">Course Notes</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Machine Learning" title="Machine Learning">Machine Learning</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>广义线性模型，英文名为<strong>Generalized Linear Model</strong>，简称 GLM。</p>
+<p>之前，涉及到两种的两种模型：</p>
+<ol>
+<li>线性拟合模型，假设了$P(y|x;\theta)$是高斯分布</li>
+<li>二分类问题，假设了$P(y|x;\theta)$满足伯努利分布</li>
+</ol>
+<p>但以上两者知识一种更广泛的，被称为『指数分布族』（The Exponential Family）的特例。</p>
+<h2 id="指数分布族"><a href="#指数分布族" class="headerlink" title="指数分布族"></a>指数分布族</h2><script type="math/tex; mode=display">
+P(y;\eta)=b(y)exp(\eta^TT(y)-a(\eta))</script><p>可以被表示为以上形式的分布，都是指数分布族的某个特定分布，给定$a, b, T$，就可以定义一个概率分布的集合，以$\eta$为参数，就可以得到不同的概率分布。</p>
+<p>在广义线性模型中，会假设$\eta=\theta^Tx$，也就是$\eta$和特征$x$线性相关。</p>
+<h2 id="伯努利分布"><a href="#伯努利分布" class="headerlink" title="伯努利分布"></a>伯努利分布</h2><p>首先，我们给出$y=1$的概率：</p>
+<script type="math/tex; mode=display">
+P(y=1;\phi)=\phi</script><p>于是：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+P(y;\phi)
+    &= \phi^y(1-\phi)^T\\\
+    &= exp(log(\phi^T(1-\phi^T)))\\\
+    &= exp(ylog(\phi)+(1-y)log(1-\phi))\\\
+    &= exp(log\frac{\phi}{1-\phi} \cdot y + log(1-\phi))
+\end{align}</script><p>比较我们上面的概率形式和指数分布族的标准形式，可以得到：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\eta &= log\frac{\phi}{1-\phi}, \text{于是} \phi=\frac{1}{1+e^{-\eta}}\\\
+a(\eta) &= -log(1-\phi)=log(1+e^\eta)\\\
+T(y) &= y\\\
+b(y) &= 1
+\end{cases}</script><p>这里的$\phi$一般会被称为正则响应函数（_canonic response function_）：</p>
+<script type="math/tex; mode=display">
+g(\eta) = E[y|\eta]=\frac{1}{1+e^{-\eta}}</script><p>相对的，正则关联函数（_canonic link function_）则是$g^{-1}$。</p>
+<h2 id="高斯分布"><a href="#高斯分布" class="headerlink" title="高斯分布"></a>高斯分布</h2><script type="math/tex; mode=display">
+N(\mu,\sigma^2)=\frac{1}{\sqrt{2\pi}}exp(-\frac{1}{2}(y-\mu)^2)</script><p>这里，出于简洁考虑，假设$\sigma=1$，经过一系列化简后，可以表示成：</p>
+<script type="math/tex; mode=display">
+\frac{1}{\sqrt{2\pi}} \cdot exp(-\frac{1}{2}y^2) \cdot exp(\mu y-\frac{1}{2}\mu^2)</script><p>那么，</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\eta &= \mu\\\
+a(\eta) &= \frac{1}{2}\mu^2=\frac{1}{2}\eta^2\\\
+T(y) &= y\\\
+b(y) &= \frac{1}{\sqrt{2\pi}} \cdot exp(-\frac{1}{2}y^2)
+\end{cases}</script><h2 id="多项式分布"><a href="#多项式分布" class="headerlink" title="多项式分布"></a>多项式分布</h2><h4 id="建模"><a href="#建模" class="headerlink" title="建模"></a>建模</h4><p>在二项分布中，$y\in \lbrace 1, 2 \rbrace$</p>
+<p>而多项式分布，$y \in \lbrace 1,\cdots, k \rbrace$</p>
+<p>一般会被用来进行邮件分类或者进行病情分类等等</p>
+<p>我们假设</p>
+<script type="math/tex; mode=display">
+P(y=i)=\phi_i</script><p>也即，邮件属于$i$类的概率是$\phi_i$，是关于特征$x$的一个函数。</p>
+<p>那么，可以用$k$个参数来建模多项式分布</p>
+<script type="math/tex; mode=display">
+P(y)=\prod_{i=1}^k\phi_i^{1\lbrace y=i \rbrace}</script><p>其中，$1 \lbrace \cdots \rbrace$的含义为，检验$\cdots$是否为真命题，若为真命题，则取 1，否则取 0。</p>
+<p>因为所有概率和为 1，所以最后一个参数</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\phi_k &= 1-\sum_{j=1}^{k-1}\phi_j \\\
+1 \lbrace y=k \rbrace &=1-\sum_{j=1}^{k-1}1 \lbrace y=j \rbrace
+\end{align}</script><p>经过化简，也可以表示成：</p>
+<script type="math/tex; mode=display">
+P(y)=exp[\sum_{i=1}^{k-1}(log(\frac{\phi_i}{\phi_k}) \cdot 1\lbrace y=i \rbrace )] + log(\phi_k)</script><p>故而</p>
+<script type="math/tex; mode=display">
+\eta = \begin{bmatrix}
+log(\frac{\phi_1}{\phi_k}) \\\
+\vdots \\\
+log(\frac{\phi_{k-1}}{\phi_k})
+\end{bmatrix} \in \Bbb R^{k-1}</script><script type="math/tex; mode=display">
+a(\eta) = -log(\phi_k)</script><script type="math/tex; mode=display">
+T(y)= \begin{bmatrix}
+1 \lbrace y=1 \rbrace \\\
+\vdots \\\
+1 \lbrace y=k-1 \rbrace
+\end{bmatrix} \in (0, 1)^{k-1}</script><script type="math/tex; mode=display">
+b(y) = 1</script><p>根据$\eta$可得：</p>
+<script type="math/tex; mode=display">
+\phi_i = e^{\eta_i} \cdot \phi_k</script><p>又因为：</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^{k}\phi_i=\sum_{i=1}^k\phi_ke^{\eta_i}=1</script><p>故而：</p>
+<script type="math/tex; mode=display">
+\phi_k = \frac{1}{\sum_{i=1}^ke^{\eta_i}}=\frac{1}{e^{\eta_k}+\sum_{i=1}^{k-1}e^{\eta_i}} = \frac{1}{1+\sum_{i=1}^{k-1}e^{\eta_i}}</script><p>所以：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\phi_i &= e^{\eta_i} \cdot \phi_k \\\
+&= \frac{e^{\eta_i}}{1 + \sum_{j=1}^{k-1}e^{\eta_j}} \\\
+&= \frac{e^{\theta_i^Tx_i}}{1 + \sum_{j=1}^{k-1}e^{\theta_j^Tx_j}}
+\end{align}</script><p>上述函数，被称为『softmax』函数，这个函数的作用经常用于进行归一化。</p>
+<p>经过上述步骤，假设函数可以被写成如下形式：</p>
+<script type="math/tex; mode=display">
+h_\theta(x)=
+\left[
+\begin{array}{c}
+1\lbrace y=1 \rbrace  \\\
+\vdots \\\
+1\lbrace y=k-1 \rbrace
+\end{array} | x;\theta
+\right]=
+\begin{bmatrix}
+\phi_1\\\
+\vdots\\\
+\phi_{k-1}
+\end{bmatrix}</script><h4 id="回归"><a href="#回归" class="headerlink" title="回归"></a>回归</h4><p>在经过上述推导，当我们有一堆训练集（$(x^{(1)}, y^{(1)}), \cdots, (x^{(m)}, y^{(m)})$）用于训练的时候，则可以进行极大似然估计：</p>
+<script type="math/tex; mode=display">
+L(\theta) = \prod_{i=1}^mP(y^{(i)} | x^{(i)};\theta) = \prod_{i=1}^m\prod_{j=1}^k\phi_j^{1\lbrace y^{(i)}=j \rbrace }</script>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#指数分布族"><span class="toc-text">指数分布族</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#伯努利分布"><span class="toc-text">伯努利分布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高斯分布"><span class="toc-text">高斯分布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多项式分布"><span class="toc-text">多项式分布</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#建模"><span class="toc-text">建模</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#回归"><span class="toc-text">回归</span></a></li></ol></li></ol></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a>
+    <a href="https://github.com/aircloud" target="_blank" rel="noopener">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

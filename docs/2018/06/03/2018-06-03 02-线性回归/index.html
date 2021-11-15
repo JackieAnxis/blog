@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="google-site-verification"
+    content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Jiacheng Pan&#39;s Blog" />
+  <meta name="keyword" content="" />
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" />
+
+  <title>
+     CS229：02-线性回归 - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+ 
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link
+    href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <!-- ga & ba script hoook -->
+  <script></script>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        CS229：02-线性回归
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2018-06-03 20:04:00</span></span> -->
+        <span class="attr">发布于：<span>2018-06-03</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#AndrewNgCS229"
+                title="AndrewNgCS229">AndrewNgCS229</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#Course Notes" title="Course Notes">Course Notes</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Machine Learning" title="Machine Learning">Machine Learning</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>首先引入一些后面会用到的定理：</p>
+<p><strong>定义 1</strong>：定义函数$f: \Bbb R^{m \times n} \mapsto \Bbb R$，$A \in \Bbb R^{m \times n}$，定义</p>
+<script type="math/tex; mode=display">
+\nabla_Af(A)=
+    \begin{bmatrix}
+    \frac{\partial f}{\partial A_{11}} & \cdots & \frac{\partial f}{\partial A_{1n}}\\\
+    \vdots & \ddots & \vdots \\\
+    \frac{\partial f}{\partial A_{m1}} & \cdots & \frac{\partial f}{\partial A_{mn}}
+    \end{bmatrix}</script><p><strong>定义 2</strong>：矩阵的迹（Trace）：如果$A \in R^{n\times n}$方阵，那么$A$的迹，是$A$对角线元素之和</p>
+<script type="math/tex; mode=display">
+tr A = \sum_{i=1}^nA_{ii}</script><p><strong>定理 1</strong>：$tr AB = tr BA$</p>
+<p><strong>定理 2</strong>：$tr ABC = tr CAB = tr BCA$</p>
+<p><strong>定理 3</strong>：$f(A)=tr AB \Rightarrow \nabla_Af(A)=B^T$</p>
+<p><strong>定理 4</strong>：$trA = tr A^T$</p>
+<p><strong>定理 5</strong>：$a \in R \Rightarrow tr a=a$</p>
+<p><strong>定理 6</strong>：$\nabla_AtrABA^TC=CAB+C^TAB^T$</p>
+<h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><h4 id="一些符号的改写"><a href="#一些符号的改写" class="headerlink" title="一些符号的改写"></a>一些符号的改写</h4><p><a href="http://jackieanxis.coding.me/2018/06/03/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95/" target="_blank" rel="noopener">上一篇博客</a>提到，梯度下降的每一步，对某个参数$\theta_i$，执行：</p>
+<script type="math/tex; mode=display">
+\displaystyle \theta_i:=\theta_i - \alpha\frac{\partial}{\partial \theta_i}J(\theta)</script><p>那么，$h_\theta(x)$的所有参数$\theta$可以表示成一列向量：</p>
+<script type="math/tex; mode=display">
+\theta = \left[
+    \begin{array}{c}
+    \theta_0\\\
+    \theta_1\\\
+    \vdots\\\
+    \theta_n
+    \end{array}
+\right] \in R^{n+1}</script><p>我们可以定义：</p>
+<script type="math/tex; mode=display">
+\nabla_\theta J = \left[
+    \begin{array}{c}
+    \frac{\partial}{\partial \theta_0}J\\\
+    \frac{\partial}{\partial \theta_1}J\\\
+    \vdots\\\
+    \frac{\partial}{\partial \theta_n}J
+    \end{array}
+\right] \in R^{n+1}</script><p>梯度下降过程可以表示成：</p>
+<script type="math/tex; mode=display">
+\theta:=\theta - \alpha\nabla_\theta J</script><p>其中，$\theta$和$\nabla_\theta J$都说是 n+1 维向量。</p>
+<p>对于训练集中所有的输入${x^{(1)}},x^{(2)},…,x^{(m)}$，其中</p>
+<script type="math/tex; mode=display">
+x^{(i)} = \left[
+    \begin{array}{c}
+    1\\\
+    x_1^{(i)}\\\
+    \vdots\\\
+    x_n^{(i)}\\\
+    \end{array}
+\right] \in R^{n+1}</script><p>$h(x)=h_{\theta}(x)=\theta_0+\theta_1x_1+\theta_2x_2+…+\theta_nx_n$，可以表示成向量：</p>
+<script type="math/tex; mode=display">
+\left[
+    \begin{array}{c}
+    h_\theta(x^{(1)})\\\
+    h_\theta(x^{(2)})\\\
+    \vdots\\\
+    h_\theta(x^{(m)})\\\
+    \end{array}
+\right] = \left[
+    \begin{array}{c}
+    (x^{(1)})^T\theta\\\
+    (x^{(2)})^T\theta\\\
+    \vdots\\\
+    (x^{(m)})^T\theta\\\
+    \end{array}
+\right] = \left[
+    \begin{array}{c}
+    (x^{(1)})^T\\\
+    (x^{(2)})^T\\\
+    \vdots\\\
+    (x^{(m)})^T
+    \end{array}
+\right] \cdot \theta = X \cdot \theta</script><p>而</p>
+<script type="math/tex; mode=display">
+Y = \left[
+    \begin{array}{c}
+    y^{(1)}\\\
+    y^{(2)}\\\
+    \vdots\\\
+    y^{(m)}
+    \end{array}
+\right]</script><p>于是，</p>
+<script type="math/tex; mode=display">
+J(\theta) = \frac{1}{2}\sum_{i=1}^{m}(h(x^{(i)} - y^{(i)})^2)=\frac{1}{2}(X \cdot \theta - Y)^T(X \cdot \theta - Y)</script><h4 id="推导过程"><a href="#推导过程" class="headerlink" title="推导过程"></a>推导过程</h4><p>关于梯度下降法，可以直接简化为求梯度为 0 的位置，即求$\nabla_\theta J(\theta) = \vec{0}$</p>
+<p>首先，简化：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\nabla_\theta J(\theta) & = \nabla_\theta\frac{1}{2}(X \cdot \theta - Y)^T(X \cdot \theta - Y)\\\
+& =\frac{1}{2}\nabla_\theta tr(\theta^TX^TX\theta - \theta^TX^TY - Y^TX\theta + Y^TY)\\\
+& =\frac{1}{2}[\nabla_\theta tr(\theta\theta^TX^TX) - \nabla_\theta tr(Y^TX\theta) - \nabla tr(Y^TX\theta)]
+\end{align}</script><p>其中，第一项：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\nabla_\theta tr(\theta\theta^TX^TX) & = \nabla_\theta tr(\theta I \theta^TX^TX) &\text{定理6, set: $\theta =^{set} A, I = B, X^TX=C$}\\\
+& = X^TX\theta I + X^TX\theta I & \text{$CAB+C^TAB^T$}\\\
+& = X^TX\theta + X^TX\theta
+\end{align}</script><p>第二项和第三项：</p>
+<script type="math/tex; mode=display">
+\nabla_\theta tr(Y^TX\theta) = X^TY\\\
+(定理3，set:Y^TX = B, \theta = A)</script><p>所以：</p>
+<script type="math/tex; mode=display">
+\nabla_\theta J(\theta) = X^TX\theta - X^TY = 0\\\
+\Rightarrow X^TX\theta = X^TY\\\</script><p>最后解得：</p>
+<script type="math/tex; mode=display">
+\theta = (X^TX)^{(-1)}X^TY</script><p>当然，以上的解是有限制的，只有当$X^TX$满秩时，才能够求逆。</p>
+<p>如果非满秩，说明方程数量不够，也就是当需要 n 个参数时，却不够 n 个输入样本。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#线性回归"><span class="toc-text">线性回归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一些符号的改写"><span class="toc-text">一些符号的改写</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#推导过程"><span class="toc-text">推导过程</span></a></li></ol></li></ol></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a>
+    <a href="https://github.com/aircloud" target="_blank" rel="noopener">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

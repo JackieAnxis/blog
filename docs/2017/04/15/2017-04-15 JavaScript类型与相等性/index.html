@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="google-site-verification"
+    content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Jiacheng Pan&#39;s Blog" />
+  <meta name="keyword" content="" />
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" />
+
+  <title>
+     JavaScript类型转换和相等性 - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+ 
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link
+    href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <!-- ga & ba script hoook -->
+  <script></script>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        JavaScript类型转换和相等性
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2017-04-15 14:18:00</span></span> -->
+        <span class="attr">发布于：<span>2017-04-15</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#FrontEnd"
+                title="FrontEnd">FrontEnd</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#FrontEnd" title="FrontEnd">FrontEnd</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#JavaScript" title="JavaScript">JavaScript</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h2 id="类型转换总结列表"><a href="#类型转换总结列表" class="headerlink" title="类型转换总结列表"></a>类型转换总结列表</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">字符串</th>
+<th style="text-align:left">数字</th>
+<th style="text-align:left">布尔值</th>
+<th style="text-align:left">对象</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">undefined</td>
+<td style="text-align:left">“undefined”</td>
+<td style="text-align:left">NaN</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">throwTypeError</td>
+</tr>
+<tr>
+<td style="text-align:left">null</td>
+<td style="text-align:left">“null”</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">throwTypeError</td>
+</tr>
+<tr>
+<td style="text-align:left">true</td>
+<td style="text-align:left">“true”</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">newBoolean(true)</td>
+</tr>
+<tr>
+<td style="text-align:left">false</td>
+<td style="text-align:left">“false”</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">newBoolean(false)</td>
+</tr>
+<tr>
+<td style="text-align:left">“”（空字符串）</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">newString(“”)</td>
+</tr>
+<tr>
+<td style="text-align:left">“1.2”（非空，数字，允许首尾带有空格）</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">1.2</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">newString(“1.2”)</td>
+</tr>
+<tr>
+<td style="text-align:left">“one”（非空，非数字）</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">NaN</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">newString(“one”)</td>
+</tr>
+<tr>
+<td style="text-align:left">0</td>
+<td style="text-align:left">“0”</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">newNumber(0)</td>
+</tr>
+<tr>
+<td style="text-align:left">-0</td>
+<td style="text-align:left">“0”</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">newNumber(-0)</td>
+</tr>
+<tr>
+<td style="text-align:left">NaN</td>
+<td style="text-align:left">“NaN”</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">newNumber(NaN)</td>
+</tr>
+<tr>
+<td style="text-align:left">Infinity</td>
+<td style="text-align:left">“Infinity”</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">newNumber(Infinity)</td>
+</tr>
+<tr>
+<td style="text-align:left">-Infinity</td>
+<td style="text-align:left">“-Infinity”</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">newNumber(-Infinity)</td>
+</tr>
+<tr>
+<td style="text-align:left">1（非无穷大，非零）</td>
+<td style="text-align:left">“1”</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">newNumber(1)</td>
+</tr>
+<tr>
+<td style="text-align:left">{}（任意对象）</td>
+<td style="text-align:left">详见下方</td>
+<td style="text-align:left">详见下方</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">[]（任意数组）</td>
+<td style="text-align:left">“”</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">[9]（1 个数字元素）</td>
+<td style="text-align:left">“9”</td>
+<td style="text-align:left">9</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">[‘a’]（其他数组）</td>
+<td style="text-align:left">使用<code>join()</code>方法（默认用逗号连接）</td>
+<td style="text-align:left">NaN</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">function(){}（任意函数）</td>
+<td style="text-align:left">调用<code>toString()</code>方法，通常是转换成源代码字符串</td>
+<td style="text-align:left">NaN</td>
+<td style="text-align:left">true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="对象如何转换成字符串或数字"><a href="#对象如何转换成字符串或数字" class="headerlink" title="对象如何转换成字符串或数字"></a>对象如何转换成字符串或数字</h2><ol>
+<li><code>toString()</code>方法：<ul>
+<li>调用<code>toString()</code>方法，一般是返回<code>&quot;[object object]&quot;</code>：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;(&#123; <span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span> &#125;.toString()) <span class="comment">// =&gt; "[object object]"</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>数组</strong>是调用<code>join()</code>方法：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].toString() <span class="comment">// =&gt; "1,2,3"</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>函数</strong>则是转换成源代码字符串<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">;(<span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">    f(x)</span><br><span class="line">&#125;.toString()) <span class="comment">// =&gt; "function(x)&#123; f(x); &#125;"</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>Date 类型</strong>会返回一个可读的日期和时间字符串:<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2010</span>, <span class="number">0</span>, <span class="number">1</span>).toString() <span class="comment">// =&gt; "Fri Jan 01 2010 00:00:00 GMT+0800 (China Standard Time)"</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>RegExp 类</strong>则是转换成正则表达式字符串<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;<span class="regexp">/\d+/g</span>.toString() <span class="comment">// =&gt; "/\\d+/g"</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><code>valueOf()</code>方法：</li>
+</ol>
+<ul>
+<li>如果对象存在任意原始值，默认将对象转换成它的原始值（比如各种原始对象的包装对象）</li>
+<li>一般，都是简单的返回对象本身</li>
+<li>特殊的是：<strong>Date</strong>类型，日期类的<code>valueOf()</code>会返回一个内部表示：从 1970 年 1 月 1 日以来的毫秒数：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2010</span>, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">d.valueOf() <span class="comment">// =&gt; 1262275200000</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>对象到字符串的转换步骤：<br><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/17-4-18/49990859-file_1492446304461_d920.png" alt=""></p>
+</li>
+<li><p>对象到数字的过程：基本上和上面一致，只不过会先调用<code>valueOf()</code>的方法。</p>
+</li>
+</ol>
+<h2 id="转换和相等性"><a href="#转换和相等性" class="headerlink" title="转换和相等性"></a>转换和相等性</h2><ol>
+<li>用<code>==</code>作比较时，为了保持两端的类型一致，会做一些类型转换</li>
+<li>用<code>===</code>作比较时，并不会做任何类型转换</li>
+<li>在做转换的时候，一个值能转换成另一个值，并不意味着这两个值相等</li>
+</ol>
+<h3 id="和"><a href="#和" class="headerlink" title="===和=="></a><code>===</code>和<code>==</code></h3><h4 id="严格相等"><a href="#严格相等" class="headerlink" title="===严格相等"></a><code>===</code>严格相等</h4><ol>
+<li>不相等的情况：<ul>
+<li>两个值类型不同</li>
+<li>其中一个值为<code>NaN</code>或者两个都为<code>NaN</code>（需要强调：<strong><code>NaN</code>和任何值都不相等，包括其本身。可以用<code>x!==x</code>来判断 x 是否为<code>NaN</code></strong>)。</li>
+</ul>
+</li>
+<li>相等的情况<ul>
+<li>都是<code>null</code>或者都是<code>undefined</code></li>
+<li>两个值为数字，且数值相等（包括 0 和-0 的情况）</li>
+<li>两个值都为布尔值，且都是<code>true</code>或<code>false</code></li>
+<li>两个值都是字符串，且它们长度一致，对应位上的值都相等</li>
+<li>两个值都是引用值，且他们指向同一个对象。数组或函数</li>
+</ul>
+</li>
+</ol>
+<h4 id="相等"><a href="#相等" class="headerlink" title="==相等"></a><code>==</code>相等</h4><ol>
+<li>两个值类型相同，和严格相等的比较规则一样，即它们严格相等时，才会想等。</li>
+<li>两个值类型不同：<ul>
+<li>一个是<code>null</code>，一个是<code>undefined</code>，认为其相等</li>
+<li>如果一个值是数字，一个是字符串，则会<strong>先将字符串转换成数字</strong>,然后用转换后的值进行比较</li>
+<li>如果一个值是<code>true</code>，则将其转换成 1 再比较；如果是<code>false</code>，则将其转换成 0</li>
+<li>对象和数字或字符串的比较，遵循上文的规则将对象转换成原始值再进行比较（除了日期类以外，都是先用<code>valueOf()</code>再用<code>toString()</code>）</li>
+</ul>
+</li>
+<li>小例子：<code>&quot;1&quot; == true</code>，答案是相等的，分成两步：一是将<code>true</code>转换成<code>1</code>；而是将<code>&quot;1&quot;</code>转换成<code>1</code>。</li>
+</ol>
+<h2 id="显式类型转换"><a href="#显式类型转换" class="headerlink" title="显式类型转换"></a>显式类型转换</h2><ol>
+<li>除了<code>null</code>和<code>undefined</code>之外的任何值都有<code>toString()</code>方法</li>
+<li><strong>数字转字符串</strong>：<ul>
+<li><code>Number</code>的<code>toString()</code>的方法可以设置基数，表示转换结果的进制：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n = <span class="number">17</span></span><br><span class="line">binary_string = n.toString()</span><br><span class="line">binary_string = n.toString(<span class="number">2</span>) <span class="comment">// Evaluates to "10001"</span></span><br><span class="line">octal_string = <span class="string">"0"</span> + n.toString(<span class="number">8</span>) <span class="comment">// Evaluates to "021"</span></span><br><span class="line">hex_string = <span class="string">"0x"</span> + n.toString(<span class="number">16</span>) <span class="comment">// Evaluates to "0x11"</span></span><br></pre></td></tr></table></figure></li>
+<li><code>toFixed()</code>, <code>toExponential()</code>和<code>toPrecision()</code>，用来控制输出的小数点位置和有效位数：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n = <span class="number">123456.789</span></span><br><span class="line">n.toFixed(<span class="number">0</span>) <span class="comment">// "123457"</span></span><br><span class="line">n.toFixed(<span class="number">2</span>) <span class="comment">// "123456.79"</span></span><br><span class="line">n.toFixed(<span class="number">5</span>) <span class="comment">// "123456.78900"</span></span><br><span class="line">n.toExponential(<span class="number">1</span>) <span class="comment">// "1.2e+5"</span></span><br><span class="line">n.toExponential(<span class="number">3</span>) <span class="comment">// "1.235e+5"</span></span><br><span class="line">n.toPrecision(<span class="number">4</span>) <span class="comment">// "1.235e+5"</span></span><br><span class="line">n.toPrecision(<span class="number">7</span>) <span class="comment">// "123456.8"</span></span><br><span class="line">n.toPrecision(<span class="number">10</span>) <span class="comment">// "123456.7890"</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><strong>字符串转数字</strong>：<code>parseInt</code>和<code>parseFloat</code>（这两个函数都会跳过任意数量的前置空格，尽可能解析更多的数值字符，并忽略后面的内容）</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">"3 blind mice"</span>) <span class="comment">// =&gt; 3</span></span><br><span class="line"><span class="built_in">parseFloat</span>(<span class="string">" 3.14 meters"</span>) <span class="comment">// =&gt; 3.14</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"-12.34"</span>) <span class="comment">// =&gt; -12</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"0xFF"</span>) <span class="comment">// =&gt; 255</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"0xff"</span>) <span class="comment">// =&gt; 255</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"-0XFF"</span>) <span class="comment">// =&gt; -255</span></span><br><span class="line"><span class="built_in">parseFloat</span>(<span class="string">".1"</span>) <span class="comment">// =&gt; 0.1</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"0.1"</span>) <span class="comment">// =&gt; 0</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">".1"</span>) <span class="comment">// =&gt; NaN: integers can't start with "."</span></span><br><span class="line"><span class="built_in">parseFloat</span>(<span class="string">"$72.47"</span>) <span class="comment">// =&gt; NaN: numbers can't start with "$"</span></span><br></pre></td></tr></table></figure>
+<p>其中<code>parseInt()</code>还可以设置第二个参数，用来表示第一个参数的进制</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">"11"</span>, <span class="number">2</span>) <span class="comment">// =&gt; 3 (1*2 + 1)</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"ff"</span>, <span class="number">16</span>) <span class="comment">// =&gt; 255 (15*16 + 15)</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"zz"</span>, <span class="number">36</span>) <span class="comment">// =&gt; 1295 (35*36 + 35)</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"077"</span>, <span class="number">8</span>) <span class="comment">// =&gt; 63 (7*8 + 7)</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"077"</span>, <span class="number">10</span>) <span class="comment">// =&gt; 77 (7*10 + 7)</span></span><br></pre></td></tr></table></figure>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#类型转换总结列表"><span class="toc-text">类型转换总结列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象如何转换成字符串或数字"><span class="toc-text">对象如何转换成字符串或数字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转换和相等性"><span class="toc-text">转换和相等性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#和"><span class="toc-text">&#x3D;&#x3D;&#x3D;和&#x3D;&#x3D;</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#严格相等"><span class="toc-text">&#x3D;&#x3D;&#x3D;严格相等</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#相等"><span class="toc-text">&#x3D;&#x3D;相等</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显式类型转换"><span class="toc-text">显式类型转换</span></a></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a>
+    <a href="https://github.com/aircloud" target="_blank" rel="noopener">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="google-site-verification"
+    content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Jiacheng Pan&#39;s Blog" />
+  <meta name="keyword" content="" />
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" />
+
+  <title>
+     数据可视化的基本原理与方法 - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/.css" src="/blog/blog/.js">
+ 
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/.js">
+
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link
+    href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <!-- ga & ba script hoook -->
+  <script></script>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        数据可视化的基本原理与方法
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2013-07-31 13:51:28</span></span> -->
+        <span class="attr">发布于：<span>2013-07-31</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#undefined"
+                title="undefined">undefined</a></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h3 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h3><p><a href="http://www.cad.zju.edu.cn/home/chenwei/" target="_blank" rel="noopener">陈为</a>，<a href="http://www.cse.msstate.edu/~szhang/" target="_blank" rel="noopener">张嵩</a>，<a href="http://coitweb.uncc.edu/~alu1/" target="_blank" rel="noopener">鲁爱东</a>. <strong>《数据可视化的基本原理与方法》</strong>. 科学出版社，2013 年 6 月. ISBN 978-7-03-037488-2.</p>
+<p>购书网址：<a href="http://www.amazon.cn/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%8E%E6%96%B9%E6%B3%95-%E9%99%88%E4%B8%BA/dp/B00DY1F7KA/ref=sr_1_1?ie=UTF8&amp;qid=1374652009&amp;sr=8-1&amp;keywords=%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%8E%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">亚马逊中国</a></p>
+<h3 id="教材的彩图的下载地址"><a href="#教材的彩图的下载地址" class="headerlink" title="教材的彩图的下载地址"></a>教材的彩图的下载地址</h3><ul>
+<li><a href="http://pan.baidu.com/share/link?shareid=3548534702&amp;uk=3610345149" target="_blank" rel="noopener">第一章 数据可视化简介</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=3552084919&amp;uk=3610345149" target="_blank" rel="noopener">第二章 视觉感知与视觉通道</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=3550264525&amp;uk=3610345149" target="_blank" rel="noopener">第三章 数据</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=3549587599&amp;uk=3610345149" target="_blank" rel="noopener">第四章 数据可视化基础</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=3549147435&amp;uk=3610345149" target="_blank" rel="noopener">第五章 时空数据可视化</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=3551084439&amp;uk=3610345149" target="_blank" rel="noopener">第六章 地理空间数据可视化</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=3550640748&amp;uk=3610345149" target="_blank" rel="noopener">第七章 高维非空间数据可视化</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=3552517374&amp;uk=3610345149" target="_blank" rel="noopener">第八章 层次和网络数据可视化</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=3551541801&amp;uk=3610345149" target="_blank" rel="noopener">第九章 跨媒体数据可视化</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=3549892524&amp;uk=3610345149" target="_blank" rel="noopener">第十章 可视化交互与评估</a></li>
+</ul>
+<h3 id="2013-年浙江大学数据可视化研讨会课件"><a href="#2013-年浙江大学数据可视化研讨会课件" class="headerlink" title="2013 年浙江大学数据可视化研讨会课件"></a>2013 年浙江大学数据可视化研讨会课件</h3><ol>
+<li><a href="http://pan.baidu.com/share/link?shareid=299987714&amp;uk=3610345149" target="_blank" rel="noopener">数据可视化简介</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=299181042&amp;uk=3610345149" target="_blank" rel="noopener">视觉感知与视觉通道</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=298276123&amp;uk=3610345149" target="_blank" rel="noopener">数据基础</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=296745003&amp;uk=3610345149" target="_blank" rel="noopener">数据可视化基础</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=295694915&amp;uk=3610345149" target="_blank" rel="noopener">统计图可视化</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=294772927&amp;uk=3610345149" target="_blank" rel="noopener">时空数据可视化 1&amp;2</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=294772927&amp;uk=3610345149" target="_blank" rel="noopener">时空数据可视化 1&amp;2</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=293989302&amp;uk=3610345149" target="_blank" rel="noopener">跨媒体数据可视化与可视工具</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=293093676&amp;uk=3610345149" target="_blank" rel="noopener">高维非空间数据可视化 1</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=292187232&amp;uk=3610345149" target="_blank" rel="noopener">地理空间数据可视化</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=291360289&amp;uk=3610345149" target="_blank" rel="noopener">层次和网络数据可视化 1&amp;2</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=291360289&amp;uk=3610345149" target="_blank" rel="noopener">层次和网络数据可视化 1&amp;2</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=290149223&amp;uk=3610345149" target="_blank" rel="noopener">文本数据可视化</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=1928021044&amp;uk=3610345149" target="_blank" rel="noopener">可视化交互与评估</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=288082969&amp;uk=3610345149" target="_blank" rel="noopener">高维非空间数据可视化 2</a></li>
+</ol>
+<h3 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h3><ol>
+<li><a href="http://pan.baidu.com/share/link?shareid=3921572440&amp;uk=3610345149" target="_blank" rel="noopener">墨尔本人行道监控数据</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=3925629793&amp;uk=3610345149" target="_blank" rel="noopener">好莱坞电影数据集</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=2028094950&amp;uk=3610345149" target="_blank" rel="noopener">VAST Challenge 2013: Mini-Challenge 3 数据集</a>（数据来源：VAST Challenge 2013）</li>
+</ol>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a>
+    <a href="https://github.com/aircloud" target="_blank" rel="noopener">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = false
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="google-site-verification"
+    content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Jiacheng Pan&#39;s Blog" />
+  <meta name="keyword" content="" />
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" />
+
+  <title>
+     杂谈：《编写可读代码的艺术》阅读笔记（二） - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+ 
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link
+    href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <!-- ga & ba script hoook -->
+  <script></script>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        杂谈：《编写可读代码的艺术》阅读笔记（二）
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2017-01-26 13:49:20</span></span> -->
+        <span class="attr">发布于：<span>2017-01-26</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#Gossip"
+                title="Gossip">Gossip</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#Coding" title="Coding">Coding</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Reading" title="Reading">Reading</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h1 id="简化循环和逻辑"><a href="#简化循环和逻辑" class="headerlink" title="简化循环和逻辑"></a>简化循环和逻辑</h1><h2 id="一、流程控制"><a href="#一、流程控制" class="headerlink" title="一、流程控制"></a>一、流程控制</h2><h3 id="1-判断"><a href="#1-判断" class="headerlink" title="1. 判断"></a>1. 判断</h3><h4 id="1）条件判断中的参数顺序"><a href="#1）条件判断中的参数顺序" class="headerlink" title="1）条件判断中的参数顺序"></a>1）条件判断中的参数顺序</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>比较的左侧</th>
+<th>比较的右侧</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“被问询的”表达式，更倾向于不断变化</td>
+<td>用来做比较的表达式，它的值更倾向于常量</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>PS</strong>：但是反着写，能够避免掉那种<code>if(obj = NULL)</code>的错误，俗称“尤达表示法”。</p>
+<h4 id="2）if-else-语句块的顺序"><a href="#2）if-else-语句块的顺序" class="headerlink" title="2）if/else 语句块的顺序"></a>2）if/else 语句块的顺序</h4><p>三个倾向性：</p>
+<ol>
+<li>倾向于先处理正逻辑，再处理负逻辑</li>
+<li>倾向于先处理掉简单情况</li>
+<li>倾向于先处理掉有趣的或者可疑的状况</li>
+</ol>
+<h4 id="3）-条件表达式"><a href="#3）-条件表达式" class="headerlink" title="3）?:条件表达式"></a>3）?:条件表达式</h4><ul>
+<li>并不是很推荐这种写法哈哈哈哈，一旦写了长表达式，就会很难理解</li>
+</ul>
+<h3 id="2-循环"><a href="#2-循环" class="headerlink" title="2. 循环"></a>2. 循环</h3><h4 id="1）避免使用-do-while-循环"><a href="#1）避免使用-do-while-循环" class="headerlink" title="1）避免使用 do/while 循环"></a>1）避免使用 do/while 循环</h4><p>通常，逻辑条件应该出现在它们所“保护”的代码前。而且<code>do/while</code>循环中的<code>continue</code>会产生歧义。</p>
+<h4 id="2）最小化嵌套"><a href="#2）最小化嵌套" class="headerlink" title="2）最小化嵌套"></a>2）最小化嵌套</h4><p>深嵌套会让读者的“思维栈”太深，可以通过提早返回来减少嵌套，可以将代码进行如下变化：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a) &#123;</span><br><span class="line">  <span class="keyword">if</span> (b) &#123;</span><br><span class="line">    <span class="comment">// do something 1</span></span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// do something 2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// do something 3</span></span><br><span class="line"><span class="keyword">return</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!a) &#123;</span><br><span class="line">  <span class="comment">// do something 3</span></span><br><span class="line">  <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (b) &#123;</span><br><span class="line">  <span class="comment">// do something 1</span></span><br><span class="line">  <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// do something 2</span></span><br><span class="line"><span class="keyword">return</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="二、长表达式拆分"><a href="#二、长表达式拆分" class="headerlink" title="二、长表达式拆分"></a>二、长表达式拆分</h2><ul>
+<li><p>方法一：<strong>增加变量</strong>：总结为一句话，<strong>用额外的变量，来代替一个长表达式</strong>，例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 解释变量</span></span><br><span class="line"><span class="keyword">if</span> (line.split(<span class="string">":"</span>)[<span class="number">0</span>].strip() == <span class="string">"root"</span>) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// **************************************</span></span><br><span class="line"><span class="comment">//                    ↓</span></span><br><span class="line"><span class="comment">// **************************************</span></span><br><span class="line"><span class="keyword">var</span> userName = line.split(<span class="string">":"</span>)[<span class="number">0</span>].strip();</span><br><span class="line"><span class="keyword">if</span> (username == <span class="string">"root"</span>) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 总结变量</span></span><br><span class="line"><span class="keyword">if</span> (request.user.id == <span class="built_in">document</span>.owner_id) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="keyword">if</span> (request.user.id != <span class="built_in">document</span>.owner_id) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ***********************************************************</span></span><br><span class="line"><span class="comment">//                              ↓</span></span><br><span class="line"><span class="comment">// ************************************************************</span></span><br><span class="line"><span class="keyword">var</span> user_owns_document = request.user.id == <span class="built_in">document</span>.owner_id;</span><br><span class="line"><span class="keyword">if</span> (user_owns_document) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (!user_owns_document) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法二：<strong>使用德摩根定律</strong></p>
+<blockquote>
+<ul>
+<li>!(a || b || c) &lt;=&gt; (!a) &amp;&amp; (!b) &amp;&amp; (!c)</li>
+<li>!(a &amp;&amp; b &amp;&amp; c) &lt;=&gt; (!a) || (!b) || (!c)</li>
+</ul>
+</blockquote>
+</li>
+<li><p>方法三：<strong>不要滥用短路逻辑</strong>：短路逻辑可能会增加代码的理解难度。</p>
+</li>
+<li><p>方法四：<strong>找到更优雅的方式</strong>，一个理念是：</p>
+<blockquote>
+<p>开始还很简单的问题变得非常令人费解，通常预示着一中更简单的方法。</p>
+</blockquote>
+</li>
+<li><p>方法五：拆分巨大的语句，把一样的表达式抽离出来作为函数开头的总结变量</p>
+<blockquote>
+<ul>
+<li>DRY：Don’t Repeat Yourself.</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h2 id="三、变量"><a href="#三、变量" class="headerlink" title="三、变量"></a>三、变量</h2><p>关于变量的三个问题：</p>
+<blockquote>
+<ul>
+<li>变量越多，就越难全部追踪</li>
+<li>变量作用域越大，就需要跟踪的越久</li>
+<li>变量改变越频繁，就越难追踪它的当前值</li>
+</ul>
+</blockquote>
+<h3 id="1）减少变量"><a href="#1）减少变量" class="headerlink" title="1）减少变量"></a>1）减少变量</h3><p>针对第一个问题，我们提出了以下几种方案，可以去掉以下几种不必要的变量：</p>
+<ul>
+<li><p><strong>没有价值的临时变量</strong>：举个例子：<code>now = datetime.datetime.now()</code>，一般这种变量有以下几种特点，</p>
+<ul>
+<li>没有拆分任何临时变量</li>
+<li>没有做过多澄清，<code>datetime.now()</code>已经足够清晰</li>
+<li>只用一次（或少数几次），没有压缩任何冗余的代码</li>
+</ul>
+</li>
+<li><p><strong>中间结果</strong>：下面例子中，<code>index_to_remove</code>可以被移除，那些为了保存临时结果，用完即丢的变量，可以考虑丢弃：</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> remove_one = <span class="function"><span class="keyword">function</span> (<span class="params">array, value_to_remove</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> index_to_remove = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (array[i] == value_to_remove) &#123;</span><br><span class="line">      index_to_remove = i;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (index_to_remove !== <span class="literal">null</span>) &#123;</span><br><span class="line">    array.splice(index_to_remove, <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// ***********************************************</span></span><br><span class="line"><span class="comment">//                      ↓</span></span><br><span class="line"><span class="comment">// ***********************************************</span></span><br><span class="line"><span class="keyword">var</span> remove_one = <span class="function"><span class="keyword">function</span> (<span class="params">array, value_to_remove</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> index_to_remove = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (array[i] == value_to_remove) &#123;</span><br><span class="line">      array.splice(i, <span class="number">1</span>);</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>流程控制变量</strong>：用来控制流程的变量，往往不包含任何程序内的数据，能通过结构化编程来消除。</li>
+</ul>
+<h3 id="2）缩小变量作用域"><a href="#2）缩小变量作用域" class="headerlink" title="2）缩小变量作用域"></a>2）缩小变量作用域</h3><blockquote>
+<p>让你的变量对尽量少的代码行可见。</p>
+</blockquote>
+<ul>
+<li><p>一个做法就是让变量“降级”，尽量降低作用域，比如</p>
+<ul>
+<li>让<strong>类成员变量</strong>降级成某个<strong>成员函数中的局部变量</strong></li>
+<li>运用好<code>C++</code>的块级作用域，那些仅仅用来当做判断条件的变量，可以放在<code>if</code>语句中定义：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">PaymentInfo* info = database.ReadPaymentInfo()</span><br><span class="line"><span class="keyword">if</span>(info)&#123;</span><br><span class="line">	<span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ************************************************</span></span><br><span class="line"><span class="comment">//                        ↓</span></span><br><span class="line"><span class="comment">// ************************************************</span></span><br><span class="line"><span class="keyword">if</span>(PaymentInfo* info = database.ReadPaymentInfo())&#123;</span><br><span class="line">	<span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>用<code>JavaScript</code>的立即执行函数制造封闭的作用域</li>
+</ul>
+</li>
+<li><p>定义下移：将定义移动到使用它之前，增加可读性</p>
+</li>
+</ul>
+<h3 id="3）只写一次的变量更好"><a href="#3）只写一次的变量更好" class="headerlink" title="3）只写一次的变量更好"></a>3）只写一次的变量更好</h3><p>尽量减少对变量的赋值的语句，有助于提高可读性。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简化循环和逻辑"><span class="toc-text">简化循环和逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、流程控制"><span class="toc-text">一、流程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-判断"><span class="toc-text">1. 判断</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1）条件判断中的参数顺序"><span class="toc-text">1）条件判断中的参数顺序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2）if-else-语句块的顺序"><span class="toc-text">2）if&#x2F;else 语句块的顺序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3）-条件表达式"><span class="toc-text">3）?:条件表达式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-循环"><span class="toc-text">2. 循环</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1）避免使用-do-while-循环"><span class="toc-text">1）避免使用 do&#x2F;while 循环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2）最小化嵌套"><span class="toc-text">2）最小化嵌套</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、长表达式拆分"><span class="toc-text">二、长表达式拆分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、变量"><span class="toc-text">三、变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1）减少变量"><span class="toc-text">1）减少变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2）缩小变量作用域"><span class="toc-text">2）缩小变量作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3）只写一次的变量更好"><span class="toc-text">3）只写一次的变量更好</span></a></li></ol></li></ol></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a>
+    <a href="https://github.com/aircloud" target="_blank" rel="noopener">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

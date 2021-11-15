@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="google-site-verification"
+    content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Jiacheng Pan&#39;s Blog" />
+  <meta name="keyword" content="" />
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" />
+
+  <title>
+     SchemeLens, A Content-Aware Vector-Based Fisheye Technique for Navigating Large Systems Diagrams - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+ 
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link
+    href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <!-- ga & ba script hoook -->
+  <script></script>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        SchemeLens, A Content-Aware Vector-Based Fisheye Technique for Navigating Large Systems Diagrams
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2018-06-09 17:29:00</span></span> -->
+        <span class="attr">发布于：<span>2018-06-09</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#PaperReading"
+                title="PaperReading">PaperReading</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#Visualization" title="Visualization">Visualization</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Graph Visualization" title="Graph Visualization">Graph Visualization</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Large Graph" title="Large Graph">Large Graph</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Fisheye" title="Fisheye">Fisheye</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <ul>
+<li>论文原文：SchemeLens: A Content-Aware Vector-Based Fisheye Technique for Navigating Large Systems Diagrams</li>
+<li>作者：<a href="https://dblp.uni-trier.de/pers/c/Coh=eacute=:Aur=eacute=lie" target="_blank" rel="noopener">Aurélie Cohé</a>，<a href="http://dblp.uni-trier.de/pers/hd/l/Liutkus:Bastien" target="_blank" rel="noopener">Bastien Liutkus</a>, <a href="https://dblp.uni-trier.de/pers/b/Bailly:Gilles" target="_blank" rel="noopener">Gilles Bailly</a> , <a href="https://dblp.uni-trier.de/pers/e/Egan:James" target="_blank" rel="noopener">James Egan</a>，<a href="https://dblp.uni-trier.de/pers/l/Lecolinet:Eric" target="_blank" rel="noopener">Eric Lecolinet</a></li>
+<li>发表刊物/会议：2016 TVCG</li>
+</ul>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-10/50334813.jpg" alt=""></p>
+<h2 id="整体套路介绍："><a href="#整体套路介绍：" class="headerlink" title="整体套路介绍："></a>整体套路介绍：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">st&#x3D;&gt;start: Abstract</span><br><span class="line">e&#x3D;&gt;end: Conclusion</span><br><span class="line">op1&#x3D;&gt;operation: Introduction 背景技术，本文技术优点，贡献点</span><br><span class="line">op2&#x3D;&gt;operation: Motivation 动机的来源，现有的缺点，设计目标</span><br><span class="line">op3&#x3D;&gt;operation: Related Wrok 分模块介绍相关工作</span><br><span class="line">op4&#x3D;&gt;operation: Techniques 详细介绍技术，技术的介绍都是由设计目标启发的</span><br><span class="line">op5&#x3D;&gt;operation: User Study 两个实验，分别论证有效性和工作原理</span><br><span class="line">op6&#x3D;&gt;operation: Discussion 围绕着实验和一些设计原则展开</span><br><span class="line"></span><br><span class="line">st-&gt;op1-&gt;op2-&gt;op3-&gt;op4-&gt;op5-&gt;op6-&gt;e</span><br></pre></td></tr></table></figure>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>第一段：介绍了焦点上下文技术，往往需要在空间和信息之间平衡（对局部增加空间，意味着其他地方的信息损失）</p>
+<p>第二段：提出本文所使用的 SchemeLens，及其优点：向量化缩放（保持个体的形态，又不会增加空白空间）和考虑拓扑空间</p>
+<p>第三段：提及简单的向量化缩放的缺点（重叠），简单介绍了解决问题的几个原则。</p>
+<p>第四段：交互式的鱼眼技术的优点以及贡献</p>
+<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><p>第一段：采访了工程师</p>
+<p>第二段：提出一般的系统图纸所存在的缺点</p>
+<p>第三段：提出了一些系统图纸所的特点</p>
+<p>第四段：三个目标：感兴趣节点的 readability，最小化图纸结构的扭曲，在交互期间图纸结构的稳定性</p>
+<p>第五段：详细描述了设计目标</p>
+<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><p>分别描述了：鱼眼透镜，拓扑相关的鱼眼透镜，自适应透镜，导航技术以及感知&amp;可读性的相关工作。</p>
+<h2 id="SchemeLens-技术描述"><a href="#SchemeLens-技术描述" class="headerlink" title="SchemeLens 技术描述"></a>SchemeLens 技术描述</h2><p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-9/95973080.jpg" alt=""></p>
+<p>Schemelens 综合了三个模块来做焦点上下文：</p>
+<ol>
+<li><p>放大透镜：</p>
+<p> 靠近鼠标的聚焦区域，会被几何放大，给定节点的放大率和其到中心的距离负相关。</p>
+</li>
+<li><p>拓扑透镜：</p>
+<p>  在鼠标下面的元素会被放大，然后沿着该元素所在的路径进行放大，测地距离（geodesic distance，也就是拓扑距离）远的放大率低。该机制有利于调节相距比较远的节点。</p>
+</li>
+<li><p>用户意图：移动鼠标时，只有沿着该路径并且和鼠标移动方向一致的节点会被放大，</p>
+</li>
+</ol>
+<h3 id="焦距区域和可读性"><a href="#焦距区域和可读性" class="headerlink" title="焦距区域和可读性"></a>焦距区域和可读性</h3><h4 id="自适应的聚焦区域"><a href="#自适应的聚焦区域" class="headerlink" title="自适应的聚焦区域"></a>自适应的聚焦区域</h4><p>聚焦区域是放大透镜的聚焦区域和拓扑透镜的聚焦区域的并集。</p>
+<p>每个节点自身的放大，都是均匀的。</p>
+<p>为了防止距离焦点近的节点放大后有重叠，但又不能让这些节点的位移过大，作者使用了弹簧模型。</p>
+<p><strong>内容感知的缩放</strong>：为了防止大的节点在放大之后变的太大，使用了一个反指数函数。</p>
+<h4 id="聚焦区域的大小"><a href="#聚焦区域的大小" class="headerlink" title="聚焦区域的大小"></a>聚焦区域的大小</h4><p>放大效果所作用的节点应该被限制在一个合理数量以内。但这个『合理』受到很多因素的影响。</p>
+<p>作者采用了限制『测地距离』的方式来限制节点数量。用户可以通过鼠标滚轮或者键盘来控制参数。</p>
+<h3 id="上下文区域和畸变"><a href="#上下文区域和畸变" class="headerlink" title="上下文区域和畸变"></a>上下文区域和畸变</h3><p>使用了三种启发式的目标来控制畸变：<strong>空间稳定性</strong>（spatial steability），<strong>美学属性</strong>（aesthetic properties），<strong>时间稳定性</strong>（temporal stability）</p>
+<h4 id="美学规则"><a href="#美学规则" class="headerlink" title="美学规则"></a>美学规则</h4><p>作者为整个图创建了一个层次结构：节点，包含这些节点的直线，包含这些直线的子路径。三条美学规则分别是：</p>
+<ol>
+<li><p>对齐。同一直线的节点要对齐（下图左），不同直线但在同一个局部环中的节点也要对齐（下图中），在同一直线上的交点也要对齐（下图右）。</p>
+<p> <img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-6-9/69993075.jpg" alt=""></p>
+</li>
+<li><p>正交。边之间的正交被保留。</p>
+</li>
+<li><p>边交叉。不能引入新的边交叉。</p>
+</li>
+</ol>
+<h4 id="节点位移"><a href="#节点位移" class="headerlink" title="节点位移"></a>节点位移</h4><p>因为放大效应不会放大空白区域，所以空白区域会被填充，反而能提高聚焦区域和上下文区域的连续性。</p>
+<h4 id="空间和时间的连续性"><a href="#空间和时间的连续性" class="headerlink" title="空间和时间的连续性"></a>空间和时间的连续性</h4><p>如果没有适当的预防措施，焦点的略微变换就会引发节点位置或大小的巨大变动。针对位置和大小，作者采用了两种不同的策略：</p>
+<ol>
+<li>位置：弹簧模型能提供时间上的连续性，以平滑交互；</li>
+<li>大小：因为放大作用同时由两种不同的透镜同时产生（放大透镜和拓扑透镜），所以可能（1）即使用户用光标靠近它，节点的大小也可能减小，（2）节点的比例可能在某些边界处突然变化。</li>
+</ol>
+<h4 id="捕捉用户意图"><a href="#捕捉用户意图" class="headerlink" title="捕捉用户意图"></a>捕捉用户意图</h4><p>这一点是可选的。</p>
+<p>当用户将光标沿着路径移动的时候，系统会将焦点沿着移动方向向前偏移一些。因此只有沿着路径的节点会被放大。当用户不沿着路径（光标的移动方向垂直于最近的路径或者光标远离所有路径）则不应用该行为。</p>
+<h3 id="Implement"><a href="#Implement" class="headerlink" title="Implement"></a>Implement</h3><p>这一章节详细描述了各部分的实现（放大透镜、拓扑透镜，节点位移以及时空稳定性）</p>
+<h2 id="User-Study"><a href="#User-Study" class="headerlink" title="User Study"></a>User Study</h2><p>第一段讲了两个 user study 的总览，包括目的，结果。</p>
+<h3 id="实验-1"><a href="#实验-1" class="headerlink" title="实验 1"></a>实验 1</h3><p>实验一为了论证有效性</p>
+<h4 id="Experimental-Protocol"><a href="#Experimental-Protocol" class="headerlink" title="Experimental Protocol"></a>Experimental Protocol</h4><ol>
+<li>参与者和设备</li>
+<li>系统图纸的结构（也就是数据集）</li>
+<li>技术（需要对比的技术，SchemeLens 和传统的鱼眼）</li>
+<li>任务和过程（任务来源于实际工程，找到图纸中存在错误的节点）</li>
+<li>任务难度：用需要探索的路径数量来区分</li>
+<li>设计：主要描述了整个实验的参数：10 个参与者$\times$2 种技术$\times$2 个图纸$\times$3 种难度$\times$18 条测例</li>
+</ol>
+<h4 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h4><ol>
+<li>完成时间的分析</li>
+<li>Subjective preferences：偏好投票</li>
+</ol>
+<h3 id="实验-2"><a href="#实验-2" class="headerlink" title="实验 2"></a>实验 2</h3><p>实验二为了解释 SchemeLens 的自适应能力是如何影响用户表现的。</p>
+<p>主要检验两个方面：拓扑自适应和用户意图自适应</p>
+<p>将实验分成四组：</p>
+<ol>
+<li>没有用户意图自适应的鱼眼</li>
+<li>有用户意图自适应的鱼眼</li>
+<li>没有用户意图自适应的 SchemeLens</li>
+<li>有用户意图自适应的 SchemeLens</li>
+</ol>
+<h4 id="Experimental-Protocol-1"><a href="#Experimental-Protocol-1" class="headerlink" title="Experimental Protocol"></a>Experimental Protocol</h4><p>类似于 Study 1</p>
+<h4 id="Results-1"><a href="#Results-1" class="headerlink" title="Results"></a>Results</h4><ol>
+<li>完成时间分析</li>
+<li>Memorization：用一个五分 Likert 表来评估用户对图表的记忆</li>
+<li>Subjective Preferences</li>
+</ol>
+<h2 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h2><p>整整一页的篇幅，围绕着以下的内容展开：</p>
+<p>第一段：讨论 User Study 1 的结果，传统的鱼眼和本文技术</p>
+<p>第二段：讨论拓扑自适应和用户意图自适应的意义</p>
+<p>第三段：讨论了对提高记忆的帮助</p>
+<p>第四段：可读性的讨论</p>
+<p>第五段：空间、时间稳定性，也即结构不要发生太大变化</p>
+<p>第六段：空白空间的意义</p>
+<p>第七段：scalability</p>
+<p>第八段：拓扑规则的影响，也就是之前提到的美学规则。</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#整体套路介绍："><span class="toc-text">整体套路介绍：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Motivation"><span class="toc-text">Motivation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Related-Work"><span class="toc-text">Related Work</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SchemeLens-技术描述"><span class="toc-text">SchemeLens 技术描述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#焦距区域和可读性"><span class="toc-text">焦距区域和可读性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#自适应的聚焦区域"><span class="toc-text">自适应的聚焦区域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#聚焦区域的大小"><span class="toc-text">聚焦区域的大小</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上下文区域和畸变"><span class="toc-text">上下文区域和畸变</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#美学规则"><span class="toc-text">美学规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#节点位移"><span class="toc-text">节点位移</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#空间和时间的连续性"><span class="toc-text">空间和时间的连续性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#捕捉用户意图"><span class="toc-text">捕捉用户意图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Implement"><span class="toc-text">Implement</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#User-Study"><span class="toc-text">User Study</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实验-1"><span class="toc-text">实验 1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Experimental-Protocol"><span class="toc-text">Experimental Protocol</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Results"><span class="toc-text">Results</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实验-2"><span class="toc-text">实验 2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Experimental-Protocol-1"><span class="toc-text">Experimental Protocol</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Results-1"><span class="toc-text">Results</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Discussion"><span class="toc-text">Discussion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-text">Conclusion</span></a></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a>
+    <a href="https://github.com/aircloud" target="_blank" rel="noopener">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

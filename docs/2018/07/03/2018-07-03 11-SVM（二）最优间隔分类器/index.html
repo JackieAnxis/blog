@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="google-site-verification"
+    content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Jiacheng Pan&#39;s Blog" />
+  <meta name="keyword" content="" />
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" />
+
+  <title>
+     CS229：11-SVM（二）最优间隔分类器 - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+ 
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link
+    href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <!-- ga & ba script hoook -->
+  <script></script>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        CS229：11-SVM（二）最优间隔分类器
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2018-07-03 16:27:00</span></span> -->
+        <span class="attr">发布于：<span>2018-07-03</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#AndrewNgCS229"
+                title="AndrewNgCS229">AndrewNgCS229</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#Course Notes" title="Course Notes">Course Notes</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Machine Learning" title="Machine Learning">Machine Learning</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p><strong>最优间隔分类器</strong>（_Optimal Margin Classifier_）。其目标是使得最小几何间隔最大化（SVM（一）概念）：</p>
+<script type="math/tex; mode=display">
+\text{目标(1):} \\\
+\max_{w, b} \gamma \\\
+\text{ s.t. } y^{(i)} \cdot ((\frac{w}{||w||})^T \cdot x^{(i)}+\frac{b}{||w||}) \geq \gamma, i=1,\ldots,n</script><p>我们知道，$\hat{\gamma} = \frac{\gamma}{||w||}$，所以上面的目标可以等同于：</p>
+<script type="math/tex; mode=display">
+\text{目标(2):} \\\
+\max_{w, b} \frac{\hat{\gamma}}{||w||} \\\
+\text{ s.t. }y^{(i)} \cdot (w^T \cdot x^{(i)}+b) \geq \hat{\gamma}, i=1,\ldots,n</script><p>为了最大化上述值，我们有两种策略。</p>
+<ol>
+<li>增大$\hat{\gamma}$</li>
+<li>减小$||w||$</li>
+</ol>
+<p>针对第一种可能，我们要证明其无效性。假如，我们增大$\hat{\gamma}$到${\hat{\gamma}}_1 := \lambda {\hat{\gamma}}$，因为$\hat{\gamma}=y(w^Tx+b)$，可以视作$w_1:=\lambda w, b_1 = \lambda b$。所以，此时</p>
+<script type="math/tex; mode=display">
+\frac{\hat{\gamma_1}}{||w_1||}=\frac{\lambda \hat{\gamma}}{||\lambda w||} = \frac{\hat{\gamma}}{||w||} \\\</script><p>没有发生任何改变，所以第一条策略不可行。于是，我们可以固定$\hat{\gamma}=1$</p>
+<p>此时，上述目标(2)可以表述成：</p>
+<script type="math/tex; mode=display">
+\text{目标(3):} \\\
+\min_{w, b} \frac{1}{2}||w||^2 \\\
+\text{ s.t. }y^{(i)} \cdot (w^T \cdot x^{(i)}+b) \geq 1, i=1,\ldots,n</script><p>因为最小化$||w||$和最小化$\frac{1}{2}||w||^2$是一致的。</p>
+<h2 id="拉格朗日乘子法（Lagrange-Multiplier）"><a href="#拉格朗日乘子法（Lagrange-Multiplier）" class="headerlink" title="拉格朗日乘子法（Lagrange Multiplier）"></a>拉格朗日乘子法（Lagrange Multiplier）</h2><p>为了解决上述的<strong>凸优化问题</strong>，我们引入拉格朗日乘子法<em>Lagrange Multiplier</em>来解决这个问题。</p>
+<p>我们首先来看看<strong>凸优化问题</strong>的定义：</p>
+<script type="math/tex; mode=display">
+\min_wf(w) \\\
+\text{s.t. }g_i(w) \leq 0, h_i(w) =0</script><p>构建拉格朗日乘子：</p>
+<script type="math/tex; mode=display">
+{\cal L}(w, \alpha, \beta) = f(w)+\sum_i\alpha_ig_i(w)+\sum_i\beta_ih_i(w)</script><p>定义：</p>
+<script type="math/tex; mode=display">
+\theta_p(w) = \max_{\alpha_i>0, \beta}{\cal L}(w, \alpha, \beta)</script><p>观察$\theta_p(w)$：</p>
+<ol>
+<li>如果$g_i(w)&gt;0$，那么$\theta_p(w)=+\infty$（因为$\alpha$可以取任意大值）。</li>
+<li>如果$h_i(w) \neq 0$，那么$\theta_p(w)=+\infty$（因为$\beta$可以取$+\infty/-\infty$）。</li>
+</ol>
+<p>所以，在满足约束的情况下，$\theta_p(w)=f(w)$，$\min_w \theta_p(w)=\min_w f(w)$，因为使得${\cal L}(w, \alpha, \beta)$最大的方法，就是其他所有项全是 0。那么，可以得出这样的结论：</p>
+<script type="math/tex; mode=display">
+\theta_p(w)=\begin{cases}
+f(w), &\text{满足约束} \\\
+\infty, &\text{不满足约束}
+\end{cases}</script><p>因此，在满足条件的情况下，$\min_w\theta_p(w)$等价于$min_wf(w)$。</p>
+<p>我们将最优间隔分类器的目标重新表示一下：</p>
+<script type="math/tex; mode=display">
+p^\ast =\min_{w, b}\max_\alpha {\cal L(w, \alpha, b)} \\\
+{\cal L}(w, \alpha, b) = \frac{1}{2}||w||^2+\sum_i\alpha_i(1-y^{(i)}(w^T x^{(i)}+b))</script><p>其中，直接忽略了$h_i(w)=0$的约束，而$g_i(w,b)=1-y^{(i)}(w^Tx^{(i)}+b) \leq 0, f(w)=\frac{1}{2}||w||^2$</p>
+<h2 id="对偶问题（Dual-Problem）"><a href="#对偶问题（Dual-Problem）" class="headerlink" title="对偶问题（Dual Problem）"></a>对偶问题（Dual Problem）</h2><p>一般来说，将原始问题转化成对偶问题来求解。一是因为对偶问题往往比较容易求解，二是因为对偶问题引入了核函数，方便推广到非线性分类的情况。</p>
+<p>我们看到，之前的原始问题，是</p>
+<script type="math/tex; mode=display">
+p^\ast =\min_{w, b}\max_\alpha {\cal L}(w, \alpha, b)</script><p>那么，定义其对偶问题：</p>
+<script type="math/tex; mode=display">
+l^\ast =\max_\alpha\min_{w,b}{\cal L}(w, \alpha, b)</script><p>接下去，我们求解对偶问题：</p>
+<p>先求解$\min_{w,b}{\cal L}(w, \alpha, b)$：</p>
+<p>分别求偏导，使其等于 0，导出最小值：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+& \nabla_w{\cal L}(w, \alpha, b) =w-\sum_{i=1}\alpha_iy^{(i)}x^{(i)}=0 \\\
+& \nabla_b{\cal L}(w, \alpha, b) =\sum_{i=1}\alpha_iy^{(i)}=0
+\end{align}</script><p>得到：</p>
+<script type="math/tex; mode=display">
+w =\sum_{i=1}\alpha_iy^{(i)}x^{(i)} \\\
+\sum_{i=1}\alpha_iy^{(i)} = 0</script><p>代入${\cal L}(w, \alpha, b)$，就可以得到最小值：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+{\cal L}(w, \alpha, b) &= \frac{1}{2}||w||^2+\sum_i\alpha_i(1-y^{(i)}(w^T x^{(i)}+b)) \\\
+\min_{w, b}{\cal L}(w, \alpha, b) &=\underbrace{\sum_{i=1}\alpha_i-\frac{1}{2}\sum_{i=1}\sum_{j=1}\alpha_i\alpha_jy_iy_j(x_i \cdot x_j)}_{W(\alpha)}
+\end{align}</script><p>于是，我们的对偶问题简化到了对$W(\alpha)$最大化：</p>
+<script type="math/tex; mode=display">
+\max_\alpha W(\alpha) \\\
+\text{s.t. }\alpha_i \geq 0, \sum_iy_i\alpha_i=0</script><p>假设，我们解得的对偶问题的解为：$\alpha^\ast =[\alpha_1^\ast ,\alpha_2^\ast , \ldots, \alpha_m^\ast ]$，那么最终原始问题的解可以表示成：</p>
+<script type="math/tex; mode=display">
+w^\ast =\sum_{i=1}\alpha_i^\ast y^{(i)}x^{(i)}</script><p>在原始问题中，还有$b$未得到解决。我们先来观察一下约束项：</p>
+<script type="math/tex; mode=display">
+g_i(w,b)=1-y{(i)}(w^Tx^{(i)}+b) \leq 0</script><p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-7-4/9336603.jpg" alt=""></p>
+<p>我们知道，在数据中，只有少数的几个数据点，他们的函数距离为 1（最小），也即$g_i(w,b)=0$，如图所示。</p>
+<p>在整个数据集中，只有这些数据点对约束超平面起了作用，这些数据点被称为支持向量（_support vector_），其对应的$\alpha_i^\ast  \neq 0$，而其他不是支持向量的数据点，没有对约束超平面起作用，其$\alpha_i^\ast =0$。</p>
+<p>此时，我们已经得到了$w^\ast $，而$b^\ast $的计算如下，找到一个数据点，其$\alpha_j^\ast \neq 0$(也就是支持向量，其函数间隔为 1)，我们就能得到：</p>
+<script type="math/tex; mode=display">
+y^{(j)}(w^{*T}x^{(j)}+b^\ast )=1
+\Rightarrow
+b^\ast =y^{(j)}-\sum_{i=1}\alpha_i^\ast y^{(i)}(x^{(i)} \cdot x^{(j)})</script>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#拉格朗日乘子法（Lagrange-Multiplier）"><span class="toc-text">拉格朗日乘子法（Lagrange Multiplier）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对偶问题（Dual-Problem）"><span class="toc-text">对偶问题（Dual Problem）</span></a></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a>
+    <a href="https://github.com/aircloud" target="_blank" rel="noopener">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

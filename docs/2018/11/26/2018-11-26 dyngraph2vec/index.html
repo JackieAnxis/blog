@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="google-site-verification"
+    content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Jiacheng Pan&#39;s Blog" />
+  <meta name="keyword" content="" />
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" />
+
+  <title>
+     dyngraph2vec, Capturing Network Dynamics using Dynamic Graph Representation Learning - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+ 
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link
+    href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <!-- ga & ba script hoook -->
+  <script></script>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        dyngraph2vec, Capturing Network Dynamics using Dynamic Graph Representation Learning
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2018-11-26 10:13:00</span></span> -->
+        <span class="attr">发布于：<span>2018-11-26</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#PaperReading"
+                title="PaperReading">PaperReading</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#Graph Mining" title="Graph Mining">Graph Mining</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Graph Embedding" title="Graph Embedding">Graph Embedding</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Dynamic Graph" title="Dynamic Graph">Dynamic Graph</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h1 id="dyngraph2vec-Capturing-Network-Dynamics-using-Dynamic-Graph-Representation-Learning"><a href="#dyngraph2vec-Capturing-Network-Dynamics-using-Dynamic-Graph-Representation-Learning" class="headerlink" title="dyngraph2vec:Capturing Network Dynamics using Dynamic Graph Representation Learning"></a>dyngraph2vec:Capturing Network Dynamics using Dynamic Graph Representation Learning</h1><ul>
+<li>论文原文：<a href="https://arxiv.org/pdf/1809.02657.pdf" target="_blank" rel="noopener">dyngraph2vec: Capturing Network Dynamics using Dynamic Graph Representation Learning</a></li>
+<li>作者：Goyal, Palash, Sujit Rokka Chhetri, and Arquimedes Canedo</li>
+<li>发表刊物/会议： arXiv</li>
+</ul>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="问题陈述"><a href="#问题陈述" class="headerlink" title="问题陈述"></a>问题陈述</h3><ul>
+<li>图：$G(V, E)$</li>
+<li>动态图：$\mathcal{G}={G_1,…,G_T}$</li>
+<li>目标：将一个节点，通过学习一个映射方法：$f_t=\lbrace V_1,…,V_t,E_1,…,E_t\rbrace \to \Bbb{R}^d$转换为一组低维向量：$y_{v_1},…,y_{v_t}$，其中$y_{v_i}=f_i(V_1,…,V_i,E_1,…,Ei)$，是一个 d 维的向量，捕获了$1-i$时刻的图动态变换。</li>
+</ul>
+<h4 id="dyngraph2vec"><a href="#dyngraph2vec" class="headerlink" title="dyngraph2vec"></a>dyngraph2vec</h4><p>dyngraph2vec 是一个深度学习模型，输入前面几个时间片段的图，即可输出下一个时刻的图。</p>
+<p>模型通过优化下面这个损失函数，来学习时刻$t$的图嵌入（network embedding，即其向量表达）。</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+L_{t+1} &= \parallel (\hat{A_{t+l+1}}-A_{t+l+1})\odot \mathcal{B} \parallel^2_F \\\
+&= \parallel (f(A_t,...,A_{t+l}) - A_{t+l+1}) \odot \mathcal{B}\parallel ^2_F
+\end{aligned}</script><p>其中，A 表示图的邻接矩阵，$f$函数用来计算$\hat{A}$，也就是对$t+l+1$时刻的图的邻接矩阵的估计。</p>
+<p>$\mathcal{B}$是惩罚项，$\mathcal{B}_{ij}=\beta, for (i,j) \in E_{t+l+1}, else 1$。</p>
+<p>$\odot​$表示一种矩阵的布尔运算，具体定义可以在这个<a href="https://www.math.fsu.edu/~pkirby/mad2104/SlideShow/s5_4.pdf" target="_blank" rel="noopener">pdf</a>里面找一下（<a href="https://www.math.fsu.edu/~pkirby/mad2104/SlideShow/s5_4.pdf），不再详述。" target="_blank" rel="noopener">https://www.math.fsu.edu/~pkirby/mad2104/SlideShow/s5_4.pdf），不再详述。</a></p>
+<p>文章使用的深度学习模型有如下三种：$dyngraph2vecAE, dyngraph2vecRNN, dyngraph2vecAERNN$。</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/image-20181126170553492.png" alt="image-20181126170553492"></p>
+<p>我们可以看到，这三种方法都分成两个步骤，Deep encoders 的目的，是输入动态的邻接矩阵，为每个节点生成低维向量；Deep decoders 则可以根据低维向量，来生成下一时刻的预测图。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#dyngraph2vec-Capturing-Network-Dynamics-using-Dynamic-Graph-Representation-Learning"><span class="toc-text">dyngraph2vec:Capturing Network Dynamics using Dynamic Graph Representation Learning</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题陈述"><span class="toc-text">问题陈述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#dyngraph2vec"><span class="toc-text">dyngraph2vec</span></a></li></ol></li></ol></li></ol></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a>
+    <a href="https://github.com/aircloud" target="_blank" rel="noopener">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

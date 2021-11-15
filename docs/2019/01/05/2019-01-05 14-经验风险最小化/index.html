@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="google-site-verification"
+    content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Jiacheng Pan&#39;s Blog" />
+  <meta name="keyword" content="" />
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" />
+
+  <title>
+     CS229：14-经验风险最小化 - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+ 
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link
+    href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <!-- ga & ba script hoook -->
+  <script></script>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        CS229：14-经验风险最小化
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2019-01-05 13:53:00</span></span> -->
+        <span class="attr">发布于：<span>2019-01-05</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#AndrewNgCS229"
+                title="AndrewNgCS229">AndrewNgCS229</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#Course Notes" title="Course Notes">Course Notes</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Machine Learning" title="Machine Learning">Machine Learning</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>就线性分类模型而言，可以将其表示为：</p>
+<script type="math/tex; mode=display">
+h_\theta(x)=g(\theta^Tx), \\\
+g(z) = 1\lbrace z \geq 0 \rbrace</script><p>其中，训练集表示为：</p>
+<script type="math/tex; mode=display">
+S=\lbrace (x^{(i)}, y^{(i)}) \rbrace _ {i = 1} ^ m, (x^{(i)}, y^{(i)}) \sim {\cal D}</script><p>这里假设了训练数据都是独立同分布的。</p>
+<p>那么，我们认为，这个线性分类器的<strong>训练误差</strong>就可以表示为它分类错误的样本比例：</p>
+<script type="math/tex; mode=display">
+{\hat{\varepsilon}}(h_\theta) = {\hat{\varepsilon}}_s(h_\theta) = \frac{1}{m}\sum_{i=1}^m1\lbrace h_\theta (x^{(i)}) \neq y^{(i)} \rbrace</script><p>在这里，我们把训练误差也称为<strong>风险</strong>（risk），由此我们导出了经验风险最小化。</p>
+<h3 id="经验风险最小化"><a href="#经验风险最小化" class="headerlink" title="经验风险最小化"></a>经验风险最小化</h3><h3 id="Empirical-Risk-Minimization，ERM"><a href="#Empirical-Risk-Minimization，ERM" class="headerlink" title="Empirical Risk Minimization，ERM"></a>Empirical Risk Minimization，ERM</h3><p>经验风险最小化，最终导出一组参数，能够使得训练误差最小：</p>
+<script type="math/tex; mode=display">
+{\hat{\theta}} = \arg \min {\hat{\varepsilon}}_s(h_\theta)</script><p>我们再定义一个假设类${\cal{H}} = \lbrace h_\theta, \theta \in {\Bbb R}^{n+1} \rbrace$，它是所有假设的集合。在线性分类中，也就是所有线性分类器的集合。</p>
+<p>那么，我们可以重新定义一次 ERM：</p>
+<script type="math/tex; mode=display">
+{\hat h} = \mathop{\arg \min}_{h \in {\cal H}} {\hat \varepsilon}(h)</script><p>对上述公式的直观理解就是：从假设类中选取一个假设，使得训练误差最小。我们这里用了$\hat{h}$表示估计，因为毕竟不可能得到最好的假设，只能得到对这个最好的假设的估计。</p>
+<p>但这仍然不是目标，我们的目标是使得<strong>泛化误差 Generalization Error</strong>最小化，也即新的数据集上分类错误的概率：</p>
+<script type="math/tex; mode=display">
+\varepsilon(h)=P_{(x,y) \sim {\cal D}}(h(x) \neq y)</script><p>接下去，为了证明：</p>
+<ul>
+<li><p>（1）${\hat \varepsilon} \approx \varepsilon$，训练误差近似于泛化误差（理解为，泛化误差和训练误差之间的差异存在上界）</p>
+</li>
+<li><p>（2）ERM 输出的泛化误差$\varepsilon({\hat h})$存在上界；</p>
+</li>
+</ul>
+<p>我们引出两个引理：</p>
+<ul>
+<li><p>联合界引理（Union Bound）</p>
+<blockquote>
+<p>$A_1, A_2, \ldots , A_k$是 k 个事件，他们之间并不一定是独立分布的，有：</p>
+<script type="math/tex; mode=display">
+P(A_1 \cup \ldots \cup A_k) \leq P(A_1) + \dots + P(A_k)</script></blockquote>
+</li>
+<li><p>Hoeffding 不等式（Hoeffding Inequality）</p>
+<blockquote>
+<p>$z_1, \ldots z_m$是 m 个 iid（independent and identically distribution，独立同分布），他们都服从伯努利分布，$P(z_i=1) = \phi$，那么对$\phi$的估计：</p>
+<script type="math/tex; mode=display">
+{\hat \phi} = \frac{1}{m}\sum_{i=1}^m z_i</script><p>于是，给定$\gamma &gt; 0$，有：</p>
+<script type="math/tex; mode=display">
+P(|{\hat{\phi}} - \phi| > \gamma) \leq 2 exp(-2\gamma^2m)</script></blockquote>
+<p>Hoeffding 不等式的直观解释就是，下图中的阴影面积，会有上界。</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-01-06/image-20190106143941030.png" alt="image-20190106143941030"></p>
+</li>
+</ul>
+<h3 id="一致收敛"><a href="#一致收敛" class="headerlink" title="一致收敛"></a>一致收敛</h3><h3 id="Uniform-Conversions"><a href="#Uniform-Conversions" class="headerlink" title="Uniform Conversions"></a>Uniform Conversions</h3><p>对于某个$h_j \in \cal{H}$，我们定义$z_i = 1 \lbrace h_j(x^{(i)}) \neq y^{(i)}\rbrace \in \lbrace{}$为第 i 个样本被分类错误的指示函数的值，对于 logistic 而言，它服从伯努利分布。</p>
+<p>那么：</p>
+<ol>
+<li>泛化误差：$P(z_i=1) = \varepsilon(h_j)$</li>
+<li>训练误差：${\hat{\varepsilon}}(h_j) = \frac{1}{m}\sum_{i=1}^m z_i$</li>
+</ol>
+<p>根据 Hoeffding 不等式，我们能够得到：</p>
+<script type="math/tex; mode=display">
+P(|{\hat{\varepsilon}}(h_j) - \varepsilon(h_j)| > \gamma) \leq 2e^{-2\gamma^2m}</script><p>接着，我们定义训练误差和泛化误差之间的差大于$\gamma$（$|{\hat{\varepsilon}}(h_j) - \varepsilon(h_j)| &gt; \gamma$）为事件$A_j$，根据以上结论，我们可知：</p>
+<script type="math/tex; mode=display">
+P(A_j) \leq 2e^{-2\gamma^2m}</script><p>那么根据联合界引理：</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+& P(\exists h_j \in H, |{\hat{\varepsilon}}(h_j) - \varepsilon(h_j)| > \gamma) \\\
+= & P(A_1 \cup A_2 \cup \ldots \cup A_k) \\\
+\leq & \sum_{i=1}^k P(A_i) \\\
+\leq & \sum_{i=1}^k 2e^{-2\gamma^2m} \\\
+= & 2ke^{-2\gamma^2m}
+\end{array}</script><p>可以表述为：存在$h_j$使$|{\hat{\varepsilon}}(h_j) - \varepsilon(h_j)| &gt; \gamma$的概率$\leq 2ke^{-2\gamma^2m}$。</p>
+<p>等价于：不存在$h_j$使$|{\hat{\varepsilon}}(h_j) - \varepsilon(h_j)| &gt; \gamma$的概率$\geq 1 - 2ke^{-2\gamma^2m}$。</p>
+<p>等价于：$\cal H$中任意的$h_j$使得$|{\hat{\varepsilon}}(h_j) - \varepsilon(h_j)| \leq \gamma$的概率$\geq 1 - 2ke^{-2\gamma^2m}$。</p>
+<p>我们将上面这个结论称之为<strong>一致收敛 Uniform Conversions</strong>，也就是说事实上，所有的假设，训练误差和泛化误差之间都存在上界。</p>
+<h3 id="样本复杂度，误差界以及偏差方差权衡"><a href="#样本复杂度，误差界以及偏差方差权衡" class="headerlink" title="样本复杂度，误差界以及偏差方差权衡"></a>样本复杂度，误差界以及偏差方差权衡</h3><p>上面的结论，我们可以引出以下的一些推论：</p>
+<h4 id="样本复杂度-Sample-Complexity"><a href="#样本复杂度-Sample-Complexity" class="headerlink" title="样本复杂度 Sample Complexity"></a>样本复杂度 Sample Complexity</h4><p>给定$\gamma, \delta$，需要多大的训练集合（$m$）？其中$\delta$指的是泛化误差和训练误差之差大于$\gamma$的概率。</p>
+<p>我们知道，$\delta \leq 2ke^{-2\gamma^2m}$，可求解：</p>
+<script type="math/tex; mode=display">
+m \geq \frac{1}{2 \gamma ^ 2} log(\frac{2k}{\delta})</script><p>这个，也被称为样本复杂度（类似于时间复杂度），指的是，只要满足上面这个条件，任意$h \in \cal H$，都能得到$|{\hat{\varepsilon}}(h_j) - \varepsilon(h_j)| \leq \gamma$</p>
+<h4 id="误差界-Error-Bound"><a href="#误差界-Error-Bound" class="headerlink" title="误差界 Error Bound"></a>误差界 Error Bound</h4><p>给定$\delta, m$时，我们会得到多大的误差上界$\gamma$。</p>
+<p>经过求解可以得到：</p>
+<script type="math/tex; mode=display">
+P(\forall h \in {\cal H}, |{\hat{\varepsilon}}(h_j) - \varepsilon(h_j)| \leq \sqrt{\frac{1}{2m}log(\frac{2k}{\delta})}) \geq 1 - \delta</script><p>也就是误差上界是：$\gamma = \sqrt{\frac{1}{2m}log(\frac{2k}{\delta})}$。</p>
+<h3 id="偏差方差权衡-Bias-Variance-Tradeoff"><a href="#偏差方差权衡-Bias-Variance-Tradeoff" class="headerlink" title="偏差方差权衡 Bias Variance Tradeoff"></a>偏差方差权衡 Bias Variance Tradeoff</h3><p>我们定义：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+{\hat h} &= \mathop{\arg \min}_{h \in \cal H} {\hat \varepsilon}(h) \text{, 使得训练误差最小的h}
+&\tag{1} \\\
+h^\ast &= \mathop{\arg \min}_{h \in \cal H} \varepsilon(h) \text{, 使得泛化误差最小的h} \tag{2}
+\end{align}</script><p>假如：</p>
+<script type="math/tex; mode=display">
+\forall h \in {\cal H}, |{\hat{\varepsilon}}(h_j) - \varepsilon(h_j)| \leq \gamma \tag{3}</script><p>那么：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\varepsilon(\hat h) &\leq {\hat \varepsilon}({\hat h}) + \gamma, &\text{derived from (3)}\\\
+&\leq {\hat \varepsilon}(h^\ast) + \gamma, &\text{derived from (1)}\\\
+&\leq {\varepsilon(h^\ast)} + \gamma + \gamma, &\text{ derived from (3)}
+\end{align}</script><p>于是，我们得到如下定理：</p>
+<p>给定大小为$k$的假设集合$\cal H$，给定$m, \delta$，那么：</p>
+<script type="math/tex; mode=display">
+\varepsilon(\hat h) \leq \underbrace{(\min_{h \in {\cal H}}\varepsilon(h))}_{\varepsilon(h^\ast)} + 2 \underbrace{\sqrt{\frac{1}{2m}log(\frac{2k}{\delta})}}_{\gamma}</script><p>的概率不低于$1-\delta$。</p>
+<p>可以想象，为了得到最佳的假设$h^\ast$，我们尽可能增大$\cal H$（能够减小$\varepsilon(h^\ast)$），但随之而来的就是$\gamma$的增大，所以需要在这两者之间进行权衡，我们指的就是<strong>偏差方差权衡 Bias Variance Tradeoff</strong>。</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-01-06/image-20190106154201189.png" alt="image-20190106154201189"></p>
+<p>由此，我们得到一个推论：</p>
+<p>给定$\delta, \gamma$，为了能够保证$\varepsilon(\hat h) \leq (\min_{h \in {\cal H}}\varepsilon(h)) + 2\gamma$的概率不小于$1-\delta$（ERM 得到的假设的一般误差，与最佳假设的一般误差之间，差值不大于$2\gamma$）</p>
+<p>我们需要保证：</p>
+<script type="math/tex; mode=display">
+m \geq \frac{1}{2\gamma^2}log(\frac{2k}{\delta})</script>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#经验风险最小化"><span class="toc-text">经验风险最小化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Empirical-Risk-Minimization，ERM"><span class="toc-text">Empirical Risk Minimization，ERM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一致收敛"><span class="toc-text">一致收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Uniform-Conversions"><span class="toc-text">Uniform Conversions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#样本复杂度，误差界以及偏差方差权衡"><span class="toc-text">样本复杂度，误差界以及偏差方差权衡</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#样本复杂度-Sample-Complexity"><span class="toc-text">样本复杂度 Sample Complexity</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#误差界-Error-Bound"><span class="toc-text">误差界 Error Bound</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#偏差方差权衡-Bias-Variance-Tradeoff"><span class="toc-text">偏差方差权衡 Bias Variance Tradeoff</span></a></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a>
+    <a href="https://github.com/aircloud" target="_blank" rel="noopener">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

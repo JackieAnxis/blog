@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="google-site-verification"
+    content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Jiacheng Pan&#39;s Blog" />
+  <meta name="keyword" content="" />
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" />
+
+  <title>
+     CS229：15-Vapnik–Chervonenkis dimension - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+ 
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link
+    href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <!-- ga & ba script hoook -->
+  <script></script>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        CS229：15-Vapnik–Chervonenkis dimension
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2019-01-10 13:53:00</span></span> -->
+        <span class="attr">发布于：<span>2019-01-10</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#AndrewNgCS229"
+                title="AndrewNgCS229">AndrewNgCS229</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#Course Notes" title="Course Notes">Course Notes</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Machine Learning" title="Machine Learning">Machine Learning</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>延续上节课的内容。</p>
+<p>给定$|\cal H| = k$，给定$\delta, \gamma$，为了保证：</p>
+<script type="math/tex; mode=display">
+\varepsilon({\hat h}) \leq \varepsilon(h) + 2\gamma</script><p>的概率不小于$1-\delta$，那么$m$需要满足：</p>
+<script type="math/tex; mode=display">
+m \geq \frac{1}{2\gamma^2}\log \frac{2k}{\delta} = O(\frac{1}{\gamma^2}\log \frac{k}{\delta})</script><p>假如$\cal H$是以$d$个实数为参数的(比如为了解决<em>n</em>个特征的分类问题，<em>d</em>就等于<em>n+1</em>)，而在计算机中，实数多以 64 位浮点数保存，d 个实数就需要 64d 位来存储，那么$\cal H$的整个假设空间大小就为$2^{64d}$，也即$k=2^{64d}$，那么：</p>
+<script type="math/tex; mode=display">
+m \geq O(\frac{1}{\gamma^2}\log \frac{k}{\delta}) = O(\frac{d}{\gamma^2}\log \frac{1}{\delta})</script><p>最直观的解释就是$m$与假设类的参数数量几乎是成正比的。</p>
+<hr>
+<p>定义<strong>Shatter（分散）</strong>：给定一个由$d$个点构成的集合：$S=\lbrace x^{(1)}, \ldots, x^{(d)} \rbrace$，我们说一个假设类$\cal H$能够<strong>分散(shatter)</strong>一个集合$S$，如果$\cal H$能够实现对$S$的任意一种标记方式，也即，对$S$的任意一种标记方式，我们都可以从$\cal H$中找到对应的假设来进行分割。<br>举例而言，如果${\cal H} = \lbrace \text{linear classification in 2D} \rbrace$(二维线性分类器的集合)，对于二维平面上的三个点，有 8 种标记方式：</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-1-11/image-20190111094049430.png" alt="image-20190111094049430"></p>
+<p>那么，蓝线所代表的线性分类器，都能完成对它们的标记，所以我们称$\cal H$能够分散平面上三个点所构成的集合。但是对于平面上四个点，就有存在以下这种情况，没有任何的线性分类器能够实现这种标记：</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-1-11/image-20190111094649618.png" alt="image-20190111094649618"></p>
+<hr>
+<p>定义<strong>Vapnik-Chervonenkis dimension（VC 维）</strong>：假设集$\cal H$的<strong>VC 维</strong>，写成$VC({\cal H})$，指的是能够被$\cal H$分散的最大集合的大小。<br>举例而言，如果$\cal H$是所有二维线性分类器构成的集合，那么$VC(\cal H) = 3$。当然并不是说$\cal H$要能分散所有三个点构成的集合，只要有某个三个点构成的集合能被$\cal H$分散即可，比如下面这种标记方式，$\cal H$就无法实现，但是我们还是称$VC(\cal H) = 3$。</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/19-1-11/image-20190111095306079.png" alt="image-20190111095306079"></p>
+<p>有一个推论：</p>
+<p>$VC({\text{linear classification of n D}}) = n + 1$</p>
+<hr>
+<p>定理：给定假设集合$\cal H$，令$VC({\cal H})=d$，那么，对于任意的$h \in {\cal H}$：</p>
+<script type="math/tex; mode=display">
+|\varepsilon(h)-{\hat \varepsilon}(h)| \leq O(\sqrt{\frac{d}{m} \log \frac{m}{d} + \frac{1}{m} \log \frac{1}{\delta}})</script><p>的概率不小于$1 - \delta$，以及</p>
+<script type="math/tex; mode=display">
+\varepsilon({\hat h}) \leq \varepsilon(h^\ast) + 2 \gamma, \gamma = O(\sqrt{\frac{d}{m} \log \frac{m}{d} + \frac{1}{m} \log \frac{1}{\delta}})</script><p>的概率不小于$1-\delta​$。</p>
+<p>引理：为了保证$\varepsilon({\hat h}) \leq \varepsilon(h ^ \ast) + 2 \gamma$至少在$1 - \delta$的概率下成立，应该满足：</p>
+<script type="math/tex; mode=display">
+m = O_{\gamma, \delta}(d)</script><p>$O_{\gamma, \delta}(d)$指的是，在固定$\gamma, \delta$的情况下，与$d$线性相关。</p>
+<p>也即，$m$必须与$\cal H$的 VC 维保持一致，也可以这么理解，为了使泛化误差和训练误差近似，训练样本数目必须和模型的参数数量成正比。</p>
+<hr>
+<p>在 SVM 中，给定数据集，如果我们只考虑半径 R 以内的点，以及间隔至少为$\gamma$的线性分类器构成的假设类，那么：</p>
+<script type="math/tex; mode=display">
+VC({\cal H}) \leq \lceil \frac{R^2}{4\gamma^2} \rceil + 1</script><p>也就说明，$\cal H​$ 的 VC 维上限，并不依赖于数据集中点$x​$的维度，换句话说，虽然点可能位于无限维的空间中，但是如果只考虑那些具有较大函数间隔的分类器所组成的假设类，那么 VC 维就存在上界。</p>
+<p>所以 SVM 会自动尝试找到一个具有较小 VC 维的假设类，所以它不会过拟合（模型参数不会过大）</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a>
+    <a href="https://github.com/aircloud" target="_blank" rel="noopener">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>

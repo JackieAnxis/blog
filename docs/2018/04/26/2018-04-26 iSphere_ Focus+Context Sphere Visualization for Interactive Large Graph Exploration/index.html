@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="google-site-verification"
+    content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Jiacheng Pan&#39;s Blog" />
+  <meta name="keyword" content="" />
+  <!-- <link rel="shortcut icon" href="/blog/img/favicon.ico"> -->
+  <link rel="shortcut icon" href="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" />
+
+  <title>
+     iSphere-交互式探索大规模图的焦点+上下文球体可视化技术 - Jiacheng Pan&#39;s Blog 
+  </title>
+
+  <!-- Custom CSS -->
+  
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+ 
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+  <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+  <link
+    href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <!-- ga & ba script hoook -->
+  <script></script>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 🎶 生命因你而火热 💯 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="http://panjiacheng.site"><img
+                    src="https://avatars2.githubusercontent.com/u/19246028?s=460&amp;u=8d4f9462069e17c42c9f7e460369ac703146ceb9&amp;v=4" /></a>
+        </div>
+        <div class="name">
+            <a href="http://panjiacheng.site">
+                <i>Jiacheng Pan</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <!-- <li >
+                <a
+                    href="http://panjiacheng.site">
+                    <i class="iconfont icon-shouye2"></i>
+                    <span>🏡&nbsp;&nbsp;主页</span>
+                </a>
+            </li> -->
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-guidang1"></i> -->
+                    <span>⌨️&nbsp;&nbsp;博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>📦&nbsp;&nbsp;分类</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌&nbsp;&nbsp;标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang"></i> -->
+                    <span>📅&nbsp;&nbsp;时间</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔍&nbsp;&nbsp;搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 🎶 生命因你而火热 💯 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        iSphere-交互式探索大规模图的焦点+上下文球体可视化技术
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2018-04-26 00:25:00</span></span> -->
+        <span class="attr">发布于：<span>2018-04-26</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#PaperReading"
+                title="PaperReading">PaperReading</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#Visualization" title="Visualization">Visualization</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Graph Visualization" title="Graph Visualization">Graph Visualization</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#Fisheye" title="Fisheye">Fisheye</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h1 id="iSphere-交互式探索大规模图的焦点-上下文球体可视化技术"><a href="#iSphere-交互式探索大规模图的焦点-上下文球体可视化技术" class="headerlink" title="iSphere: 交互式探索大规模图的焦点+上下文球体可视化技术"></a>iSphere: 交互式探索大规模图的焦点+上下文球体可视化技术</h1><ul>
+<li>论文原文：iSphere: Focus+Context Sphere Visualization for Interactive Large Graph Exploration</li>
+<li>作者：Fan Du , Nan Cao , Yu-Ru Lin</li>
+<li>发表刊物/会议：<a href="http://chi2017.acm.org/" target="_blank" rel="noopener">CHI ‘17</a> Proceedings of the 2017 CHI Conference on Human Factors in Computing Systems。</li>
+</ul>
+<p>文章主要对大图探索技术进行了一些综述，提出了一个新的焦点+上下文技术 iSphere，并进行了实验：在不同窗口条件下，不同图探索任务下，比较多种图的焦点+上下文技术。结果显示，iSphere 在边探索和路径探索下跟其他对照组相比有最佳的探索效率。</p>
+<p><a href="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/iSphere.pdf" target="_blank" rel="noopener">组会报告 PDF 链接</a></p>
+<h3 id="一、介绍"><a href="#一、介绍" class="headerlink" title="一、介绍"></a>一、介绍</h3><p>交互式探索是在大图数据中进行导航的一个主要方法。</p>
+<p>有很多可视化和交互技术用来支持大图探索（也即在一块相对较小的屏幕上探索大规模图），大概能分以下几类：</p>
+<ul>
+<li><p><strong>交互技术</strong>：包括三种：（1）基于查询的方法；（2）在层次聚类图中进行语义缩放；（3）缩放和平移；</p>
+<ul>
+<li><p><strong>基于查询的方法</strong>：查询是探索大图最简单的方法，可以查询节点或者链接的标签，并展示一部分用户感兴趣的图。但这类探索方法只在用户任务明确，查询可以明确定义的时候才能有效。</p>
+<p>​</p>
+</li>
+<li><p>在层次聚类图中进行语义缩放**：经常被用在层次聚类图的可视化中，当用户缩放到下一个层次中，则需要可视化当前层次的图。和一般的缩放相比，语义缩放不仅改变了图的表示，也同时更新了需要展示的数据。</p>
+<p>层次聚类图可视化提供了附加的上下文信息用来进行数据导航。然而在不同分支下，叶节点之间的拓扑信息被隐藏，用户要进行缩放。并且，当层次比较深的时候，或者说有很大的扇出（缩放的代价）时，语义缩放就会很低效。</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-5-4/55799171.jpg" alt=""></p>
+</li>
+<li><p><strong>缩放和平移</strong>：为了消除无效的语义缩放，则需要将层次扁平化或者索性去掉层次结构。但是当展示大数据集的时候就会缺少空间。缩放和平移经常一起使用，用来解决这个问题。</p>
+</li>
+</ul>
+<p>​</p>
+</li>
+<li><p><strong>可视化技术</strong>：两种通用的可视化设计原则：（1）概览+细节；（2）焦点+上下文。</p>
+<ul>
+<li><p><strong>概览+细节</strong>：概览视图用来描绘整个图，然后细节图则表述不同的视角下的图的细节。</p>
+<p>概览视图一般在一个小的视窗下，一般悬浮在另一个大的窗口（一般用来展示部分选择的图的细节）前面，或者相反。两者通过交互一起联动。</p>
+<p>这种技术很容易实现并使用广泛 ，但这种在两个分离的视图中展示概览和细节的形式，打破了空间连续性。</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-5-4/44210738.jpg" alt=""></p>
+</li>
+<li><p><strong>焦点+上下文</strong>：另一种通用的探索大数据的可视化设计原则。使得观察者能主要看感兴趣的部分（全细节）同时将上下文结构用概览的形式展示。焦点+上下文技术有两种分类：平面的和双曲空间的。平面探索展示的上下文太少，后者则引入了过多的畸变。</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-5-4/32982992.jpg" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>作者提出了一个新颖的焦点+上下文的展示方式，iSphere。将节点链接图映射到黎曼空间中，然后再正交投影到二维平面上。产生的焦点上下文视图，有一个聚焦区域并被周围的上下文所包围。文章的主要贡献有：</p>
+<ol>
+<li>提出了一种新的用于探索大规模图的焦点上下文展示方法。</li>
+<li>进行了第一次用于比较两种不同的焦点+上下文技术的用户调研（在不同的探索任务、屏幕大小以及图大小下进行）。</li>
+<li>提供了针对实验结果的拓展性的分析和讨论，主要围绕不同的焦点+上下文技术在何时、为什么以及怎么发挥作用或者说它们拥有的限制。以及 iSphere 用在小屏幕上的优点。</li>
+</ol>
+<h3 id="二、焦点-上下文技术"><a href="#二、焦点-上下文技术" class="headerlink" title="二、焦点+上下文技术"></a>二、焦点+上下文技术</h3><p>焦点+上下文技术，最简单的方法就是在一个可以缩放和平移的窗口进行展示（不带有任何畸变），但这只能展示一部分的数据。</p>
+<h4 id="畸变导向技术"><a href="#畸变导向技术" class="headerlink" title="畸变导向技术"></a>畸变导向技术</h4><p>畸变导向的技术则提升了这种设计，在展示更多包围的上下文的同时，将聚焦区域放大，并且不用增加展示区域或者损失空间连续性。技术有：</p>
+<ul>
+<li><p>polyfocal projection 多焦点投影<sup><a href="#fn_1" id="reffn_1">1</a></sup>，下图左，图像的每个像素点上的畸变率，跟该像素离焦点中心的距离的 N 次方成反比。</p>
+</li>
+<li><p>graphical fisheye views 图鱼眼，下图右，将图像的鱼眼转换到拓扑结构上</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-5-4/82242877.jpg" alt=""></p>
+</li>
+<li><p>topological fisheye views 拓扑鱼眼。在图鱼眼的基础上，增加了层次聚类图，展开焦点附近的层次聚类图，而将远离焦点的聚合起来。</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-5-4/99073611.jpg" alt=""></p>
+</li>
+</ul>
+<p>但，在给定的畸变率限制下，这些技术都无法将整个可视化平面放进焦点+上下文展示中。而且，过去的用户调研显示，引入了畸变，就会降低用户的表现，因为他们需要留意畸变的形状和位置以便在脑中进行回忆。</p>
+<h4 id="非欧式几何技术"><a href="#非欧式几何技术" class="headerlink" title="非欧式几何技术"></a>非欧式几何技术</h4><p>非欧氏几何会用来构造更高的畸变率的焦点+上下文展示。在三维空间中有两种非欧氏几何，<strong>椭圆几何</strong>和<strong>双曲几何</strong>。</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-5-4/38473098.jpg" alt=""></p>
+<ul>
+<li><p>椭圆几何能够被可视化为一个三维球体的表面，当通过<strong>正交投影</strong>将这个球体投影到屏幕上时，就会自动生成一个焦点+上下文的展示（上图左）。然而这些技术会被『表达问题』所限制，因为球体表面区域有限。</p>
+</li>
+<li><p>双曲几何，能够用 Poincare disk 模型（庞加莱圆盘模型）在二维空间进行描述。就如上图右展示的那样，这种模型利用<strong>透视投影</strong>将无限的双叶双曲面投影到一个圆盘上。会有较高的畸变率，但可以投影到任意大小的窗口中。庞加莱圆盘模型是保角的，这对保持结构和形状很重要。但庞加莱圆盘模型虽然能保持角度但是却会让直线、曲线产生畸变。</p>
+</li>
+</ul>
+<p>iSphere 解决了上述的限制，该种方法相对温和的畸变率，能比平面展现更多的上下文，相对于双曲几何而言则能降低边的扭曲。</p>
+<h3 id="三、ISPHERE-的设计"><a href="#三、ISPHERE-的设计" class="headerlink" title="三、ISPHERE 的设计"></a>三、ISPHERE 的设计</h3><h4 id="1-设计思想"><a href="#1-设计思想" class="headerlink" title="1 设计思想"></a>1 设计思想</h4><p>iSphere 适用于任何类型的图（有向无向，无部/二部/多部，平坦图/非平坦图），可以是任何大小的节点链接图，并且可以是任意的节点链接布局。</p>
+<p>首先，将图布局在一个虚拟平面$\Bbb P$上，将$\Bbb P$映射到单位球体$\Bbb S$上（基于球面投影 Stereographic Projection 的逆过程，Stereographic Projection 球面投影，也就是如何将地球仪上的地图投影成平面的过程）。在这之后，$\Bbb S$会通过正交投影投影到一个二维平面上，形成一个焦点+上下文视图，如下方的示意图。</p>
+<h5 id="布局方法"><a href="#布局方法" class="headerlink" title="布局方法"></a>布局方法</h5><p>可以用任意的布局方法，布局是离线进行的。</p>
+<h5 id="将虚拟平面映射到黎曼球体上"><a href="#将虚拟平面映射到黎曼球体上" class="headerlink" title="将虚拟平面映射到黎曼球体上"></a>将虚拟平面映射到黎曼球体上</h5><p>将虚拟平面映射到黎曼球体上。基于球面投影的逆过程。</p>
+<p>球面投影的正向过程：</p>
+<p>北极点$N: (0,0,1)$</p>
+<p>球面上的某个点$P: (x, y, z), x^2+y^2+z^2=1$</p>
+<p>虚拟平面上的投影结果：<script type="math/tex">P': (X, Y) = (\frac{x}{1-z}, \frac{y}{1-z})</script></p>
+<p>逆向投影：</p>
+<p>$P:(x, y, z) = (\frac{2X}{X^2+Y^2+1}), \frac{2Y}{X^2+Y^2+1}, \frac{X^2+Y^2-1}{X^2+Y^2+1})$</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-5-4/81448962.jpg" alt=""></p>
+<p>以上的过程是保角的，感兴趣的区域（赤道内）会被投影到南半球，其他区域则投影到北半球，无限远的点会被投影到北极点。</p>
+<h5 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h5><p>通常只会渲染$\Bbb S$的南半球（正交投影），因为它展示了聚焦区域。用 GPU 在像素级别上进行并行渲染。</p>
+<p>当边是任意的曲线的时候，则需要将边的每个像素点都映射到球体上，然后用样条曲线进行差值来进行模拟。</p>
+<p>当边是直线的时候，就可以简单用投影的性质进行映射。一条直线就可能是一个大的弧。</p>
+<p>本文假设所有边都是直的。</p>
+<h5 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h5><p>缩放和平移都在 iSphere 上进行了实现。缩放是通过调整$\Bbb S$的半径。平移则是基于莫比乌斯变换 Möbius transformation。一个等价的实现则是保持$\Bbb S$不变，而简单平移和缩放虚拟平面。这种平移的效应可能像是旋转球体。</p>
+<h4 id="和双曲投影的比较"><a href="#和双曲投影的比较" class="headerlink" title="和双曲投影的比较"></a>和双曲投影的比较</h4><p>两者有很多共同的性质：</p>
+<ol>
+<li>两者都将原始的欧式平面转换成了一个焦点+上下文的展示，中间区域被放大，周围区域则被压缩成为上下文。</li>
+<li>他们都提供了保角变换，图结构能够被保留。</li>
+<li>能够将无限的信息空间映射到单位空间中，就可以用任意大小的窗口进行可视化。</li>
+</ol>
+<p>不同的性质：</p>
+<ol>
+<li>双曲显示会有更高的畸变率，因为它将所有的空间都展示给用户，那么高层次的拓扑任务，比如检测聚类，就会变得更简单。但高度的畸变会让小的移动产生大的视觉变化。相对而言，iSphere 将信息空间映射到三维黎曼球体上，然后正交投影到二维平面上，于是只要展示半球即可，将远离聚焦区域的节点隐藏。</li>
+<li>一条双曲线，在庞加莱圆盘上会被映射成一个欧几里得圆的一个弧，该弧垂直于原盘边界。</li>
+<li>在双曲几何的环境里，平面的曲率是负数，而黎曼球体上则恒定为正数。这些性质则会影响结构的表示。</li>
+</ol>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-4-16/7958076.jpg" alt=""></p>
+<h3 id="四、实验设计"><a href="#四、实验设计" class="headerlink" title="四、实验设计"></a>四、实验设计</h3><h4 id="对照实验"><a href="#对照实验" class="headerlink" title="对照实验"></a>对照实验</h4><p>比较了三种技术，平面（$D_p$），双曲（$D_h$），iSphere（$D_s$）。</p>
+<p>JAVA 实现。</p>
+<p>三者用了同样的布局方法。</p>
+<h4 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h4><ol>
+<li>节点探索：给定一个节点，找到最高度数的邻节点。</li>
+<li>边探索：给定两个节点，找到拥有最高度数的公共邻节点。</li>
+<li>路径探索：给定路径，找到路径上最高度数的节点。</li>
+</ol>
+<p>所有的任务都是一个广跨度的探索。只要求用户选择一个单一的目标，这样可以减少他们的操作。</p>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p>文章用了 Exploring community structure in biological networks with random graphs<sup><a href="#fn_4" id="reffn_4">4</a></sup>中提到的图数据模型来生成能够精确控制规模和社团结构的图数据。并且用了四种不同的窗口大小。</p>
+<p>让四名用户进行了一次试点研究来决定是否有其他的条件影响用户的表现。</p>
+<p>并没有引入畸变透镜的技术，因为这些技术往往无法完全涵盖一个相对较大的虚拟平面，并且可能会引入其他的因素。</p>
+<ul>
+<li><p><strong>展示技术</strong>：平面（$D_p$），双曲（$D_h$），iSphere（$D_s$）</p>
+<p>​</p>
+</li>
+<li><p><strong>图规模</strong>：参数为节点个数和边数。</p>
+<p>在试点研究中进行了选择，选出了对用户表现区分的最好的参数。</p>
+<p>最多 2048 个节点，保证所有任务都可以在大约 30 秒时间左右完成。（2048 个节点已经是作者认知中，对照比较实验中用的规模最大的图了）</p>
+<p>然后为了验证不同的展示形式的 scalability：当图规模指数增长的时候，用户表现的趋势。</p>
+<p>故而选择了$2^7, 2^8, 2^{11}$节点数量。然后 8 作为平均度数，边数则是 1024/4096/16384。</p>
+<p>​</p>
+</li>
+<li><p><strong>图结构</strong>：用了模块度（modularity）来测量图的聚类能力。</p>
+<p>高模块度的图显示了清晰的模块结构，低模块度则没有清晰结构。</p>
+<p>固定了聚类数量为 3，使得实验难度较为中等。</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-4-16/4789149.jpg" alt=""></p>
+</li>
+<li><p><strong>窗口大小</strong>：$361 \times 203mm, 148 \times 197 mm, 58 \times 104 mm, 36 \times 42 mm$，笔记本电脑、平板、⼿机、⼿表</p>
+</li>
+</ul>
+<p>除了以上三个原因，节点的数量和分布也很重要（参数都由试点研究进行确定，控制一个中等难度）：</p>
+<ul>
+<li>任务一中，给定节点为一个 15 度的节点，邻节点分布在不同的聚类中。</li>
+<li>任务二中，两个节点从属于不同的聚类，拥有三个公共邻节点。</li>
+<li>任务三种，路径长度为 5，节点散布在 3 个不同的聚类中。</li>
+</ul>
+<h4 id="实验条件"><a href="#实验条件" class="headerlink" title="实验条件"></a>实验条件</h4><p>每个参与者要经历 648 条测试（3 种技术，3 个任务，4 种窗口大小，3 种图规模，2 种模块度，3 次重复），一共预计要花 5 小时完成。这太耗时了，不大可能。为了降低这个疲劳问题却保证结果的质量，作者设计了两个对照实验，来覆盖所有的测试条件。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:center">实验 I</th>
+<th style="text-align:center">实验 II</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">技术</td>
+<td style="text-align:center"><strong>双曲（$D_h$），平面（$D_p$），iSphere（$D_s$）</strong></td>
+<td style="text-align:center"><strong>平面（$D_p$），iSphere（$D_s$）</strong></td>
+</tr>
+<tr>
+<td style="text-align:right">任务</td>
+<td style="text-align:center">T1，T2，T3</td>
+<td style="text-align:center">T1，T2，T3</td>
+</tr>
+<tr>
+<td style="text-align:right">窗口大小</td>
+<td style="text-align:center">笔记本电脑</td>
+<td style="text-align:center">平板、手机、手表</td>
+</tr>
+<tr>
+<td style="text-align:right">图规模</td>
+<td style="text-align:center"><strong>小、中、大</strong></td>
+<td style="text-align:center">大</td>
+</tr>
+<tr>
+<td style="text-align:right">图模块度</td>
+<td style="text-align:center">低、高</td>
+<td style="text-align:center">低、高</td>
+</tr>
+<tr>
+<td style="text-align:right">重复次数</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:right">参与者数量</td>
+<td style="text-align:center">18</td>
+<td style="text-align:center">18</td>
+</tr>
+<tr>
+<td style="text-align:right">总测试条数</td>
+<td style="text-align:center">2916（18*162）</td>
+<td style="text-align:center">1944（18*108）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="假设"><a href="#假设" class="headerlink" title="假设"></a>假设</h4><p>假设图规模较小，视窗较大的时候，三种不同技术效果差异不大；</p>
+<p>但当图的规模增大时或者窗口的大小降低时，保留图的上下文则能够指导用户进行导航，并且更高效的找到目标。</p>
+<ul>
+<li>$D_h$（双曲）拥有最高的畸变率，全图都会被展示出来，但只把聚焦区域留在中间，其他图压缩为上下文环绕着聚焦区域。</li>
+<li>$D_s$（iSphere）有着较低的畸变率，只将相关的部分展示为上下文围绕着聚焦区域。</li>
+<li>$D_p$（平面）没有畸变，展示了最少的上下文。</li>
+</ul>
+<p>也就是说更高的畸变率能增加上下文的数量，从而引导数据探索，但也带来更弯曲的边以及更畸形的图结构，交互的时候容易引起更大的视觉变化。因此更高效的图探索要在两个因素之间进行平衡。</p>
+<p>在三种技术中，$D_h$和$D_s$提供了更多的上下文信息，那么就能更好的进行节点探索任务，故而假设：</p>
+<ul>
+<li><strong>H1(a)</strong>：在实验 1 中，当图规模上升的时候$D_h$比$D_s$$D_p$更高效</li>
+<li><strong>H1(b)</strong>：在实验 1 中，当窗口大小降低时，$D_s$比$D_p$更高效。</li>
+</ul>
+<p>$D_s$比$D_p$展示了更多的细节，并且它的边比$D_h$畸变更少，故而假设：</p>
+<ul>
+<li><strong>H2(a)</strong>：在实验 1 的任务 2 中，图规模上升，$D_s$比$D_h$和$D_p$效率更高</li>
+<li><strong>H2(b)</strong>：在实验 2 的任务 2 中，窗口大小下降时，$D_s$比$D_p$效率更高</li>
+<li><strong>H3(a)</strong>：在实验 1 的任务 3 中，图规模上升，$D_s$比$D_h$和$D_p$效率更高</li>
+<li><strong>H3(b)</strong>：在实验 2 的任务 3 中，窗口大小下降时，$D_s$比$D_p$效率更高</li>
+</ul>
+<p>在任务 3 中，用户表现还会受到图的拓扑结构图结构的影响，当模块的结构比较清晰时，$D_p$会表现最佳，因为它保留了原始结构，没有畸变。当模块结构不清晰时，用户则会受益于焦点+上下文的展示，相信$D_s$会因为它较为温和的畸变率表现的更好：</p>
+<ul>
+<li><strong>H4</strong>：当模块度高时，在任务 3 中，$D_p$会比其他两者表现的更高效</li>
+<li><strong>H5</strong>：当模块度低时，在任务 3 中，$D_s$会比其他两者表现的更高效</li>
+</ul>
+<h3 id="五、用户调研"><a href="#五、用户调研" class="headerlink" title="五、用户调研"></a>五、用户调研</h3><h4 id="参与者和实验设备"><a href="#参与者和实验设备" class="headerlink" title="参与者和实验设备"></a>参与者和实验设备</h4><p>实验 1：18 人，12 男 6 女，23-34 岁，均值 26.55 岁，标准差 3.03</p>
+<p>实验 2：18 人，11 男 7 女，19-25 岁，均值 20.44 岁，标准差 1.54</p>
+<p>都是计算机科学的学生或研究人员，有正常或者纠正到正常的视觉。</p>
+<p>白背景，黑节点，节点大小反映了它的度数（$radius=2 \times log_2(degree+1)$），边也是黑色的，1 像素。</p>
+<p>当鼠标悬浮在节点上时，该节点和邻接边会变成蓝色。当点击节点，高亮会保持，直到下次点击。</p>
+<h4 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h4><ul>
+<li><p><strong>介绍</strong>：开始实验前，先向参与者介绍图探索技术，向他们展示同个图是如何用不同技术进行展示的，如下图，展现了不同技术不同缩放率下的结果。</p>
+<p>然后解释三种探索任务，然后用调研系统展示如何进行任务。</p>
+</li>
+<li><p><strong>练习</strong>：正式开始前都会给用户练习的时间，以保证正确理解所有的任务。练习任务包含了三种任务以及需要测试的图探索技术，使用了小规模图（128 节点，1024 边，0.3 模块度）。</p>
+</li>
+<li><p><strong>正式实验</strong>：分别在实验 1 和实验 2 使用了$3 \times 3$或$2 \times 2$拉丁方阵来平衡三种技术的顺序。三种技术的不同实验用例会被随机打乱。在三组技术下用了同样的图，但是每次重用的时候都会进行旋转或镜像变化。每个实验用例有 40 秒的时间限制，每次正式的实验会大概持续 1 小时。每次完成一种技术，参与者都会休息一会。两个实验会分别多次进行，实验 1 先进行。</p>
+</li>
+</ul>
+<h4 id="数据收集和分析"><a href="#数据收集和分析" class="headerlink" title="数据收集和分析"></a>数据收集和分析</h4><p>记录了完成时间和准确度(假如找到了目标节点则为 1，否则为 0)来度量用户表现。</p>
+<p>对完成时间进行了一个对数变化来归一化，然后用了对多种技术分析用 ANOVA，然后成对的技术比较则用了 t 检验。因为准确度的结果没有遵循正态分布，则用 Friedman 测试和成对 Wilcoxon 测试来分析，所有测试用了 0.5 的显著水平。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>多因素检验（&gt;2）</th>
+<th>成对检验（=2）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>完成时间（正态分布）</td>
+<td>ANOVA</td>
+<td>t 检验</td>
+</tr>
+<tr>
+<td>准确率（0-1 分布）</td>
+<td>Friedman</td>
+<td>Wilcoxon</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="实验-I-的结果"><a href="#实验-I-的结果" class="headerlink" title="实验 I 的结果"></a>实验 I 的结果</h4><p>将所有结果用图模块度和图规模分离。</p>
+<h5 id="T1-节点探索任务"><a href="#T1-节点探索任务" class="headerlink" title="T1: 节点探索任务"></a>T1: 节点探索任务</h5><p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-4-16/4449587.jpg" alt=""></p>
+<blockquote>
+<p>误差线表示了一个 95%的置信区间，左边两个为准确率，右边两个为平均完成时间；上面两个为低模块度，下面两个为高模块度</p>
+</blockquote>
+<p><strong>准确度</strong>：在所有情况下都没有明显区别。(a, c)</p>
+<p><strong>完成时间</strong>：在所有情形下也没有找到明显区别。(b, d)</p>
+<p>总之，拒绝假设<strong>H1(a)</strong>。三种展示技术在任务 1 下有着相似的表现。</p>
+<h5 id="T2-边探索任务"><a href="#T2-边探索任务" class="headerlink" title="T2: 边探索任务"></a>T2: 边探索任务</h5><p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-4-16/23354116.jpg" alt=""></p>
+<blockquote>
+<p>误差线表示了一个 95%的置信区间。有显著性结果的行被绘制成白色背景</p>
+</blockquote>
+<p><strong>准确度</strong>：在低模块度、图规模较大的情况下(a)，检测到了显著区别($\chi ^2(2)=6.62, p=.03$)。$D_s$和$D_p$比$D_h$有显著更高的准确度。</p>
+<p><strong>完成时间</strong>：没有发现任何显著差别。</p>
+<p>总之，$D_s$在任务 2 中，低模块度和大图规模的情况下，会比$D_h$有更高的准确度，能够部分支持假设<strong>H2(a)</strong>。而$D_p$和$D_s$之间没有发现明显的区别。</p>
+<h5 id="T3-边探索任务"><a href="#T3-边探索任务" class="headerlink" title="T3: 边探索任务"></a>T3: 边探索任务</h5><p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-4-16/56626463.jpg" alt=""></p>
+<blockquote>
+<p>误差线表示了一个 95%的置信区间。有显著性结果的行被绘制成白色背景</p>
+</blockquote>
+<p><strong>准确度</strong>：在(a, c)中，当图规模较大时，在低模块度和高模块度的情况下都会有明显的区别。而在中等规模的图中，仅在低模块度下有差异。而在小图中则未发现显著区别。</p>
+<p><strong>完成时间</strong>：(b, d)，低模块度情况下，当图规模中等或较大时会有显著区别，而高模块度情况下也同样。在中等规模图中，$D_s$和$D_p$会比$D_h$更快完成，而只在大图中，$D_s$会比$D_h$更快完成。</p>
+<p>总之，在任务 3 中，$D_s$和$D_p$会有更好的表现，特别是当图规模扩大的时候。这些结果支持了假设<strong>H3(a)</strong>和假设<strong>H4-5</strong>。</p>
+<h5 id="问卷调查"><a href="#问卷调查" class="headerlink" title="问卷调查"></a>问卷调查</h5><p>实验 I 的参与者会进行问卷调研，根据对以下情况的支持有效程度对三种方法进行排序。(Q1)节点探索；(Q2)边探索；(Q3)路径探索；(Q4)大图探索；(Q5)易用程度；(Q6)总体偏爱程度。最终结果如下图：</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-4-16/10477168.jpg" alt=""></p>
+<h4 id="Results-Of-Study-II"><a href="#Results-Of-Study-II" class="headerlink" title="Results Of Study II"></a>Results Of Study II</h4><p>结果根据模块度和视窗大小进行了分离，然后所有的图规模都是大的。</p>
+<h5 id="T1-Node-Exploration-Task"><a href="#T1-Node-Exploration-Task" class="headerlink" title="T1: Node Exploration Task"></a>T1: Node Exploration Task</h5><p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-4-16/88802243.jpg" alt=""></p>
+<blockquote>
+<p>误差线表示了一个 95%的置信区间</p>
+</blockquote>
+<p><strong>准确度</strong>：$D_p$和$D_s$在所有情况下都没有明显区别。(a, c)</p>
+<p><strong>完成时间</strong>：$D_p$和$D_s$在所有情形下也没有找到明显区别。(b, d)</p>
+<p>总之，拒绝假设<strong>H1(b)</strong>。$D_p$和$D_s$在不同的窗口大小下，任务 1 下有着相似的表现。</p>
+<h5 id="T2-Link-Exploration-Task"><a href="#T2-Link-Exploration-Task" class="headerlink" title="T2: Link Exploration Task"></a>T2: Link Exploration Task</h5><p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-4-16/98868642.jpg" alt=""></p>
+<blockquote>
+<p>误差线表示了一个 95%的置信区间。有显著性结果的行被绘制成白色背景</p>
+</blockquote>
+<p><strong>准确度</strong>：$D_p$和$D_s$在所有情况下都没有明显区别。(a, c)</p>
+<p><strong>完成时间</strong>：低模块度时(b)，$D_s$在手机大小视窗和平板大小视窗中的平均时间都明显快于$D_p$的平均时间。在高模块度(d)，$D_s$比$D_p$有明显更好的表现。</p>
+<p>总之，$D_s$在任务 2 中，能够比$D_p$完成更快。特别是在小窗口下，支持假设<strong>H2(b)</strong>。</p>
+<h5 id="T3-Path-Exploration-Task"><a href="#T3-Path-Exploration-Task" class="headerlink" title="T3: Path Exploration Task"></a>T3: Path Exploration Task</h5><p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/18-4-16/76744173.jpg" alt=""></p>
+<blockquote>
+<p>误差线表示了一个 95%的置信区间。有显著性结果的行被绘制成白色背景</p>
+</blockquote>
+<p><strong>准确度</strong>：$D_p$和$D_s$在所有情况下都没有明显区别。(a, c)</p>
+<p><strong>完成时间</strong>：(b, d)，低模块度情况下，在所有的视窗尺寸下，$D_s$都会比$D_p$花费显著更少的时间。当在高模块度的情况下，$D_s$会比$D_p$在手机大小的窗口和平板大小的窗口中快的更明显。</p>
+<p>总之，在任务 3 中，两种模块度情况下，$D_s$会比$D_p$更快完成，这些结果部分支持了假设<strong>H3(b)</strong>和假设<strong>H5</strong>，但和假设<strong>H4</strong>矛盾。</p>
+<h5 id="Post-Study-Questionnaire"><a href="#Post-Study-Questionnaire" class="headerlink" title="Post-Study Questionnaire"></a>Post-Study Questionnaire</h5><p>实验 II 的参与者会进行问卷调研，在不同窗口条件下选择他们认为更高效的技术。手表大小：10/18 选择了$D_s$，手机大小：11/18 选择了$D_s$，平板大小：12/18 选择$D_p$。</p>
+<h3 id="六、讨论"><a href="#六、讨论" class="headerlink" title="六、讨论"></a>六、讨论</h3><h5 id="为什么在实验-I-中，-D-h-会被认为最差的技术？"><a href="#为什么在实验-I-中，-D-h-会被认为最差的技术？" class="headerlink" title="为什么在实验 I 中，$D_h$会被认为最差的技术？"></a>为什么在实验 I 中，$D_h$会被认为最差的技术？</h5><p>问卷中，$D_h$被用户挑选为支持大图探索最低效的技术。一个用户提到『在双曲的布局下，很难遍历所有的节点，因为节点之间的相对距离一直在变化』。另一个提到『图的形状一直在发生变化即便只是一点点的平移交互』。这些抱怨都来源于一个问题：畸变。一些用户建议：『静止的图可能才适合双曲空间的布局，它一点都不适合交互』</p>
+<h5 id="为什么在实验-I-中，-D-s-只是某些条件下强于-D-p-？"><a href="#为什么在实验-I-中，-D-s-只是某些条件下强于-D-p-？" class="headerlink" title="为什么在实验 I 中，$D_s$只是某些条件下强于$D_p$？"></a>为什么在实验 I 中，$D_s$只是某些条件下强于$D_p$？</h5><p>$D_s$和$D_p$相比并没有表现出显著的优势，这个发现很神奇。采访了那些在问题 1-3 中选择了$D_p$的人。他们都感到『比起追踪曲线，追踪直线更直观、有效』。根据结果，在追踪一个较长的路径的时候，$D_p$不够能扩展 scalable。当图规模上升的时候，用户表现一个明显的下降趋势，『在$D_p$中，会花更多的时间在大图中追踪长路径，当路径太长，会记不得前面的候选节点，展示更多的上下文会帮助我记住』。因此我们认为$D_s$会比$D_p$在真实情况的大图中表现的更好。</p>
+<h5 id="为什么在实验-I-中，-D-s-最受用户欢迎？"><a href="#为什么在实验-I-中，-D-s-最受用户欢迎？" class="headerlink" title="为什么在实验 I 中，$D_s$最受用户欢迎？"></a>为什么在实验 I 中，$D_s$最受用户欢迎？</h5><p>在实验 I 中，在实验 I 中，虽然$D_s$只比$D_p$好一点，但是能够提供更好的用户体验，被最多的用户喜欢(16/18)。『球体的放大作用能够帮助我看到当前聚焦区域的细节，在平面展示中，需要放大才能达到同样级别的细节，在大数据集下，球体展示相对于其他另外两种技术会看上去更稀疏一些，所以能使得探索更简单』。一些其他用户提到『球体在有限区域内展示了更多的东西』，『当使用 iSphere 时，交互会更少，特别是找公共邻节点和追踪路径的时候』很多用户特别喜欢 iSphere 的平移操作，就类似于旋转一个球体。『在 iSphere 中，中心视图会被自然放大，所以只要旋转球体而并不需要放大』</p>
+<h5 id="为什么在实验-II-中，-D-s-比-D-p-在小视窗下表现的更好？"><a href="#为什么在实验-II-中，-D-s-比-D-p-在小视窗下表现的更好？" class="headerlink" title="为什么在实验 II 中，$D_s$比$D_p$在小视窗下表现的更好？"></a>为什么在实验 II 中，$D_s$比$D_p$在小视窗下表现的更好？</h5><p>『球体展示会更少需要拖动和缩放操作，假如屏幕太小，无法同时展示太多节点，就会需要大量的平移和缩放。而球体展示能够在屏幕上展示更多的节点，就只需要更少的交互』</p>
+<p>『球体会比平面显得更稀疏一些』</p>
+<p>『在球体展示中，注意力能更集中，因为它使得窗口看上去更大了，跟踪路径会更有效，因为能有效的避免路径周围的拥挤』</p>
+<p>『如果节点能够被更清晰的展示，那么在平面上跟踪直线边会更简单』</p>
+<h5 id="为什么要使用-iSphere"><a href="#为什么要使用-iSphere" class="headerlink" title="为什么要使用 iSphere"></a>为什么要使用 iSphere</h5><p>我们认为在使用焦点+上下文技术时，选择一个合适的畸变率很重要。高畸变率能捕捉更多上下文信息，但也使得信息空间扭曲了，这会影响用户的感知。当屏幕较小或者图规模较大的时候，我们认为 iSphere 会比较合适。</p>
+<blockquote id="fn_1">
+<sup>1</sup>. Naftali Kadmon and Eli Shlomi. 1978. A polyfocal projection for statistical surfaces. The Cartographic Journal 15, 1 (1978), 36–41.<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. G W Furnas. 1986. Generalized fisheye views. In Proceedings of the SIGCHI Conference on Human Factors in Computing Systems. 16–23.<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. James Abello, Stephen G Kobourov, and Roman Yusufov. 2004. Visualizing large graphs with compound-fisheye views and treemaps. In International Symposium on Graph Drawing. 431–441.<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_4">
+<sup>4</sup>. Pratha Sah, Lisa Singh, Aaron Clauset, and Shweta Bansal. 2014. Exploring community structure in biological networks with random graphs. BMC Bioinformatics 15, 1 (2014), 220.<a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#8617;</a>
+</blockquote>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+    
+    
+    <div class="index-right">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#iSphere-交互式探索大规模图的焦点-上下文球体可视化技术"><span class="toc-text">iSphere: 交互式探索大规模图的焦点+上下文球体可视化技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、介绍"><span class="toc-text">一、介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、焦点-上下文技术"><span class="toc-text">二、焦点+上下文技术</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#畸变导向技术"><span class="toc-text">畸变导向技术</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#非欧式几何技术"><span class="toc-text">非欧式几何技术</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、ISPHERE-的设计"><span class="toc-text">三、ISPHERE 的设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-设计思想"><span class="toc-text">1 设计思想</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#布局方法"><span class="toc-text">布局方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#将虚拟平面映射到黎曼球体上"><span class="toc-text">将虚拟平面映射到黎曼球体上</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#渲染"><span class="toc-text">渲染</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#交互"><span class="toc-text">交互</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#和双曲投影的比较"><span class="toc-text">和双曲投影的比较</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、实验设计"><span class="toc-text">四、实验设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#对照实验"><span class="toc-text">对照实验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#任务"><span class="toc-text">任务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#变量"><span class="toc-text">变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实验条件"><span class="toc-text">实验条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#假设"><span class="toc-text">假设</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、用户调研"><span class="toc-text">五、用户调研</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参与者和实验设备"><span class="toc-text">参与者和实验设备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#过程"><span class="toc-text">过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据收集和分析"><span class="toc-text">数据收集和分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实验-I-的结果"><span class="toc-text">实验 I 的结果</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#T1-节点探索任务"><span class="toc-text">T1: 节点探索任务</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#T2-边探索任务"><span class="toc-text">T2: 边探索任务</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#T3-边探索任务"><span class="toc-text">T3: 边探索任务</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#问卷调查"><span class="toc-text">问卷调查</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Results-Of-Study-II"><span class="toc-text">Results Of Study II</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#T1-Node-Exploration-Task"><span class="toc-text">T1: Node Exploration Task</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#T2-Link-Exploration-Task"><span class="toc-text">T2: Link Exploration Task</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#T3-Path-Exploration-Task"><span class="toc-text">T3: Path Exploration Task</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Post-Study-Questionnaire"><span class="toc-text">Post-Study Questionnaire</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、讨论"><span class="toc-text">六、讨论</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#为什么在实验-I-中，-D-h-会被认为最差的技术？"><span class="toc-text">为什么在实验 I 中，$D_h$会被认为最差的技术？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#为什么在实验-I-中，-D-s-只是某些条件下强于-D-p-？"><span class="toc-text">为什么在实验 I 中，$D_s$只是某些条件下强于$D_p$？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#为什么在实验-I-中，-D-s-最受用户欢迎？"><span class="toc-text">为什么在实验 I 中，$D_s$最受用户欢迎？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#为什么在实验-II-中，-D-s-比-D-p-在小视窗下表现的更好？"><span class="toc-text">为什么在实验 II 中，$D_s$比$D_p$在小视窗下表现的更好？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#为什么要使用-iSphere"><span class="toc-text">为什么要使用 iSphere</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+</div>
+    </div>
+    
+</div>
+
+<footer class="footer">
+  <ul class="list-inline text-center">
+         
+  </ul>
+  
+  <p>
+    <a href="http://panjiacheng.site">@Jiacheng Pan</a> Created By
+    <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> Theme
+    <a href="https://github.com/aircloud/hexo-theme-aircloud" target="_blank" rel="noopener">AirCloud</a>
+    <a href="https://github.com/aircloud" target="_blank" rel="noopener">@Xiaotao</a>
+  </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script type="text/javascript">
+       (function() {
+           if (typeof LivereTower === 'function') { return; }
+
+           var j, d = document.getElementById('lv-container');
+
+           d.setAttribute('data-id','city');
+           d.setAttribute('data-uid' , 'MTAyMC8yOTk2MC82NTI1');
+
+           j = document.createElement('script');
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+
+           d.appendChild(j);
+       })();
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+</html>
