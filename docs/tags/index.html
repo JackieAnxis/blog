@@ -20,10 +20,10 @@
   <!-- Custom CSS -->
   
 <link rel="stylesheet" href="/blog/css/aircloud.css">
-<link rel="stylesheet" href="/blog/.css">
+<link rel="stylesheet" href="/blog/blog/blog/.css" src="/blog/.js">
  
 <link rel="stylesheet" href="/blog/css/gitment.css">
-<link rel="stylesheet" href="/blog/blog/.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/.css" src="/blog/.js">
 
   <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
   <link
@@ -207,20 +207,20 @@
         >Algorithm</a
     >
     
-    <a href="#Graph" title="Graph" rel="3"
-        >Graph</a
-    >
-    
     <a href="#Math" title="Math" rel="4"
         >Math</a
     >
     
-    <a href="#Dynamic Graph" title="Dynamic Graph" rel="4"
-        >Dynamic Graph</a
+    <a href="#Graph" title="Graph" rel="3"
+        >Graph</a
     >
     
     <a href="#Matrix" title="Matrix" rel="1"
         >Matrix</a
+    >
+    
+    <a href="#Dynamic Graph" title="Dynamic Graph" rel="4"
+        >Dynamic Graph</a
     >
     
     <a href="#Travel" title="Travel" rel="1"
@@ -231,24 +231,16 @@
         >React</a
     >
     
-    <a href="#Scatterplot" title="Scatterplot" rel="1"
-        >Scatterplot</a
-    >
-    
     <a href="#Authoring" title="Authoring" rel="3"
         >Authoring</a
     >
     
+    <a href="#Scatterplot" title="Scatterplot" rel="1"
+        >Scatterplot</a
+    >
+    
     <a href="#WebGL" title="WebGL" rel="1"
         >WebGL</a
-    >
-    
-    <a href="#Windows" title="Windows" rel="1"
-        >Windows</a
-    >
-    
-    <a href="#software" title="software" rel="1"
-        >software</a
     >
     
     <a href="#论文评述" title="论文评述" rel="1"
@@ -257,6 +249,14 @@
     
     <a href="#报告" title="报告" rel="1"
         >报告</a
+    >
+    
+    <a href="#Windows" title="Windows" rel="1"
+        >Windows</a
+    >
+    
+    <a href="#software" title="software" rel="1"
+        >software</a
     >
     
 </div>
@@ -2876,6 +2876,69 @@
 </div>
 
 <div class="one-tag-list">
+    <span class="fa fa-tag listing-seperator" id="Math">
+        <span class="tag-text">Math</span>
+    </span>
+    
+    <!-- <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li> -->
+    <div class="post-preview">
+        <a href="/blog/2019/01/16/2019-01-16 图的基础知识/">
+            <h2 class="post-title">
+                杂谈：图的相关基础知识
+            </h2>
+            
+        </a>
+        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    </div>
+    
+    <!-- <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li> -->
+    <div class="post-preview">
+        <a href="/blog/2018/06/19/2018-06-19 拉普拉斯矩阵和代数连通度/">
+            <h2 class="post-title">
+                杂谈：拉普拉斯矩阵和代数连通度
+            </h2>
+            
+        </a>
+        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    </div>
+    
+    <!-- <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li> -->
+    <div class="post-preview">
+        <a href="/blog/2018/06/19/2018-06-19 图的小波变换/">
+            <h2 class="post-title">
+                杂谈：图的小波变换
+            </h2>
+            
+        </a>
+        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    </div>
+    
+    <!-- <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li> -->
+    <div class="post-preview">
+        <a href="/blog/2018/06/19/2018-06-19 傅里叶分析/">
+            <h2 class="post-title">
+                杂谈：【转】傅里叶分析之掐死教程（完整版）
+            </h2>
+            
+        </a>
+        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    </div>
+    
+</div>
+
+<div class="one-tag-list">
     <span class="fa fa-tag listing-seperator" id="Graph">
         <span class="tag-text">Graph</span>
     </span>
@@ -2925,8 +2988,8 @@
 </div>
 
 <div class="one-tag-list">
-    <span class="fa fa-tag listing-seperator" id="Math">
-        <span class="tag-text">Math</span>
+    <span class="fa fa-tag listing-seperator" id="Matrix">
+        <span class="tag-text">Matrix</span>
     </span>
     
     <!-- <li class="listing-item">
@@ -2934,51 +2997,9 @@
     <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
     </li> -->
     <div class="post-preview">
-        <a href="/blog/2019/01/16/2019-01-16 图的基础知识/">
+        <a href="/blog/2018/06/26/2018-06-26 HiPiler, Visual Exploration of Large Genome Interaction Matrices with Interactive Small Multiples/">
             <h2 class="post-title">
-                杂谈：图的相关基础知识
-            </h2>
-            
-        </a>
-        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-    </div>
-    
-    <!-- <li class="listing-item">
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    </li> -->
-    <div class="post-preview">
-        <a href="/blog/2018/06/19/2018-06-19 拉普拉斯矩阵和代数连通度/">
-            <h2 class="post-title">
-                杂谈：拉普拉斯矩阵和代数连通度
-            </h2>
-            
-        </a>
-        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-    </div>
-    
-    <!-- <li class="listing-item">
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    </li> -->
-    <div class="post-preview">
-        <a href="/blog/2018/06/19/2018-06-19 傅里叶分析/">
-            <h2 class="post-title">
-                杂谈：【转】傅里叶分析之掐死教程（完整版）
-            </h2>
-            
-        </a>
-        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-    </div>
-    
-    <!-- <li class="listing-item">
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    </li> -->
-    <div class="post-preview">
-        <a href="/blog/2018/06/19/2018-06-19 图的小波变换/">
-            <h2 class="post-title">
-                杂谈：图的小波变换
+                HiPiler Visual Exploration of Large Genome Interaction Matrices with Interactive Small Multiples
             </h2>
             
         </a>
@@ -3051,27 +3072,6 @@
 </div>
 
 <div class="one-tag-list">
-    <span class="fa fa-tag listing-seperator" id="Matrix">
-        <span class="tag-text">Matrix</span>
-    </span>
-    
-    <!-- <li class="listing-item">
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    </li> -->
-    <div class="post-preview">
-        <a href="/blog/2018/06/26/2018-06-26 HiPiler, Visual Exploration of Large Genome Interaction Matrices with Interactive Small Multiples/">
-            <h2 class="post-title">
-                HiPiler Visual Exploration of Large Genome Interaction Matrices with Interactive Small Multiples
-            </h2>
-            
-        </a>
-        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-    </div>
-    
-</div>
-
-<div class="one-tag-list">
     <span class="fa fa-tag listing-seperator" id="Travel">
         <span class="tag-text">Travel</span>
     </span>
@@ -3119,27 +3119,6 @@
         <a href="/blog/2018/09/14/2018-09-14 十分钟了解MobX/">
             <h2 class="post-title">
                 十分钟了解MobX
-            </h2>
-            
-        </a>
-        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-    </div>
-    
-</div>
-
-<div class="one-tag-list">
-    <span class="fa fa-tag listing-seperator" id="Scatterplot">
-        <span class="tag-text">Scatterplot</span>
-    </span>
-    
-    <!-- <li class="listing-item">
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    </li> -->
-    <div class="post-preview">
-        <a href="/blog/2021/04/20/2021-04-20 Kyrix-S-Authoring Scalable Scatterplot Visualizations of Big Data/">
-            <h2 class="post-title">
-                Kyrix-S: Authoring Scalable Scatterplot Visualizations of Big Data
             </h2>
             
         </a>
@@ -3198,6 +3177,27 @@
 </div>
 
 <div class="one-tag-list">
+    <span class="fa fa-tag listing-seperator" id="Scatterplot">
+        <span class="tag-text">Scatterplot</span>
+    </span>
+    
+    <!-- <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li> -->
+    <div class="post-preview">
+        <a href="/blog/2021/04/20/2021-04-20 Kyrix-S-Authoring Scalable Scatterplot Visualizations of Big Data/">
+            <h2 class="post-title">
+                Kyrix-S: Authoring Scalable Scatterplot Visualizations of Big Data
+            </h2>
+            
+        </a>
+        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    </div>
+    
+</div>
+
+<div class="one-tag-list">
     <span class="fa fa-tag listing-seperator" id="WebGL">
         <span class="tag-text">WebGL</span>
     </span>
@@ -3210,48 +3210,6 @@
         <a href="/blog/2021/06/10/2021-06-10 P4&P5&P6/">
             <h2 class="post-title">
                 P4 P5 以及 P6
-            </h2>
-            
-        </a>
-        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-    </div>
-    
-</div>
-
-<div class="one-tag-list">
-    <span class="fa fa-tag listing-seperator" id="Windows">
-        <span class="tag-text">Windows</span>
-    </span>
-    
-    <!-- <li class="listing-item">
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    </li> -->
-    <div class="post-preview">
-        <a href="/blog/2021/11/15/2021-11-15 Window装机指南/">
-            <h2 class="post-title">
-                Windows装机指南
-            </h2>
-            
-        </a>
-        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-    </div>
-    
-</div>
-
-<div class="one-tag-list">
-    <span class="fa fa-tag listing-seperator" id="software">
-        <span class="tag-text">software</span>
-    </span>
-    
-    <!-- <li class="listing-item">
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    </li> -->
-    <div class="post-preview">
-        <a href="/blog/2021/11/15/2021-11-15 Window装机指南/">
-            <h2 class="post-title">
-                Windows装机指南
             </h2>
             
         </a>
@@ -3294,6 +3252,48 @@
         <a href="/blog/2021/10/11/2021-10-11-Lumos/">
             <h2 class="post-title">
                 Lumos Increasing Awareness of Analytic Behavior during Visual Data Analysis
+            </h2>
+            
+        </a>
+        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    </div>
+    
+</div>
+
+<div class="one-tag-list">
+    <span class="fa fa-tag listing-seperator" id="Windows">
+        <span class="tag-text">Windows</span>
+    </span>
+    
+    <!-- <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li> -->
+    <div class="post-preview">
+        <a href="/blog/2021/11/15/2021-11-15 Window装机指南/">
+            <h2 class="post-title">
+                Windows装机指南
+            </h2>
+            
+        </a>
+        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    </div>
+    
+</div>
+
+<div class="one-tag-list">
+    <span class="fa fa-tag listing-seperator" id="software">
+        <span class="tag-text">software</span>
+    </span>
+    
+    <!-- <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li> -->
+    <div class="post-preview">
+        <a href="/blog/2021/11/15/2021-11-15 Window装机指南/">
+            <h2 class="post-title">
+                Windows装机指南
             </h2>
             
         </a>
@@ -3349,7 +3349,7 @@
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
 <script src="/blog/js/index.js"></script>
-<script href="/blog/blog/.css" src="/blog/.js"></script>
+<script href="/blog/blog/blog/blog/.css" src="/blog/blog/.js"></script>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
