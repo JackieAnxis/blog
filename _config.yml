@@ -93,14 +93,14 @@ math:
     engine: "mathjax"
 
 comment:
-    # type: livere
-    # livere_id: "city"
-    # livere_uid: MTAyMC8yOTk2MC82NTI1
-    type: gitment
-    owner: jiacheng-pan
-    repo: blog
-    id: 0cecde248667e71adf8a
-    secret: 5d79e0f31b2d02d0d6d72c67296f75c8d6cbc208
+    type: livere
+    livere_id: "city"
+    livere_uid: MTAyMC8yOTk2MC82NTI1
+    # type: gitment
+    # owner: jiacheng-pan
+    # repo: blog
+    # id: 0cecde248667e71adf8a
+    # secret: 5d79e0f31b2d02d0d6d72c67296f75c8d6cbc208
 
 author_generator:
     per_page: 10

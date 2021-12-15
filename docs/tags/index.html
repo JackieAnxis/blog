@@ -20,10 +20,10 @@
   <!-- Custom CSS -->
   
 <link rel="stylesheet" href="/blog/css/aircloud.css">
-<link rel="stylesheet" href="/blog/blog/blog/.css" src="/blog/.js">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/.css" src="/blog/blog/.js">
  
 <link rel="stylesheet" href="/blog/css/gitment.css">
-<link rel="stylesheet" href="/blog/blog/blog/blog/.css" src="/blog/.js">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/.js">
 
   <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
   <link
@@ -187,12 +187,12 @@
         >Graph Embedding</a
     >
     
-    <a href="#Fisheye" title="Fisheye" rel="4"
-        >Fisheye</a
-    >
-    
     <a href="#Color" title="Color" rel="1"
         >Color</a
+    >
+    
+    <a href="#Fisheye" title="Fisheye" rel="4"
+        >Fisheye</a
     >
     
     <a href="#Deep Learning" title="Deep Learning" rel="1"
@@ -203,10 +203,6 @@
         >Computer Vision</a
     >
     
-    <a href="#Math" title="Math" rel="4"
-        >Math</a
-    >
-    
     <a href="#Algorithm" title="Algorithm" rel="1"
         >Algorithm</a
     >
@@ -215,12 +211,16 @@
         >Graph</a
     >
     
-    <a href="#Matrix" title="Matrix" rel="1"
-        >Matrix</a
+    <a href="#Math" title="Math" rel="4"
+        >Math</a
     >
     
     <a href="#Dynamic Graph" title="Dynamic Graph" rel="4"
         >Dynamic Graph</a
+    >
+    
+    <a href="#Matrix" title="Matrix" rel="1"
+        >Matrix</a
     >
     
     <a href="#Travel" title="Travel" rel="1"
@@ -2729,6 +2729,27 @@
 </div>
 
 <div class="one-tag-list">
+    <span class="fa fa-tag listing-seperator" id="Color">
+        <span class="tag-text">Color</span>
+    </span>
+    
+    <!-- <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li> -->
+    <div class="post-preview">
+        <a href="/blog/2018/05/03/2018-05-03 Affective Color in Visualization/">
+            <h2 class="post-title">
+                Affective Color in Visualization
+            </h2>
+            
+        </a>
+        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    </div>
+    
+</div>
+
+<div class="one-tag-list">
     <span class="fa fa-tag listing-seperator" id="Fisheye">
         <span class="tag-text">Fisheye</span>
     </span>
@@ -2792,27 +2813,6 @@
 </div>
 
 <div class="one-tag-list">
-    <span class="fa fa-tag listing-seperator" id="Color">
-        <span class="tag-text">Color</span>
-    </span>
-    
-    <!-- <li class="listing-item">
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    </li> -->
-    <div class="post-preview">
-        <a href="/blog/2018/05/03/2018-05-03 Affective Color in Visualization/">
-            <h2 class="post-title">
-                Affective Color in Visualization
-            </h2>
-            
-        </a>
-        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-    </div>
-    
-</div>
-
-<div class="one-tag-list">
     <span class="fa fa-tag listing-seperator" id="Deep Learning">
         <span class="tag-text">Deep Learning</span>
     </span>
@@ -2846,69 +2846,6 @@
         <a href="/blog/2018/05/06/2018-05-06 ICCV2017：第一人称视角手势估计/">
             <h2 class="post-title">
                 ICCV2017：第一人称视角手势估计
-            </h2>
-            
-        </a>
-        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-    </div>
-    
-</div>
-
-<div class="one-tag-list">
-    <span class="fa fa-tag listing-seperator" id="Math">
-        <span class="tag-text">Math</span>
-    </span>
-    
-    <!-- <li class="listing-item">
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    </li> -->
-    <div class="post-preview">
-        <a href="/blog/2019/01/16/2019-01-16 图的基础知识/">
-            <h2 class="post-title">
-                杂谈：图的相关基础知识
-            </h2>
-            
-        </a>
-        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-    </div>
-    
-    <!-- <li class="listing-item">
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    </li> -->
-    <div class="post-preview">
-        <a href="/blog/2018/06/19/2018-06-19 图的小波变换/">
-            <h2 class="post-title">
-                杂谈：图的小波变换
-            </h2>
-            
-        </a>
-        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-    </div>
-    
-    <!-- <li class="listing-item">
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    </li> -->
-    <div class="post-preview">
-        <a href="/blog/2018/06/19/2018-06-19 拉普拉斯矩阵和代数连通度/">
-            <h2 class="post-title">
-                杂谈：拉普拉斯矩阵和代数连通度
-            </h2>
-            
-        </a>
-        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-    </div>
-    
-    <!-- <li class="listing-item">
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    </li> -->
-    <div class="post-preview">
-        <a href="/blog/2018/06/19/2018-06-19 傅里叶分析/">
-            <h2 class="post-title">
-                杂谈：【转】傅里叶分析之掐死教程（完整版）
             </h2>
             
         </a>
@@ -2988,8 +2925,8 @@
 </div>
 
 <div class="one-tag-list">
-    <span class="fa fa-tag listing-seperator" id="Matrix">
-        <span class="tag-text">Matrix</span>
+    <span class="fa fa-tag listing-seperator" id="Math">
+        <span class="tag-text">Math</span>
     </span>
     
     <!-- <li class="listing-item">
@@ -2997,9 +2934,51 @@
     <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
     </li> -->
     <div class="post-preview">
-        <a href="/blog/2018/06/26/2018-06-26 HiPiler, Visual Exploration of Large Genome Interaction Matrices with Interactive Small Multiples/">
+        <a href="/blog/2019/01/16/2019-01-16 图的基础知识/">
             <h2 class="post-title">
-                HiPiler Visual Exploration of Large Genome Interaction Matrices with Interactive Small Multiples
+                杂谈：图的相关基础知识
+            </h2>
+            
+        </a>
+        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    </div>
+    
+    <!-- <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li> -->
+    <div class="post-preview">
+        <a href="/blog/2018/06/19/2018-06-19 图的小波变换/">
+            <h2 class="post-title">
+                杂谈：图的小波变换
+            </h2>
+            
+        </a>
+        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    </div>
+    
+    <!-- <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li> -->
+    <div class="post-preview">
+        <a href="/blog/2018/06/19/2018-06-19 傅里叶分析/">
+            <h2 class="post-title">
+                杂谈：【转】傅里叶分析之掐死教程（完整版）
+            </h2>
+            
+        </a>
+        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    </div>
+    
+    <!-- <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li> -->
+    <div class="post-preview">
+        <a href="/blog/2018/06/19/2018-06-19 拉普拉斯矩阵和代数连通度/">
+            <h2 class="post-title">
+                杂谈：拉普拉斯矩阵和代数连通度
             </h2>
             
         </a>
@@ -3063,6 +3042,27 @@
         <a href="/blog/2018/06/24/2018-06-24 Wavelet-based Visual Analysis of Dynamic Networks/">
             <h2 class="post-title">
                 Wavelet-based Visual Analysis of Dynamic Networks
+            </h2>
+            
+        </a>
+        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    </div>
+    
+</div>
+
+<div class="one-tag-list">
+    <span class="fa fa-tag listing-seperator" id="Matrix">
+        <span class="tag-text">Matrix</span>
+    </span>
+    
+    <!-- <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li> -->
+    <div class="post-preview">
+        <a href="/blog/2018/06/26/2018-06-26 HiPiler, Visual Exploration of Large Genome Interaction Matrices with Interactive Small Multiples/">
+            <h2 class="post-title">
+                HiPiler Visual Exploration of Large Genome Interaction Matrices with Interactive Small Multiples
             </h2>
             
         </a>
@@ -3349,7 +3349,7 @@
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
 <script src="/blog/js/index.js"></script>
-<script href="/blog/blog/blog/blog/.css" src="/blog/blog/.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/.js"></script>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
