@@ -1,6 +1,5 @@
 ---
-title: "Kyrix-S: Authoring Scalable Scatterplot Visualizations
-of Big Data"
+title: "Simultaneous Matrix Orderings for Graph Collections"
 tags: ["Visualization", "Matrix", "Graph"]
 date: 2022-06-02
 author: PaperReading
